@@ -1,0 +1,70 @@
+\doxysection{Clipboard support}
+\hypertarget{group__clipboard}{}\label{group__clipboard}\index{Clipboard support@{Clipboard support}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} void \mbox{\hyperlink{group__clipboard_ga7a580309bbc185a0459c3559021d2fd7}{glfw\+Set\+Clipboard\+String}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Sets the clipboard to the specified string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__clipboard_ga315b28b05797d00fe7cdf1ecfdc638dc}{glfw\+Get\+Clipboard\+String}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Retrieves the contents of the clipboard as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__clipboard_ga315b28b05797d00fe7cdf1ecfdc638dc}\label{group__clipboard_ga315b28b05797d00fe7cdf1ecfdc638dc} 
+\index{Clipboard support@{Clipboard support}!glfwGetClipboardString@{glfwGetClipboardString}}
+\index{glfwGetClipboardString@{glfwGetClipboardString}!Clipboard support@{Clipboard support}}
+\doxysubsubsection{\texorpdfstring{glfwGetClipboardString()}{glfwGetClipboardString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char \texorpdfstring{$\ast$}{*} glfw\+Get\+Clipboard\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+
+
+
+Retrieves the contents of the clipboard as a string. 
+
+This function returns the contents of the system clipboard, if it contains or is convertible to a UTF-\/8 encoded string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em window} & The window that will request the clipboard contents. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contents of the clipboard as a UTF-\/8 encoded string, or {\ttfamily NULL} if an error occurred.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function may only be called from the main thread.
+
+The returned string is allocated and freed by GLFW. You should not free it yourself.
+
+The returned string is valid only until the next call to \doxylink{group__input_ga315b28b05797d00fe7cdf1ecfdc638dc}{glfw\+Get\+Clipboard\+String} or \doxylink{group__input_ga7a580309bbc185a0459c3559021d2fd7}{glfw\+Set\+Clipboard\+String}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__clipboard_ga7a580309bbc185a0459c3559021d2fd7}{glfw\+Set\+Clipboard\+String} 
+\end{DoxySeeAlso}
+\Hypertarget{group__clipboard_ga7a580309bbc185a0459c3559021d2fd7}\label{group__clipboard_ga7a580309bbc185a0459c3559021d2fd7} 
+\index{Clipboard support@{Clipboard support}!glfwSetClipboardString@{glfwSetClipboardString}}
+\index{glfwSetClipboardString@{glfwSetClipboardString}!Clipboard support@{Clipboard support}}
+\doxysubsubsection{\texorpdfstring{glfwSetClipboardString()}{glfwSetClipboardString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} void glfw\+Set\+Clipboard\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})}
+
+
+
+Sets the clipboard to the specified string. 
+
+This function sets the system clipboard to the specified, UTF-\/8 encoded string. The string is copied before returning, so you don\textquotesingle{}t have to retain it afterwards.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em window} & The window that will own the clipboard contents. \\
+\hline
+\mbox{\texttt{ in}}  & {\em string} & A UTF-\/8 encoded string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function may only be called from the main thread.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__clipboard_ga315b28b05797d00fe7cdf1ecfdc638dc}{glfw\+Get\+Clipboard\+String} 
+\end{DoxySeeAlso}

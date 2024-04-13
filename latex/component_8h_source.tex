@@ -1,0 +1,42 @@
+\doxysection{component.\+h}
+\hypertarget{component_8h_source}{}\label{component_8h_source}\mbox{\hyperlink{component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00001}00001\ \textcolor{comment}{//Component.h\ -\/\ abstract\ base\ class\ for\ electronic\ components}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00004}00004\ \textcolor{comment}{//\ 19-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Created.}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00005}00005\ \textcolor{comment}{//\ 27-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Added\ graphical\ display.}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00006}00006\ \textcolor{comment}{//\ 09-\/September-\/23\ Fahad\ A.Khan\ \ }}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ \_COMPONENT\_H\_}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ \_COMPONENT\_H\_}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}\ \ \ \textcolor{comment}{//for\ GLEW\ library}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{glut_8h}{GL/glut.h}}>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <Windows.h>}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <gl/GL.h>}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <gl/GLU.h>}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{glut_8h}{gl/glut.h}}>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{freeglut_8h}{gl/freeglut.h}}>}}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00023}\mbox{\hyperlink{class_component}{00023}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00024}00024\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00025}\mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{00025}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}};}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00026}\mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{00026}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}};}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00027}\mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{00027}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}};}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00028}\mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{00028}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}};}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00030}\mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{00030}}\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{GetName}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00031}\mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{00031}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{Update}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ voltage)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00032}\mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{00032}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{GetVoltage}}(\textcolor{keywordtype}{double}\ \_current,\ \textcolor{keywordtype}{double}\ timestep)=0;}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00033}\mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{00033}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{Display}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00034}\mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{00034}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{SetColor}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{component_8h_source_l00037}00037\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//\ \_COMPONENT\_H\_}}
+
+\end{DoxyCode}

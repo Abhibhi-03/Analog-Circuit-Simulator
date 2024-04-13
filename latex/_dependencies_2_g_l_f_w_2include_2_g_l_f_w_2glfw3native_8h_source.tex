@@ -1,0 +1,187 @@
+\doxysection{glfw3native.\+h}
+\hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source}{}\label{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source}\index{For\_VS/Dependencies/GLFW/include/GLFW/glfw3native.h@{For\_VS/Dependencies/GLFW/include/GLFW/glfw3native.h}}
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00001}00001\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00002}00002\ \textcolor{comment}{\ *\ GLFW\ 3.3\ -\/\ www.glfw.org}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00003}00003\ \textcolor{comment}{\ *\ A\ library\ for\ OpenGL,\ window\ and\ input}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00004}00004\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2002-\/2006\ Marcus\ Geelnard}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00006}00006\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2018\ Camilla\ Löwy\ <elmindreda@glfw.org>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00007}00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00008}00008\ \textcolor{comment}{\ *\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00009}00009\ \textcolor{comment}{\ *\ warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00010}00010\ \textcolor{comment}{\ *\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00012}00012\ \textcolor{comment}{\ *\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00013}00013\ \textcolor{comment}{\ *\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00014}00014\ \textcolor{comment}{\ *\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00015}00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00016}00016\ \textcolor{comment}{\ *\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00017}00017\ \textcolor{comment}{\ *\ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00018}00018\ \textcolor{comment}{\ *\ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00019}00019\ \textcolor{comment}{\ *\ \ \ \ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00020}00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00021}00021\ \textcolor{comment}{\ *\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00022}00022\ \textcolor{comment}{\ *\ \ \ \ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00023}00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00024}00024\ \textcolor{comment}{\ *\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00025}00025\ \textcolor{comment}{\ *\ \ \ \ distribution.}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00026}00026\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00027}00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00029}00029\ \textcolor{preprocessor}{\#ifndef\ \_glfw3\_native\_h\_}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00030}00030\ \textcolor{preprocessor}{\#define\ \_glfw3\_native\_h\_}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00032}00032\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00033}00033\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00037}00037\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00038}00038\ \textcolor{comment}{\ *\ Doxygen\ documentation}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00039}00039\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00090}00090\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00091}00091\ \textcolor{comment}{\ *\ System\ headers\ and\ types}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00092}00092\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00094}00094\ \textcolor{preprocessor}{\#if\ !defined(GLFW\_NATIVE\_INCLUDE\_NONE)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00096}00096\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_WIN32)\ ||\ defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00097}00097\ \ \ \textcolor{comment}{/*\ This\ is\ a\ workaround\ for\ the\ fact\ that\ glfw3.h\ needs\ to\ export\ APIENTRY\ (for}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00098}00098\ \textcolor{comment}{\ \ \ *\ example\ to\ allow\ applications\ to\ correctly\ declare\ a\ GL\_KHR\_debug\ callback)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ *\ but\ windows.h\ assumes\ no\ one\ will\ define\ APIENTRY\ before\ it\ does}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00101}00101\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_APIENTRY\_DEFINED)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00102}00102\ \textcolor{preprocessor}{\ \ \ \#undef\ APIENTRY}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00103}00103\ \textcolor{preprocessor}{\ \ \ \#undef\ GLFW\_APIENTRY\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00104}00104\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00105}00105\ \textcolor{preprocessor}{\ \ \#include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00106}00106\ \textcolor{preprocessor}{\ \#elif\ defined(GLFW\_EXPOSE\_NATIVE\_COCOA)\ ||\ defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00107}00107\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_OBJC\_\_)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00108}00108\ \textcolor{preprocessor}{\ \ \ \#import\ <Cocoa/Cocoa.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00109}00109\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00110}00110\ \textcolor{preprocessor}{\ \ \ \#include\ <ApplicationServices/ApplicationServices.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00111}00111\ \textcolor{preprocessor}{\ \ \ \#include\ <objc/objc.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00112}00112\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00113}00113\ \textcolor{preprocessor}{\ \#elif\ defined(GLFW\_EXPOSE\_NATIVE\_X11)\ ||\ defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00114}00114\ \textcolor{preprocessor}{\ \ \#include\ <X11/Xlib.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00115}00115\ \textcolor{preprocessor}{\ \ \#include\ <X11/extensions/Xrandr.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00116}00116\ \textcolor{preprocessor}{\ \#elif\ defined(GLFW\_EXPOSE\_NATIVE\_WAYLAND)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00117}00117\ \textcolor{preprocessor}{\ \ \#include\ <wayland-\/client.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00118}00118\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00120}00120\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00121}00121\ \ \ \textcolor{comment}{/*\ WGL\ is\ declared\ by\ windows.h\ */}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00122}00122\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00123}00123\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00124}00124\ \ \ \textcolor{comment}{/*\ NSGL\ is\ declared\ by\ Cocoa.h\ */}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00125}00125\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00126}00126\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00127}00127\ \ \ \textcolor{comment}{/*\ This\ is\ a\ workaround\ for\ the\ fact\ that\ glfw3.h\ defines\ GLAPIENTRY\ because\ by}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00128}00128\ \textcolor{comment}{\ \ \ *\ default\ it\ also\ acts\ as\ an\ OpenGL\ header}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00129}00129\ \textcolor{comment}{\ \ \ *\ However,\ glx.h\ will\ include\ gl.h,\ which\ will\ define\ it\ unconditionally}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00130}00130\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00131}00131\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_GLAPIENTRY\_DEFINED)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00132}00132\ \textcolor{preprocessor}{\ \ \ \#undef\ GLAPIENTRY}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00133}00133\ \textcolor{preprocessor}{\ \ \ \#undef\ GLFW\_GLAPIENTRY\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00134}00134\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00135}00135\ \textcolor{preprocessor}{\ \ \#include\ <GL/glx.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00136}00136\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00137}00137\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_EGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00138}00138\ \textcolor{preprocessor}{\ \ \#include\ <EGL/egl.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00139}00139\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00140}00140\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_EXPOSE\_NATIVE\_OSMESA)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00141}00141\ \ \ \textcolor{comment}{/*\ This\ is\ a\ workaround\ for\ the\ fact\ that\ glfw3.h\ defines\ GLAPIENTRY\ because\ by}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00142}00142\ \textcolor{comment}{\ \ \ *\ default\ it\ also\ acts\ as\ an\ OpenGL\ header}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00143}00143\ \textcolor{comment}{\ \ \ *\ However,\ osmesa.h\ will\ include\ gl.h,\ which\ will\ define\ it\ unconditionally}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00144}00144\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00145}00145\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_GLAPIENTRY\_DEFINED)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00146}00146\ \textcolor{preprocessor}{\ \ \ \#undef\ GLAPIENTRY}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00147}00147\ \textcolor{preprocessor}{\ \ \ \#undef\ GLFW\_GLAPIENTRY\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00148}00148\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00149}00149\ \textcolor{preprocessor}{\ \ \#include\ <GL/osmesa.h>}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00152}00152\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*GLFW\_NATIVE\_INCLUDE\_NONE*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00155}00155\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00156}00156\ \textcolor{comment}{\ *\ Functions}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00157}00157\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00159}00159\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_WIN32)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00175}00175\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ glfwGetWin32Adapter(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00192}00192\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ glfwGetWin32Monitor(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00216}00216\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ HWND\ glfwGetWin32Window(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00217}00217\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00219}00219\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00243}00243\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ HGLRC\ glfwGetWGLContext(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00244}00244\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00246}00246\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_COCOA)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00261}00261\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ CGDirectDisplayID\ glfwGetCocoaMonitor(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00277}00277\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{id}\ glfwGetCocoaWindow(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00278}00278\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00280}00280\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00296}00296\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{id}\ glfwGetNSGLContext(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00297}00297\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00299}00299\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_X11)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00314}00314\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ Display*\ glfwGetX11Display(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00330}00330\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ RRCrtc\ glfwGetX11Adapter(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00346}00346\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ RROutput\ glfwGetX11Monitor(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00362}00362\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ Window\ glfwGetX11Window(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00384}00384\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ glfwSetX11SelectionString(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00412}00412\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ glfwGetX11SelectionString(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00413}00413\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00415}00415\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00431}00431\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glxew_8h_ab14f757b495fc428b0564f1914be5838}{GLXContext}}\ glfwGetGLXContext(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00432}00432\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00448}00448\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glxew_8h_a7b7fbb726212feadef35c6c7c09b9541}{GLXWindow}}\ glfwGetGLXWindow(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00449}00449\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00451}00451\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_WAYLAND)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00466}00466\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{struct\ }wl\_display*\ glfwGetWaylandDisplay(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00482}00482\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{struct\ }wl\_output*\ glfwGetWaylandMonitor(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00498}00498\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{struct\ }wl\_surface*\ glfwGetWaylandWindow(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00499}00499\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00501}00501\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_EGL)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00519}00519\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{eglew_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}}\ glfwGetEGLDisplay(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00536}00536\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{eglew_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}}\ glfwGetEGLContext(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00553}00553\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{eglew_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}}\ glfwGetEGLSurface(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00554}00554\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00555}00555\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00556}00556\ \textcolor{preprocessor}{\#if\ defined(GLFW\_EXPOSE\_NATIVE\_OSMESA)}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00579}00579\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ glfwGetOSMesaColorBuffer(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ width,\ \textcolor{keywordtype}{int}*\ height,\ \textcolor{keywordtype}{int}*\ format,\ \textcolor{keywordtype}{void}**\ buffer);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00603}00603\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ glfwGetOSMesaDepthBuffer(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ width,\ \textcolor{keywordtype}{int}*\ height,\ \textcolor{keywordtype}{int}*\ bytesPerValue,\ \textcolor{keywordtype}{void}**\ buffer);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00620}00620\ \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ OSMesaContext\ glfwGetOSMesaContext(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00621}00621\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00622}00622\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00623}00623\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00624}00624\ \}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00625}00625\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00626}00626\ }
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00627}00627\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_glfw3\_native\_h\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3native_8h_source_l00628}00628\ }
+
+\end{DoxyCode}

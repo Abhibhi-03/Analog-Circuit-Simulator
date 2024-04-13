@@ -1,0 +1,432 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/particles.c File Reference}
+\hypertarget{particles_8c}{}\label{particles_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/particles.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/particles.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$tinycthread.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$linmath.\+h$>$}\newline
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vec3}{Vec3}}
+\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}}
+\item 
+struct \mbox{\hyperlink{struct_p_a_r_t_i_c_l_e}{PARTICLE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{particles_8c_a088324ad8995e3eb76024e3e79083d48}{GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{particles_8c_adcf51d551294f28f0355f8463bc9737f}{GL\+\_\+\+LIGHT\+\_\+\+MODEL\+\_\+\+COLOR\+\_\+\+CONTROL\+\_\+\+EXT}}~0x81\+F8
+\item 
+\#define \mbox{\hyperlink{particles_8c_a593e9aeddef6f33d4ecf78a61e2755e1}{GL\+\_\+\+SINGLE\+\_\+\+COLOR\+\_\+\+EXT}}~0x81\+F9
+\item 
+\#define \mbox{\hyperlink{particles_8c_afd239a141295a983f2a440781cda4a57}{GL\+\_\+\+SEPARATE\+\_\+\+SPECULAR\+\_\+\+COLOR\+\_\+\+EXT}}~0x81\+FA
+\item 
+\#define \mbox{\hyperlink{particles_8c_a1bb55b5b25ae255cebe35ef0bb562bc4}{P\+\_\+\+TEX\+\_\+\+WIDTH}}~8
+\item 
+\#define \mbox{\hyperlink{particles_8c_a64dbc2ab407429c0007cb70a36279a40}{P\+\_\+\+TEX\+\_\+\+HEIGHT}}~8
+\item 
+\#define \mbox{\hyperlink{particles_8c_ac8291d1f5263777e3a8c9a9a028acaba}{F\+\_\+\+TEX\+\_\+\+WIDTH}}~16
+\item 
+\#define \mbox{\hyperlink{particles_8c_ab0ab21c7e97ea7d7face6f21d2baab31}{F\+\_\+\+TEX\+\_\+\+HEIGHT}}~16
+\item 
+\#define \mbox{\hyperlink{particles_8c_a43b318e80d2457f5ce3e00a6cf1543c8}{MAX\+\_\+\+PARTICLES}}~3000
+\item 
+\#define \mbox{\hyperlink{particles_8c_a2cb01479daf885a0c7f6510922dd98f2}{LIFE\+\_\+\+SPAN}}~8.f
+\item 
+\#define \mbox{\hyperlink{particles_8c_a11976b589133c91b6be9af536dce3314}{BIRTH\+\_\+\+INTERVAL}}~(\mbox{\hyperlink{particles_8c_a2cb01479daf885a0c7f6510922dd98f2}{LIFE\+\_\+\+SPAN}}/(float)\mbox{\hyperlink{particles_8c_a43b318e80d2457f5ce3e00a6cf1543c8}{MAX\+\_\+\+PARTICLES}})
+\item 
+\#define \mbox{\hyperlink{particles_8c_ab786d5d647a636c286a1a5310e71b850}{PARTICLE\+\_\+\+SIZE}}~0.\+7f
+\item 
+\#define \mbox{\hyperlink{particles_8c_a6801baa546c6112d19eb095111d24720}{GRAVITY}}~9.\+8f
+\item 
+\#define \mbox{\hyperlink{particles_8c_ab7d66695dede78826ee578ddfc5a92aa}{VELOCITY}}~8.f
+\item 
+\#define \mbox{\hyperlink{particles_8c_a670e281e909d14a6172f3014861e30e4}{FRICTION}}~0.\+75f
+\item 
+\#define \mbox{\hyperlink{particles_8c_ad73ab86b03e0b24679f7e5fe51f3a272}{FOUNTAIN\+\_\+\+HEIGHT}}~3.f
+\item 
+\#define \mbox{\hyperlink{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}{FOUNTAIN\+\_\+\+RADIUS}}~1.\+6f
+\item 
+\#define \mbox{\hyperlink{particles_8c_a631035a7c2f94d0e004b18a889e3e21a}{MIN\+\_\+\+DELTA\+\_\+T}}~(\mbox{\hyperlink{particles_8c_a11976b589133c91b6be9af536dce3314}{BIRTH\+\_\+\+INTERVAL}} \texorpdfstring{$\ast$}{*} 0.\+5f)
+\item 
+\#define \mbox{\hyperlink{particles_8c_a38177ef0818bb97e5b5b83612af71bb3}{FOUNTAIN\+\_\+\+R2}}~(\mbox{\hyperlink{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}{FOUNTAIN\+\_\+\+RADIUS}}+\mbox{\hyperlink{particles_8c_ab786d5d647a636c286a1a5310e71b850}{PARTICLE\+\_\+\+SIZE}}/2)\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}{FOUNTAIN\+\_\+\+RADIUS}}+\mbox{\hyperlink{particles_8c_ab786d5d647a636c286a1a5310e71b850}{PARTICLE\+\_\+\+SIZE}}/2)
+\item 
+\#define \mbox{\hyperlink{particles_8c_a6010b5a9e6b5ce902e16acbfbf402ebd}{BATCH\+\_\+\+PARTICLES}}~70
+\item 
+\#define \mbox{\hyperlink{particles_8c_a25eb335db4c3f3551fa167a12286532f}{PARTICLE\+\_\+\+VERTS}}~4
+\item 
+\#define \mbox{\hyperlink{particles_8c_a869e7f43e7a368dd99c20a6d937dc8c7}{FOUNTAIN\+\_\+\+SIDE\+\_\+\+POINTS}}~14
+\item 
+\#define \mbox{\hyperlink{particles_8c_a08b37f24c612fde2e0376d58d9fc8fc9}{FOUNTAIN\+\_\+\+SWEEP\+\_\+\+STEPS}}~32
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{particles_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{particles_8c_a5584bdb427edfe29e0c0c3753b619161}{aspect\+\_\+ratio}}
+\item 
+int \mbox{\hyperlink{particles_8c_a232aacc06be62239d2b6b0e450024451}{wireframe}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>double \mbox{\hyperlink{particles_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}\\
+\>float \mbox{\hyperlink{particles_8c_a778e38aa889751afffa2dea6b803e67a}{dt}}\\
+\>int \mbox{\hyperlink{particles_8c_abb3b8750696e644bd96355c1164c9ce2}{p\_frame}}\\
+\>int \mbox{\hyperlink{particles_8c_a19b4337757230d14ed3651b21ba9b3ee}{d\_frame}}\\
+\>\mbox{\hyperlink{tinycthread_8h_aa5c55d7c9eb959c15c4d5b73c02e8a41}{cnd\_t}} \mbox{\hyperlink{particles_8c_a800a0d0b8154e4f583d95b70a8073572}{p\_done}}\\
+\>\mbox{\hyperlink{tinycthread_8h_aa5c55d7c9eb959c15c4d5b73c02e8a41}{cnd\_t}} \mbox{\hyperlink{particles_8c_a51264ad5f1100e8a85438e5d0e5d8015}{d\_done}}\\
+\>\mbox{\hyperlink{tinycthread_8h_ae653b263c1432a99c799cbf028bc65e2}{mtx\_t}} \mbox{\hyperlink{particles_8c_a1dbc652397b5d924f922be2b112f8600}{particles\_lock}}\\
+\} \mbox{\hyperlink{particles_8c_a1cc17be6241d35720731d80c19d42792}{thread\_sync}}\\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \mbox{\hyperlink{particles_8c_a437a6ecf1689ec746dd416f5b310d14a}{particle\+\_\+tex\+\_\+id}}
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \mbox{\hyperlink{particles_8c_ae3b61e7ad0a71d8f62fba9178af995c1}{floor\+\_\+tex\+\_\+id}}
+\item 
+const unsigned char \mbox{\hyperlink{particles_8c_ae843e530d419008098cee29d5461809e}{particle\+\_\+texture}} \mbox{[}\mbox{\hyperlink{particles_8c_a1bb55b5b25ae255cebe35ef0bb562bc4}{P\+\_\+\+TEX\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{particles_8c_a64dbc2ab407429c0007cb70a36279a40}{P\+\_\+\+TEX\+\_\+\+HEIGHT}}\mbox{]}
+\item 
+const unsigned char \mbox{\hyperlink{particles_8c_a2c9a31543151e7a5329bcdb5736ffb9c}{floor\+\_\+texture}} \mbox{[}\mbox{\hyperlink{particles_8c_ac8291d1f5263777e3a8c9a9a028acaba}{F\+\_\+\+TEX\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{particles_8c_ab0ab21c7e97ea7d7face6f21d2baab31}{F\+\_\+\+TEX\+\_\+\+HEIGHT}}\mbox{]}
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_addbab577fd2beb3ab90382286235d36a}{fountain\+\_\+diffuse}} \mbox{[}4\mbox{]} = \{ 0.\+7f, 1.f, 1.f, 1.f \}
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_a39d55f15216f018e855cbdc46c0dbc10}{fountain\+\_\+specular}} \mbox{[}4\mbox{]} = \{ 1.f, 1.f, 1.f, 1.f \}
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_a23c3fb4d1a4bf41317144afe2255de02}{fountain\+\_\+shininess}} = 12.f
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_aaf6f0b7de0e6fe7329e8aa439115c480}{floor\+\_\+diffuse}} \mbox{[}4\mbox{]} = \{ 1.f, 0.\+6f, 0.\+6f, 1.f \}
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_a77347e707a9c6cee82aa900459410a47}{floor\+\_\+specular}} \mbox{[}4\mbox{]} = \{ 0.\+6f, 0.\+6f, 0.\+6f, 1.f \}
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_ac64a4936c129af65b61913a7fb23b5ec}{floor\+\_\+shininess}} = 18.f
+\item 
+const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{particles_8c_ac4d5ae3d7b24387639fead29e33ea7ef}{fog\+\_\+color}} \mbox{[}4\mbox{]} = \{ 0.\+1f, 0.\+1f, 0.\+1f, 1.f \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{particles_8c_a6010b5a9e6b5ce902e16acbfbf402ebd}\label{particles_8c_a6010b5a9e6b5ce902e16acbfbf402ebd} 
+\index{particles.c@{particles.c}!BATCH\_PARTICLES@{BATCH\_PARTICLES}}
+\index{BATCH\_PARTICLES@{BATCH\_PARTICLES}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{BATCH\_PARTICLES}{BATCH\_PARTICLES}}
+{\footnotesize\ttfamily \#define BATCH\+\_\+\+PARTICLES~70}
+
+\Hypertarget{particles_8c_a11976b589133c91b6be9af536dce3314}\label{particles_8c_a11976b589133c91b6be9af536dce3314} 
+\index{particles.c@{particles.c}!BIRTH\_INTERVAL@{BIRTH\_INTERVAL}}
+\index{BIRTH\_INTERVAL@{BIRTH\_INTERVAL}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{BIRTH\_INTERVAL}{BIRTH\_INTERVAL}}
+{\footnotesize\ttfamily \#define BIRTH\+\_\+\+INTERVAL~(\mbox{\hyperlink{particles_8c_a2cb01479daf885a0c7f6510922dd98f2}{LIFE\+\_\+\+SPAN}}/(float)\mbox{\hyperlink{particles_8c_a43b318e80d2457f5ce3e00a6cf1543c8}{MAX\+\_\+\+PARTICLES}})}
+
+\Hypertarget{particles_8c_ab0ab21c7e97ea7d7face6f21d2baab31}\label{particles_8c_ab0ab21c7e97ea7d7face6f21d2baab31} 
+\index{particles.c@{particles.c}!F\_TEX\_HEIGHT@{F\_TEX\_HEIGHT}}
+\index{F\_TEX\_HEIGHT@{F\_TEX\_HEIGHT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{F\_TEX\_HEIGHT}{F\_TEX\_HEIGHT}}
+{\footnotesize\ttfamily \#define F\+\_\+\+TEX\+\_\+\+HEIGHT~16}
+
+\Hypertarget{particles_8c_ac8291d1f5263777e3a8c9a9a028acaba}\label{particles_8c_ac8291d1f5263777e3a8c9a9a028acaba} 
+\index{particles.c@{particles.c}!F\_TEX\_WIDTH@{F\_TEX\_WIDTH}}
+\index{F\_TEX\_WIDTH@{F\_TEX\_WIDTH}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{F\_TEX\_WIDTH}{F\_TEX\_WIDTH}}
+{\footnotesize\ttfamily \#define F\+\_\+\+TEX\+\_\+\+WIDTH~16}
+
+\Hypertarget{particles_8c_ad73ab86b03e0b24679f7e5fe51f3a272}\label{particles_8c_ad73ab86b03e0b24679f7e5fe51f3a272} 
+\index{particles.c@{particles.c}!FOUNTAIN\_HEIGHT@{FOUNTAIN\_HEIGHT}}
+\index{FOUNTAIN\_HEIGHT@{FOUNTAIN\_HEIGHT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FOUNTAIN\_HEIGHT}{FOUNTAIN\_HEIGHT}}
+{\footnotesize\ttfamily \#define FOUNTAIN\+\_\+\+HEIGHT~3.f}
+
+\Hypertarget{particles_8c_a38177ef0818bb97e5b5b83612af71bb3}\label{particles_8c_a38177ef0818bb97e5b5b83612af71bb3} 
+\index{particles.c@{particles.c}!FOUNTAIN\_R2@{FOUNTAIN\_R2}}
+\index{FOUNTAIN\_R2@{FOUNTAIN\_R2}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FOUNTAIN\_R2}{FOUNTAIN\_R2}}
+{\footnotesize\ttfamily \#define FOUNTAIN\+\_\+\+R2~(\mbox{\hyperlink{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}{FOUNTAIN\+\_\+\+RADIUS}}+\mbox{\hyperlink{particles_8c_ab786d5d647a636c286a1a5310e71b850}{PARTICLE\+\_\+\+SIZE}}/2)\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}{FOUNTAIN\+\_\+\+RADIUS}}+\mbox{\hyperlink{particles_8c_ab786d5d647a636c286a1a5310e71b850}{PARTICLE\+\_\+\+SIZE}}/2)}
+
+\Hypertarget{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe}\label{particles_8c_a160c32e97c4979707f7aeec6c8a44ebe} 
+\index{particles.c@{particles.c}!FOUNTAIN\_RADIUS@{FOUNTAIN\_RADIUS}}
+\index{FOUNTAIN\_RADIUS@{FOUNTAIN\_RADIUS}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FOUNTAIN\_RADIUS}{FOUNTAIN\_RADIUS}}
+{\footnotesize\ttfamily \#define FOUNTAIN\+\_\+\+RADIUS~1.\+6f}
+
+\Hypertarget{particles_8c_a869e7f43e7a368dd99c20a6d937dc8c7}\label{particles_8c_a869e7f43e7a368dd99c20a6d937dc8c7} 
+\index{particles.c@{particles.c}!FOUNTAIN\_SIDE\_POINTS@{FOUNTAIN\_SIDE\_POINTS}}
+\index{FOUNTAIN\_SIDE\_POINTS@{FOUNTAIN\_SIDE\_POINTS}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FOUNTAIN\_SIDE\_POINTS}{FOUNTAIN\_SIDE\_POINTS}}
+{\footnotesize\ttfamily \#define FOUNTAIN\+\_\+\+SIDE\+\_\+\+POINTS~14}
+
+\Hypertarget{particles_8c_a08b37f24c612fde2e0376d58d9fc8fc9}\label{particles_8c_a08b37f24c612fde2e0376d58d9fc8fc9} 
+\index{particles.c@{particles.c}!FOUNTAIN\_SWEEP\_STEPS@{FOUNTAIN\_SWEEP\_STEPS}}
+\index{FOUNTAIN\_SWEEP\_STEPS@{FOUNTAIN\_SWEEP\_STEPS}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FOUNTAIN\_SWEEP\_STEPS}{FOUNTAIN\_SWEEP\_STEPS}}
+{\footnotesize\ttfamily \#define FOUNTAIN\+\_\+\+SWEEP\+\_\+\+STEPS~32}
+
+\Hypertarget{particles_8c_a670e281e909d14a6172f3014861e30e4}\label{particles_8c_a670e281e909d14a6172f3014861e30e4} 
+\index{particles.c@{particles.c}!FRICTION@{FRICTION}}
+\index{FRICTION@{FRICTION}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{FRICTION}{FRICTION}}
+{\footnotesize\ttfamily \#define FRICTION~0.\+75f}
+
+\Hypertarget{particles_8c_adcf51d551294f28f0355f8463bc9737f}\label{particles_8c_adcf51d551294f28f0355f8463bc9737f} 
+\index{particles.c@{particles.c}!GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT@{GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT}}
+\index{GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT@{GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT}{GL\_LIGHT\_MODEL\_COLOR\_CONTROL\_EXT}}
+{\footnotesize\ttfamily \#define GL\+\_\+\+LIGHT\+\_\+\+MODEL\+\_\+\+COLOR\+\_\+\+CONTROL\+\_\+\+EXT~0x81\+F8}
+
+\Hypertarget{particles_8c_afd239a141295a983f2a440781cda4a57}\label{particles_8c_afd239a141295a983f2a440781cda4a57} 
+\index{particles.c@{particles.c}!GL\_SEPARATE\_SPECULAR\_COLOR\_EXT@{GL\_SEPARATE\_SPECULAR\_COLOR\_EXT}}
+\index{GL\_SEPARATE\_SPECULAR\_COLOR\_EXT@{GL\_SEPARATE\_SPECULAR\_COLOR\_EXT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{GL\_SEPARATE\_SPECULAR\_COLOR\_EXT}{GL\_SEPARATE\_SPECULAR\_COLOR\_EXT}}
+{\footnotesize\ttfamily \#define GL\+\_\+\+SEPARATE\+\_\+\+SPECULAR\+\_\+\+COLOR\+\_\+\+EXT~0x81\+FA}
+
+\Hypertarget{particles_8c_a593e9aeddef6f33d4ecf78a61e2755e1}\label{particles_8c_a593e9aeddef6f33d4ecf78a61e2755e1} 
+\index{particles.c@{particles.c}!GL\_SINGLE\_COLOR\_EXT@{GL\_SINGLE\_COLOR\_EXT}}
+\index{GL\_SINGLE\_COLOR\_EXT@{GL\_SINGLE\_COLOR\_EXT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{GL\_SINGLE\_COLOR\_EXT}{GL\_SINGLE\_COLOR\_EXT}}
+{\footnotesize\ttfamily \#define GL\+\_\+\+SINGLE\+\_\+\+COLOR\+\_\+\+EXT~0x81\+F9}
+
+\Hypertarget{particles_8c_a088324ad8995e3eb76024e3e79083d48}\label{particles_8c_a088324ad8995e3eb76024e3e79083d48} 
+\index{particles.c@{particles.c}!GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}}
+\index{GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{GLFW\_INCLUDE\_NONE}{GLFW\_INCLUDE\_NONE}}
+{\footnotesize\ttfamily \#define GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}
+
+\Hypertarget{particles_8c_a6801baa546c6112d19eb095111d24720}\label{particles_8c_a6801baa546c6112d19eb095111d24720} 
+\index{particles.c@{particles.c}!GRAVITY@{GRAVITY}}
+\index{GRAVITY@{GRAVITY}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{GRAVITY}{GRAVITY}}
+{\footnotesize\ttfamily \#define GRAVITY~9.\+8f}
+
+\Hypertarget{particles_8c_a2cb01479daf885a0c7f6510922dd98f2}\label{particles_8c_a2cb01479daf885a0c7f6510922dd98f2} 
+\index{particles.c@{particles.c}!LIFE\_SPAN@{LIFE\_SPAN}}
+\index{LIFE\_SPAN@{LIFE\_SPAN}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{LIFE\_SPAN}{LIFE\_SPAN}}
+{\footnotesize\ttfamily \#define LIFE\+\_\+\+SPAN~8.f}
+
+\Hypertarget{particles_8c_a43b318e80d2457f5ce3e00a6cf1543c8}\label{particles_8c_a43b318e80d2457f5ce3e00a6cf1543c8} 
+\index{particles.c@{particles.c}!MAX\_PARTICLES@{MAX\_PARTICLES}}
+\index{MAX\_PARTICLES@{MAX\_PARTICLES}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_PARTICLES}{MAX\_PARTICLES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PARTICLES~3000}
+
+\Hypertarget{particles_8c_a631035a7c2f94d0e004b18a889e3e21a}\label{particles_8c_a631035a7c2f94d0e004b18a889e3e21a} 
+\index{particles.c@{particles.c}!MIN\_DELTA\_T@{MIN\_DELTA\_T}}
+\index{MIN\_DELTA\_T@{MIN\_DELTA\_T}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_DELTA\_T}{MIN\_DELTA\_T}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+DELTA\+\_\+T~(\mbox{\hyperlink{particles_8c_a11976b589133c91b6be9af536dce3314}{BIRTH\+\_\+\+INTERVAL}} \texorpdfstring{$\ast$}{*} 0.\+5f)}
+
+\Hypertarget{particles_8c_a64dbc2ab407429c0007cb70a36279a40}\label{particles_8c_a64dbc2ab407429c0007cb70a36279a40} 
+\index{particles.c@{particles.c}!P\_TEX\_HEIGHT@{P\_TEX\_HEIGHT}}
+\index{P\_TEX\_HEIGHT@{P\_TEX\_HEIGHT}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{P\_TEX\_HEIGHT}{P\_TEX\_HEIGHT}}
+{\footnotesize\ttfamily \#define P\+\_\+\+TEX\+\_\+\+HEIGHT~8}
+
+\Hypertarget{particles_8c_a1bb55b5b25ae255cebe35ef0bb562bc4}\label{particles_8c_a1bb55b5b25ae255cebe35ef0bb562bc4} 
+\index{particles.c@{particles.c}!P\_TEX\_WIDTH@{P\_TEX\_WIDTH}}
+\index{P\_TEX\_WIDTH@{P\_TEX\_WIDTH}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{P\_TEX\_WIDTH}{P\_TEX\_WIDTH}}
+{\footnotesize\ttfamily \#define P\+\_\+\+TEX\+\_\+\+WIDTH~8}
+
+\Hypertarget{particles_8c_ab786d5d647a636c286a1a5310e71b850}\label{particles_8c_ab786d5d647a636c286a1a5310e71b850} 
+\index{particles.c@{particles.c}!PARTICLE\_SIZE@{PARTICLE\_SIZE}}
+\index{PARTICLE\_SIZE@{PARTICLE\_SIZE}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{PARTICLE\_SIZE}{PARTICLE\_SIZE}}
+{\footnotesize\ttfamily \#define PARTICLE\+\_\+\+SIZE~0.\+7f}
+
+\Hypertarget{particles_8c_a25eb335db4c3f3551fa167a12286532f}\label{particles_8c_a25eb335db4c3f3551fa167a12286532f} 
+\index{particles.c@{particles.c}!PARTICLE\_VERTS@{PARTICLE\_VERTS}}
+\index{PARTICLE\_VERTS@{PARTICLE\_VERTS}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{PARTICLE\_VERTS}{PARTICLE\_VERTS}}
+{\footnotesize\ttfamily \#define PARTICLE\+\_\+\+VERTS~4}
+
+\Hypertarget{particles_8c_ab7d66695dede78826ee578ddfc5a92aa}\label{particles_8c_ab7d66695dede78826ee578ddfc5a92aa} 
+\index{particles.c@{particles.c}!VELOCITY@{VELOCITY}}
+\index{VELOCITY@{VELOCITY}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{VELOCITY}{VELOCITY}}
+{\footnotesize\ttfamily \#define VELOCITY~8.f}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{particles_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{particles_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{particles.c@{particles.c}!main@{main}}
+\index{main@{main}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{particles_8c_a5584bdb427edfe29e0c0c3753b619161}\label{particles_8c_a5584bdb427edfe29e0c0c3753b619161} 
+\index{particles.c@{particles.c}!aspect\_ratio@{aspect\_ratio}}
+\index{aspect\_ratio@{aspect\_ratio}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{aspect\_ratio}{aspect\_ratio}}
+{\footnotesize\ttfamily float aspect\+\_\+ratio}
+
+\Hypertarget{particles_8c_a51264ad5f1100e8a85438e5d0e5d8015}\label{particles_8c_a51264ad5f1100e8a85438e5d0e5d8015} 
+\index{particles.c@{particles.c}!d\_done@{d\_done}}
+\index{d\_done@{d\_done}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{d\_done}{d\_done}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tinycthread_8h_aa5c55d7c9eb959c15c4d5b73c02e8a41}{cnd\+\_\+t}} d\+\_\+done}
+
+\Hypertarget{particles_8c_a19b4337757230d14ed3651b21ba9b3ee}\label{particles_8c_a19b4337757230d14ed3651b21ba9b3ee} 
+\index{particles.c@{particles.c}!d\_frame@{d\_frame}}
+\index{d\_frame@{d\_frame}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{d\_frame}{d\_frame}}
+{\footnotesize\ttfamily int d\+\_\+frame}
+
+\Hypertarget{particles_8c_a778e38aa889751afffa2dea6b803e67a}\label{particles_8c_a778e38aa889751afffa2dea6b803e67a} 
+\index{particles.c@{particles.c}!dt@{dt}}
+\index{dt@{dt}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily float dt}
+
+\Hypertarget{particles_8c_aaf6f0b7de0e6fe7329e8aa439115c480}\label{particles_8c_aaf6f0b7de0e6fe7329e8aa439115c480} 
+\index{particles.c@{particles.c}!floor\_diffuse@{floor\_diffuse}}
+\index{floor\_diffuse@{floor\_diffuse}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{floor\_diffuse}{floor\_diffuse}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} floor\+\_\+diffuse\mbox{[}4\mbox{]} = \{ 1.f, 0.\+6f, 0.\+6f, 1.f \}}
+
+\Hypertarget{particles_8c_ac64a4936c129af65b61913a7fb23b5ec}\label{particles_8c_ac64a4936c129af65b61913a7fb23b5ec} 
+\index{particles.c@{particles.c}!floor\_shininess@{floor\_shininess}}
+\index{floor\_shininess@{floor\_shininess}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{floor\_shininess}{floor\_shininess}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} floor\+\_\+shininess = 18.f}
+
+\Hypertarget{particles_8c_a77347e707a9c6cee82aa900459410a47}\label{particles_8c_a77347e707a9c6cee82aa900459410a47} 
+\index{particles.c@{particles.c}!floor\_specular@{floor\_specular}}
+\index{floor\_specular@{floor\_specular}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{floor\_specular}{floor\_specular}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} floor\+\_\+specular\mbox{[}4\mbox{]} = \{ 0.\+6f, 0.\+6f, 0.\+6f, 1.f \}}
+
+\Hypertarget{particles_8c_ae3b61e7ad0a71d8f62fba9178af995c1}\label{particles_8c_ae3b61e7ad0a71d8f62fba9178af995c1} 
+\index{particles.c@{particles.c}!floor\_tex\_id@{floor\_tex\_id}}
+\index{floor\_tex\_id@{floor\_tex\_id}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{floor\_tex\_id}{floor\_tex\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} floor\+\_\+tex\+\_\+id}
+
+\Hypertarget{particles_8c_a2c9a31543151e7a5329bcdb5736ffb9c}\label{particles_8c_a2c9a31543151e7a5329bcdb5736ffb9c} 
+\index{particles.c@{particles.c}!floor\_texture@{floor\_texture}}
+\index{floor\_texture@{floor\_texture}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{floor\_texture}{floor\_texture}}
+{\footnotesize\ttfamily const unsigned char floor\+\_\+texture\mbox{[}\mbox{\hyperlink{particles_8c_ac8291d1f5263777e3a8c9a9a028acaba}{F\+\_\+\+TEX\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{particles_8c_ab0ab21c7e97ea7d7face6f21d2baab31}{F\+\_\+\+TEX\+\_\+\+HEIGHT}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xff,\ 0xf0,\ 0xcc,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xff,\ 0xf0,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xcc,\ 0xee,\ 0xff,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0x30,\ 0x66,\ 0x30,\ 0x30,\ 0x30,\ 0x20,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xee,\ 0xf0,\ 0xf0,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xcc,\ 0xf0,\ 0xf0,\ 0xf0,\ 0x30,\ 0x30,\ 0x55,\ 0x30,\ 0x30,\ 0x44,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xdd,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0x33,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xff,\ 0xf0,\ 0xf0,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x60,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0x33,\ 0x33,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x33,\ 0x30,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x20,\ 0x30,\ 0x30,\ 0xf0,\ 0xff,\ 0xf0,\ 0xf0,\ 0xdd,\ 0xf0,\ 0xf0,\ 0xff,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x55,\ 0x33,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xff,\ 0xf0,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x44,\ 0x66,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xaa,\ 0xf0,\ 0xf0,\ 0xcc,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0xff,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xff,\ 0xf0,\ 0xdd,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x77,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,}
+\DoxyCodeLine{\ \ \ \ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0x30,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,\ 0xf0,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{particles_8c_ac4d5ae3d7b24387639fead29e33ea7ef}\label{particles_8c_ac4d5ae3d7b24387639fead29e33ea7ef} 
+\index{particles.c@{particles.c}!fog\_color@{fog\_color}}
+\index{fog\_color@{fog\_color}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{fog\_color}{fog\_color}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} fog\+\_\+color\mbox{[}4\mbox{]} = \{ 0.\+1f, 0.\+1f, 0.\+1f, 1.f \}}
+
+\Hypertarget{particles_8c_addbab577fd2beb3ab90382286235d36a}\label{particles_8c_addbab577fd2beb3ab90382286235d36a} 
+\index{particles.c@{particles.c}!fountain\_diffuse@{fountain\_diffuse}}
+\index{fountain\_diffuse@{fountain\_diffuse}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{fountain\_diffuse}{fountain\_diffuse}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} fountain\+\_\+diffuse\mbox{[}4\mbox{]} = \{ 0.\+7f, 1.f, 1.f, 1.f \}}
+
+\Hypertarget{particles_8c_a23c3fb4d1a4bf41317144afe2255de02}\label{particles_8c_a23c3fb4d1a4bf41317144afe2255de02} 
+\index{particles.c@{particles.c}!fountain\_shininess@{fountain\_shininess}}
+\index{fountain\_shininess@{fountain\_shininess}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{fountain\_shininess}{fountain\_shininess}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} fountain\+\_\+shininess = 12.f}
+
+\Hypertarget{particles_8c_a39d55f15216f018e855cbdc46c0dbc10}\label{particles_8c_a39d55f15216f018e855cbdc46c0dbc10} 
+\index{particles.c@{particles.c}!fountain\_specular@{fountain\_specular}}
+\index{fountain\_specular@{fountain\_specular}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{fountain\_specular}{fountain\_specular}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} fountain\+\_\+specular\mbox{[}4\mbox{]} = \{ 1.f, 1.f, 1.f, 1.f \}}
+
+\Hypertarget{particles_8c_a800a0d0b8154e4f583d95b70a8073572}\label{particles_8c_a800a0d0b8154e4f583d95b70a8073572} 
+\index{particles.c@{particles.c}!p\_done@{p\_done}}
+\index{p\_done@{p\_done}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{p\_done}{p\_done}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tinycthread_8h_aa5c55d7c9eb959c15c4d5b73c02e8a41}{cnd\+\_\+t}} p\+\_\+done}
+
+\Hypertarget{particles_8c_abb3b8750696e644bd96355c1164c9ce2}\label{particles_8c_abb3b8750696e644bd96355c1164c9ce2} 
+\index{particles.c@{particles.c}!p\_frame@{p\_frame}}
+\index{p\_frame@{p\_frame}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{p\_frame}{p\_frame}}
+{\footnotesize\ttfamily int p\+\_\+frame}
+
+\Hypertarget{particles_8c_a437a6ecf1689ec746dd416f5b310d14a}\label{particles_8c_a437a6ecf1689ec746dd416f5b310d14a} 
+\index{particles.c@{particles.c}!particle\_tex\_id@{particle\_tex\_id}}
+\index{particle\_tex\_id@{particle\_tex\_id}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{particle\_tex\_id}{particle\_tex\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} particle\+\_\+tex\+\_\+id}
+
+\Hypertarget{particles_8c_ae843e530d419008098cee29d5461809e}\label{particles_8c_ae843e530d419008098cee29d5461809e} 
+\index{particles.c@{particles.c}!particle\_texture@{particle\_texture}}
+\index{particle\_texture@{particle\_texture}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{particle\_texture}{particle\_texture}}
+{\footnotesize\ttfamily const unsigned char particle\+\_\+texture\mbox{[}\mbox{\hyperlink{particles_8c_a1bb55b5b25ae255cebe35ef0bb562bc4}{P\+\_\+\+TEX\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{particles_8c_a64dbc2ab407429c0007cb70a36279a40}{P\+\_\+\+TEX\+\_\+\+HEIGHT}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x00,\ 0x11,\ 0x22,\ 0x22,\ 0x11,\ 0x00,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x11,\ 0x33,\ 0x88,\ 0x77,\ 0x33,\ 0x11,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x22,\ 0x88,\ 0xff,\ 0xee,\ 0x77,\ 0x22,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x22,\ 0x77,\ 0xee,\ 0xff,\ 0x88,\ 0x22,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x11,\ 0x33,\ 0x77,\ 0x88,\ 0x33,\ 0x11,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x00,\ 0x11,\ 0x33,\ 0x22,\ 0x11,\ 0x00,\ 0x00,}
+\DoxyCodeLine{\ \ \ \ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00,\ 0x00}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{particles_8c_a1dbc652397b5d924f922be2b112f8600}\label{particles_8c_a1dbc652397b5d924f922be2b112f8600} 
+\index{particles.c@{particles.c}!particles\_lock@{particles\_lock}}
+\index{particles\_lock@{particles\_lock}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{particles\_lock}{particles\_lock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tinycthread_8h_ae653b263c1432a99c799cbf028bc65e2}{mtx\+\_\+t}} particles\+\_\+lock}
+
+\Hypertarget{particles_8c_a87accd1af8e0aff4b818d891374f7cec}\label{particles_8c_a87accd1af8e0aff4b818d891374f7cec} 
+\index{particles.c@{particles.c}!t@{t}}
+\index{t@{t}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily double t}
+
+\Hypertarget{particles_8c_a1cc17be6241d35720731d80c19d42792}\label{particles_8c_a1cc17be6241d35720731d80c19d42792} 
+\index{particles.c@{particles.c}!thread\_sync@{thread\_sync}}
+\index{thread\_sync@{thread\_sync}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  thread\+\_\+sync}
+
+\Hypertarget{particles_8c_a232aacc06be62239d2b6b0e450024451}\label{particles_8c_a232aacc06be62239d2b6b0e450024451} 
+\index{particles.c@{particles.c}!wireframe@{wireframe}}
+\index{wireframe@{wireframe}!particles.c@{particles.c}}
+\doxysubsubsection{\texorpdfstring{wireframe}{wireframe}}
+{\footnotesize\ttfamily int wireframe}
+

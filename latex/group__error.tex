@@ -1,0 +1,80 @@
+\doxysection{Error handling}
+\hypertarget{group__error}{}\label{group__error}\index{Error handling@{Error handling}}
+\doxysubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__errors}{Error codes}}
+\begin{DoxyCompactList}\small\item\em Error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__error_gaa684e3f8b44b6a35000119d524d49e6d}{GLFWerrorfun}}) (int, const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em The function signature for error callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}} \mbox{\hyperlink{group__error_ga5919096b958c47102126061fb5a6f9c3}{glfw\+Set\+Error\+Callback}} (\mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}} cbfun)
+\begin{DoxyCompactList}\small\item\em Sets the error callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__error_gaa684e3f8b44b6a35000119d524d49e6d}\label{group__error_gaa684e3f8b44b6a35000119d524d49e6d} 
+\index{Error handling@{Error handling}!GLFWerrorfun@{GLFWerrorfun}}
+\index{GLFWerrorfun@{GLFWerrorfun}!Error handling@{Error handling}}
+\doxysubsubsection{\texorpdfstring{GLFWerrorfun}{GLFWerrorfun}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} GLFWerrorfun) (int, const char \texorpdfstring{$\ast$}{*})}
+
+
+
+The function signature for error callbacks. 
+
+This is the function signature for error callback functions.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & An \doxylink{group__errors}{error code}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em description} & A UTF-\/8 encoded string describing the error.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__error_ga5919096b958c47102126061fb5a6f9c3}{glfw\+Set\+Error\+Callback} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_f_w_2glfw3_8h_source_l00587}{587}} of file \mbox{\hyperlink{packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_f_w_2glfw3_8h_source}{glfw3.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__error_ga5919096b958c47102126061fb5a6f9c3}\label{group__error_ga5919096b958c47102126061fb5a6f9c3} 
+\index{Error handling@{Error handling}!glfwSetErrorCallback@{glfwSetErrorCallback}}
+\index{glfwSetErrorCallback@{glfwSetErrorCallback}!Error handling@{Error handling}}
+\doxysubsubsection{\texorpdfstring{glfwSetErrorCallback()}{glfwSetErrorCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}} glfw\+Set\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}}}]{cbfun }\end{DoxyParamCaption})}
+
+
+
+Sets the error callback. 
+
+This function sets the error callback, which is called with an error code and a human-\/readable description each time a GLFW error occurs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cbfun} & The new callback, or {\ttfamily NULL} to remove the currently set callback. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previously set callback, or {\ttfamily NULL} if no callback was set or an error occurred.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function may be called before \doxylink{group__init_gab41771f0215a2e0afb4cf1cf98082d40}{glfw\+Init}.
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+The error callback is called by the thread where the error was generated. If you are using GLFW from multiple threads, your error callback needs to be written accordingly.
+
+Because the description string provided to the callback may have been generated specifically for that error, it is not guaranteed to be valid after the callback has returned. If you wish to use it after that, you need to make your own copy of it before returning. 
+\end{DoxyNote}

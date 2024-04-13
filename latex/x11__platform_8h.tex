@@ -1,0 +1,854 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\+\_\+platform.h File Reference}
+\hypertarget{x11__platform_8h}{}\label{x11__platform_8h}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_platform.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_platform.h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/keysym.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xatom.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xcursor/\+Xcursor.\+h$>$}\newline
+{\ttfamily \#include $<$X11/extensions/\+Xrandr.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+XKBlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/extensions/\+Xinerama.\+h$>$}\newline
+{\ttfamily \#include $<$X11/extensions/\+XInput2.\+h$>$}\newline
+{\ttfamily \#include "{}posix\+\_\+thread.\+h"{}}\newline
+{\ttfamily \#include "{}posix\+\_\+time.\+h"{}}\newline
+{\ttfamily \#include "{}xkb\+\_\+unicode.\+h"{}}\newline
+{\ttfamily \#include "{}glx\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}egl\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}osmesa\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}null\+\_\+joystick.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}}
+\item 
+struct \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a87a17c4f5e704cd4bcf06c5049f66350}{XRRAlloc\+Gamma}}~\+\_\+glfw.\+x11.\+randr.\+Alloc\+Gamma
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_af079b02e39f592f13414ab0c714a69a8}{XRRFree\+Crtc\+Info}}~\+\_\+glfw.\+x11.\+randr.\+Free\+Crtc\+Info
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a59cad2179f06c34d1ae55f3171dd49b3}{XRRFree\+Gamma}}~\+\_\+glfw.\+x11.\+randr.\+Free\+Gamma
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_af7039567d4292985380e5a21462df00a}{XRRFree\+Output\+Info}}~\+\_\+glfw.\+x11.\+randr.\+Free\+Output\+Info
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a227499ad2e417195e18e86d6e4c9684d}{XRRFree\+Screen\+Resources}}~\+\_\+glfw.\+x11.\+randr.\+Free\+Screen\+Resources
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_aab0e09d1538db8816e20c122dced690a}{XRRGet\+Crtc\+Gamma}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Gamma
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a1263156e6a5f2e1c0bd1b30b2d0664a6}{XRRGet\+Crtc\+Gamma\+Size}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Gamma\+Size
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a163460fc468733ed65a95d1a19197cb2}{XRRGet\+Crtc\+Info}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Info
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a1b69e960073c7171a14e9b312d40115a}{XRRGet\+Output\+Info}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Output\+Info
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_abc464c1cf1d3f982397d77e172f10572}{XRRGet\+Output\+Primary}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Output\+Primary
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a81b377b84134a955b71b1efffb8380e7}{XRRGet\+Screen\+Resources\+Current}}~\+\_\+glfw.\+x11.\+randr.\+Get\+Screen\+Resources\+Current
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a5bc36e7cf5895f56ed8a80650ce6de60}{XRRQuery\+Extension}}~\+\_\+glfw.\+x11.\+randr.\+Query\+Extension
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ab31dcb8f26884de7a06c832f862ebe09}{XRRQuery\+Version}}~\+\_\+glfw.\+x11.\+randr.\+Query\+Version
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ad6dcdfda57cd77454dc6cb8ca4442cc5}{XRRSelect\+Input}}~\+\_\+glfw.\+x11.\+randr.\+Select\+Input
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a8a18de031c310e1e981b09cebb89970f}{XRRSet\+Crtc\+Config}}~\+\_\+glfw.\+x11.\+randr.\+Set\+Crtc\+Config
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_af4af6286fb934b318c6c0e1eca406d41}{XRRSet\+Crtc\+Gamma}}~\+\_\+glfw.\+x11.\+randr.\+Set\+Crtc\+Gamma
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_af4ba6aa228541f0c4bdf0de0fb1098c3}{XRRUpdate\+Configuration}}~\+\_\+glfw.\+x11.\+randr.\+Update\+Configuration
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_af5c32d1bdeb458433b577792edb398f0}{Xcursor\+Image\+Create}}~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Create
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a97ae67418232354dc0593f7523bbe110}{Xcursor\+Image\+Destroy}}~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Destroy
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_aa0d505683108c876545279c1c299428e}{Xcursor\+Image\+Load\+Cursor}}~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Load\+Cursor
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a67b0ea7c805754bf2a6e4bfcccef6bec}{Xinerama\+Is\+Active}}~\+\_\+glfw.\+x11.\+xinerama.\+Is\+Active
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a5639a89e118513e467957f2127bbadb1}{Xinerama\+Query\+Extension}}~\+\_\+glfw.\+x11.\+xinerama.\+Query\+Extension
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ab3eab609dc01e6fa7302a611f2297cbb}{Xinerama\+Query\+Screens}}~\+\_\+glfw.\+x11.\+xinerama.\+Query\+Screens
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a214538b0cf5427b71316bb9d3c221a22}{XGet\+XCBConnection}}~\+\_\+glfw.\+x11.\+x11xcb.\+Get\+XCBConnection
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ac86a769545839054e1a5fbb0c3739db3}{XF86\+Vid\+Mode\+Query\+Extension}}~\+\_\+glfw.\+x11.\+vidmode.\+Query\+Extension
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a2119ddaa77e4203f56e874475cbce3ba}{XF86\+Vid\+Mode\+Get\+Gamma\+Ramp}}~\+\_\+glfw.\+x11.\+vidmode.\+Get\+Gamma\+Ramp
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a41578e983b45d9acc7b55975aab6e3db}{XF86\+Vid\+Mode\+Set\+Gamma\+Ramp}}~\+\_\+glfw.\+x11.\+vidmode.\+Set\+Gamma\+Ramp
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a6700dbfed1f01bc9325e53aff8eb05ee}{XF86\+Vid\+Mode\+Get\+Gamma\+Ramp\+Size}}~\+\_\+glfw.\+x11.\+vidmode.\+Get\+Gamma\+Ramp\+Size
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_adc8b96b62b4129e420e27f1b209e0eb2}{XIQuery\+Version}}~\+\_\+glfw.\+x11.\+xi.\+Query\+Version
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_aad0d36c07adcd6e9cb35fde528dbe0d9}{XISelect\+Events}}~\+\_\+glfw.\+x11.\+xi.\+Select\+Events
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a798960a579bf4012c4a7e1d9234a4c11}{XRender\+Query\+Extension}}~\+\_\+glfw.\+x11.\+xrender.\+Query\+Extension
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_aa869a977173ca5bcc96dddf8455119a4}{XRender\+Query\+Version}}~\+\_\+glfw.\+x11.\+xrender.\+Query\+Version
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a27863687508d7908d9e460d579b4085e}{XRender\+Find\+Visual\+Format}}~\+\_\+glfw.\+x11.\+xrender.\+Find\+Visual\+Format
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}{\+\_\+glfw\+\_\+dlopen}}(name)~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}{\+\_\+glfw\+\_\+dlclose}}(handle)~dlclose(handle)
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}{\+\_\+glfw\+\_\+dlsym}}(handle,  name)~dlsym(handle, name)
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a66a01ba2539c9e2945327fa24a21b957}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW}}~((EGLNative\+Window\+Type) window-\/$>$x11.\+handle)
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a10726291463db08cf815a0170e85548a}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY}}~((EGLNative\+Display\+Type) \mbox{\hyperlink{boing_8c_a4ea013001a5fb47853d0fab8f8de35cd}{\+\_\+glfw.\+x11.\+display}})
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}}  x11
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ad666193a847340c128970216fc00f92c}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}} x11
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}} x11
+\item 
+\#define \mbox{\hyperlink{x11__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}}  x11
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a1fb8ec75465e95f1e599b7b9316db6e8}{PFN\+\_\+\+XRRAlloc\+Gamma}}) (int)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a2a128e8383ee7696b9912b25c489f668}{PFN\+\_\+\+XRRFree\+Crtc\+Info}}) (XRRCrtc\+Info \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a715362a3d9f09d07560b2d3fe18fa679}{PFN\+\_\+\+XRRFree\+Gamma}}) (XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a49a492e9ff561e9e71ee8fb2ab304176}{PFN\+\_\+\+XRRFree\+Output\+Info}}) (XRROutput\+Info \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a89c98aa408f3d07ccfcc5909a9afeaee}{PFN\+\_\+\+XRRFree\+Screen\+Resources}}) (XRRScreen\+Resources \texorpdfstring{$\ast$}{*})
+\item 
+typedef XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_aaf98563bb31f310a2dc702d4665a44c1}{PFN\+\_\+\+XRRGet\+Crtc\+Gamma}}) (Display \texorpdfstring{$\ast$}{*}, RRCrtc)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a4293a5c80d8f8155c747543cb7684998}{PFN\+\_\+\+XRRGet\+Crtc\+Gamma\+Size}}) (Display \texorpdfstring{$\ast$}{*}, RRCrtc)
+\item 
+typedef XRRCrtc\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a5622179c9d57786f7f758fb1ae8c61e0}{PFN\+\_\+\+XRRGet\+Crtc\+Info}}) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RRCrtc)
+\item 
+typedef XRROutput\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_aebb50ac71bcaee24807cb6b9b7920c41}{PFN\+\_\+\+XRRGet\+Output\+Info}}) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RROutput)
+\item 
+typedef RROutput(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a77804bf49105dfad36c2f99293745f5a}{PFN\+\_\+\+XRRGet\+Output\+Primary}}) (Display \texorpdfstring{$\ast$}{*}, Window)
+\item 
+typedef XRRScreen\+Resources \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a7d8848666763445d0fba6bdc045dd9be}{PFN\+\_\+\+XRRGet\+Screen\+Resources\+Current}}) (Display \texorpdfstring{$\ast$}{*}, Window)
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a395ccc9f7b363cb655b1dc80ffdb70c0}{PFN\+\_\+\+XRRQuery\+Extension}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef Status(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ad60e77a1d429d446fa573736845e367b}{PFN\+\_\+\+XRRQuery\+Version}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ab1302751bde12c7de35a77b7d1614237}{PFN\+\_\+\+XRRSelect\+Input}}) (Display \texorpdfstring{$\ast$}{*}, Window, int)
+\item 
+typedef Status(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a8da6db5156cb2e11e5de6d096512b2b0}{PFN\+\_\+\+XRRSet\+Crtc\+Config}}) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RRCrtc, Time, int, int, RRMode, Rotation, RROutput \texorpdfstring{$\ast$}{*}, int)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a5af20a315bd527aa8c8d9d55f7a8e5d0}{PFN\+\_\+\+XRRSet\+Crtc\+Gamma}}) (Display \texorpdfstring{$\ast$}{*}, RRCrtc, XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a0dd4ffe4dadeeb5d27a3d74d621d18e2}{PFN\+\_\+\+XRRUpdate\+Configuration}}) (XEvent \texorpdfstring{$\ast$}{*})
+\item 
+typedef Xcursor\+Image \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ab7cc53b80724438ca5b10ed5c41be891}{PFN\+\_\+\+Xcursor\+Image\+Create}}) (int, int)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_afe5bb9177ee2dc75be4c5254f06edda8}{PFN\+\_\+\+Xcursor\+Image\+Destroy}}) (Xcursor\+Image \texorpdfstring{$\ast$}{*})
+\item 
+typedef Cursor(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a246763079b8594f83df243070530a83e}{PFN\+\_\+\+Xcursor\+Image\+Load\+Cursor}}) (Display \texorpdfstring{$\ast$}{*}, const Xcursor\+Image \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_aa865bdf7c9d46b2599a7385ab4054900}{PFN\+\_\+\+Xinerama\+Is\+Active}}) (Display \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ac10a5e28c802fd73f3e2c94262baa115}{PFN\+\_\+\+Xinerama\+Query\+Extension}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef Xinerama\+Screen\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ae6405b1f605cfad5e144b81aff973475}{PFN\+\_\+\+Xinerama\+Query\+Screens}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef XID \mbox{\hyperlink{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c}{xcb\+\_\+window\+\_\+t}}
+\item 
+typedef XID \mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\+\_\+visualid\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a78d05140fce23724a98b067a148039b5}{PFN\+\_\+\+XGet\+XCBConnection}}) (Display \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_af17658d89afc7423d68b8a2c510ac3fa}{PFN\+\_\+\+XF86\+Vid\+Mode\+Query\+Extension}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_aba9eded9fd386a2e80b945bad5f71ae8}{PFN\+\_\+\+XF86\+Vid\+Mode\+Get\+Gamma\+Ramp}}) (Display \texorpdfstring{$\ast$}{*}, int, int, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a6d46efcbd3f2f127c6c9453edfd4ee74}{PFN\+\_\+\+XF86\+Vid\+Mode\+Set\+Gamma\+Ramp}}) (Display \texorpdfstring{$\ast$}{*}, int, int, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*})
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a9c1952bf95a25d44574e1fa2061c6899}{PFN\+\_\+\+XF86\+Vid\+Mode\+Get\+Gamma\+Ramp\+Size}}) (Display \texorpdfstring{$\ast$}{*}, int, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef Status(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a15a1ff7b1e51b10c17e10f1b2ada71e9}{PFN\+\_\+\+XIQuery\+Version}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ae4714dd25018e231e1189d1fd79ef1aa}{PFN\+\_\+\+XISelect\+Events}}) (Display \texorpdfstring{$\ast$}{*}, Window, XIEvent\+Mask \texorpdfstring{$\ast$}{*}, int)
+\item 
+typedef Bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a61745485e61f97ef9ab3450004ad8843}{PFN\+\_\+\+XRender\+Query\+Extension}}) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef Status(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_af94996969f1f85bc80aa820285922762}{PFN\+\_\+\+XRender\+Query\+Version}}) (Display \texorpdfstring{$\ast$}{*}dpy, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+typedef XRender\+Pict\+Format \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a632f526f083a1026086d2188d90cd53e}{PFN\+\_\+\+XRender\+Find\+Visual\+Format}}) (Display \texorpdfstring{$\ast$}{*}, Visual const \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914}{Vk\+Xlib\+Surface\+Create\+Flags\+KHR}}
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981}{Vk\+Xcb\+Surface\+Create\+Flags\+KHR}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{x11__platform_8h_ae8e567d87ea093db76ef6378fb205f9b}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{x11__platform_8h_abf8f0a95f974c56d8080dd0d31cc045b}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}}
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_ac2df2d76a16c25b6744c7ca4028c1de7}{PFN\+\_\+vk\+Create\+Xlib\+Surface\+KHR}}) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a993da456e6d8e84b174c0c075eb8797c}{PFN\+\_\+vk\+Get\+Physical\+Device\+Xlib\+Presentation\+Support\+KHR}}) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, Display \texorpdfstring{$\ast$}{*}, Visual\+ID)
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a096006a8090415c298343e76e7f4783a}{PFN\+\_\+vk\+Create\+Xcb\+Surface\+KHR}}) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__platform_8h_a9dadff46ad047864d3828d1352f1fb91}{PFN\+\_\+vk\+Get\+Physical\+Device\+Xcb\+Presentation\+Support\+KHR}}) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\+\_\+visualid\+\_\+t}})
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}} \mbox{\hyperlink{x11__platform_8h_acd215ab1758444fbacb77007f7bafb28}{\+\_\+\+GLFWwindow\+X11}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}} \mbox{\hyperlink{x11__platform_8h_a45467aa3a3ca1cb6f2c9eb98c4bb2a53}{\+\_\+\+GLFWlibrary\+X11}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}} \mbox{\hyperlink{x11__platform_8h_ae66902d9ef6f6a0086f4a019873f1c27}{\+\_\+\+GLFWmonitor\+X11}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}} \mbox{\hyperlink{x11__platform_8h_aa309bbcb0fbb44e8254815e276f31715}{\+\_\+\+GLFWcursor\+X11}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{x11__platform_8h_ade7b239b6691fb34b66f3022ad97949d}{\+\_\+glfw\+Poll\+Monitors\+X11}} (void)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_ab4f579e1c8c56307de37875618f947ba}{\+\_\+glfw\+Set\+Video\+Mode\+X11}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}monitor, const \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} \texorpdfstring{$\ast$}{*}desired)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_a6dbff2579e47fcec78b5510d738b70a1}{\+\_\+glfw\+Restore\+Video\+Mode\+X11}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}monitor)
+\item 
+Cursor \mbox{\hyperlink{x11__platform_8h_adbdd4b17827c10e74644fbd7cd98115e}{\+\_\+glfw\+Create\+Cursor\+X11}} (const \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}} \texorpdfstring{$\ast$}{*}image, int xhot, int yhot)
+\item 
+unsigned long \mbox{\hyperlink{x11__platform_8h_a889b3172437e770a55812b569e1a93bd}{\+\_\+glfw\+Get\+Window\+Property\+X11}} (Window window, Atom property, Atom type, unsigned char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}value)
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{x11__platform_8h_aaed792df59dc2eff6382d4a6f9c54c67}{\+\_\+glfw\+Is\+Visual\+Transparent\+X11}} (Visual \texorpdfstring{$\ast$}{*}visual)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_ac91795c020fc3d64cabfe8bacb141185}{\+\_\+glfw\+Grab\+Error\+Handler\+X11}} (void)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_a2fec8c7a77c8004f943f25914dc947d9}{\+\_\+glfw\+Release\+Error\+Handler\+X11}} (void)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_a21e402dbb0117b1706d8506024c5689d}{\+\_\+glfw\+Input\+Error\+X11}} (int error, const char \texorpdfstring{$\ast$}{*}message)
+\item 
+void \mbox{\hyperlink{x11__platform_8h_ae8c308d237bfd06661aa590bfa582579}{\+\_\+glfw\+Push\+Selection\+To\+Manager\+X11}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{x11__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}\label{x11__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfw\_dlclose@{\_glfw\_dlclose}}
+\index{\_glfw\_dlclose@{\_glfw\_dlclose}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlclose}{\_glfw\_dlclose}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlclose(\begin{DoxyParamCaption}\item[{}]{handle }\end{DoxyParamCaption})~dlclose(handle)}
+
+\Hypertarget{x11__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}\label{x11__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfw\_dlopen@{\_glfw\_dlopen}}
+\index{\_glfw\_dlopen@{\_glfw\_dlopen}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlopen}{\_glfw\_dlopen}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlopen(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)}
+
+\Hypertarget{x11__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}\label{x11__platform_8h_ac0795db0183d348f2867cc5a6322bfbc} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfw\_dlsym@{\_glfw\_dlsym}}
+\index{\_glfw\_dlsym@{\_glfw\_dlsym}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlsym}{\_glfw\_dlsym}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlsym(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{name }\end{DoxyParamCaption})~dlsym(handle, name)}
+
+\Hypertarget{x11__platform_8h_a10726291463db08cf815a0170e85548a}\label{x11__platform_8h_a10726291463db08cf815a0170e85548a} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+\index{\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_DISPLAY}{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY~((EGLNative\+Display\+Type) \mbox{\hyperlink{boing_8c_a4ea013001a5fb47853d0fab8f8de35cd}{\+\_\+glfw.\+x11.\+display}})}
+
+\Hypertarget{x11__platform_8h_a66a01ba2539c9e2945327fa24a21b957}\label{x11__platform_8h_a66a01ba2539c9e2945327fa24a21b957} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+\index{\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_WINDOW}{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW~((EGLNative\+Window\+Type) window-\/$>$x11.\+handle)}
+
+\Hypertarget{x11__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}\label{x11__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CURSOR\_STATE}{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}}  x11}
+
+\Hypertarget{x11__platform_8h_ad666193a847340c128970216fc00f92c}\label{x11__platform_8h_ad666193a847340c128970216fc00f92c} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}} x11}
+
+\Hypertarget{x11__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}\label{x11__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_MONITOR\_STATE}{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}} x11}
+
+\Hypertarget{x11__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}\label{x11__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}}  x11}
+
+\Hypertarget{x11__platform_8h_af5c32d1bdeb458433b577792edb398f0}\label{x11__platform_8h_af5c32d1bdeb458433b577792edb398f0} 
+\index{x11\_platform.h@{x11\_platform.h}!XcursorImageCreate@{XcursorImageCreate}}
+\index{XcursorImageCreate@{XcursorImageCreate}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XcursorImageCreate}{XcursorImageCreate}}
+{\footnotesize\ttfamily \#define Xcursor\+Image\+Create~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Create}
+
+\Hypertarget{x11__platform_8h_a97ae67418232354dc0593f7523bbe110}\label{x11__platform_8h_a97ae67418232354dc0593f7523bbe110} 
+\index{x11\_platform.h@{x11\_platform.h}!XcursorImageDestroy@{XcursorImageDestroy}}
+\index{XcursorImageDestroy@{XcursorImageDestroy}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XcursorImageDestroy}{XcursorImageDestroy}}
+{\footnotesize\ttfamily \#define Xcursor\+Image\+Destroy~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Destroy}
+
+\Hypertarget{x11__platform_8h_aa0d505683108c876545279c1c299428e}\label{x11__platform_8h_aa0d505683108c876545279c1c299428e} 
+\index{x11\_platform.h@{x11\_platform.h}!XcursorImageLoadCursor@{XcursorImageLoadCursor}}
+\index{XcursorImageLoadCursor@{XcursorImageLoadCursor}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XcursorImageLoadCursor}{XcursorImageLoadCursor}}
+{\footnotesize\ttfamily \#define Xcursor\+Image\+Load\+Cursor~\+\_\+glfw.\+x11.\+xcursor.\+Image\+Load\+Cursor}
+
+\Hypertarget{x11__platform_8h_a2119ddaa77e4203f56e874475cbce3ba}\label{x11__platform_8h_a2119ddaa77e4203f56e874475cbce3ba} 
+\index{x11\_platform.h@{x11\_platform.h}!XF86VidModeGetGammaRamp@{XF86VidModeGetGammaRamp}}
+\index{XF86VidModeGetGammaRamp@{XF86VidModeGetGammaRamp}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XF86VidModeGetGammaRamp}{XF86VidModeGetGammaRamp}}
+{\footnotesize\ttfamily \#define XF86\+Vid\+Mode\+Get\+Gamma\+Ramp~\+\_\+glfw.\+x11.\+vidmode.\+Get\+Gamma\+Ramp}
+
+\Hypertarget{x11__platform_8h_a6700dbfed1f01bc9325e53aff8eb05ee}\label{x11__platform_8h_a6700dbfed1f01bc9325e53aff8eb05ee} 
+\index{x11\_platform.h@{x11\_platform.h}!XF86VidModeGetGammaRampSize@{XF86VidModeGetGammaRampSize}}
+\index{XF86VidModeGetGammaRampSize@{XF86VidModeGetGammaRampSize}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XF86VidModeGetGammaRampSize}{XF86VidModeGetGammaRampSize}}
+{\footnotesize\ttfamily \#define XF86\+Vid\+Mode\+Get\+Gamma\+Ramp\+Size~\+\_\+glfw.\+x11.\+vidmode.\+Get\+Gamma\+Ramp\+Size}
+
+\Hypertarget{x11__platform_8h_ac86a769545839054e1a5fbb0c3739db3}\label{x11__platform_8h_ac86a769545839054e1a5fbb0c3739db3} 
+\index{x11\_platform.h@{x11\_platform.h}!XF86VidModeQueryExtension@{XF86VidModeQueryExtension}}
+\index{XF86VidModeQueryExtension@{XF86VidModeQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XF86VidModeQueryExtension}{XF86VidModeQueryExtension}}
+{\footnotesize\ttfamily \#define XF86\+Vid\+Mode\+Query\+Extension~\+\_\+glfw.\+x11.\+vidmode.\+Query\+Extension}
+
+\Hypertarget{x11__platform_8h_a41578e983b45d9acc7b55975aab6e3db}\label{x11__platform_8h_a41578e983b45d9acc7b55975aab6e3db} 
+\index{x11\_platform.h@{x11\_platform.h}!XF86VidModeSetGammaRamp@{XF86VidModeSetGammaRamp}}
+\index{XF86VidModeSetGammaRamp@{XF86VidModeSetGammaRamp}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XF86VidModeSetGammaRamp}{XF86VidModeSetGammaRamp}}
+{\footnotesize\ttfamily \#define XF86\+Vid\+Mode\+Set\+Gamma\+Ramp~\+\_\+glfw.\+x11.\+vidmode.\+Set\+Gamma\+Ramp}
+
+\Hypertarget{x11__platform_8h_a214538b0cf5427b71316bb9d3c221a22}\label{x11__platform_8h_a214538b0cf5427b71316bb9d3c221a22} 
+\index{x11\_platform.h@{x11\_platform.h}!XGetXCBConnection@{XGetXCBConnection}}
+\index{XGetXCBConnection@{XGetXCBConnection}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XGetXCBConnection}{XGetXCBConnection}}
+{\footnotesize\ttfamily \#define XGet\+XCBConnection~\+\_\+glfw.\+x11.\+x11xcb.\+Get\+XCBConnection}
+
+\Hypertarget{x11__platform_8h_a67b0ea7c805754bf2a6e4bfcccef6bec}\label{x11__platform_8h_a67b0ea7c805754bf2a6e4bfcccef6bec} 
+\index{x11\_platform.h@{x11\_platform.h}!XineramaIsActive@{XineramaIsActive}}
+\index{XineramaIsActive@{XineramaIsActive}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XineramaIsActive}{XineramaIsActive}}
+{\footnotesize\ttfamily \#define Xinerama\+Is\+Active~\+\_\+glfw.\+x11.\+xinerama.\+Is\+Active}
+
+\Hypertarget{x11__platform_8h_a5639a89e118513e467957f2127bbadb1}\label{x11__platform_8h_a5639a89e118513e467957f2127bbadb1} 
+\index{x11\_platform.h@{x11\_platform.h}!XineramaQueryExtension@{XineramaQueryExtension}}
+\index{XineramaQueryExtension@{XineramaQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XineramaQueryExtension}{XineramaQueryExtension}}
+{\footnotesize\ttfamily \#define Xinerama\+Query\+Extension~\+\_\+glfw.\+x11.\+xinerama.\+Query\+Extension}
+
+\Hypertarget{x11__platform_8h_ab3eab609dc01e6fa7302a611f2297cbb}\label{x11__platform_8h_ab3eab609dc01e6fa7302a611f2297cbb} 
+\index{x11\_platform.h@{x11\_platform.h}!XineramaQueryScreens@{XineramaQueryScreens}}
+\index{XineramaQueryScreens@{XineramaQueryScreens}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XineramaQueryScreens}{XineramaQueryScreens}}
+{\footnotesize\ttfamily \#define Xinerama\+Query\+Screens~\+\_\+glfw.\+x11.\+xinerama.\+Query\+Screens}
+
+\Hypertarget{x11__platform_8h_adc8b96b62b4129e420e27f1b209e0eb2}\label{x11__platform_8h_adc8b96b62b4129e420e27f1b209e0eb2} 
+\index{x11\_platform.h@{x11\_platform.h}!XIQueryVersion@{XIQueryVersion}}
+\index{XIQueryVersion@{XIQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XIQueryVersion}{XIQueryVersion}}
+{\footnotesize\ttfamily \#define XIQuery\+Version~\+\_\+glfw.\+x11.\+xi.\+Query\+Version}
+
+\Hypertarget{x11__platform_8h_aad0d36c07adcd6e9cb35fde528dbe0d9}\label{x11__platform_8h_aad0d36c07adcd6e9cb35fde528dbe0d9} 
+\index{x11\_platform.h@{x11\_platform.h}!XISelectEvents@{XISelectEvents}}
+\index{XISelectEvents@{XISelectEvents}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XISelectEvents}{XISelectEvents}}
+{\footnotesize\ttfamily \#define XISelect\+Events~\+\_\+glfw.\+x11.\+xi.\+Select\+Events}
+
+\Hypertarget{x11__platform_8h_a27863687508d7908d9e460d579b4085e}\label{x11__platform_8h_a27863687508d7908d9e460d579b4085e} 
+\index{x11\_platform.h@{x11\_platform.h}!XRenderFindVisualFormat@{XRenderFindVisualFormat}}
+\index{XRenderFindVisualFormat@{XRenderFindVisualFormat}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRenderFindVisualFormat}{XRenderFindVisualFormat}}
+{\footnotesize\ttfamily \#define XRender\+Find\+Visual\+Format~\+\_\+glfw.\+x11.\+xrender.\+Find\+Visual\+Format}
+
+\Hypertarget{x11__platform_8h_a798960a579bf4012c4a7e1d9234a4c11}\label{x11__platform_8h_a798960a579bf4012c4a7e1d9234a4c11} 
+\index{x11\_platform.h@{x11\_platform.h}!XRenderQueryExtension@{XRenderQueryExtension}}
+\index{XRenderQueryExtension@{XRenderQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRenderQueryExtension}{XRenderQueryExtension}}
+{\footnotesize\ttfamily \#define XRender\+Query\+Extension~\+\_\+glfw.\+x11.\+xrender.\+Query\+Extension}
+
+\Hypertarget{x11__platform_8h_aa869a977173ca5bcc96dddf8455119a4}\label{x11__platform_8h_aa869a977173ca5bcc96dddf8455119a4} 
+\index{x11\_platform.h@{x11\_platform.h}!XRenderQueryVersion@{XRenderQueryVersion}}
+\index{XRenderQueryVersion@{XRenderQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRenderQueryVersion}{XRenderQueryVersion}}
+{\footnotesize\ttfamily \#define XRender\+Query\+Version~\+\_\+glfw.\+x11.\+xrender.\+Query\+Version}
+
+\Hypertarget{x11__platform_8h_a87a17c4f5e704cd4bcf06c5049f66350}\label{x11__platform_8h_a87a17c4f5e704cd4bcf06c5049f66350} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRAllocGamma@{XRRAllocGamma}}
+\index{XRRAllocGamma@{XRRAllocGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRAllocGamma}{XRRAllocGamma}}
+{\footnotesize\ttfamily \#define XRRAlloc\+Gamma~\+\_\+glfw.\+x11.\+randr.\+Alloc\+Gamma}
+
+\Hypertarget{x11__platform_8h_af079b02e39f592f13414ab0c714a69a8}\label{x11__platform_8h_af079b02e39f592f13414ab0c714a69a8} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRFreeCrtcInfo@{XRRFreeCrtcInfo}}
+\index{XRRFreeCrtcInfo@{XRRFreeCrtcInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRFreeCrtcInfo}{XRRFreeCrtcInfo}}
+{\footnotesize\ttfamily \#define XRRFree\+Crtc\+Info~\+\_\+glfw.\+x11.\+randr.\+Free\+Crtc\+Info}
+
+\Hypertarget{x11__platform_8h_a59cad2179f06c34d1ae55f3171dd49b3}\label{x11__platform_8h_a59cad2179f06c34d1ae55f3171dd49b3} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRFreeGamma@{XRRFreeGamma}}
+\index{XRRFreeGamma@{XRRFreeGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRFreeGamma}{XRRFreeGamma}}
+{\footnotesize\ttfamily \#define XRRFree\+Gamma~\+\_\+glfw.\+x11.\+randr.\+Free\+Gamma}
+
+\Hypertarget{x11__platform_8h_af7039567d4292985380e5a21462df00a}\label{x11__platform_8h_af7039567d4292985380e5a21462df00a} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRFreeOutputInfo@{XRRFreeOutputInfo}}
+\index{XRRFreeOutputInfo@{XRRFreeOutputInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRFreeOutputInfo}{XRRFreeOutputInfo}}
+{\footnotesize\ttfamily \#define XRRFree\+Output\+Info~\+\_\+glfw.\+x11.\+randr.\+Free\+Output\+Info}
+
+\Hypertarget{x11__platform_8h_a227499ad2e417195e18e86d6e4c9684d}\label{x11__platform_8h_a227499ad2e417195e18e86d6e4c9684d} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRFreeScreenResources@{XRRFreeScreenResources}}
+\index{XRRFreeScreenResources@{XRRFreeScreenResources}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRFreeScreenResources}{XRRFreeScreenResources}}
+{\footnotesize\ttfamily \#define XRRFree\+Screen\+Resources~\+\_\+glfw.\+x11.\+randr.\+Free\+Screen\+Resources}
+
+\Hypertarget{x11__platform_8h_aab0e09d1538db8816e20c122dced690a}\label{x11__platform_8h_aab0e09d1538db8816e20c122dced690a} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetCrtcGamma@{XRRGetCrtcGamma}}
+\index{XRRGetCrtcGamma@{XRRGetCrtcGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetCrtcGamma}{XRRGetCrtcGamma}}
+{\footnotesize\ttfamily \#define XRRGet\+Crtc\+Gamma~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Gamma}
+
+\Hypertarget{x11__platform_8h_a1263156e6a5f2e1c0bd1b30b2d0664a6}\label{x11__platform_8h_a1263156e6a5f2e1c0bd1b30b2d0664a6} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetCrtcGammaSize@{XRRGetCrtcGammaSize}}
+\index{XRRGetCrtcGammaSize@{XRRGetCrtcGammaSize}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetCrtcGammaSize}{XRRGetCrtcGammaSize}}
+{\footnotesize\ttfamily \#define XRRGet\+Crtc\+Gamma\+Size~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Gamma\+Size}
+
+\Hypertarget{x11__platform_8h_a163460fc468733ed65a95d1a19197cb2}\label{x11__platform_8h_a163460fc468733ed65a95d1a19197cb2} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetCrtcInfo@{XRRGetCrtcInfo}}
+\index{XRRGetCrtcInfo@{XRRGetCrtcInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetCrtcInfo}{XRRGetCrtcInfo}}
+{\footnotesize\ttfamily \#define XRRGet\+Crtc\+Info~\+\_\+glfw.\+x11.\+randr.\+Get\+Crtc\+Info}
+
+\Hypertarget{x11__platform_8h_a1b69e960073c7171a14e9b312d40115a}\label{x11__platform_8h_a1b69e960073c7171a14e9b312d40115a} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetOutputInfo@{XRRGetOutputInfo}}
+\index{XRRGetOutputInfo@{XRRGetOutputInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetOutputInfo}{XRRGetOutputInfo}}
+{\footnotesize\ttfamily \#define XRRGet\+Output\+Info~\+\_\+glfw.\+x11.\+randr.\+Get\+Output\+Info}
+
+\Hypertarget{x11__platform_8h_abc464c1cf1d3f982397d77e172f10572}\label{x11__platform_8h_abc464c1cf1d3f982397d77e172f10572} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetOutputPrimary@{XRRGetOutputPrimary}}
+\index{XRRGetOutputPrimary@{XRRGetOutputPrimary}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetOutputPrimary}{XRRGetOutputPrimary}}
+{\footnotesize\ttfamily \#define XRRGet\+Output\+Primary~\+\_\+glfw.\+x11.\+randr.\+Get\+Output\+Primary}
+
+\Hypertarget{x11__platform_8h_a81b377b84134a955b71b1efffb8380e7}\label{x11__platform_8h_a81b377b84134a955b71b1efffb8380e7} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRGetScreenResourcesCurrent@{XRRGetScreenResourcesCurrent}}
+\index{XRRGetScreenResourcesCurrent@{XRRGetScreenResourcesCurrent}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRGetScreenResourcesCurrent}{XRRGetScreenResourcesCurrent}}
+{\footnotesize\ttfamily \#define XRRGet\+Screen\+Resources\+Current~\+\_\+glfw.\+x11.\+randr.\+Get\+Screen\+Resources\+Current}
+
+\Hypertarget{x11__platform_8h_a5bc36e7cf5895f56ed8a80650ce6de60}\label{x11__platform_8h_a5bc36e7cf5895f56ed8a80650ce6de60} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRQueryExtension@{XRRQueryExtension}}
+\index{XRRQueryExtension@{XRRQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRQueryExtension}{XRRQueryExtension}}
+{\footnotesize\ttfamily \#define XRRQuery\+Extension~\+\_\+glfw.\+x11.\+randr.\+Query\+Extension}
+
+\Hypertarget{x11__platform_8h_ab31dcb8f26884de7a06c832f862ebe09}\label{x11__platform_8h_ab31dcb8f26884de7a06c832f862ebe09} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRQueryVersion@{XRRQueryVersion}}
+\index{XRRQueryVersion@{XRRQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRQueryVersion}{XRRQueryVersion}}
+{\footnotesize\ttfamily \#define XRRQuery\+Version~\+\_\+glfw.\+x11.\+randr.\+Query\+Version}
+
+\Hypertarget{x11__platform_8h_ad6dcdfda57cd77454dc6cb8ca4442cc5}\label{x11__platform_8h_ad6dcdfda57cd77454dc6cb8ca4442cc5} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRSelectInput@{XRRSelectInput}}
+\index{XRRSelectInput@{XRRSelectInput}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRSelectInput}{XRRSelectInput}}
+{\footnotesize\ttfamily \#define XRRSelect\+Input~\+\_\+glfw.\+x11.\+randr.\+Select\+Input}
+
+\Hypertarget{x11__platform_8h_a8a18de031c310e1e981b09cebb89970f}\label{x11__platform_8h_a8a18de031c310e1e981b09cebb89970f} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRSetCrtcConfig@{XRRSetCrtcConfig}}
+\index{XRRSetCrtcConfig@{XRRSetCrtcConfig}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRSetCrtcConfig}{XRRSetCrtcConfig}}
+{\footnotesize\ttfamily \#define XRRSet\+Crtc\+Config~\+\_\+glfw.\+x11.\+randr.\+Set\+Crtc\+Config}
+
+\Hypertarget{x11__platform_8h_af4af6286fb934b318c6c0e1eca406d41}\label{x11__platform_8h_af4af6286fb934b318c6c0e1eca406d41} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRSetCrtcGamma@{XRRSetCrtcGamma}}
+\index{XRRSetCrtcGamma@{XRRSetCrtcGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRSetCrtcGamma}{XRRSetCrtcGamma}}
+{\footnotesize\ttfamily \#define XRRSet\+Crtc\+Gamma~\+\_\+glfw.\+x11.\+randr.\+Set\+Crtc\+Gamma}
+
+\Hypertarget{x11__platform_8h_af4ba6aa228541f0c4bdf0de0fb1098c3}\label{x11__platform_8h_af4ba6aa228541f0c4bdf0de0fb1098c3} 
+\index{x11\_platform.h@{x11\_platform.h}!XRRUpdateConfiguration@{XRRUpdateConfiguration}}
+\index{XRRUpdateConfiguration@{XRRUpdateConfiguration}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{XRRUpdateConfiguration}{XRRUpdateConfiguration}}
+{\footnotesize\ttfamily \#define XRRUpdate\+Configuration~\+\_\+glfw.\+x11.\+randr.\+Update\+Configuration}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{x11__platform_8h_aa309bbcb0fbb44e8254815e276f31715}\label{x11__platform_8h_aa309bbcb0fbb44e8254815e276f31715} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFWcursorX11@{\_GLFWcursorX11}}
+\index{\_GLFWcursorX11@{\_GLFWcursorX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWcursorX11}{\_GLFWcursorX11}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}} \mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\+\_\+\+GLFWcursor\+X11}}}
+
+\Hypertarget{x11__platform_8h_a45467aa3a3ca1cb6f2c9eb98c4bb2a53}\label{x11__platform_8h_a45467aa3a3ca1cb6f2c9eb98c4bb2a53} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFWlibraryX11@{\_GLFWlibraryX11}}
+\index{\_GLFWlibraryX11@{\_GLFWlibraryX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWlibraryX11}{\_GLFWlibraryX11}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}} \mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\+\_\+\+GLFWlibrary\+X11}}}
+
+\Hypertarget{x11__platform_8h_ae66902d9ef6f6a0086f4a019873f1c27}\label{x11__platform_8h_ae66902d9ef6f6a0086f4a019873f1c27} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFWmonitorX11@{\_GLFWmonitorX11}}
+\index{\_GLFWmonitorX11@{\_GLFWmonitorX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWmonitorX11}{\_GLFWmonitorX11}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}} \mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\+\_\+\+GLFWmonitor\+X11}}}
+
+\Hypertarget{x11__platform_8h_acd215ab1758444fbacb77007f7bafb28}\label{x11__platform_8h_acd215ab1758444fbacb77007f7bafb28} 
+\index{x11\_platform.h@{x11\_platform.h}!\_GLFWwindowX11@{\_GLFWwindowX11}}
+\index{\_GLFWwindowX11@{\_GLFWwindowX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWwindowX11}{\_GLFWwindowX11}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}} \mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\+\_\+\+GLFWwindow\+X11}}}
+
+\Hypertarget{x11__platform_8h_a096006a8090415c298343e76e7f4783a}\label{x11__platform_8h_a096006a8090415c298343e76e7f4783a} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_vkCreateXcbSurfaceKHR@{PFN\_vkCreateXcbSurfaceKHR}}
+\index{PFN\_vkCreateXcbSurfaceKHR@{PFN\_vkCreateXcbSurfaceKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkCreateXcbSurfaceKHR}{PFN\_vkCreateXcbSurfaceKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Create\+Xcb\+Surface\+KHR) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ac2df2d76a16c25b6744c7ca4028c1de7}\label{x11__platform_8h_ac2df2d76a16c25b6744c7ca4028c1de7} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_vkCreateXlibSurfaceKHR@{PFN\_vkCreateXlibSurfaceKHR}}
+\index{PFN\_vkCreateXlibSurfaceKHR@{PFN\_vkCreateXlibSurfaceKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkCreateXlibSurfaceKHR}{PFN\_vkCreateXlibSurfaceKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Create\+Xlib\+Surface\+KHR) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a9dadff46ad047864d3828d1352f1fb91}\label{x11__platform_8h_a9dadff46ad047864d3828d1352f1fb91} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR}}
+\index{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR}{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Get\+Physical\+Device\+Xcb\+Presentation\+Support\+KHR) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\+\_\+visualid\+\_\+t}})}
+
+\Hypertarget{x11__platform_8h_a993da456e6d8e84b174c0c075eb8797c}\label{x11__platform_8h_a993da456e6d8e84b174c0c075eb8797c} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR}}
+\index{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR}{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Get\+Physical\+Device\+Xlib\+Presentation\+Support\+KHR) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, Display \texorpdfstring{$\ast$}{*}, Visual\+ID)}
+
+\Hypertarget{x11__platform_8h_ab7cc53b80724438ca5b10ed5c41be891}\label{x11__platform_8h_ab7cc53b80724438ca5b10ed5c41be891} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XcursorImageCreate@{PFN\_XcursorImageCreate}}
+\index{PFN\_XcursorImageCreate@{PFN\_XcursorImageCreate}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XcursorImageCreate}{PFN\_XcursorImageCreate}}
+{\footnotesize\ttfamily typedef Xcursor\+Image \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xcursor\+Image\+Create) (int, int)}
+
+\Hypertarget{x11__platform_8h_afe5bb9177ee2dc75be4c5254f06edda8}\label{x11__platform_8h_afe5bb9177ee2dc75be4c5254f06edda8} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XcursorImageDestroy@{PFN\_XcursorImageDestroy}}
+\index{PFN\_XcursorImageDestroy@{PFN\_XcursorImageDestroy}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XcursorImageDestroy}{PFN\_XcursorImageDestroy}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xcursor\+Image\+Destroy) (Xcursor\+Image \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a246763079b8594f83df243070530a83e}\label{x11__platform_8h_a246763079b8594f83df243070530a83e} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XcursorImageLoadCursor@{PFN\_XcursorImageLoadCursor}}
+\index{PFN\_XcursorImageLoadCursor@{PFN\_XcursorImageLoadCursor}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XcursorImageLoadCursor}{PFN\_XcursorImageLoadCursor}}
+{\footnotesize\ttfamily typedef Cursor(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xcursor\+Image\+Load\+Cursor) (Display \texorpdfstring{$\ast$}{*}, const Xcursor\+Image \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_aba9eded9fd386a2e80b945bad5f71ae8}\label{x11__platform_8h_aba9eded9fd386a2e80b945bad5f71ae8} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XF86VidModeGetGammaRamp@{PFN\_XF86VidModeGetGammaRamp}}
+\index{PFN\_XF86VidModeGetGammaRamp@{PFN\_XF86VidModeGetGammaRamp}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XF86VidModeGetGammaRamp}{PFN\_XF86VidModeGetGammaRamp}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XF86\+Vid\+Mode\+Get\+Gamma\+Ramp) (Display \texorpdfstring{$\ast$}{*}, int, int, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a9c1952bf95a25d44574e1fa2061c6899}\label{x11__platform_8h_a9c1952bf95a25d44574e1fa2061c6899} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XF86VidModeGetGammaRampSize@{PFN\_XF86VidModeGetGammaRampSize}}
+\index{PFN\_XF86VidModeGetGammaRampSize@{PFN\_XF86VidModeGetGammaRampSize}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XF86VidModeGetGammaRampSize}{PFN\_XF86VidModeGetGammaRampSize}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XF86\+Vid\+Mode\+Get\+Gamma\+Ramp\+Size) (Display \texorpdfstring{$\ast$}{*}, int, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_af17658d89afc7423d68b8a2c510ac3fa}\label{x11__platform_8h_af17658d89afc7423d68b8a2c510ac3fa} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XF86VidModeQueryExtension@{PFN\_XF86VidModeQueryExtension}}
+\index{PFN\_XF86VidModeQueryExtension@{PFN\_XF86VidModeQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XF86VidModeQueryExtension}{PFN\_XF86VidModeQueryExtension}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XF86\+Vid\+Mode\+Query\+Extension) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a6d46efcbd3f2f127c6c9453edfd4ee74}\label{x11__platform_8h_a6d46efcbd3f2f127c6c9453edfd4ee74} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XF86VidModeSetGammaRamp@{PFN\_XF86VidModeSetGammaRamp}}
+\index{PFN\_XF86VidModeSetGammaRamp@{PFN\_XF86VidModeSetGammaRamp}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XF86VidModeSetGammaRamp}{PFN\_XF86VidModeSetGammaRamp}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XF86\+Vid\+Mode\+Set\+Gamma\+Ramp) (Display \texorpdfstring{$\ast$}{*}, int, int, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*}, unsigned short \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a78d05140fce23724a98b067a148039b5}\label{x11__platform_8h_a78d05140fce23724a98b067a148039b5} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XGetXCBConnection@{PFN\_XGetXCBConnection}}
+\index{PFN\_XGetXCBConnection@{PFN\_XGetXCBConnection}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XGetXCBConnection}{PFN\_XGetXCBConnection}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XGet\+XCBConnection) (Display \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_aa865bdf7c9d46b2599a7385ab4054900}\label{x11__platform_8h_aa865bdf7c9d46b2599a7385ab4054900} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XineramaIsActive@{PFN\_XineramaIsActive}}
+\index{PFN\_XineramaIsActive@{PFN\_XineramaIsActive}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XineramaIsActive}{PFN\_XineramaIsActive}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xinerama\+Is\+Active) (Display \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ac10a5e28c802fd73f3e2c94262baa115}\label{x11__platform_8h_ac10a5e28c802fd73f3e2c94262baa115} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XineramaQueryExtension@{PFN\_XineramaQueryExtension}}
+\index{PFN\_XineramaQueryExtension@{PFN\_XineramaQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XineramaQueryExtension}{PFN\_XineramaQueryExtension}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xinerama\+Query\+Extension) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ae6405b1f605cfad5e144b81aff973475}\label{x11__platform_8h_ae6405b1f605cfad5e144b81aff973475} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XineramaQueryScreens@{PFN\_XineramaQueryScreens}}
+\index{PFN\_XineramaQueryScreens@{PFN\_XineramaQueryScreens}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XineramaQueryScreens}{PFN\_XineramaQueryScreens}}
+{\footnotesize\ttfamily typedef Xinerama\+Screen\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+Xinerama\+Query\+Screens) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a15a1ff7b1e51b10c17e10f1b2ada71e9}\label{x11__platform_8h_a15a1ff7b1e51b10c17e10f1b2ada71e9} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XIQueryVersion@{PFN\_XIQueryVersion}}
+\index{PFN\_XIQueryVersion@{PFN\_XIQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XIQueryVersion}{PFN\_XIQueryVersion}}
+{\footnotesize\ttfamily typedef Status(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XIQuery\+Version) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ae4714dd25018e231e1189d1fd79ef1aa}\label{x11__platform_8h_ae4714dd25018e231e1189d1fd79ef1aa} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XISelectEvents@{PFN\_XISelectEvents}}
+\index{PFN\_XISelectEvents@{PFN\_XISelectEvents}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XISelectEvents}{PFN\_XISelectEvents}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XISelect\+Events) (Display \texorpdfstring{$\ast$}{*}, Window, XIEvent\+Mask \texorpdfstring{$\ast$}{*}, int)}
+
+\Hypertarget{x11__platform_8h_a632f526f083a1026086d2188d90cd53e}\label{x11__platform_8h_a632f526f083a1026086d2188d90cd53e} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRenderFindVisualFormat@{PFN\_XRenderFindVisualFormat}}
+\index{PFN\_XRenderFindVisualFormat@{PFN\_XRenderFindVisualFormat}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRenderFindVisualFormat}{PFN\_XRenderFindVisualFormat}}
+{\footnotesize\ttfamily typedef XRender\+Pict\+Format \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRender\+Find\+Visual\+Format) (Display \texorpdfstring{$\ast$}{*}, Visual const  \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a61745485e61f97ef9ab3450004ad8843}\label{x11__platform_8h_a61745485e61f97ef9ab3450004ad8843} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRenderQueryExtension@{PFN\_XRenderQueryExtension}}
+\index{PFN\_XRenderQueryExtension@{PFN\_XRenderQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRenderQueryExtension}{PFN\_XRenderQueryExtension}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRender\+Query\+Extension) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_af94996969f1f85bc80aa820285922762}\label{x11__platform_8h_af94996969f1f85bc80aa820285922762} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRenderQueryVersion@{PFN\_XRenderQueryVersion}}
+\index{PFN\_XRenderQueryVersion@{PFN\_XRenderQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRenderQueryVersion}{PFN\_XRenderQueryVersion}}
+{\footnotesize\ttfamily typedef Status(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRender\+Query\+Version) (Display \texorpdfstring{$\ast$}{*}dpy, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a1fb8ec75465e95f1e599b7b9316db6e8}\label{x11__platform_8h_a1fb8ec75465e95f1e599b7b9316db6e8} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRAllocGamma@{PFN\_XRRAllocGamma}}
+\index{PFN\_XRRAllocGamma@{PFN\_XRRAllocGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRAllocGamma}{PFN\_XRRAllocGamma}}
+{\footnotesize\ttfamily typedef XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRAlloc\+Gamma) (int)}
+
+\Hypertarget{x11__platform_8h_a2a128e8383ee7696b9912b25c489f668}\label{x11__platform_8h_a2a128e8383ee7696b9912b25c489f668} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRFreeCrtcInfo@{PFN\_XRRFreeCrtcInfo}}
+\index{PFN\_XRRFreeCrtcInfo@{PFN\_XRRFreeCrtcInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRFreeCrtcInfo}{PFN\_XRRFreeCrtcInfo}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRFree\+Crtc\+Info) (XRRCrtc\+Info \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a715362a3d9f09d07560b2d3fe18fa679}\label{x11__platform_8h_a715362a3d9f09d07560b2d3fe18fa679} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRFreeGamma@{PFN\_XRRFreeGamma}}
+\index{PFN\_XRRFreeGamma@{PFN\_XRRFreeGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRFreeGamma}{PFN\_XRRFreeGamma}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRFree\+Gamma) (XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a49a492e9ff561e9e71ee8fb2ab304176}\label{x11__platform_8h_a49a492e9ff561e9e71ee8fb2ab304176} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRFreeOutputInfo@{PFN\_XRRFreeOutputInfo}}
+\index{PFN\_XRRFreeOutputInfo@{PFN\_XRRFreeOutputInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRFreeOutputInfo}{PFN\_XRRFreeOutputInfo}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRFree\+Output\+Info) (XRROutput\+Info \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a89c98aa408f3d07ccfcc5909a9afeaee}\label{x11__platform_8h_a89c98aa408f3d07ccfcc5909a9afeaee} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRFreeScreenResources@{PFN\_XRRFreeScreenResources}}
+\index{PFN\_XRRFreeScreenResources@{PFN\_XRRFreeScreenResources}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRFreeScreenResources}{PFN\_XRRFreeScreenResources}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRFree\+Screen\+Resources) (XRRScreen\+Resources \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_aaf98563bb31f310a2dc702d4665a44c1}\label{x11__platform_8h_aaf98563bb31f310a2dc702d4665a44c1} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetCrtcGamma@{PFN\_XRRGetCrtcGamma}}
+\index{PFN\_XRRGetCrtcGamma@{PFN\_XRRGetCrtcGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetCrtcGamma}{PFN\_XRRGetCrtcGamma}}
+{\footnotesize\ttfamily typedef XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Crtc\+Gamma) (Display \texorpdfstring{$\ast$}{*}, RRCrtc)}
+
+\Hypertarget{x11__platform_8h_a4293a5c80d8f8155c747543cb7684998}\label{x11__platform_8h_a4293a5c80d8f8155c747543cb7684998} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetCrtcGammaSize@{PFN\_XRRGetCrtcGammaSize}}
+\index{PFN\_XRRGetCrtcGammaSize@{PFN\_XRRGetCrtcGammaSize}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetCrtcGammaSize}{PFN\_XRRGetCrtcGammaSize}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Crtc\+Gamma\+Size) (Display \texorpdfstring{$\ast$}{*}, RRCrtc)}
+
+\Hypertarget{x11__platform_8h_a5622179c9d57786f7f758fb1ae8c61e0}\label{x11__platform_8h_a5622179c9d57786f7f758fb1ae8c61e0} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetCrtcInfo@{PFN\_XRRGetCrtcInfo}}
+\index{PFN\_XRRGetCrtcInfo@{PFN\_XRRGetCrtcInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetCrtcInfo}{PFN\_XRRGetCrtcInfo}}
+{\footnotesize\ttfamily typedef XRRCrtc\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Crtc\+Info) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RRCrtc)}
+
+\Hypertarget{x11__platform_8h_aebb50ac71bcaee24807cb6b9b7920c41}\label{x11__platform_8h_aebb50ac71bcaee24807cb6b9b7920c41} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetOutputInfo@{PFN\_XRRGetOutputInfo}}
+\index{PFN\_XRRGetOutputInfo@{PFN\_XRRGetOutputInfo}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetOutputInfo}{PFN\_XRRGetOutputInfo}}
+{\footnotesize\ttfamily typedef XRROutput\+Info \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Output\+Info) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RROutput)}
+
+\Hypertarget{x11__platform_8h_a77804bf49105dfad36c2f99293745f5a}\label{x11__platform_8h_a77804bf49105dfad36c2f99293745f5a} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetOutputPrimary@{PFN\_XRRGetOutputPrimary}}
+\index{PFN\_XRRGetOutputPrimary@{PFN\_XRRGetOutputPrimary}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetOutputPrimary}{PFN\_XRRGetOutputPrimary}}
+{\footnotesize\ttfamily typedef RROutput(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Output\+Primary) (Display \texorpdfstring{$\ast$}{*}, Window)}
+
+\Hypertarget{x11__platform_8h_a7d8848666763445d0fba6bdc045dd9be}\label{x11__platform_8h_a7d8848666763445d0fba6bdc045dd9be} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRGetScreenResourcesCurrent@{PFN\_XRRGetScreenResourcesCurrent}}
+\index{PFN\_XRRGetScreenResourcesCurrent@{PFN\_XRRGetScreenResourcesCurrent}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRGetScreenResourcesCurrent}{PFN\_XRRGetScreenResourcesCurrent}}
+{\footnotesize\ttfamily typedef XRRScreen\+Resources \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRGet\+Screen\+Resources\+Current) (Display \texorpdfstring{$\ast$}{*}, Window)}
+
+\Hypertarget{x11__platform_8h_a395ccc9f7b363cb655b1dc80ffdb70c0}\label{x11__platform_8h_a395ccc9f7b363cb655b1dc80ffdb70c0} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRQueryExtension@{PFN\_XRRQueryExtension}}
+\index{PFN\_XRRQueryExtension@{PFN\_XRRQueryExtension}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRQueryExtension}{PFN\_XRRQueryExtension}}
+{\footnotesize\ttfamily typedef Bool(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRQuery\+Extension) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ad60e77a1d429d446fa573736845e367b}\label{x11__platform_8h_ad60e77a1d429d446fa573736845e367b} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRQueryVersion@{PFN\_XRRQueryVersion}}
+\index{PFN\_XRRQueryVersion@{PFN\_XRRQueryVersion}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRQueryVersion}{PFN\_XRRQueryVersion}}
+{\footnotesize\ttfamily typedef Status(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRQuery\+Version) (Display \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_ab1302751bde12c7de35a77b7d1614237}\label{x11__platform_8h_ab1302751bde12c7de35a77b7d1614237} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRSelectInput@{PFN\_XRRSelectInput}}
+\index{PFN\_XRRSelectInput@{PFN\_XRRSelectInput}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRSelectInput}{PFN\_XRRSelectInput}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRSelect\+Input) (Display \texorpdfstring{$\ast$}{*}, Window, int)}
+
+\Hypertarget{x11__platform_8h_a8da6db5156cb2e11e5de6d096512b2b0}\label{x11__platform_8h_a8da6db5156cb2e11e5de6d096512b2b0} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRSetCrtcConfig@{PFN\_XRRSetCrtcConfig}}
+\index{PFN\_XRRSetCrtcConfig@{PFN\_XRRSetCrtcConfig}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRSetCrtcConfig}{PFN\_XRRSetCrtcConfig}}
+{\footnotesize\ttfamily typedef Status(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRSet\+Crtc\+Config) (Display \texorpdfstring{$\ast$}{*}, XRRScreen\+Resources \texorpdfstring{$\ast$}{*}, RRCrtc, Time, int, int, RRMode, Rotation, RROutput \texorpdfstring{$\ast$}{*}, int)}
+
+\Hypertarget{x11__platform_8h_a5af20a315bd527aa8c8d9d55f7a8e5d0}\label{x11__platform_8h_a5af20a315bd527aa8c8d9d55f7a8e5d0} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRSetCrtcGamma@{PFN\_XRRSetCrtcGamma}}
+\index{PFN\_XRRSetCrtcGamma@{PFN\_XRRSetCrtcGamma}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRSetCrtcGamma}{PFN\_XRRSetCrtcGamma}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRSet\+Crtc\+Gamma) (Display \texorpdfstring{$\ast$}{*}, RRCrtc, XRRCrtc\+Gamma \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_a0dd4ffe4dadeeb5d27a3d74d621d18e2}\label{x11__platform_8h_a0dd4ffe4dadeeb5d27a3d74d621d18e2} 
+\index{x11\_platform.h@{x11\_platform.h}!PFN\_XRRUpdateConfiguration@{PFN\_XRRUpdateConfiguration}}
+\index{PFN\_XRRUpdateConfiguration@{PFN\_XRRUpdateConfiguration}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_XRRUpdateConfiguration}{PFN\_XRRUpdateConfiguration}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+\+XRRUpdate\+Configuration) (XEvent \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981}\label{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981} 
+\index{x11\_platform.h@{x11\_platform.h}!VkXcbSurfaceCreateFlagsKHR@{VkXcbSurfaceCreateFlagsKHR}}
+\index{VkXcbSurfaceCreateFlagsKHR@{VkXcbSurfaceCreateFlagsKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkXcbSurfaceCreateFlagsKHR}{VkXcbSurfaceCreateFlagsKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981}{Vk\+Xcb\+Surface\+Create\+Flags\+KHR}}}
+
+\Hypertarget{x11__platform_8h_abf8f0a95f974c56d8080dd0d31cc045b}\label{x11__platform_8h_abf8f0a95f974c56d8080dd0d31cc045b} 
+\index{x11\_platform.h@{x11\_platform.h}!VkXcbSurfaceCreateInfoKHR@{VkXcbSurfaceCreateInfoKHR}}
+\index{VkXcbSurfaceCreateInfoKHR@{VkXcbSurfaceCreateInfoKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkXcbSurfaceCreateInfoKHR}{VkXcbSurfaceCreateInfoKHR}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{Vk\+Xcb\+Surface\+Create\+Info\+KHR}}}
+
+\Hypertarget{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914}\label{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914} 
+\index{x11\_platform.h@{x11\_platform.h}!VkXlibSurfaceCreateFlagsKHR@{VkXlibSurfaceCreateFlagsKHR}}
+\index{VkXlibSurfaceCreateFlagsKHR@{VkXlibSurfaceCreateFlagsKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkXlibSurfaceCreateFlagsKHR}{VkXlibSurfaceCreateFlagsKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914}{Vk\+Xlib\+Surface\+Create\+Flags\+KHR}}}
+
+\Hypertarget{x11__platform_8h_ae8e567d87ea093db76ef6378fb205f9b}\label{x11__platform_8h_ae8e567d87ea093db76ef6378fb205f9b} 
+\index{x11\_platform.h@{x11\_platform.h}!VkXlibSurfaceCreateInfoKHR@{VkXlibSurfaceCreateInfoKHR}}
+\index{VkXlibSurfaceCreateInfoKHR@{VkXlibSurfaceCreateInfoKHR}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkXlibSurfaceCreateInfoKHR}{VkXlibSurfaceCreateInfoKHR}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{Vk\+Xlib\+Surface\+Create\+Info\+KHR}}}
+
+\Hypertarget{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}\label{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f} 
+\index{x11\_platform.h@{x11\_platform.h}!xcb\_connection\_t@{xcb\_connection\_t}}
+\index{xcb\_connection\_t@{xcb\_connection\_t}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xcb\_connection\_t}{xcb\_connection\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}} \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\+\_\+connection\+\_\+t}}}
+
+\Hypertarget{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}\label{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b} 
+\index{x11\_platform.h@{x11\_platform.h}!xcb\_visualid\_t@{xcb\_visualid\_t}}
+\index{xcb\_visualid\_t@{xcb\_visualid\_t}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xcb\_visualid\_t}{xcb\_visualid\_t}}
+{\footnotesize\ttfamily typedef XID \mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\+\_\+visualid\+\_\+t}}}
+
+\Hypertarget{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c}\label{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c} 
+\index{x11\_platform.h@{x11\_platform.h}!xcb\_window\_t@{xcb\_window\_t}}
+\index{xcb\_window\_t@{xcb\_window\_t}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xcb\_window\_t}{xcb\_window\_t}}
+{\footnotesize\ttfamily typedef XID \mbox{\hyperlink{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c}{xcb\+\_\+window\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{x11__platform_8h_adbdd4b17827c10e74644fbd7cd98115e}\label{x11__platform_8h_adbdd4b17827c10e74644fbd7cd98115e} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwCreateCursorX11@{\_glfwCreateCursorX11}}
+\index{\_glfwCreateCursorX11@{\_glfwCreateCursorX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwCreateCursorX11()}{\_glfwCreateCursorX11()}}
+{\footnotesize\ttfamily Cursor \+\_\+glfw\+Create\+Cursor\+X11 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{int}]{xhot,  }\item[{int}]{yhot }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_a889b3172437e770a55812b569e1a93bd}\label{x11__platform_8h_a889b3172437e770a55812b569e1a93bd} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwGetWindowPropertyX11@{\_glfwGetWindowPropertyX11}}
+\index{\_glfwGetWindowPropertyX11@{\_glfwGetWindowPropertyX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwGetWindowPropertyX11()}{\_glfwGetWindowPropertyX11()}}
+{\footnotesize\ttfamily unsigned long \+\_\+glfw\+Get\+Window\+Property\+X11 (\begin{DoxyParamCaption}\item[{Window}]{window,  }\item[{Atom}]{property,  }\item[{Atom}]{type,  }\item[{unsigned char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_ac91795c020fc3d64cabfe8bacb141185}\label{x11__platform_8h_ac91795c020fc3d64cabfe8bacb141185} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwGrabErrorHandlerX11@{\_glfwGrabErrorHandlerX11}}
+\index{\_glfwGrabErrorHandlerX11@{\_glfwGrabErrorHandlerX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwGrabErrorHandlerX11()}{\_glfwGrabErrorHandlerX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Grab\+Error\+Handler\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_a21e402dbb0117b1706d8506024c5689d}\label{x11__platform_8h_a21e402dbb0117b1706d8506024c5689d} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwInputErrorX11@{\_glfwInputErrorX11}}
+\index{\_glfwInputErrorX11@{\_glfwInputErrorX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwInputErrorX11()}{\_glfwInputErrorX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Input\+Error\+X11 (\begin{DoxyParamCaption}\item[{int}]{error,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_aaed792df59dc2eff6382d4a6f9c54c67}\label{x11__platform_8h_aaed792df59dc2eff6382d4a6f9c54c67} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwIsVisualTransparentX11@{\_glfwIsVisualTransparentX11}}
+\index{\_glfwIsVisualTransparentX11@{\_glfwIsVisualTransparentX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwIsVisualTransparentX11()}{\_glfwIsVisualTransparentX11()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Is\+Visual\+Transparent\+X11 (\begin{DoxyParamCaption}\item[{Visual \texorpdfstring{$\ast$}{*}}]{visual }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_ade7b239b6691fb34b66f3022ad97949d}\label{x11__platform_8h_ade7b239b6691fb34b66f3022ad97949d} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwPollMonitorsX11@{\_glfwPollMonitorsX11}}
+\index{\_glfwPollMonitorsX11@{\_glfwPollMonitorsX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwPollMonitorsX11()}{\_glfwPollMonitorsX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Poll\+Monitors\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_ae8c308d237bfd06661aa590bfa582579}\label{x11__platform_8h_ae8c308d237bfd06661aa590bfa582579} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwPushSelectionToManagerX11@{\_glfwPushSelectionToManagerX11}}
+\index{\_glfwPushSelectionToManagerX11@{\_glfwPushSelectionToManagerX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwPushSelectionToManagerX11()}{\_glfwPushSelectionToManagerX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Push\+Selection\+To\+Manager\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_a2fec8c7a77c8004f943f25914dc947d9}\label{x11__platform_8h_a2fec8c7a77c8004f943f25914dc947d9} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwReleaseErrorHandlerX11@{\_glfwReleaseErrorHandlerX11}}
+\index{\_glfwReleaseErrorHandlerX11@{\_glfwReleaseErrorHandlerX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwReleaseErrorHandlerX11()}{\_glfwReleaseErrorHandlerX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Release\+Error\+Handler\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_a6dbff2579e47fcec78b5510d738b70a1}\label{x11__platform_8h_a6dbff2579e47fcec78b5510d738b70a1} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwRestoreVideoModeX11@{\_glfwRestoreVideoModeX11}}
+\index{\_glfwRestoreVideoModeX11@{\_glfwRestoreVideoModeX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwRestoreVideoModeX11()}{\_glfwRestoreVideoModeX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Restore\+Video\+Mode\+X11 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}}]{monitor }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__platform_8h_ab4f579e1c8c56307de37875618f947ba}\label{x11__platform_8h_ab4f579e1c8c56307de37875618f947ba} 
+\index{x11\_platform.h@{x11\_platform.h}!\_glfwSetVideoModeX11@{\_glfwSetVideoModeX11}}
+\index{\_glfwSetVideoModeX11@{\_glfwSetVideoModeX11}!x11\_platform.h@{x11\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwSetVideoModeX11()}{\_glfwSetVideoModeX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Set\+Video\+Mode\+X11 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}}]{monitor,  }\item[{const \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} \texorpdfstring{$\ast$}{*}}]{desired }\end{DoxyParamCaption})}
+

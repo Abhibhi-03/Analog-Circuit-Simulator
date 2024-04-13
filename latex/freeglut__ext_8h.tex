@@ -1,0 +1,957 @@
+\doxysection{For\+\_\+\+VS/packages/nupengl.core.0.1.0.1/build/native/include/\+GL/freeglut\+\_\+ext.h File Reference}
+\hypertarget{freeglut__ext_8h}{}\label{freeglut__ext_8h}\index{For\_VS/packages/nupengl.core.0.1.0.1/build/native/include/GL/freeglut\_ext.h@{For\_VS/packages/nupengl.core.0.1.0.1/build/native/include/GL/freeglut\_ext.h}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a9c5f5b3262cd42a3608321a4939d34ac}{GLUT\+\_\+\+KEY\+\_\+\+NUM\+\_\+\+LOCK}}~0x006D
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a00024a01093240008dfd30445d5c1a66}{GLUT\+\_\+\+KEY\+\_\+\+BEGIN}}~0x006E
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_aef49717758c978650c8c87a965c864e3}{GLUT\+\_\+\+KEY\+\_\+\+DELETE}}~0x006F
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a985ff7ec32f335b6a070de858e569e9e}{GLUT\+\_\+\+KEY\+\_\+\+SHIFT\+\_\+L}}~0x0070
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ab8606bb4e6b2930e3606f0fcc9d3aeef}{GLUT\+\_\+\+KEY\+\_\+\+SHIFT\+\_\+R}}~0x0071
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a1a34aead1fa9a123871075397f9dc6d5}{GLUT\+\_\+\+KEY\+\_\+\+CTRL\+\_\+L}}~0x0072
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_afa1c6b9e1967e4b6653a902030af1333}{GLUT\+\_\+\+KEY\+\_\+\+CTRL\+\_\+R}}~0x0073
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_acba2dc74a3437934a5efad91b8725686}{GLUT\+\_\+\+KEY\+\_\+\+ALT\+\_\+L}}~0x0074
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a772ebe335166d3e9acc2ea0f4c3d9215}{GLUT\+\_\+\+KEY\+\_\+\+ALT\+\_\+R}}~0x0075
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_afd0be6a00ae9f8c204c2989a81cf8328}{GLUT\+\_\+\+ACTION\+\_\+\+EXIT}}~0
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a31645582890ce22c225d33fcd2c4e303}{GLUT\+\_\+\+ACTION\+\_\+\+GLUTMAINLOOP\+\_\+\+RETURNS}}~1
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a0e0a287babe8d4b54b2ce867c6cbd291}{GLUT\+\_\+\+ACTION\+\_\+\+CONTINUE\+\_\+\+EXECUTION}}~2
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a675a424ad1520ab6d27821753b9450d3}{GLUT\+\_\+\+CREATE\+\_\+\+NEW\+\_\+\+CONTEXT}}~0
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a16148fe2711c0e8e001d1d91e2672692}{GLUT\+\_\+\+USE\+\_\+\+CURRENT\+\_\+\+CONTEXT}}~1
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a72004074b5d9a2a24678a384a1d80764}{GLUT\+\_\+\+FORCE\+\_\+\+INDIRECT\+\_\+\+CONTEXT}}~0
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a34219dc7cb4017c248bb37b10ff8da68}{GLUT\+\_\+\+ALLOW\+\_\+\+DIRECT\+\_\+\+CONTEXT}}~1
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a231a34307085019df418c6a92ff8f0ef}{GLUT\+\_\+\+TRY\+\_\+\+DIRECT\+\_\+\+CONTEXT}}~2
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_adc60ca8afb0dcbca161260f353d286dd}{GLUT\+\_\+\+FORCE\+\_\+\+DIRECT\+\_\+\+CONTEXT}}~3
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a5e02edb6e5086d0f1585782f32fab9f3}{GLUT\+\_\+\+INIT\+\_\+\+STATE}}~0x007C
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ace20ae5a0f4d4e23014f190b00aeab6f}{GLUT\+\_\+\+ACTION\+\_\+\+ON\+\_\+\+WINDOW\+\_\+\+CLOSE}}~0x01\+F9
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ae0bb1de0cb531d7d29152c7b258a47f9}{GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+WIDTH}}~0x01\+FA
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a9ea1afd6ae1ce6809b71cc6f1a7bb345}{GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+HEIGHT}}~0x01\+FB
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a208018159647fb801fd550c56a6f54ba}{GLUT\+\_\+\+WINDOW\+\_\+\+HEADER\+\_\+\+HEIGHT}}~0x01\+FB  /\texorpdfstring{$\ast$}{*} Docs say it should always have been \mbox{\hyperlink{freeglut__ext_8h_a9ea1afd6ae1ce6809b71cc6f1a7bb345}{GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+HEIGHT}}, keep this for backward compatibility \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a4d2e63523cbd4c3f0b71f4f7fcecd4f5}{GLUT\+\_\+\+VERSION}}~0x01\+FC
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ac4cad3cad0e362ee5506bfe17f7ac671}{GLUT\+\_\+\+RENDERING\+\_\+\+CONTEXT}}~0x01\+FD
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_aecd17a8a361d7cba6793b371c5bb07c9}{GLUT\+\_\+\+DIRECT\+\_\+\+RENDERING}}~0x01\+FE
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_af43aa9c0f56e0397da1c0d16613d212f}{GLUT\+\_\+\+FULL\+\_\+\+SCREEN}}~0x01\+FF
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a6ceb9892e540d6236a3cae31665e73dd}{GLUT\+\_\+\+SKIP\+\_\+\+STALE\+\_\+\+MOTION\+\_\+\+EVENTS}}~0x0204
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a136ef9b31c160542efa0ec1080db387f}{GLUT\+\_\+\+AUX}}~0x1000
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a7ca0aedd93dcaec8c4d759509d2f5e00}{GLUT\+\_\+\+AUX1}}~0x1000
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a95f362751944799cf69656aa646d8a6d}{GLUT\+\_\+\+AUX2}}~0x2000
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ac1259e84e57f9597327cdd8d9493ab6b}{GLUT\+\_\+\+AUX3}}~0x4000
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a9dfc07c3e6836560404d0ac0d42ef74c}{GLUT\+\_\+\+AUX4}}~0x8000
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a9d73ef9c12dcc38358971560b3c651a1}{GLUT\+\_\+\+INIT\+\_\+\+MAJOR\+\_\+\+VERSION}}~0x0200
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a58e41cd81caafe21100776cb87efd991}{GLUT\+\_\+\+INIT\+\_\+\+MINOR\+\_\+\+VERSION}}~0x0201
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a0743c57473db04cc7d8d835fa301c3ff}{GLUT\+\_\+\+INIT\+\_\+\+FLAGS}}~0x0202
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ad0718fd881fef6c4f2b4c8ae486d208f}{GLUT\+\_\+\+INIT\+\_\+\+PROFILE}}~0x0203
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a8627dc76b3bd129a27d5b6ada48a8a83}{GLUT\+\_\+\+DEBUG}}~0x0001
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ab49da1f1c45ec950b3bfa6a57a3b0fee}{GLUT\+\_\+\+FORWARD\+\_\+\+COMPATIBLE}}~0x0002
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a5d49c522bbf2d83c7e411c78df51bd93}{GLUT\+\_\+\+CORE\+\_\+\+PROFILE}}~0x0001
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_ad3a392deb930418d442a52e9044ab664}{GLUT\+\_\+\+COMPATIBILITY\+\_\+\+PROFILE}}~0x0002
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_af25cc58f66bf15cde50fa5345d87adf9}{GLUT\+\_\+\+HAS\+\_\+\+MULTI}}~1
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a683792c5c16fecf9bf0e42bd970dc164}{GLUT\+\_\+\+CAPTIONLESS}}~0x0400
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a8e290f090594f9367a2f4ba020ffa324}{GLUT\+\_\+\+BORDERLESS}}~0x0800
+\item 
+\#define \mbox{\hyperlink{freeglut__ext_8h_a8b0ef442c6d59a8deec61525db16e59b}{GLUT\+\_\+\+SRGB}}~0x1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}{GLUTproc}}) ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a6ab07848a855e45793d05bcce93faba3}{glut\+Main\+Loop\+Event}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a49fa089383daefbddc005f2bfcd04071}{glut\+Leave\+Main\+Loop}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a354d9a39b095c4dc22ad6f6d163826ec}{glut\+Exit}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a1b189e2ab9719c6f12251dbe9b03faa1}{glut\+Full\+Screen\+Toggle}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a227f0301219e24dfbba6a562c47f8252}{glut\+Leave\+Full\+Screen}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a9161e4426b136e1929b95c1780acba81}{glut\+Mouse\+Wheel\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(int, int, int, int))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_aefa43f2bacd50aa3fb851ed50af99520}{glut\+Close\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(void))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a1f14c9f686d40ac81838ba0096c64815}{glut\+WMClose\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(void))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_afe6f085e3599cda08e5b784a1a5f499f}{glut\+Menu\+Destroy\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(void))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a18f94be444502efce3eee0ca1c5fd5b3}{glut\+Set\+Option}} (\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}} option\+\_\+flag, int value)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} int \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_abec1747976e26a62ce157963819582a5}{glut\+Get\+Mode\+Values}} (\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}} mode, int \texorpdfstring{$\ast$}{*}size)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_af71cc72e049c32994f54abb898c8622c}{glut\+Get\+Window\+Data}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a77097f59115b3fdc6e4c7b1a05a30688}{glut\+Set\+Window\+Data}} (void \texorpdfstring{$\ast$}{*}data)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a41fccc0298f981f610a210592d8b08c5}{glut\+Get\+Menu\+Data}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_af89db03e5b31ffe1bb56b91c57f94e8a}{glut\+Set\+Menu\+Data}} (void \texorpdfstring{$\ast$}{*}data)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} int \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a5b6f22e0919265e3f1f2a5fe0267b4e9}{glut\+Bitmap\+Height}} (void \texorpdfstring{$\ast$}{*}font)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_aa92ad14a94a3e52fbce036983f7cb81b}{glut\+Stroke\+Height}} (void \texorpdfstring{$\ast$}{*}font)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a49d2f57dbb22d136b9843e48bc4f6936}{glut\+Bitmap\+String}} (void \texorpdfstring{$\ast$}{*}font, const unsigned char \texorpdfstring{$\ast$}{*}string)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_aa08192f6d743e1db38a54d0ffdcdf813}{glut\+Stroke\+String}} (void \texorpdfstring{$\ast$}{*}font, const unsigned char \texorpdfstring{$\ast$}{*}string)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a0646e97fa16eae6264801a2a5a20ebb7}{glut\+Wire\+Rhombic\+Dodecahedron}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a5bbf9c4c34980fb79b34ce6f8237f80e}{glut\+Solid\+Rhombic\+Dodecahedron}} (void)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a6fac6d6a4a8f7a2f8050a8ed6ff53d03}{glut\+Wire\+Sierpinski\+Sponge}} (int num\+\_\+levels, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} offset\mbox{[}3\mbox{]}, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} scale)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a50409328e958d946d5e3219e15015d34}{glut\+Solid\+Sierpinski\+Sponge}} (int num\+\_\+levels, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} offset\mbox{[}3\mbox{]}, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} scale)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a9e89165415295a9db5904929d70b6cbb}{glut\+Wire\+Cylinder}} (\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} radius, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} height, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}} slices, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}} stacks)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a7415d348b7ea09c2281e52bc9df1d2bb}{glut\+Solid\+Cylinder}} (\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} radius, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}} height, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}} slices, \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}} stacks)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} \mbox{\hyperlink{freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}{GLUTproc}} \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_ae4d0f4651650924d24ce5c13edee0e06}{glut\+Get\+Proc\+Address}} (const char \texorpdfstring{$\ast$}{*}proc\+Name)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_af8782fcb6ef57235d4833857581c34b4}{glut\+Multi\+Entry\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(int, int))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a4e76b8c3f851f285b16ccf10dd52497a}{glut\+Multi\+Button\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(int, int, int, int, int))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_adfa134cbbac7fc808c0a656ade6b8c25}{glut\+Multi\+Motion\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(int, int, int))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_af362999e14f86407ae7c40fff8ea2939}{glut\+Multi\+Passive\+Func}} (void(\texorpdfstring{$\ast$}{*}callback)(int, int, int))
+\item 
+int \mbox{\hyperlink{freeglut__ext_8h_ab7f38f57eb585b9729f586f8456801c1}{glut\+Joystick\+Get\+Num\+Axes}} (int ident)
+\item 
+int \mbox{\hyperlink{freeglut__ext_8h_a1fb7799b5e666941df23a96bfe50b590}{glut\+Joystick\+Get\+Num\+Buttons}} (int ident)
+\item 
+int \mbox{\hyperlink{freeglut__ext_8h_a12e27b530800e931493867834a428fe6}{glut\+Joystick\+Not\+Working}} (int ident)
+\item 
+float \mbox{\hyperlink{freeglut__ext_8h_af8827f7a77db26c2839e6a8c541643cf}{glut\+Joystick\+Get\+Dead\+Band}} (int ident, int axis)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a68362f5d4eb25af37426b780dce0fab9}{glut\+Joystick\+Set\+Dead\+Band}} (int ident, int axis, float db)
+\item 
+float \mbox{\hyperlink{freeglut__ext_8h_a72c3fd24f981c303084384a57081906a}{glut\+Joystick\+Get\+Saturation}} (int ident, int axis)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a1ea1d3fac954b1918633c04d0c9e9e1e}{glut\+Joystick\+Set\+Saturation}} (int ident, int axis, float st)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a1f4e3c75e1ca330ea75bd8280f1cc98b}{glut\+Joystick\+Set\+Min\+Range}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a653525349c4ebe5af4c2cdfa23a2ac92}{glut\+Joystick\+Set\+Max\+Range}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a2f71a97351526922047a3dec887d1acc}{glut\+Joystick\+Set\+Center}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_a8d8d7d08e10b13738aba738322ee7e3b}{glut\+Joystick\+Get\+Min\+Range}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_ae2f47100d658bcdf6c375d71fe02ddcc}{glut\+Joystick\+Get\+Max\+Range}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+void \mbox{\hyperlink{freeglut__ext_8h_ad636ed6a5796fb860986b3f60ef4208d}{glut\+Joystick\+Get\+Center}} (int ident, float \texorpdfstring{$\ast$}{*}axes)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_abe52eb31edbf01b16cd347ac88b2f71f}{glut\+Init\+Context\+Version}} (int major\+Version, int minor\+Version)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_a161686883fdccf9ca181605438779795}{glut\+Init\+Context\+Flags}} (int flags)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_ad7f3455a601c63b75310a3ad61d54dd4}{glut\+Init\+Context\+Profile}} (int profile)
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_ac36f541fc55288cae8478fde66b18b25}{glut\+Init\+Error\+Func}} (void(\texorpdfstring{$\ast$}{*}v\+Error)(const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap))
+\item 
+\mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} \mbox{\hyperlink{freeglut__ext_8h_aad9f54aaf994578312a42a2e7093070b}{glut\+Init\+Warning\+Func}} (void(\texorpdfstring{$\ast$}{*}v\+Warning)(const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{freeglut__ext_8h_a0e0a287babe8d4b54b2ce867c6cbd291}\label{freeglut__ext_8h_a0e0a287babe8d4b54b2ce867c6cbd291} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_ACTION\_CONTINUE\_EXECUTION@{GLUT\_ACTION\_CONTINUE\_EXECUTION}}
+\index{GLUT\_ACTION\_CONTINUE\_EXECUTION@{GLUT\_ACTION\_CONTINUE\_EXECUTION}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_ACTION\_CONTINUE\_EXECUTION}{GLUT\_ACTION\_CONTINUE\_EXECUTION}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+ACTION\+\_\+\+CONTINUE\+\_\+\+EXECUTION~2}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00053}{53}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_afd0be6a00ae9f8c204c2989a81cf8328}\label{freeglut__ext_8h_afd0be6a00ae9f8c204c2989a81cf8328} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_ACTION\_EXIT@{GLUT\_ACTION\_EXIT}}
+\index{GLUT\_ACTION\_EXIT@{GLUT\_ACTION\_EXIT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_ACTION\_EXIT}{GLUT\_ACTION\_EXIT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+ACTION\+\_\+\+EXIT~0}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00051}{51}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a31645582890ce22c225d33fcd2c4e303}\label{freeglut__ext_8h_a31645582890ce22c225d33fcd2c4e303} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS@{GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS}}
+\index{GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS@{GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS}{GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+ACTION\+\_\+\+GLUTMAINLOOP\+\_\+\+RETURNS~1}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00052}{52}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ace20ae5a0f4d4e23014f190b00aeab6f}\label{freeglut__ext_8h_ace20ae5a0f4d4e23014f190b00aeab6f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_ACTION\_ON\_WINDOW\_CLOSE@{GLUT\_ACTION\_ON\_WINDOW\_CLOSE}}
+\index{GLUT\_ACTION\_ON\_WINDOW\_CLOSE@{GLUT\_ACTION\_ON\_WINDOW\_CLOSE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_ACTION\_ON\_WINDOW\_CLOSE}{GLUT\_ACTION\_ON\_WINDOW\_CLOSE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+ACTION\+\_\+\+ON\+\_\+\+WINDOW\+\_\+\+CLOSE~0x01\+F9}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00074}{74}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a34219dc7cb4017c248bb37b10ff8da68}\label{freeglut__ext_8h_a34219dc7cb4017c248bb37b10ff8da68} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_ALLOW\_DIRECT\_CONTEXT@{GLUT\_ALLOW\_DIRECT\_CONTEXT}}
+\index{GLUT\_ALLOW\_DIRECT\_CONTEXT@{GLUT\_ALLOW\_DIRECT\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_ALLOW\_DIRECT\_CONTEXT}{GLUT\_ALLOW\_DIRECT\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+ALLOW\+\_\+\+DIRECT\+\_\+\+CONTEXT~1}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00065}{65}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a136ef9b31c160542efa0ec1080db387f}\label{freeglut__ext_8h_a136ef9b31c160542efa0ec1080db387f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_AUX@{GLUT\_AUX}}
+\index{GLUT\_AUX@{GLUT\_AUX}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_AUX}{GLUT\_AUX}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+AUX~0x1000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00094}{94}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a7ca0aedd93dcaec8c4d759509d2f5e00}\label{freeglut__ext_8h_a7ca0aedd93dcaec8c4d759509d2f5e00} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_AUX1@{GLUT\_AUX1}}
+\index{GLUT\_AUX1@{GLUT\_AUX1}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_AUX1}{GLUT\_AUX1}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+AUX1~0x1000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00096}{96}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a95f362751944799cf69656aa646d8a6d}\label{freeglut__ext_8h_a95f362751944799cf69656aa646d8a6d} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_AUX2@{GLUT\_AUX2}}
+\index{GLUT\_AUX2@{GLUT\_AUX2}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_AUX2}{GLUT\_AUX2}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+AUX2~0x2000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00097}{97}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ac1259e84e57f9597327cdd8d9493ab6b}\label{freeglut__ext_8h_ac1259e84e57f9597327cdd8d9493ab6b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_AUX3@{GLUT\_AUX3}}
+\index{GLUT\_AUX3@{GLUT\_AUX3}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_AUX3}{GLUT\_AUX3}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+AUX3~0x4000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00098}{98}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a9dfc07c3e6836560404d0ac0d42ef74c}\label{freeglut__ext_8h_a9dfc07c3e6836560404d0ac0d42ef74c} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_AUX4@{GLUT\_AUX4}}
+\index{GLUT\_AUX4@{GLUT\_AUX4}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_AUX4}{GLUT\_AUX4}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+AUX4~0x8000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00099}{99}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a8e290f090594f9367a2f4ba020ffa324}\label{freeglut__ext_8h_a8e290f090594f9367a2f4ba020ffa324} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_BORDERLESS@{GLUT\_BORDERLESS}}
+\index{GLUT\_BORDERLESS@{GLUT\_BORDERLESS}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_BORDERLESS}{GLUT\_BORDERLESS}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+BORDERLESS~0x0800}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00230}{230}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a683792c5c16fecf9bf0e42bd970dc164}\label{freeglut__ext_8h_a683792c5c16fecf9bf0e42bd970dc164} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_CAPTIONLESS@{GLUT\_CAPTIONLESS}}
+\index{GLUT\_CAPTIONLESS@{GLUT\_CAPTIONLESS}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_CAPTIONLESS}{GLUT\_CAPTIONLESS}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+CAPTIONLESS~0x0400}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00229}{229}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ad3a392deb930418d442a52e9044ab664}\label{freeglut__ext_8h_ad3a392deb930418d442a52e9044ab664} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_COMPATIBILITY\_PROFILE@{GLUT\_COMPATIBILITY\_PROFILE}}
+\index{GLUT\_COMPATIBILITY\_PROFILE@{GLUT\_COMPATIBILITY\_PROFILE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_COMPATIBILITY\_PROFILE}{GLUT\_COMPATIBILITY\_PROFILE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+COMPATIBILITY\+\_\+\+PROFILE~0x0002}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00120}{120}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a5d49c522bbf2d83c7e411c78df51bd93}\label{freeglut__ext_8h_a5d49c522bbf2d83c7e411c78df51bd93} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_CORE\_PROFILE@{GLUT\_CORE\_PROFILE}}
+\index{GLUT\_CORE\_PROFILE@{GLUT\_CORE\_PROFILE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_CORE\_PROFILE}{GLUT\_CORE\_PROFILE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+CORE\+\_\+\+PROFILE~0x0001}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00119}{119}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a675a424ad1520ab6d27821753b9450d3}\label{freeglut__ext_8h_a675a424ad1520ab6d27821753b9450d3} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_CREATE\_NEW\_CONTEXT@{GLUT\_CREATE\_NEW\_CONTEXT}}
+\index{GLUT\_CREATE\_NEW\_CONTEXT@{GLUT\_CREATE\_NEW\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_CREATE\_NEW\_CONTEXT}{GLUT\_CREATE\_NEW\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+CREATE\+\_\+\+NEW\+\_\+\+CONTEXT~0}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00058}{58}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a8627dc76b3bd129a27d5b6ada48a8a83}\label{freeglut__ext_8h_a8627dc76b3bd129a27d5b6ada48a8a83} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_DEBUG@{GLUT\_DEBUG}}
+\index{GLUT\_DEBUG@{GLUT\_DEBUG}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_DEBUG}{GLUT\_DEBUG}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+DEBUG~0x0001}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00112}{112}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_aecd17a8a361d7cba6793b371c5bb07c9}\label{freeglut__ext_8h_aecd17a8a361d7cba6793b371c5bb07c9} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_DIRECT\_RENDERING@{GLUT\_DIRECT\_RENDERING}}
+\index{GLUT\_DIRECT\_RENDERING@{GLUT\_DIRECT\_RENDERING}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_DIRECT\_RENDERING}{GLUT\_DIRECT\_RENDERING}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+DIRECT\+\_\+\+RENDERING~0x01\+FE}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00083}{83}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_adc60ca8afb0dcbca161260f353d286dd}\label{freeglut__ext_8h_adc60ca8afb0dcbca161260f353d286dd} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_FORCE\_DIRECT\_CONTEXT@{GLUT\_FORCE\_DIRECT\_CONTEXT}}
+\index{GLUT\_FORCE\_DIRECT\_CONTEXT@{GLUT\_FORCE\_DIRECT\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_FORCE\_DIRECT\_CONTEXT}{GLUT\_FORCE\_DIRECT\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+FORCE\+\_\+\+DIRECT\+\_\+\+CONTEXT~3}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00067}{67}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a72004074b5d9a2a24678a384a1d80764}\label{freeglut__ext_8h_a72004074b5d9a2a24678a384a1d80764} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_FORCE\_INDIRECT\_CONTEXT@{GLUT\_FORCE\_INDIRECT\_CONTEXT}}
+\index{GLUT\_FORCE\_INDIRECT\_CONTEXT@{GLUT\_FORCE\_INDIRECT\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_FORCE\_INDIRECT\_CONTEXT}{GLUT\_FORCE\_INDIRECT\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+FORCE\+\_\+\+INDIRECT\+\_\+\+CONTEXT~0}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00064}{64}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ab49da1f1c45ec950b3bfa6a57a3b0fee}\label{freeglut__ext_8h_ab49da1f1c45ec950b3bfa6a57a3b0fee} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_FORWARD\_COMPATIBLE@{GLUT\_FORWARD\_COMPATIBLE}}
+\index{GLUT\_FORWARD\_COMPATIBLE@{GLUT\_FORWARD\_COMPATIBLE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_FORWARD\_COMPATIBLE}{GLUT\_FORWARD\_COMPATIBLE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+FORWARD\+\_\+\+COMPATIBLE~0x0002}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00113}{113}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_af43aa9c0f56e0397da1c0d16613d212f}\label{freeglut__ext_8h_af43aa9c0f56e0397da1c0d16613d212f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_FULL\_SCREEN@{GLUT\_FULL\_SCREEN}}
+\index{GLUT\_FULL\_SCREEN@{GLUT\_FULL\_SCREEN}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_FULL\_SCREEN}{GLUT\_FULL\_SCREEN}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+FULL\+\_\+\+SCREEN~0x01\+FF}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00085}{85}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_af25cc58f66bf15cde50fa5345d87adf9}\label{freeglut__ext_8h_af25cc58f66bf15cde50fa5345d87adf9} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_HAS\_MULTI@{GLUT\_HAS\_MULTI}}
+\index{GLUT\_HAS\_MULTI@{GLUT\_HAS\_MULTI}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_HAS\_MULTI}{GLUT\_HAS\_MULTI}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+HAS\+\_\+\+MULTI~1}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00183}{183}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a0743c57473db04cc7d8d835fa301c3ff}\label{freeglut__ext_8h_a0743c57473db04cc7d8d835fa301c3ff} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_INIT\_FLAGS@{GLUT\_INIT\_FLAGS}}
+\index{GLUT\_INIT\_FLAGS@{GLUT\_INIT\_FLAGS}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_INIT\_FLAGS}{GLUT\_INIT\_FLAGS}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+INIT\+\_\+\+FLAGS~0x0202}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00106}{106}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a9d73ef9c12dcc38358971560b3c651a1}\label{freeglut__ext_8h_a9d73ef9c12dcc38358971560b3c651a1} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_INIT\_MAJOR\_VERSION@{GLUT\_INIT\_MAJOR\_VERSION}}
+\index{GLUT\_INIT\_MAJOR\_VERSION@{GLUT\_INIT\_MAJOR\_VERSION}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_INIT\_MAJOR\_VERSION}{GLUT\_INIT\_MAJOR\_VERSION}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+INIT\+\_\+\+MAJOR\+\_\+\+VERSION~0x0200}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00104}{104}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a58e41cd81caafe21100776cb87efd991}\label{freeglut__ext_8h_a58e41cd81caafe21100776cb87efd991} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_INIT\_MINOR\_VERSION@{GLUT\_INIT\_MINOR\_VERSION}}
+\index{GLUT\_INIT\_MINOR\_VERSION@{GLUT\_INIT\_MINOR\_VERSION}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_INIT\_MINOR\_VERSION}{GLUT\_INIT\_MINOR\_VERSION}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+INIT\+\_\+\+MINOR\+\_\+\+VERSION~0x0201}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00105}{105}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ad0718fd881fef6c4f2b4c8ae486d208f}\label{freeglut__ext_8h_ad0718fd881fef6c4f2b4c8ae486d208f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_INIT\_PROFILE@{GLUT\_INIT\_PROFILE}}
+\index{GLUT\_INIT\_PROFILE@{GLUT\_INIT\_PROFILE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_INIT\_PROFILE}{GLUT\_INIT\_PROFILE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+INIT\+\_\+\+PROFILE~0x0203}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00107}{107}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a5e02edb6e5086d0f1585782f32fab9f3}\label{freeglut__ext_8h_a5e02edb6e5086d0f1585782f32fab9f3} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_INIT\_STATE@{GLUT\_INIT\_STATE}}
+\index{GLUT\_INIT\_STATE@{GLUT\_INIT\_STATE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_INIT\_STATE}{GLUT\_INIT\_STATE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+INIT\+\_\+\+STATE~0x007C}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00072}{72}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_acba2dc74a3437934a5efad91b8725686}\label{freeglut__ext_8h_acba2dc74a3437934a5efad91b8725686} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_ALT\_L@{GLUT\_KEY\_ALT\_L}}
+\index{GLUT\_KEY\_ALT\_L@{GLUT\_KEY\_ALT\_L}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_ALT\_L}{GLUT\_KEY\_ALT\_L}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+ALT\+\_\+L~0x0074}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00045}{45}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a772ebe335166d3e9acc2ea0f4c3d9215}\label{freeglut__ext_8h_a772ebe335166d3e9acc2ea0f4c3d9215} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_ALT\_R@{GLUT\_KEY\_ALT\_R}}
+\index{GLUT\_KEY\_ALT\_R@{GLUT\_KEY\_ALT\_R}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_ALT\_R}{GLUT\_KEY\_ALT\_R}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+ALT\+\_\+R~0x0075}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00046}{46}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a00024a01093240008dfd30445d5c1a66}\label{freeglut__ext_8h_a00024a01093240008dfd30445d5c1a66} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_BEGIN@{GLUT\_KEY\_BEGIN}}
+\index{GLUT\_KEY\_BEGIN@{GLUT\_KEY\_BEGIN}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_BEGIN}{GLUT\_KEY\_BEGIN}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+BEGIN~0x006E}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00039}{39}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a1a34aead1fa9a123871075397f9dc6d5}\label{freeglut__ext_8h_a1a34aead1fa9a123871075397f9dc6d5} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_CTRL\_L@{GLUT\_KEY\_CTRL\_L}}
+\index{GLUT\_KEY\_CTRL\_L@{GLUT\_KEY\_CTRL\_L}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_CTRL\_L}{GLUT\_KEY\_CTRL\_L}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+CTRL\+\_\+L~0x0072}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00043}{43}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_afa1c6b9e1967e4b6653a902030af1333}\label{freeglut__ext_8h_afa1c6b9e1967e4b6653a902030af1333} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_CTRL\_R@{GLUT\_KEY\_CTRL\_R}}
+\index{GLUT\_KEY\_CTRL\_R@{GLUT\_KEY\_CTRL\_R}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_CTRL\_R}{GLUT\_KEY\_CTRL\_R}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+CTRL\+\_\+R~0x0073}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00044}{44}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_aef49717758c978650c8c87a965c864e3}\label{freeglut__ext_8h_aef49717758c978650c8c87a965c864e3} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_DELETE@{GLUT\_KEY\_DELETE}}
+\index{GLUT\_KEY\_DELETE@{GLUT\_KEY\_DELETE}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_DELETE}{GLUT\_KEY\_DELETE}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+DELETE~0x006F}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00040}{40}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a9c5f5b3262cd42a3608321a4939d34ac}\label{freeglut__ext_8h_a9c5f5b3262cd42a3608321a4939d34ac} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_NUM\_LOCK@{GLUT\_KEY\_NUM\_LOCK}}
+\index{GLUT\_KEY\_NUM\_LOCK@{GLUT\_KEY\_NUM\_LOCK}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_NUM\_LOCK}{GLUT\_KEY\_NUM\_LOCK}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+NUM\+\_\+\+LOCK~0x006D}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00038}{38}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a985ff7ec32f335b6a070de858e569e9e}\label{freeglut__ext_8h_a985ff7ec32f335b6a070de858e569e9e} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_SHIFT\_L@{GLUT\_KEY\_SHIFT\_L}}
+\index{GLUT\_KEY\_SHIFT\_L@{GLUT\_KEY\_SHIFT\_L}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_SHIFT\_L}{GLUT\_KEY\_SHIFT\_L}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+SHIFT\+\_\+L~0x0070}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00041}{41}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ab8606bb4e6b2930e3606f0fcc9d3aeef}\label{freeglut__ext_8h_ab8606bb4e6b2930e3606f0fcc9d3aeef} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_KEY\_SHIFT\_R@{GLUT\_KEY\_SHIFT\_R}}
+\index{GLUT\_KEY\_SHIFT\_R@{GLUT\_KEY\_SHIFT\_R}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_KEY\_SHIFT\_R}{GLUT\_KEY\_SHIFT\_R}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+KEY\+\_\+\+SHIFT\+\_\+R~0x0071}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00042}{42}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ac4cad3cad0e362ee5506bfe17f7ac671}\label{freeglut__ext_8h_ac4cad3cad0e362ee5506bfe17f7ac671} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_RENDERING\_CONTEXT@{GLUT\_RENDERING\_CONTEXT}}
+\index{GLUT\_RENDERING\_CONTEXT@{GLUT\_RENDERING\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_RENDERING\_CONTEXT}{GLUT\_RENDERING\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+RENDERING\+\_\+\+CONTEXT~0x01\+FD}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00082}{82}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a6ceb9892e540d6236a3cae31665e73dd}\label{freeglut__ext_8h_a6ceb9892e540d6236a3cae31665e73dd} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_SKIP\_STALE\_MOTION\_EVENTS@{GLUT\_SKIP\_STALE\_MOTION\_EVENTS}}
+\index{GLUT\_SKIP\_STALE\_MOTION\_EVENTS@{GLUT\_SKIP\_STALE\_MOTION\_EVENTS}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_SKIP\_STALE\_MOTION\_EVENTS}{GLUT\_SKIP\_STALE\_MOTION\_EVENTS}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+SKIP\+\_\+\+STALE\+\_\+\+MOTION\+\_\+\+EVENTS~0x0204}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00087}{87}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a8b0ef442c6d59a8deec61525db16e59b}\label{freeglut__ext_8h_a8b0ef442c6d59a8deec61525db16e59b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_SRGB@{GLUT\_SRGB}}
+\index{GLUT\_SRGB@{GLUT\_SRGB}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_SRGB}{GLUT\_SRGB}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+SRGB~0x1000}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00231}{231}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a231a34307085019df418c6a92ff8f0ef}\label{freeglut__ext_8h_a231a34307085019df418c6a92ff8f0ef} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_TRY\_DIRECT\_CONTEXT@{GLUT\_TRY\_DIRECT\_CONTEXT}}
+\index{GLUT\_TRY\_DIRECT\_CONTEXT@{GLUT\_TRY\_DIRECT\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_TRY\_DIRECT\_CONTEXT}{GLUT\_TRY\_DIRECT\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+TRY\+\_\+\+DIRECT\+\_\+\+CONTEXT~2}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00066}{66}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a16148fe2711c0e8e001d1d91e2672692}\label{freeglut__ext_8h_a16148fe2711c0e8e001d1d91e2672692} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_USE\_CURRENT\_CONTEXT@{GLUT\_USE\_CURRENT\_CONTEXT}}
+\index{GLUT\_USE\_CURRENT\_CONTEXT@{GLUT\_USE\_CURRENT\_CONTEXT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_USE\_CURRENT\_CONTEXT}{GLUT\_USE\_CURRENT\_CONTEXT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+USE\+\_\+\+CURRENT\+\_\+\+CONTEXT~1}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00059}{59}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a4d2e63523cbd4c3f0b71f4f7fcecd4f5}\label{freeglut__ext_8h_a4d2e63523cbd4c3f0b71f4f7fcecd4f5} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_VERSION@{GLUT\_VERSION}}
+\index{GLUT\_VERSION@{GLUT\_VERSION}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_VERSION}{GLUT\_VERSION}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+VERSION~0x01\+FC}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00080}{80}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a9ea1afd6ae1ce6809b71cc6f1a7bb345}\label{freeglut__ext_8h_a9ea1afd6ae1ce6809b71cc6f1a7bb345} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_WINDOW\_BORDER\_HEIGHT@{GLUT\_WINDOW\_BORDER\_HEIGHT}}
+\index{GLUT\_WINDOW\_BORDER\_HEIGHT@{GLUT\_WINDOW\_BORDER\_HEIGHT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_WINDOW\_BORDER\_HEIGHT}{GLUT\_WINDOW\_BORDER\_HEIGHT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+HEIGHT~0x01\+FB}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00077}{77}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_ae0bb1de0cb531d7d29152c7b258a47f9}\label{freeglut__ext_8h_ae0bb1de0cb531d7d29152c7b258a47f9} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_WINDOW\_BORDER\_WIDTH@{GLUT\_WINDOW\_BORDER\_WIDTH}}
+\index{GLUT\_WINDOW\_BORDER\_WIDTH@{GLUT\_WINDOW\_BORDER\_WIDTH}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_WINDOW\_BORDER\_WIDTH}{GLUT\_WINDOW\_BORDER\_WIDTH}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+WIDTH~0x01\+FA}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00076}{76}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+\Hypertarget{freeglut__ext_8h_a208018159647fb801fd550c56a6f54ba}\label{freeglut__ext_8h_a208018159647fb801fd550c56a6f54ba} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUT\_WINDOW\_HEADER\_HEIGHT@{GLUT\_WINDOW\_HEADER\_HEIGHT}}
+\index{GLUT\_WINDOW\_HEADER\_HEIGHT@{GLUT\_WINDOW\_HEADER\_HEIGHT}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUT\_WINDOW\_HEADER\_HEIGHT}{GLUT\_WINDOW\_HEADER\_HEIGHT}}
+{\footnotesize\ttfamily \#define GLUT\+\_\+\+WINDOW\+\_\+\+HEADER\+\_\+\+HEIGHT~0x01\+FB  /\texorpdfstring{$\ast$}{*} Docs say it should always have been \mbox{\hyperlink{freeglut__ext_8h_a9ea1afd6ae1ce6809b71cc6f1a7bb345}{GLUT\+\_\+\+WINDOW\+\_\+\+BORDER\+\_\+\+HEIGHT}}, keep this for backward compatibility \texorpdfstring{$\ast$}{*}/}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00078}{78}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}\label{freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!GLUTproc@{GLUTproc}}
+\index{GLUTproc@{GLUTproc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{GLUTproc}{GLUTproc}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} GLUTproc) ()}
+
+
+
+Definition at line \mbox{\hyperlink{freeglut__ext_8h_source_l00176}{176}} of file \mbox{\hyperlink{freeglut__ext_8h_source}{freeglut\+\_\+ext.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{freeglut__ext_8h_a5b6f22e0919265e3f1f2a5fe0267b4e9}\label{freeglut__ext_8h_a5b6f22e0919265e3f1f2a5fe0267b4e9} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutBitmapHeight@{glutBitmapHeight}}
+\index{glutBitmapHeight@{glutBitmapHeight}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutBitmapHeight()}{glutBitmapHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} int \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Bitmap\+Height (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a49d2f57dbb22d136b9843e48bc4f6936}\label{freeglut__ext_8h_a49d2f57dbb22d136b9843e48bc4f6936} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutBitmapString@{glutBitmapString}}
+\index{glutBitmapString@{glutBitmapString}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutBitmapString()}{glutBitmapString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Bitmap\+String (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_aefa43f2bacd50aa3fb851ed50af99520}\label{freeglut__ext_8h_aefa43f2bacd50aa3fb851ed50af99520} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutCloseFunc@{glutCloseFunc}}
+\index{glutCloseFunc@{glutCloseFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutCloseFunc()}{glutCloseFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Close\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a354d9a39b095c4dc22ad6f6d163826ec}\label{freeglut__ext_8h_a354d9a39b095c4dc22ad6f6d163826ec} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutExit@{glutExit}}
+\index{glutExit@{glutExit}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutExit()}{glutExit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a1b189e2ab9719c6f12251dbe9b03faa1}\label{freeglut__ext_8h_a1b189e2ab9719c6f12251dbe9b03faa1} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutFullScreenToggle@{glutFullScreenToggle}}
+\index{glutFullScreenToggle@{glutFullScreenToggle}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutFullScreenToggle()}{glutFullScreenToggle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Full\+Screen\+Toggle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a41fccc0298f981f610a210592d8b08c5}\label{freeglut__ext_8h_a41fccc0298f981f610a210592d8b08c5} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutGetMenuData@{glutGetMenuData}}
+\index{glutGetMenuData@{glutGetMenuData}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutGetMenuData()}{glutGetMenuData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Get\+Menu\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_abec1747976e26a62ce157963819582a5}\label{freeglut__ext_8h_abec1747976e26a62ce157963819582a5} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutGetModeValues@{glutGetModeValues}}
+\index{glutGetModeValues@{glutGetModeValues}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutGetModeValues()}{glutGetModeValues()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} int \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Get\+Mode\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}}}]{mode,  }\item[{int \texorpdfstring{$\ast$}{*}}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ae4d0f4651650924d24ce5c13edee0e06}\label{freeglut__ext_8h_ae4d0f4651650924d24ce5c13edee0e06} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutGetProcAddress@{glutGetProcAddress}}
+\index{glutGetProcAddress@{glutGetProcAddress}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutGetProcAddress()}{glutGetProcAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} \mbox{\hyperlink{freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}{GLUTproc}} \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Get\+Proc\+Address (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{proc\+Name }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_af71cc72e049c32994f54abb898c8622c}\label{freeglut__ext_8h_af71cc72e049c32994f54abb898c8622c} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutGetWindowData@{glutGetWindowData}}
+\index{glutGetWindowData@{glutGetWindowData}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutGetWindowData()}{glutGetWindowData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Get\+Window\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a161686883fdccf9ca181605438779795}\label{freeglut__ext_8h_a161686883fdccf9ca181605438779795} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutInitContextFlags@{glutInitContextFlags}}
+\index{glutInitContextFlags@{glutInitContextFlags}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutInitContextFlags()}{glutInitContextFlags()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Init\+Context\+Flags (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ad7f3455a601c63b75310a3ad61d54dd4}\label{freeglut__ext_8h_ad7f3455a601c63b75310a3ad61d54dd4} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutInitContextProfile@{glutInitContextProfile}}
+\index{glutInitContextProfile@{glutInitContextProfile}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutInitContextProfile()}{glutInitContextProfile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Init\+Context\+Profile (\begin{DoxyParamCaption}\item[{int}]{profile }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_abe52eb31edbf01b16cd347ac88b2f71f}\label{freeglut__ext_8h_abe52eb31edbf01b16cd347ac88b2f71f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutInitContextVersion@{glutInitContextVersion}}
+\index{glutInitContextVersion@{glutInitContextVersion}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutInitContextVersion()}{glutInitContextVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Init\+Context\+Version (\begin{DoxyParamCaption}\item[{int}]{major\+Version,  }\item[{int}]{minor\+Version }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ac36f541fc55288cae8478fde66b18b25}\label{freeglut__ext_8h_ac36f541fc55288cae8478fde66b18b25} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutInitErrorFunc@{glutInitErrorFunc}}
+\index{glutInitErrorFunc@{glutInitErrorFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutInitErrorFunc()}{glutInitErrorFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Init\+Error\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap)}]{v\+Error }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_aad9f54aaf994578312a42a2e7093070b}\label{freeglut__ext_8h_aad9f54aaf994578312a42a2e7093070b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutInitWarningFunc@{glutInitWarningFunc}}
+\index{glutInitWarningFunc@{glutInitWarningFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutInitWarningFunc()}{glutInitWarningFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Init\+Warning\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(const char \texorpdfstring{$\ast$}{*}fmt, va\+\_\+list ap)}]{v\+Warning }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ad636ed6a5796fb860986b3f60ef4208d}\label{freeglut__ext_8h_ad636ed6a5796fb860986b3f60ef4208d} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetCenter@{glutJoystickGetCenter}}
+\index{glutJoystickGetCenter@{glutJoystickGetCenter}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetCenter()}{glutJoystickGetCenter()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Get\+Center (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_af8827f7a77db26c2839e6a8c541643cf}\label{freeglut__ext_8h_af8827f7a77db26c2839e6a8c541643cf} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetDeadBand@{glutJoystickGetDeadBand}}
+\index{glutJoystickGetDeadBand@{glutJoystickGetDeadBand}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetDeadBand()}{glutJoystickGetDeadBand()}}
+{\footnotesize\ttfamily float glut\+Joystick\+Get\+Dead\+Band (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{int}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ae2f47100d658bcdf6c375d71fe02ddcc}\label{freeglut__ext_8h_ae2f47100d658bcdf6c375d71fe02ddcc} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetMaxRange@{glutJoystickGetMaxRange}}
+\index{glutJoystickGetMaxRange@{glutJoystickGetMaxRange}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetMaxRange()}{glutJoystickGetMaxRange()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Get\+Max\+Range (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a8d8d7d08e10b13738aba738322ee7e3b}\label{freeglut__ext_8h_a8d8d7d08e10b13738aba738322ee7e3b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetMinRange@{glutJoystickGetMinRange}}
+\index{glutJoystickGetMinRange@{glutJoystickGetMinRange}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetMinRange()}{glutJoystickGetMinRange()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Get\+Min\+Range (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_ab7f38f57eb585b9729f586f8456801c1}\label{freeglut__ext_8h_ab7f38f57eb585b9729f586f8456801c1} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetNumAxes@{glutJoystickGetNumAxes}}
+\index{glutJoystickGetNumAxes@{glutJoystickGetNumAxes}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetNumAxes()}{glutJoystickGetNumAxes()}}
+{\footnotesize\ttfamily int glut\+Joystick\+Get\+Num\+Axes (\begin{DoxyParamCaption}\item[{int}]{ident }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a1fb7799b5e666941df23a96bfe50b590}\label{freeglut__ext_8h_a1fb7799b5e666941df23a96bfe50b590} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetNumButtons@{glutJoystickGetNumButtons}}
+\index{glutJoystickGetNumButtons@{glutJoystickGetNumButtons}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetNumButtons()}{glutJoystickGetNumButtons()}}
+{\footnotesize\ttfamily int glut\+Joystick\+Get\+Num\+Buttons (\begin{DoxyParamCaption}\item[{int}]{ident }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a72c3fd24f981c303084384a57081906a}\label{freeglut__ext_8h_a72c3fd24f981c303084384a57081906a} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickGetSaturation@{glutJoystickGetSaturation}}
+\index{glutJoystickGetSaturation@{glutJoystickGetSaturation}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickGetSaturation()}{glutJoystickGetSaturation()}}
+{\footnotesize\ttfamily float glut\+Joystick\+Get\+Saturation (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{int}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a12e27b530800e931493867834a428fe6}\label{freeglut__ext_8h_a12e27b530800e931493867834a428fe6} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickNotWorking@{glutJoystickNotWorking}}
+\index{glutJoystickNotWorking@{glutJoystickNotWorking}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickNotWorking()}{glutJoystickNotWorking()}}
+{\footnotesize\ttfamily int glut\+Joystick\+Not\+Working (\begin{DoxyParamCaption}\item[{int}]{ident }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a2f71a97351526922047a3dec887d1acc}\label{freeglut__ext_8h_a2f71a97351526922047a3dec887d1acc} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickSetCenter@{glutJoystickSetCenter}}
+\index{glutJoystickSetCenter@{glutJoystickSetCenter}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickSetCenter()}{glutJoystickSetCenter()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Set\+Center (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a68362f5d4eb25af37426b780dce0fab9}\label{freeglut__ext_8h_a68362f5d4eb25af37426b780dce0fab9} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickSetDeadBand@{glutJoystickSetDeadBand}}
+\index{glutJoystickSetDeadBand@{glutJoystickSetDeadBand}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickSetDeadBand()}{glutJoystickSetDeadBand()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Set\+Dead\+Band (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{int}]{axis,  }\item[{float}]{db }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a653525349c4ebe5af4c2cdfa23a2ac92}\label{freeglut__ext_8h_a653525349c4ebe5af4c2cdfa23a2ac92} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickSetMaxRange@{glutJoystickSetMaxRange}}
+\index{glutJoystickSetMaxRange@{glutJoystickSetMaxRange}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickSetMaxRange()}{glutJoystickSetMaxRange()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Set\+Max\+Range (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a1f4e3c75e1ca330ea75bd8280f1cc98b}\label{freeglut__ext_8h_a1f4e3c75e1ca330ea75bd8280f1cc98b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickSetMinRange@{glutJoystickSetMinRange}}
+\index{glutJoystickSetMinRange@{glutJoystickSetMinRange}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickSetMinRange()}{glutJoystickSetMinRange()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Set\+Min\+Range (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{float \texorpdfstring{$\ast$}{*}}]{axes }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a1ea1d3fac954b1918633c04d0c9e9e1e}\label{freeglut__ext_8h_a1ea1d3fac954b1918633c04d0c9e9e1e} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutJoystickSetSaturation@{glutJoystickSetSaturation}}
+\index{glutJoystickSetSaturation@{glutJoystickSetSaturation}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutJoystickSetSaturation()}{glutJoystickSetSaturation()}}
+{\footnotesize\ttfamily void glut\+Joystick\+Set\+Saturation (\begin{DoxyParamCaption}\item[{int}]{ident,  }\item[{int}]{axis,  }\item[{float}]{st }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a227f0301219e24dfbba6a562c47f8252}\label{freeglut__ext_8h_a227f0301219e24dfbba6a562c47f8252} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutLeaveFullScreen@{glutLeaveFullScreen}}
+\index{glutLeaveFullScreen@{glutLeaveFullScreen}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutLeaveFullScreen()}{glutLeaveFullScreen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Leave\+Full\+Screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a49fa089383daefbddc005f2bfcd04071}\label{freeglut__ext_8h_a49fa089383daefbddc005f2bfcd04071} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutLeaveMainLoop@{glutLeaveMainLoop}}
+\index{glutLeaveMainLoop@{glutLeaveMainLoop}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutLeaveMainLoop()}{glutLeaveMainLoop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Leave\+Main\+Loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a6ab07848a855e45793d05bcce93faba3}\label{freeglut__ext_8h_a6ab07848a855e45793d05bcce93faba3} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMainLoopEvent@{glutMainLoopEvent}}
+\index{glutMainLoopEvent@{glutMainLoopEvent}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMainLoopEvent()}{glutMainLoopEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Main\+Loop\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_afe6f085e3599cda08e5b784a1a5f499f}\label{freeglut__ext_8h_afe6f085e3599cda08e5b784a1a5f499f} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMenuDestroyFunc@{glutMenuDestroyFunc}}
+\index{glutMenuDestroyFunc@{glutMenuDestroyFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMenuDestroyFunc()}{glutMenuDestroyFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Menu\+Destroy\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a9161e4426b136e1929b95c1780acba81}\label{freeglut__ext_8h_a9161e4426b136e1929b95c1780acba81} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMouseWheelFunc@{glutMouseWheelFunc}}
+\index{glutMouseWheelFunc@{glutMouseWheelFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMouseWheelFunc()}{glutMouseWheelFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Mouse\+Wheel\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int, int, int, int)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a4e76b8c3f851f285b16ccf10dd52497a}\label{freeglut__ext_8h_a4e76b8c3f851f285b16ccf10dd52497a} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMultiButtonFunc@{glutMultiButtonFunc}}
+\index{glutMultiButtonFunc@{glutMultiButtonFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMultiButtonFunc()}{glutMultiButtonFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Multi\+Button\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int, int, int, int, int)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_af8782fcb6ef57235d4833857581c34b4}\label{freeglut__ext_8h_af8782fcb6ef57235d4833857581c34b4} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMultiEntryFunc@{glutMultiEntryFunc}}
+\index{glutMultiEntryFunc@{glutMultiEntryFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMultiEntryFunc()}{glutMultiEntryFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Multi\+Entry\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int, int)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_adfa134cbbac7fc808c0a656ade6b8c25}\label{freeglut__ext_8h_adfa134cbbac7fc808c0a656ade6b8c25} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMultiMotionFunc@{glutMultiMotionFunc}}
+\index{glutMultiMotionFunc@{glutMultiMotionFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMultiMotionFunc()}{glutMultiMotionFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Multi\+Motion\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int, int, int)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_af362999e14f86407ae7c40fff8ea2939}\label{freeglut__ext_8h_af362999e14f86407ae7c40fff8ea2939} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutMultiPassiveFunc@{glutMultiPassiveFunc}}
+\index{glutMultiPassiveFunc@{glutMultiPassiveFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutMultiPassiveFunc()}{glutMultiPassiveFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Multi\+Passive\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int, int, int)}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_af89db03e5b31ffe1bb56b91c57f94e8a}\label{freeglut__ext_8h_af89db03e5b31ffe1bb56b91c57f94e8a} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSetMenuData@{glutSetMenuData}}
+\index{glutSetMenuData@{glutSetMenuData}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSetMenuData()}{glutSetMenuData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Set\+Menu\+Data (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a18f94be444502efce3eee0ca1c5fd5b3}\label{freeglut__ext_8h_a18f94be444502efce3eee0ca1c5fd5b3} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSetOption@{glutSetOption}}
+\index{glutSetOption@{glutSetOption}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSetOption()}{glutSetOption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}}}]{option\+\_\+flag,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a77097f59115b3fdc6e4c7b1a05a30688}\label{freeglut__ext_8h_a77097f59115b3fdc6e4c7b1a05a30688} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSetWindowData@{glutSetWindowData}}
+\index{glutSetWindowData@{glutSetWindowData}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSetWindowData()}{glutSetWindowData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Set\+Window\+Data (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a7415d348b7ea09c2281e52bc9df1d2bb}\label{freeglut__ext_8h_a7415d348b7ea09c2281e52bc9df1d2bb} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSolidCylinder@{glutSolidCylinder}}
+\index{glutSolidCylinder@{glutSolidCylinder}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSolidCylinder()}{glutSolidCylinder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Solid\+Cylinder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{radius,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{height,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}}]{slices,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}}]{stacks }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a5bbf9c4c34980fb79b34ce6f8237f80e}\label{freeglut__ext_8h_a5bbf9c4c34980fb79b34ce6f8237f80e} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSolidRhombicDodecahedron@{glutSolidRhombicDodecahedron}}
+\index{glutSolidRhombicDodecahedron@{glutSolidRhombicDodecahedron}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSolidRhombicDodecahedron()}{glutSolidRhombicDodecahedron()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Solid\+Rhombic\+Dodecahedron (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a50409328e958d946d5e3219e15015d34}\label{freeglut__ext_8h_a50409328e958d946d5e3219e15015d34} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutSolidSierpinskiSponge@{glutSolidSierpinskiSponge}}
+\index{glutSolidSierpinskiSponge@{glutSolidSierpinskiSponge}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutSolidSierpinskiSponge()}{glutSolidSierpinskiSponge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Solid\+Sierpinski\+Sponge (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+levels,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{offset\mbox{[}3\mbox{]},  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{scale }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_aa92ad14a94a3e52fbce036983f7cb81b}\label{freeglut__ext_8h_aa92ad14a94a3e52fbce036983f7cb81b} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutStrokeHeight@{glutStrokeHeight}}
+\index{glutStrokeHeight@{glutStrokeHeight}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutStrokeHeight()}{glutStrokeHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Stroke\+Height (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_aa08192f6d743e1db38a54d0ffdcdf813}\label{freeglut__ext_8h_aa08192f6d743e1db38a54d0ffdcdf813} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutStrokeString@{glutStrokeString}}
+\index{glutStrokeString@{glutStrokeString}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutStrokeString()}{glutStrokeString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Stroke\+String (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a9e89165415295a9db5904929d70b6cbb}\label{freeglut__ext_8h_a9e89165415295a9db5904929d70b6cbb} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutWireCylinder@{glutWireCylinder}}
+\index{glutWireCylinder@{glutWireCylinder}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutWireCylinder()}{glutWireCylinder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Wire\+Cylinder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{radius,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{height,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}}]{slices,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}}]{stacks }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a0646e97fa16eae6264801a2a5a20ebb7}\label{freeglut__ext_8h_a0646e97fa16eae6264801a2a5a20ebb7} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutWireRhombicDodecahedron@{glutWireRhombicDodecahedron}}
+\index{glutWireRhombicDodecahedron@{glutWireRhombicDodecahedron}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutWireRhombicDodecahedron()}{glutWireRhombicDodecahedron()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Wire\+Rhombic\+Dodecahedron (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a6fac6d6a4a8f7a2f8050a8ed6ff53d03}\label{freeglut__ext_8h_a6fac6d6a4a8f7a2f8050a8ed6ff53d03} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutWireSierpinskiSponge@{glutWireSierpinskiSponge}}
+\index{glutWireSierpinskiSponge@{glutWireSierpinskiSponge}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutWireSierpinskiSponge()}{glutWireSierpinskiSponge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+Wire\+Sierpinski\+Sponge (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+levels,  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{offset\mbox{[}3\mbox{]},  }\item[{\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}}]{scale }\end{DoxyParamCaption})}
+
+\Hypertarget{freeglut__ext_8h_a1f14c9f686d40ac81838ba0096c64815}\label{freeglut__ext_8h_a1f14c9f686d40ac81838ba0096c64815} 
+\index{freeglut\_ext.h@{freeglut\_ext.h}!glutWMCloseFunc@{glutWMCloseFunc}}
+\index{glutWMCloseFunc@{glutWMCloseFunc}!freeglut\_ext.h@{freeglut\_ext.h}}
+\doxysubsubsection{\texorpdfstring{glutWMCloseFunc()}{glutWMCloseFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}} void \mbox{\hyperlink{freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}} glut\+WMClose\+Func (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{callback }\end{DoxyParamCaption})}
+

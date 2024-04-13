@@ -1,0 +1,580 @@
+\doxysection{linmath.\+h}
+\hypertarget{linmath_8h_source}{}\label{linmath_8h_source}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/deps/linmath.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/deps/linmath.h}}
+\mbox{\hyperlink{linmath_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LINMATH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LINMATH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ inline\ \_\_inline}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LINMATH\_H\_DEFINE\_VEC(n)\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{typedef\ float\ vec\#\#n[n];\ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{static\ inline\ void\ vec\#\#n\#\#\_add(vec\#\#n\ r,\ vec\#\#n\ const\ a,\ vec\#\#n\ const\ b)\ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ int\ i;\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ for(i=0;\ i<n;\ ++i)\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ r[i]\ =\ a[i]\ +\ b[i];\ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{static\ inline\ void\ vec\#\#n\#\#\_sub(vec\#\#n\ r,\ vec\#\#n\ const\ a,\ vec\#\#n\ const\ b)\ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ int\ i;\ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ for(i=0;\ i<n;\ ++i)\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ r[i]\ =\ a[i]\ -\/\ b[i];\ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{static\ inline\ void\ vec\#\#n\#\#\_scale(vec\#\#n\ r,\ vec\#\#n\ const\ v,\ float\ const\ s)\ \(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ int\ i;\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ for(i=0;\ i<n;\ ++i)\ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ r[i]\ =\ v[i]\ *\ s;\ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{static\ inline\ float\ vec\#\#n\#\#\_mul\_inner(vec\#\#n\ const\ a,\ vec\#\#n\ const\ b)\ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ float\ p\ =\ 0.;\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ int\ i;\ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ for(i=0;\ i<n;\ ++i)\ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ p\ +=\ b[i]*a[i];\ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ return\ p;\ \(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{static\ inline\ float\ vec\#\#n\#\#\_len(vec\#\#n\ const\ v)\ \(\backslash\)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ return\ (float)\ sqrt(vec\#\#n\#\#\_mul\_inner(v,v));\ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{static\ inline\ void\ vec\#\#n\#\#\_norm(vec\#\#n\ r,\ vec\#\#n\ const\ v)\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ float\ k\ =\ 1.f\ /\ vec\#\#n\#\#\_len(v);\ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ vec\#\#n\#\#\_scale(r,\ v,\ k);\ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775}{LINMATH\_H\_DEFINE\_VEC}}(2)}
+\DoxyCodeLine{00049\ \mbox{\hyperlink{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775}{LINMATH\_H\_DEFINE\_VEC}}(3)}
+\DoxyCodeLine{00050\ \mbox{\hyperlink{linmath_8h_ad7ae6ff6612bd489d7f6a5b6a9fdc775}{LINMATH\_H\_DEFINE\_VEC}}(4)}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ static\ inline\ \textcolor{keywordtype}{void}\ vec3\_mul\_cross(vec3\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ vec3\ const\ a,\ vec3\ const\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[0]\ =\ a[1]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[2]\ -\/\ a[2]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[1];}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[1]\ =\ a[2]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[0]\ -\/\ a[0]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[2];}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[2]\ =\ a[0]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[1]\ -\/\ a[1]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[0];}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ vec3\_reflect(vec3\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ vec3\ \textcolor{keyword}{const}\ v,\ vec3\ \textcolor{keyword}{const}\ n)}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ \ =\ 2.f*vec3\_mul\_inner(v,\ n);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<3;++i)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ v[i]\ -\/\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}*n[i];}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ vec4\_mul\_cross(vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ vec4\ a,\ vec4\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[0]\ =\ a[1]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[2]\ -\/\ a[2]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[1];}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[1]\ =\ a[2]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[0]\ -\/\ a[0]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[2];}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[2]\ =\ a[0]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[1]\ -\/\ a[1]*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[0];}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[3]\ =\ 1.f;}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ vec4\_reflect(vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ vec4\ v,\ vec4\ n)}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ \ =\ 2.f*vec4\_mul\_inner(v,\ n);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;++i)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ v[i]\ -\/\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}*n[i];}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ vec4\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}[4];}
+\DoxyCodeLine{00084\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_identity(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M)}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(j=0;\ j<4;\ ++j)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ M[i][j]\ =\ i==j\ ?\ 1.f\ :\ 0.f;}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_dup(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ N)}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(j=0;\ j<4;\ ++j)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ M[i][j]\ =\ N[i][j];}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_row(vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ k;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{for}(k=0;\ k<4;\ ++k)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[k]\ =\ M[k][i];}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_col(vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ k;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{for}(k=0;\ k<4;\ ++k)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[k]\ =\ M[i][k];}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_transpose(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ N)}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{for}(j=0;\ j<4;\ ++j)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ M[i][j]\ =\ N[j][i];}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_add(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ a,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ vec4\_add(M[i],\ a[i],\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[i]);}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_sub(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ a,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00124\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ vec4\_sub(M[i],\ a[i],\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[i]);}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_scale(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ a,\ \textcolor{keywordtype}{float}\ k)}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ vec4\_scale(M[i],\ a[i],\ k);}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_scale\_aniso(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ a,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00138\ \ \ \ \ vec4\_scale(M[0],\ a[0],\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}});}
+\DoxyCodeLine{00139\ \ \ \ \ vec4\_scale(M[1],\ a[1],\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}});}
+\DoxyCodeLine{00140\ \ \ \ \ vec4\_scale(M[2],\ a[2],\ z);}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ M[3][i]\ =\ a[3][i];}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_mul(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ a,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ temp;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ k,\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ c;}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{for}(c=0;\ c<4;\ ++c)\ \textcolor{keywordflow}{for}(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}=0;\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}<4;\ ++\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}})\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ temp[c][\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}]\ =\ 0.f;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(k=0;\ k<4;\ ++k)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ temp[c][\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}]\ +=\ a[k][\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}]\ *\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[c][k];}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ mat4x4\_dup(M,\ temp);}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_mul\_vec4(vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ vec4\ v)}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{for}(j=0;\ j<4;\ ++j)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[j]\ =\ 0.f;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[j]\ +=\ M[i][j]\ *\ v[i];}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_translate(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ T,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ mat4x4\_identity(T);}
+\DoxyCodeLine{00168\ \ \ \ \ T[3][0]\ =\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}};}
+\DoxyCodeLine{00169\ \ \ \ \ T[3][1]\ =\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}};}
+\DoxyCodeLine{00170\ \ \ \ \ T[3][2]\ =\ z;}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00172\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_translate\_in\_place(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00173\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ vec4\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}\ =\ \{\mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ z,\ 0\};}
+\DoxyCodeLine{00175\ \ \ \ \ vec4\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ mat4x4\_row(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ M,\ i);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ M[3][i]\ +=\ vec4\_mul\_inner(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}});}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_from\_vec3\_mul\_outer(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ vec3\ a,\ vec3\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00183\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)\ \textcolor{keywordflow}{for}(j=0;\ j<4;\ ++j)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ M[i][j]\ =\ i<3\ \&\&\ j<3\ ?\ a[i]\ *\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[j]\ :\ 0.f;}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_rotate(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ angle)}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ sinf(angle);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{float}\ c\ =\ cosf(angle);}
+\DoxyCodeLine{00192\ \ \ \ \ vec3\ u\ =\ \{\mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}},\ \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}},\ z\};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}(vec3\_len(u)\ >\ 1e-\/4)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ T,\ C,\ S\ =\ \{\{0\}\};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ vec3\_norm(u,\ u);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ mat4x4\_from\_vec3\_mul\_outer(T,\ u,\ u);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ S[1][2]\ =\ \ u[0];}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ S[2][1]\ =\ -\/u[0];}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ S[2][0]\ =\ \ u[1];}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ S[0][2]\ =\ -\/u[1];}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ S[0][1]\ =\ \ u[2];}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ S[1][0]\ =\ -\/u[2];}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ mat4x4\_scale(S,\ S,\ s);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ mat4x4\_identity(C);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ mat4x4\_sub(C,\ C,\ T);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ mat4x4\_scale(C,\ C,\ c);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ mat4x4\_add(T,\ T,\ C);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ mat4x4\_add(T,\ T,\ S);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ T[3][3]\ =\ 1.;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ mat4x4\_mul(R,\ M,\ T);}
+\DoxyCodeLine{00219\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ mat4x4\_dup(R,\ M);}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \}}
+\DoxyCodeLine{00223\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_rotate\_X(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ Q,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ angle)}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ sinf(angle);}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{float}\ c\ =\ cosf(angle);}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R\ =\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \{1.f,\ 0.f,\ 0.f,\ 0.f\},}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{0.f,\ \ \ c,\ \ \ s,\ 0.f\},}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \{0.f,\ \ -\/s,\ \ \ c,\ 0.f\},}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{0.f,\ 0.f,\ 0.f,\ 1.f\}}
+\DoxyCodeLine{00232\ \ \ \ \ \};}
+\DoxyCodeLine{00233\ \ \ \ \ mat4x4\_mul(Q,\ M,\ R);}
+\DoxyCodeLine{00234\ \}}
+\DoxyCodeLine{00235\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_rotate\_Y(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ Q,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ angle)}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ sinf(angle);}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{float}\ c\ =\ cosf(angle);}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R\ =\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{\ \ \ c,\ 0.f,\ \ -\/s,\ 0.f\},}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \{\ 0.f,\ 1.f,\ 0.f,\ 0.f\},}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \{\ \ \ s,\ 0.f,\ \ \ c,\ 0.f\},}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \{\ 0.f,\ 0.f,\ 0.f,\ 1.f\}}
+\DoxyCodeLine{00244\ \ \ \ \ \};}
+\DoxyCodeLine{00245\ \ \ \ \ mat4x4\_mul(Q,\ M,\ R);}
+\DoxyCodeLine{00246\ \}}
+\DoxyCodeLine{00247\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_rotate\_Z(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ Q,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ angle)}
+\DoxyCodeLine{00248\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ sinf(angle);}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{float}\ c\ =\ cosf(angle);}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R\ =\ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \{\ \ \ c,\ \ \ s,\ 0.f,\ 0.f\},}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \{\ \ -\/s,\ \ \ c,\ 0.f,\ 0.f\},}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \{\ 0.f,\ 0.f,\ 1.f,\ 0.f\},}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \{\ 0.f,\ 0.f,\ 0.f,\ 1.f\}}
+\DoxyCodeLine{00256\ \ \ \ \ \};}
+\DoxyCodeLine{00257\ \ \ \ \ mat4x4\_mul(Q,\ M,\ R);}
+\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{00259\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_invert(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ T,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M)}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{float}\ idet;}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{float}\ s[6];}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{float}\ c[6];}
+\DoxyCodeLine{00264\ \ \ \ \ s[0]\ =\ M[0][0]*M[1][1]\ -\/\ M[1][0]*M[0][1];}
+\DoxyCodeLine{00265\ \ \ \ \ s[1]\ =\ M[0][0]*M[1][2]\ -\/\ M[1][0]*M[0][2];}
+\DoxyCodeLine{00266\ \ \ \ \ s[2]\ =\ M[0][0]*M[1][3]\ -\/\ M[1][0]*M[0][3];}
+\DoxyCodeLine{00267\ \ \ \ \ s[3]\ =\ M[0][1]*M[1][2]\ -\/\ M[1][1]*M[0][2];}
+\DoxyCodeLine{00268\ \ \ \ \ s[4]\ =\ M[0][1]*M[1][3]\ -\/\ M[1][1]*M[0][3];}
+\DoxyCodeLine{00269\ \ \ \ \ s[5]\ =\ M[0][2]*M[1][3]\ -\/\ M[1][2]*M[0][3];}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ c[0]\ =\ M[2][0]*M[3][1]\ -\/\ M[3][0]*M[2][1];}
+\DoxyCodeLine{00272\ \ \ \ \ c[1]\ =\ M[2][0]*M[3][2]\ -\/\ M[3][0]*M[2][2];}
+\DoxyCodeLine{00273\ \ \ \ \ c[2]\ =\ M[2][0]*M[3][3]\ -\/\ M[3][0]*M[2][3];}
+\DoxyCodeLine{00274\ \ \ \ \ c[3]\ =\ M[2][1]*M[3][2]\ -\/\ M[3][1]*M[2][2];}
+\DoxyCodeLine{00275\ \ \ \ \ c[4]\ =\ M[2][1]*M[3][3]\ -\/\ M[3][1]*M[2][3];}
+\DoxyCodeLine{00276\ \ \ \ \ c[5]\ =\ M[2][2]*M[3][3]\ -\/\ M[3][2]*M[2][3];}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{/*\ Assumes\ it\ is\ invertible\ */}}
+\DoxyCodeLine{00279\ \ \ \ \ idet\ =\ 1.0f/(\ s[0]*c[5]-\/s[1]*c[4]+s[2]*c[3]+s[3]*c[2]-\/s[4]*c[1]+s[5]*c[0]\ );}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ T[0][0]\ =\ (\ M[1][1]\ *\ c[5]\ -\/\ M[1][2]\ *\ c[4]\ +\ M[1][3]\ *\ c[3])\ *\ idet;}
+\DoxyCodeLine{00282\ \ \ \ \ T[0][1]\ =\ (-\/M[0][1]\ *\ c[5]\ +\ M[0][2]\ *\ c[4]\ -\/\ M[0][3]\ *\ c[3])\ *\ idet;}
+\DoxyCodeLine{00283\ \ \ \ \ T[0][2]\ =\ (\ M[3][1]\ *\ s[5]\ -\/\ M[3][2]\ *\ s[4]\ +\ M[3][3]\ *\ s[3])\ *\ idet;}
+\DoxyCodeLine{00284\ \ \ \ \ T[0][3]\ =\ (-\/M[2][1]\ *\ s[5]\ +\ M[2][2]\ *\ s[4]\ -\/\ M[2][3]\ *\ s[3])\ *\ idet;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ T[1][0]\ =\ (-\/M[1][0]\ *\ c[5]\ +\ M[1][2]\ *\ c[2]\ -\/\ M[1][3]\ *\ c[1])\ *\ idet;}
+\DoxyCodeLine{00287\ \ \ \ \ T[1][1]\ =\ (\ M[0][0]\ *\ c[5]\ -\/\ M[0][2]\ *\ c[2]\ +\ M[0][3]\ *\ c[1])\ *\ idet;}
+\DoxyCodeLine{00288\ \ \ \ \ T[1][2]\ =\ (-\/M[3][0]\ *\ s[5]\ +\ M[3][2]\ *\ s[2]\ -\/\ M[3][3]\ *\ s[1])\ *\ idet;}
+\DoxyCodeLine{00289\ \ \ \ \ T[1][3]\ =\ (\ M[2][0]\ *\ s[5]\ -\/\ M[2][2]\ *\ s[2]\ +\ M[2][3]\ *\ s[1])\ *\ idet;}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ T[2][0]\ =\ (\ M[1][0]\ *\ c[4]\ -\/\ M[1][1]\ *\ c[2]\ +\ M[1][3]\ *\ c[0])\ *\ idet;}
+\DoxyCodeLine{00292\ \ \ \ \ T[2][1]\ =\ (-\/M[0][0]\ *\ c[4]\ +\ M[0][1]\ *\ c[2]\ -\/\ M[0][3]\ *\ c[0])\ *\ idet;}
+\DoxyCodeLine{00293\ \ \ \ \ T[2][2]\ =\ (\ M[3][0]\ *\ s[4]\ -\/\ M[3][1]\ *\ s[2]\ +\ M[3][3]\ *\ s[0])\ *\ idet;}
+\DoxyCodeLine{00294\ \ \ \ \ T[2][3]\ =\ (-\/M[2][0]\ *\ s[4]\ +\ M[2][1]\ *\ s[2]\ -\/\ M[2][3]\ *\ s[0])\ *\ idet;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ T[3][0]\ =\ (-\/M[1][0]\ *\ c[3]\ +\ M[1][1]\ *\ c[1]\ -\/\ M[1][2]\ *\ c[0])\ *\ idet;}
+\DoxyCodeLine{00297\ \ \ \ \ T[3][1]\ =\ (\ M[0][0]\ *\ c[3]\ -\/\ M[0][1]\ *\ c[1]\ +\ M[0][2]\ *\ c[0])\ *\ idet;}
+\DoxyCodeLine{00298\ \ \ \ \ T[3][2]\ =\ (-\/M[3][0]\ *\ s[3]\ +\ M[3][1]\ *\ s[1]\ -\/\ M[3][2]\ *\ s[0])\ *\ idet;}
+\DoxyCodeLine{00299\ \ \ \ \ T[3][3]\ =\ (\ M[2][0]\ *\ s[3]\ -\/\ M[2][1]\ *\ s[1]\ +\ M[2][2]\ *\ s[0])\ *\ idet;}
+\DoxyCodeLine{00300\ \}}
+\DoxyCodeLine{00301\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_orthonormalize(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M)}
+\DoxyCodeLine{00302\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{float}\ s\ =\ 1.;}
+\DoxyCodeLine{00304\ \ \ \ \ vec3\ h;}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ mat4x4\_dup(R,\ M);}
+\DoxyCodeLine{00307\ \ \ \ \ vec3\_norm(R[2],\ R[2]);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ s\ =\ vec3\_mul\_inner(R[1],\ R[2]);}
+\DoxyCodeLine{00310\ \ \ \ \ vec3\_scale(h,\ R[2],\ s);}
+\DoxyCodeLine{00311\ \ \ \ \ vec3\_sub(R[1],\ R[1],\ h);}
+\DoxyCodeLine{00312\ \ \ \ \ vec3\_norm(R[2],\ R[2]);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ s\ =\ vec3\_mul\_inner(R[1],\ R[2]);}
+\DoxyCodeLine{00315\ \ \ \ \ vec3\_scale(h,\ R[2],\ s);}
+\DoxyCodeLine{00316\ \ \ \ \ vec3\_sub(R[1],\ R[1],\ h);}
+\DoxyCodeLine{00317\ \ \ \ \ vec3\_norm(R[1],\ R[1]);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ s\ =\ vec3\_mul\_inner(R[0],\ R[1]);}
+\DoxyCodeLine{00320\ \ \ \ \ vec3\_scale(h,\ R[1],\ s);}
+\DoxyCodeLine{00321\ \ \ \ \ vec3\_sub(R[0],\ R[0],\ h);}
+\DoxyCodeLine{00322\ \ \ \ \ vec3\_norm(R[0],\ R[0]);}
+\DoxyCodeLine{00323\ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_frustum(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ l,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ \textcolor{keywordtype}{float}\ n,\ \textcolor{keywordtype}{float}\ f)}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ M[0][0]\ =\ 2.f*n/(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}-\/l);}
+\DoxyCodeLine{00328\ \ \ \ \ M[0][1]\ =\ M[0][2]\ =\ M[0][3]\ =\ 0.f;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ M[1][1]\ =\ 2.f*n/(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}-\/\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00331\ \ \ \ \ M[1][0]\ =\ M[1][2]\ =\ M[1][3]\ =\ 0.f;}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ M[2][0]\ =\ (\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}+l)/(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}-\/l);}
+\DoxyCodeLine{00334\ \ \ \ \ M[2][1]\ =\ (\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}+\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})/(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}-\/\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00335\ \ \ \ \ M[2][2]\ =\ -\/(f+n)/(f-\/n);}
+\DoxyCodeLine{00336\ \ \ \ \ M[2][3]\ =\ -\/1.f;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ M[3][2]\ =\ -\/2.f*(f*n)/(f-\/n);}
+\DoxyCodeLine{00339\ \ \ \ \ M[3][0]\ =\ M[3][1]\ =\ M[3][3]\ =\ 0.f;}
+\DoxyCodeLine{00340\ \}}
+\DoxyCodeLine{00341\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_ortho(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \textcolor{keywordtype}{float}\ l,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ \textcolor{keywordtype}{float}\ n,\ \textcolor{keywordtype}{float}\ f)}
+\DoxyCodeLine{00342\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ M[0][0]\ =\ 2.f/(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}-\/l);}
+\DoxyCodeLine{00344\ \ \ \ \ M[0][1]\ =\ M[0][2]\ =\ M[0][3]\ =\ 0.f;}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ M[1][1]\ =\ 2.f/(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}-\/\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00347\ \ \ \ \ M[1][0]\ =\ M[1][2]\ =\ M[1][3]\ =\ 0.f;}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ M[2][2]\ =\ -\/2.f/(f-\/n);}
+\DoxyCodeLine{00350\ \ \ \ \ M[2][0]\ =\ M[2][1]\ =\ M[2][3]\ =\ 0.f;}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ M[3][0]\ =\ -\/(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}+l)/(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}-\/l);}
+\DoxyCodeLine{00353\ \ \ \ \ M[3][1]\ =\ -\/(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}+\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})/(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}-\/\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00354\ \ \ \ \ M[3][2]\ =\ -\/(f+n)/(f-\/n);}
+\DoxyCodeLine{00355\ \ \ \ \ M[3][3]\ =\ 1.f;}
+\DoxyCodeLine{00356\ \}}
+\DoxyCodeLine{00357\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_perspective(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ m,\ \textcolor{keywordtype}{float}\ y\_fov,\ \textcolor{keywordtype}{float}\ aspect,\ \textcolor{keywordtype}{float}\ n,\ \textcolor{keywordtype}{float}\ f)}
+\DoxyCodeLine{00358\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{/*\ NOTE:\ Degrees\ are\ an\ unhandy\ unit\ to\ work\ with.}}
+\DoxyCodeLine{00360\ \textcolor{comment}{\ \ \ \ \ *\ linmath.h\ uses\ radians\ for\ everything!\ */}}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{float}\ \textcolor{keyword}{const}\ a\ =\ 1.f\ /\ (float)\ tan(y\_fov\ /\ 2.f);}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ m[0][0]\ =\ a\ /\ aspect;}
+\DoxyCodeLine{00364\ \ \ \ \ m[0][1]\ =\ 0.f;}
+\DoxyCodeLine{00365\ \ \ \ \ m[0][2]\ =\ 0.f;}
+\DoxyCodeLine{00366\ \ \ \ \ m[0][3]\ =\ 0.f;}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ m[1][0]\ =\ 0.f;}
+\DoxyCodeLine{00369\ \ \ \ \ m[1][1]\ =\ a;}
+\DoxyCodeLine{00370\ \ \ \ \ m[1][2]\ =\ 0.f;}
+\DoxyCodeLine{00371\ \ \ \ \ m[1][3]\ =\ 0.f;}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ m[2][0]\ =\ 0.f;}
+\DoxyCodeLine{00374\ \ \ \ \ m[2][1]\ =\ 0.f;}
+\DoxyCodeLine{00375\ \ \ \ \ m[2][2]\ =\ -\/((f\ +\ n)\ /\ (f\ -\/\ n));}
+\DoxyCodeLine{00376\ \ \ \ \ m[2][3]\ =\ -\/1.f;}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ m[3][0]\ =\ 0.f;}
+\DoxyCodeLine{00379\ \ \ \ \ m[3][1]\ =\ 0.f;}
+\DoxyCodeLine{00380\ \ \ \ \ m[3][2]\ =\ -\/((2.f\ *\ f\ *\ n)\ /\ (f\ -\/\ n));}
+\DoxyCodeLine{00381\ \ \ \ \ m[3][3]\ =\ 0.f;}
+\DoxyCodeLine{00382\ \}}
+\DoxyCodeLine{00383\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_look\_at(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ m,\ vec3\ eye,\ vec3\ center,\ vec3\ up)}
+\DoxyCodeLine{00384\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{comment}{/*\ Adapted\ from\ Android's\ OpenGL\ Matrix.java.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{comment}{/*\ See\ the\ OpenGL\ GLUT\ documentation\ for\ gluLookAt\ for\ a\ description\ */}}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{comment}{/*\ of\ the\ algorithm.\ We\ implement\ it\ in\ a\ straightforward\ way:\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{comment}{/*\ TODO:\ The\ negation\ of\ of\ can\ be\ spared\ by\ swapping\ the\ order\ of}}
+\DoxyCodeLine{00390\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ operands\ in\ the\ following\ cross\ products\ in\ the\ right\ way.\ */}}
+\DoxyCodeLine{00391\ \ \ \ \ vec3\ f;}
+\DoxyCodeLine{00392\ \ \ \ \ vec3\ s;}
+\DoxyCodeLine{00393\ \ \ \ \ vec3\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ vec3\_sub(f,\ center,\ eye);}
+\DoxyCodeLine{00396\ \ \ \ \ vec3\_norm(f,\ f);}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ vec3\_mul\_cross(s,\ f,\ up);}
+\DoxyCodeLine{00399\ \ \ \ \ vec3\_norm(s,\ s);}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ vec3\_mul\_cross(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ s,\ f);}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ m[0][0]\ =\ \ s[0];}
+\DoxyCodeLine{00404\ \ \ \ \ m[0][1]\ =\ \ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}[0];}
+\DoxyCodeLine{00405\ \ \ \ \ m[0][2]\ =\ -\/f[0];}
+\DoxyCodeLine{00406\ \ \ \ \ m[0][3]\ =\ \ \ 0.f;}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \ \ m[1][0]\ =\ \ s[1];}
+\DoxyCodeLine{00409\ \ \ \ \ m[1][1]\ =\ \ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}[1];}
+\DoxyCodeLine{00410\ \ \ \ \ m[1][2]\ =\ -\/f[1];}
+\DoxyCodeLine{00411\ \ \ \ \ m[1][3]\ =\ \ \ 0.f;}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ m[2][0]\ =\ \ s[2];}
+\DoxyCodeLine{00414\ \ \ \ \ m[2][1]\ =\ \ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}[2];}
+\DoxyCodeLine{00415\ \ \ \ \ m[2][2]\ =\ -\/f[2];}
+\DoxyCodeLine{00416\ \ \ \ \ m[2][3]\ =\ \ \ 0.f;}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ m[3][0]\ =\ \ 0.f;}
+\DoxyCodeLine{00419\ \ \ \ \ m[3][1]\ =\ \ 0.f;}
+\DoxyCodeLine{00420\ \ \ \ \ m[3][2]\ =\ \ 0.f;}
+\DoxyCodeLine{00421\ \ \ \ \ m[3][3]\ =\ \ 1.f;}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ mat4x4\_translate\_in\_place(m,\ -\/eye[0],\ -\/eye[1],\ -\/eye[2]);}
+\DoxyCodeLine{00424\ \}}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}[4];}
+\DoxyCodeLine{00427\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_identity(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q)}
+\DoxyCodeLine{00428\ \{}
+\DoxyCodeLine{00429\ \ \ \ \ q[0]\ =\ q[1]\ =\ q[2]\ =\ 0.f;}
+\DoxyCodeLine{00430\ \ \ \ \ q[3]\ =\ 1.f;}
+\DoxyCodeLine{00431\ \}}
+\DoxyCodeLine{00432\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_add(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ a,\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00433\ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ a[i]\ +\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[i];}
+\DoxyCodeLine{00437\ \}}
+\DoxyCodeLine{00438\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_sub(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ a,\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00439\ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ a[i]\ -\/\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[i];}
+\DoxyCodeLine{00443\ \}}
+\DoxyCodeLine{00444\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_mul(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q)}
+\DoxyCodeLine{00445\ \{}
+\DoxyCodeLine{00446\ \ \ \ \ vec3\ w;}
+\DoxyCodeLine{00447\ \ \ \ \ vec3\_mul\_cross(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}},\ q);}
+\DoxyCodeLine{00448\ \ \ \ \ vec3\_scale(w,\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}},\ q[3]);}
+\DoxyCodeLine{00449\ \ \ \ \ vec3\_add(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ w);}
+\DoxyCodeLine{00450\ \ \ \ \ vec3\_scale(w,\ q,\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[3]);}
+\DoxyCodeLine{00451\ \ \ \ \ vec3\_add(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ w);}
+\DoxyCodeLine{00452\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[3]\ =\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[3]*q[3]\ -\/\ vec3\_mul\_inner(\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}},\ q);}
+\DoxyCodeLine{00453\ \}}
+\DoxyCodeLine{00454\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_scale(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ v,\ \textcolor{keywordtype}{float}\ s)}
+\DoxyCodeLine{00455\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ v[i]\ *\ s;}
+\DoxyCodeLine{00459\ \}}
+\DoxyCodeLine{00460\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ quat\_inner\_product(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ a,\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}})}
+\DoxyCodeLine{00461\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ =\ 0.f;}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<4;\ ++i)}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ +=\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}[i]*a[i];}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}};}
+\DoxyCodeLine{00467\ \}}
+\DoxyCodeLine{00468\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_conj(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q)}
+\DoxyCodeLine{00469\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<3;\ ++i)}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ -\/q[i];}
+\DoxyCodeLine{00473\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[3]\ =\ q[3];}
+\DoxyCodeLine{00474\ \}}
+\DoxyCodeLine{00475\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_rotate(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \textcolor{keywordtype}{float}\ angle,\ vec3\ axis)\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00477\ \ \ \ \ vec3\ v;}
+\DoxyCodeLine{00478\ \ \ \ \ vec3\_scale(v,\ axis,\ sinf(angle\ /\ 2));}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;\ i<3;\ ++i)}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[i]\ =\ v[i];}
+\DoxyCodeLine{00481\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}[3]\ =\ cosf(angle\ /\ 2);}
+\DoxyCodeLine{00482\ \}}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ quat\_norm\ vec4\_norm}}
+\DoxyCodeLine{00484\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_mul\_vec3(vec3\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q,\ vec3\ v)}
+\DoxyCodeLine{00485\ \{}
+\DoxyCodeLine{00486\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00487\ \textcolor{comment}{\ *\ Method\ by\ Fabian\ 'ryg'\ Giessen\ (of\ Farbrausch)}}
+\DoxyCodeLine{00488\ \textcolor{comment}{t\ =\ 2\ *\ cross(q.xyz,\ v)}}
+\DoxyCodeLine{00489\ \textcolor{comment}{v'\ =\ v\ +\ q.w\ *\ t\ +\ cross(q.xyz,\ t)}}
+\DoxyCodeLine{00490\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00491\ \ \ \ \ vec3\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}}\ =\ \{q[0],\ q[1],\ q[2]\};}
+\DoxyCodeLine{00492\ \ \ \ \ vec3\ u\ =\ \{q[0],\ q[1],\ q[2]\};}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \ \ vec3\_mul\_cross(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ v);}
+\DoxyCodeLine{00495\ \ \ \ \ vec3\_scale(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ 2);}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ vec3\_mul\_cross(u,\ u,\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}});}
+\DoxyCodeLine{00498\ \ \ \ \ vec3\_scale(\mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}},\ q[3]);}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ vec3\_add(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ v,\ \mbox{\hyperlink{boing_8c_a87accd1af8e0aff4b818d891374f7cec}{t}});}
+\DoxyCodeLine{00501\ \ \ \ \ vec3\_add(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}},\ u);}
+\DoxyCodeLine{00502\ \}}
+\DoxyCodeLine{00503\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4\_from\_quat(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q)}
+\DoxyCodeLine{00504\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ q[3];}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}\ =\ q[0];}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordtype}{float}\ c\ =\ q[1];}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{float}\ d\ =\ q[2];}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordtype}{float}\ a2\ =\ a*a;}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordtype}{float}\ b2\ =\ \mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}};}
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordtype}{float}\ c2\ =\ c*c;}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{float}\ d2\ =\ d*d;}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \ \ \ \ M[0][0]\ =\ a2\ +\ b2\ -\/\ c2\ -\/\ d2;}
+\DoxyCodeLine{00515\ \ \ \ \ M[0][1]\ =\ 2.f*(\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}*c\ +\ a*d);}
+\DoxyCodeLine{00516\ \ \ \ \ M[0][2]\ =\ 2.f*(\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}*d\ -\/\ a*c);}
+\DoxyCodeLine{00517\ \ \ \ \ M[0][3]\ =\ 0.f;}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ M[1][0]\ =\ 2*(\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}*c\ -\/\ a*d);}
+\DoxyCodeLine{00520\ \ \ \ \ M[1][1]\ =\ a2\ -\/\ b2\ +\ c2\ -\/\ d2;}
+\DoxyCodeLine{00521\ \ \ \ \ M[1][2]\ =\ 2.f*(c*d\ +\ a*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00522\ \ \ \ \ M[1][3]\ =\ 0.f;}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ M[2][0]\ =\ 2.f*(\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}}*d\ +\ a*c);}
+\DoxyCodeLine{00525\ \ \ \ \ M[2][1]\ =\ 2.f*(c*d\ -\/\ a*\mbox{\hyperlink{offscreen_8c_a83fc1af92e29717b4513d121b0c72c7d}{b}});}
+\DoxyCodeLine{00526\ \ \ \ \ M[2][2]\ =\ a2\ -\/\ b2\ -\/\ c2\ +\ d2;}
+\DoxyCodeLine{00527\ \ \ \ \ M[2][3]\ =\ 0.f;}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ M[3][0]\ =\ M[3][1]\ =\ M[3][2]\ =\ 0.f;}
+\DoxyCodeLine{00530\ \ \ \ \ M[3][3]\ =\ 1.f;}
+\DoxyCodeLine{00531\ \}}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mat4x4o\_mul\_quat(\mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ R,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M,\ \mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q)}
+\DoxyCodeLine{00534\ \{}
+\DoxyCodeLine{00535\ \textcolor{comment}{/*\ \ XXX:\ The\ way\ this\ is\ written\ only\ works\ for\ othogonal\ matrices.\ */}}
+\DoxyCodeLine{00536\ \textcolor{comment}{/*\ TODO:\ Take\ care\ of\ non-\/orthogonal\ case.\ */}}
+\DoxyCodeLine{00537\ \ \ \ \ quat\_mul\_vec3(R[0],\ q,\ M[0]);}
+\DoxyCodeLine{00538\ \ \ \ \ quat\_mul\_vec3(R[1],\ q,\ M[1]);}
+\DoxyCodeLine{00539\ \ \ \ \ quat\_mul\_vec3(R[2],\ q,\ M[2]);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ R[3][0]\ =\ R[3][1]\ =\ R[3][2]\ =\ 0.f;}
+\DoxyCodeLine{00542\ \ \ \ \ R[3][3]\ =\ 1.f;}
+\DoxyCodeLine{00543\ \}}
+\DoxyCodeLine{00544\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ quat\_from\_mat4x4(\mbox{\hyperlink{linmath_8h_ae0543f2eba665379de2ca111c187ce65}{quat}}\ q,\ \mbox{\hyperlink{linmath_8h_aea448460b62175f89ed5760877496434}{mat4x4}}\ M)}
+\DoxyCodeLine{00545\ \{}
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}=0.f;}
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \textcolor{keywordtype}{int}\ perm[]\ =\ \{\ 0,\ 1,\ 2,\ 0,\ 1\ \};}
+\DoxyCodeLine{00550\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ =\ perm;}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ \ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ i<3;\ i++)\ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\ =\ M[i][i];}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ m\ <\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}\ )}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ m\ =\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}};}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}\ =\ \&perm[i];}
+\DoxyCodeLine{00558\ \ \ \ \ \}}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ \ \ \ \ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}\ =\ (float)\ sqrt(1.f\ +\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]]\ -\/\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]]\ -\/\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]]\ );}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}\ <\ 1e-\/6)\ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ q[0]\ =\ 1.f;}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ q[1]\ =\ q[2]\ =\ q[3]\ =\ 0.f;}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00566\ \ \ \ \ \}}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ q[0]\ =\ \mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}}/2.f;}
+\DoxyCodeLine{00569\ \ \ \ \ q[1]\ =\ (M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]]\ -\/\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]])/(2.f*\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}});}
+\DoxyCodeLine{00570\ \ \ \ \ q[2]\ =\ (M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]]\ -\/\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[0]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]])/(2.f*\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}});}
+\DoxyCodeLine{00571\ \ \ \ \ q[3]\ =\ (M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]]\ -\/\ M[\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[1]][\mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}}[2]])/(2.f*\mbox{\hyperlink{offscreen_8c_a4788d82c901b9367dd5c0daff8a7616b}{r}});}
+\DoxyCodeLine{00572\ \}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

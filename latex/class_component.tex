@@ -1,0 +1,144 @@
+\doxysection{Component Class Reference}
+\hypertarget{class_component}{}\label{class_component}\index{Component@{Component}}
+
+
+{\ttfamily \#include $<$component.\+h$>$}
+
+Inheritance diagram for Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{Get\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{Update}} (double current, double voltage)=0
+\item 
+virtual double \mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{Get\+Voltage}} (double \+\_\+current, double timestep)=0
+\item 
+virtual void \mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{Display}} (double \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}}, double \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}})=0
+\item 
+virtual void \mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{Set\+Color}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}}
+\item 
+float \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}}
+\item 
+float \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}}
+\item 
+std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{component_8h_source_l00023}{23}} of file \mbox{\hyperlink{component_8h_source}{component.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_component_a7b578e52f1325b116999b09e4c074b8f}\label{class_component_a7b578e52f1325b116999b09e4c074b8f} 
+\index{Component@{Component}!Display@{Display}}
+\index{Display@{Display}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Display (\begin{DoxyParamCaption}\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_capacitor_a032f12506154b8f353d302deb35d4a72}{Capacitor}}, \mbox{\hyperlink{class_inductor_a7162d9c8a63cc89bce90c104cb324d1f}{Inductor}}, and \mbox{\hyperlink{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}{Resistor}}.
+
+\Hypertarget{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}\label{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7} 
+\index{Component@{Component}!GetName@{GetName}}
+\index{GetName@{GetName}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily virtual std\+::string Component\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_capacitor_ad53c8e0afce7629f2bcbf6299acf4999}{Capacitor}}, \mbox{\hyperlink{class_inductor_a7bf3d43b795db93952525dcb2ad4720b}{Inductor}}, and \mbox{\hyperlink{class_resistor_a7ce084c8f44edda800354e60378f8692}{Resistor}}.
+
+\Hypertarget{class_component_acfea93c40240140362e7a03d263f2a17}\label{class_component_acfea93c40240140362e7a03d263f2a17} 
+\index{Component@{Component}!GetVoltage@{GetVoltage}}
+\index{GetVoltage@{GetVoltage}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{GetVoltage()}{GetVoltage()}}
+{\footnotesize\ttfamily virtual double Component\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{double}]{\+\_\+current,  }\item[{double}]{timestep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_capacitor_af23e972081307b1d8b5980d7aa335999}{Capacitor}}, \mbox{\hyperlink{class_inductor_ae045cf8523e9165db6fae8db50912fda}{Inductor}}, and \mbox{\hyperlink{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}{Resistor}}.
+
+\Hypertarget{class_component_ad3ee7184ccb015b166af2cebf94a6b10}\label{class_component_ad3ee7184ccb015b166af2cebf94a6b10} 
+\index{Component@{Component}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Set\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_capacitor_ad359475527a08035d5cf2e1ba17216e5}{Capacitor}}, \mbox{\hyperlink{class_inductor_ad57d15aeb4479d0bef84400649ad2e68}{Inductor}}, and \mbox{\hyperlink{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}{Resistor}}.
+
+\Hypertarget{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}\label{class_component_a1299af5f5bbaf277c9c7881bc8c241bc} 
+\index{Component@{Component}!Update@{Update}}
+\index{Update@{Update}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_inductor_adcfc54d563afee6eb59c45496d3f7eef}{Inductor}}, \mbox{\hyperlink{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}{Resistor}}, and \mbox{\hyperlink{class_capacitor_ab4d161bad90659e3f32f757a4e10c3fa}{Capacitor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}\label{class_component_aed6b29d9378c59dbf0e4ee950b6084f4} 
+\index{Component@{Component}!Blue@{Blue}}
+\index{Blue@{Blue}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Blue}{Blue}}
+{\footnotesize\ttfamily float Component\+::\+Blue\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{component_8h_source_l00027}{27}} of file \mbox{\hyperlink{component_8h_source}{component.\+h}}.
+
+\Hypertarget{class_component_a7969050ef5900af7eb5db990afc0f582}\label{class_component_a7969050ef5900af7eb5db990afc0f582} 
+\index{Component@{Component}!Green@{Green}}
+\index{Green@{Green}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Green}{Green}}
+{\footnotesize\ttfamily float Component\+::\+Green\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{component_8h_source_l00026}{26}} of file \mbox{\hyperlink{component_8h_source}{component.\+h}}.
+
+\Hypertarget{class_component_a46343549452bda5ee9752f7a9bc15efb}\label{class_component_a46343549452bda5ee9752f7a9bc15efb} 
+\index{Component@{Component}!name@{name}}
+\index{name@{name}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Component\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{component_8h_source_l00028}{28}} of file \mbox{\hyperlink{component_8h_source}{component.\+h}}.
+
+\Hypertarget{class_component_a627ec61e88e3a92f7df344b52bbb4efa}\label{class_component_a627ec61e88e3a92f7df344b52bbb4efa} 
+\index{Component@{Component}!Red@{Red}}
+\index{Red@{Red}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Red}{Red}}
+{\footnotesize\ttfamily float Component\+::\+Red\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{component_8h_source_l00025}{25}} of file \mbox{\hyperlink{component_8h_source}{component.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{component_8h}{component.\+h}}\end{DoxyCompactItemize}

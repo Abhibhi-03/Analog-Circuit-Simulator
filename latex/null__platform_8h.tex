@@ -1,0 +1,120 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/null\+\_\+platform.h File Reference}
+\hypertarget{null__platform_8h}{}\label{null__platform_8h}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/null\_platform.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/null\_platform.h}}
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include "{}osmesa\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}posix\+\_\+time.\+h"{}}\newline
+{\ttfamily \#include "{}posix\+\_\+thread.\+h"{}}\newline
+{\ttfamily \#include "{}null\+\_\+joystick.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}} null
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Context; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE}}~struct \{ int dummy\+Monitor; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE}}~struct \{ int dummy\+Cursor; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_ad666193a847340c128970216fc00f92c}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}}~struct \{ int dummy\+Library\+Window; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Library\+Context; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_a7527be8d23c4f6ef26e35694f81c0253}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+EGLContext; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_a1e49276c184872315159484bc6f37c3b}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+EGLLibrary\+Context; \}
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}{\+\_\+glfw\+\_\+dlopen}}(name)~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}{\+\_\+glfw\+\_\+dlclose}}(handle)~dlclose(handle)
+\item 
+\#define \mbox{\hyperlink{null__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}{\+\_\+glfw\+\_\+dlsym}}(handle,  name)~dlsym(handle, name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}} \mbox{\hyperlink{null__platform_8h_a23736ae4a639154ae39fd9b842f12b98}{\+\_\+\+GLFWwindow\+Null}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{null__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}\label{null__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559} 
+\index{null\_platform.h@{null\_platform.h}!\_glfw\_dlclose@{\_glfw\_dlclose}}
+\index{\_glfw\_dlclose@{\_glfw\_dlclose}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlclose}{\_glfw\_dlclose}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlclose(\begin{DoxyParamCaption}\item[{}]{handle }\end{DoxyParamCaption})~dlclose(handle)}
+
+\Hypertarget{null__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}\label{null__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569} 
+\index{null\_platform.h@{null\_platform.h}!\_glfw\_dlopen@{\_glfw\_dlopen}}
+\index{\_glfw\_dlopen@{\_glfw\_dlopen}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlopen}{\_glfw\_dlopen}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlopen(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)}
+
+\Hypertarget{null__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}\label{null__platform_8h_ac0795db0183d348f2867cc5a6322bfbc} 
+\index{null\_platform.h@{null\_platform.h}!\_glfw\_dlsym@{\_glfw\_dlsym}}
+\index{\_glfw\_dlsym@{\_glfw\_dlsym}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlsym}{\_glfw\_dlsym}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlsym(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{name }\end{DoxyParamCaption})~dlsym(handle, name)}
+
+\Hypertarget{null__platform_8h_a7527be8d23c4f6ef26e35694f81c0253}\label{null__platform_8h_a7527be8d23c4f6ef26e35694f81c0253} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_EGL\_CONTEXT\_STATE@{\_GLFW\_EGL\_CONTEXT\_STATE}}
+\index{\_GLFW\_EGL\_CONTEXT\_STATE@{\_GLFW\_EGL\_CONTEXT\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_CONTEXT\_STATE}{\_GLFW\_EGL\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+EGLContext; \}}
+
+\Hypertarget{null__platform_8h_a1e49276c184872315159484bc6f37c3b}\label{null__platform_8h_a1e49276c184872315159484bc6f37c3b} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+EGLLibrary\+Context; \}}
+
+\Hypertarget{null__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}\label{null__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Context; \}}
+
+\Hypertarget{null__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}\label{null__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CURSOR\_STATE}{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE~struct \{ int dummy\+Cursor; \}}
+
+\Hypertarget{null__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}\label{null__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Library\+Context; \}}
+
+\Hypertarget{null__platform_8h_ad666193a847340c128970216fc00f92c}\label{null__platform_8h_ad666193a847340c128970216fc00f92c} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE~struct \{ int dummy\+Library\+Window; \}}
+
+\Hypertarget{null__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}\label{null__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_MONITOR\_STATE}{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE~struct \{ int dummy\+Monitor; \}}
+
+\Hypertarget{null__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}\label{null__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}} null}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{null__platform_8h_a23736ae4a639154ae39fd9b842f12b98}\label{null__platform_8h_a23736ae4a639154ae39fd9b842f12b98} 
+\index{null\_platform.h@{null\_platform.h}!\_GLFWwindowNull@{\_GLFWwindowNull}}
+\index{\_GLFWwindowNull@{\_GLFWwindowNull}!null\_platform.h@{null\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWwindowNull}{\_GLFWwindowNull}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}} \mbox{\hyperlink{struct___g_l_f_wwindow_null}{\+\_\+\+GLFWwindow\+Null}}}
+

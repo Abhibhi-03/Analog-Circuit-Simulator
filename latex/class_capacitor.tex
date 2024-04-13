@@ -1,0 +1,150 @@
+\doxysection{Capacitor Class Reference}
+\hypertarget{class_capacitor}{}\label{class_capacitor}\index{Capacitor@{Capacitor}}
+
+
+{\ttfamily \#include $<$Capacitor.\+h$>$}
+
+Inheritance diagram for Capacitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_capacitor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacitor_a8419daa37be021ab05ebec2f337ce960}{Capacitor}} (double capacitance, double red, double green, double blue, std\+::string name)
+\item 
+double \mbox{\hyperlink{class_capacitor_af23e972081307b1d8b5980d7aa335999}{Get\+Voltage}} (double current, double timestep) override
+\item 
+std\+::string \mbox{\hyperlink{class_capacitor_ad53c8e0afce7629f2bcbf6299acf4999}{Get\+Name}} () const override
+\item 
+void \mbox{\hyperlink{class_capacitor_a032f12506154b8f353d302deb35d4a72}{Display}} (double current, double voltage) override
+\item 
+void \mbox{\hyperlink{class_capacitor_ab4d161bad90659e3f32f757a4e10c3fa}{Update}} (double \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}}, double \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}}) override
+\item 
+double \mbox{\hyperlink{class_capacitor_adde5af0d81f2c51abacf9451fd0856da}{Get\+Inductance}} ()
+\item 
+void \mbox{\hyperlink{class_capacitor_ad359475527a08035d5cf2e1ba17216e5}{Set\+Color}} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}}
+\item 
+float \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}}
+\item 
+float \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}}
+\item 
+std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8h_source_l00007}{7}} of file \mbox{\hyperlink{_capacitor_8h_source}{Capacitor.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_capacitor_a8419daa37be021ab05ebec2f337ce960}\label{class_capacitor_a8419daa37be021ab05ebec2f337ce960} 
+\index{Capacitor@{Capacitor}!Capacitor@{Capacitor}}
+\index{Capacitor@{Capacitor}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{Capacitor()}{Capacitor()}}
+{\footnotesize\ttfamily Capacitor\+::\+Capacitor (\begin{DoxyParamCaption}\item[{double}]{capacitance,  }\item[{double}]{red,  }\item[{double}]{green,  }\item[{double}]{blue,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_capacitor_a032f12506154b8f353d302deb35d4a72}\label{class_capacitor_a032f12506154b8f353d302deb35d4a72} 
+\index{Capacitor@{Capacitor}!Display@{Display}}
+\index{Display@{Display}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Capacitor\+::\+Display (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+\Hypertarget{class_capacitor_adde5af0d81f2c51abacf9451fd0856da}\label{class_capacitor_adde5af0d81f2c51abacf9451fd0856da} 
+\index{Capacitor@{Capacitor}!GetInductance@{GetInductance}}
+\index{GetInductance@{GetInductance}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{GetInductance()}{GetInductance()}}
+{\footnotesize\ttfamily double Capacitor\+::\+Get\+Inductance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+\Hypertarget{class_capacitor_ad53c8e0afce7629f2bcbf6299acf4999}\label{class_capacitor_ad53c8e0afce7629f2bcbf6299acf4999} 
+\index{Capacitor@{Capacitor}!GetName@{GetName}}
+\index{GetName@{GetName}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Capacitor\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+\Hypertarget{class_capacitor_af23e972081307b1d8b5980d7aa335999}\label{class_capacitor_af23e972081307b1d8b5980d7aa335999} 
+\index{Capacitor@{Capacitor}!GetVoltage@{GetVoltage}}
+\index{GetVoltage@{GetVoltage}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{GetVoltage()}{GetVoltage()}}
+{\footnotesize\ttfamily double Capacitor\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{timestep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+\Hypertarget{class_capacitor_ad359475527a08035d5cf2e1ba17216e5}\label{class_capacitor_ad359475527a08035d5cf2e1ba17216e5} 
+\index{Capacitor@{Capacitor}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Capacitor\+::\+Set\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+\Hypertarget{class_capacitor_ab4d161bad90659e3f32f757a4e10c3fa}\label{class_capacitor_ab4d161bad90659e3f32f757a4e10c3fa} 
+\index{Capacitor@{Capacitor}!Update@{Update}}
+\index{Update@{Update}!Capacitor@{Capacitor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Capacitor\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_capacitor_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_capacitor_8cpp_source}{Capacitor.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_capacitor_8h}{Capacitor.\+h}}\item 
+\mbox{\hyperlink{_capacitor_8cpp}{Capacitor.\+cpp}}\end{DoxyCompactItemize}

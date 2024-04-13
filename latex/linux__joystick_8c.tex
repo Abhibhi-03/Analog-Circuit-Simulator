@@ -1,0 +1,81 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/linux\+\_\+joystick.c File Reference}
+\hypertarget{linux__joystick_8c}{}\label{linux__joystick_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/linux\_joystick.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/linux\_joystick.c}}
+{\ttfamily \#include "{}internal.\+h"{}}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/inotify.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{linux__joystick_8c_a722eb8b390bbac757caaa2d1f43c62d4}{SYN\+\_\+\+DROPPED}}~3
+\item 
+\#define \mbox{\hyperlink{linux__joystick_8c_a1ca0e95c17343cd70446cb3cee101d6a}{is\+Bit\+Set}}(bit,  arr)~(arr\mbox{[}(bit) / 8\mbox{]} \& (1 $<$$<$ ((bit) \% 8)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{linux__joystick_8c_a17dc11e9772c08f5afdbe17d6830a8f5}{\+\_\+glfw\+Init\+Joysticks\+Linux}} (void)
+\item 
+void \mbox{\hyperlink{linux__joystick_8c_a64271879f7bf9f6a9e9631310a7e75f1}{\+\_\+glfw\+Terminate\+Joysticks\+Linux}} (void)
+\item 
+void \mbox{\hyperlink{linux__joystick_8c_ad94630838d7c9d77b8c13518a47fcbef}{\+\_\+glfw\+Detect\+Joystick\+Connection\+Linux}} (void)
+\item 
+int \mbox{\hyperlink{linux__joystick_8c_a07c7e99222e703fbd67b2c6045d6440f}{\+\_\+glfw\+Platform\+Poll\+Joystick}} (\mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \texorpdfstring{$\ast$}{*}js, int mode)
+\item 
+void \mbox{\hyperlink{linux__joystick_8c_ab9fd6c52f91cdf20f1b190a365709033}{\+\_\+glfw\+Platform\+Update\+Gamepad\+GUID}} (char \texorpdfstring{$\ast$}{*}guid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{linux__joystick_8c_a1ca0e95c17343cd70446cb3cee101d6a}\label{linux__joystick_8c_a1ca0e95c17343cd70446cb3cee101d6a} 
+\index{linux\_joystick.c@{linux\_joystick.c}!isBitSet@{isBitSet}}
+\index{isBitSet@{isBitSet}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{isBitSet}{isBitSet}}
+{\footnotesize\ttfamily \#define is\+Bit\+Set(\begin{DoxyParamCaption}\item[{}]{bit,  }\item[{}]{arr }\end{DoxyParamCaption})~(arr\mbox{[}(bit) / 8\mbox{]} \& (1 $<$$<$ ((bit) \% 8)))}
+
+\Hypertarget{linux__joystick_8c_a722eb8b390bbac757caaa2d1f43c62d4}\label{linux__joystick_8c_a722eb8b390bbac757caaa2d1f43c62d4} 
+\index{linux\_joystick.c@{linux\_joystick.c}!SYN\_DROPPED@{SYN\_DROPPED}}
+\index{SYN\_DROPPED@{SYN\_DROPPED}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{SYN\_DROPPED}{SYN\_DROPPED}}
+{\footnotesize\ttfamily \#define SYN\+\_\+\+DROPPED~3}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{linux__joystick_8c_ad94630838d7c9d77b8c13518a47fcbef}\label{linux__joystick_8c_ad94630838d7c9d77b8c13518a47fcbef} 
+\index{linux\_joystick.c@{linux\_joystick.c}!\_glfwDetectJoystickConnectionLinux@{\_glfwDetectJoystickConnectionLinux}}
+\index{\_glfwDetectJoystickConnectionLinux@{\_glfwDetectJoystickConnectionLinux}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwDetectJoystickConnectionLinux()}{\_glfwDetectJoystickConnectionLinux()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Detect\+Joystick\+Connection\+Linux (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{linux__joystick_8c_a17dc11e9772c08f5afdbe17d6830a8f5}\label{linux__joystick_8c_a17dc11e9772c08f5afdbe17d6830a8f5} 
+\index{linux\_joystick.c@{linux\_joystick.c}!\_glfwInitJoysticksLinux@{\_glfwInitJoysticksLinux}}
+\index{\_glfwInitJoysticksLinux@{\_glfwInitJoysticksLinux}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwInitJoysticksLinux()}{\_glfwInitJoysticksLinux()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Init\+Joysticks\+Linux (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{linux__joystick_8c_a07c7e99222e703fbd67b2c6045d6440f}\label{linux__joystick_8c_a07c7e99222e703fbd67b2c6045d6440f} 
+\index{linux\_joystick.c@{linux\_joystick.c}!\_glfwPlatformPollJoystick@{\_glfwPlatformPollJoystick}}
+\index{\_glfwPlatformPollJoystick@{\_glfwPlatformPollJoystick}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformPollJoystick()}{\_glfwPlatformPollJoystick()}}
+{\footnotesize\ttfamily int \+\_\+glfw\+Platform\+Poll\+Joystick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \texorpdfstring{$\ast$}{*}}]{js,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{linux__joystick_8c_ab9fd6c52f91cdf20f1b190a365709033}\label{linux__joystick_8c_ab9fd6c52f91cdf20f1b190a365709033} 
+\index{linux\_joystick.c@{linux\_joystick.c}!\_glfwPlatformUpdateGamepadGUID@{\_glfwPlatformUpdateGamepadGUID}}
+\index{\_glfwPlatformUpdateGamepadGUID@{\_glfwPlatformUpdateGamepadGUID}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformUpdateGamepadGUID()}{\_glfwPlatformUpdateGamepadGUID()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Platform\+Update\+Gamepad\+GUID (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{guid }\end{DoxyParamCaption})}
+
+\Hypertarget{linux__joystick_8c_a64271879f7bf9f6a9e9631310a7e75f1}\label{linux__joystick_8c_a64271879f7bf9f6a9e9631310a7e75f1} 
+\index{linux\_joystick.c@{linux\_joystick.c}!\_glfwTerminateJoysticksLinux@{\_glfwTerminateJoysticksLinux}}
+\index{\_glfwTerminateJoysticksLinux@{\_glfwTerminateJoysticksLinux}!linux\_joystick.c@{linux\_joystick.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwTerminateJoysticksLinux()}{\_glfwTerminateJoysticksLinux()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Terminate\+Joysticks\+Linux (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

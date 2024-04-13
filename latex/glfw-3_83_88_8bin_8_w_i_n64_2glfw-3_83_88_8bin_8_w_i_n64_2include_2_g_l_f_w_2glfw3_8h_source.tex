@@ -1,0 +1,916 @@
+\doxysection{glfw3.\+h}
+\hypertarget{glfw-3_83_88_8bin_8_w_i_n64_2glfw-3_83_88_8bin_8_w_i_n64_2include_2_g_l_f_w_2glfw3_8h_source}{}\label{glfw-3_83_88_8bin_8_w_i_n64_2glfw-3_83_88_8bin_8_w_i_n64_2include_2_g_l_f_w_2glfw3_8h_source}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8.bin.WIN64/glfw-\/3.3.8.bin.WIN64/include/GLFW/glfw3.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8.bin.WIN64/glfw-\/3.3.8.bin.WIN64/include/GLFW/glfw3.h}}
+\mbox{\hyperlink{glfw-3_83_88_8bin_8_w_i_n64_2glfw-3_83_88_8bin_8_w_i_n64_2include_2_g_l_f_w_2glfw3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ GLFW\ 3.3\ -\/\ www.glfw.org}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ A\ library\ for\ OpenGL,\ window\ and\ input}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2002-\/2006\ Marcus\ Geelnard}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2019\ Camilla\ Löwy\ <elmindreda@glfw.org>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ \ \ \ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ \ \ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ \ \ \ distribution.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ \_glfw3\_h\_}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ \_glfw3\_h\_}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ Doxygen\ documentation}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ Compiler-\/\ and\ platform-\/specific\ preprocessor\ work}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ If\ we\ are\ we\ on\ Windows,\ we\ want\ a\ single\ define\ for\ it.}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#if\ !defined(\_WIN32)\ \&\&\ (defined(\_\_WIN32\_\_)\ ||\ defined(WIN32)\ ||\ defined(\_\_MINGW32\_\_))}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \#define\ \_WIN32}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_WIN32\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{/*\ Include\ because\ most\ Windows\ GLU\ headers\ need\ wchar\_t\ and}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ the\ macOS\ OpenGL\ header\ blocks\ the\ definition\ of\ ptrdiff\_t\ by\ glext.h.}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ *\ Include\ it\ unconditionally\ to\ avoid\ surprising\ side-\/effects.}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{/*\ Include\ because\ it\ is\ needed\ by\ Vulkan\ and\ related\ functions.}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ *\ Include\ it\ unconditionally\ to\ avoid\ surprising\ side-\/effects.}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#if\ defined(GLFW\_INCLUDE\_VULKAN)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \#include\ <vulkan/vulkan.h>}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Vulkan\ header\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*\ The\ Vulkan\ header\ may\ have\ indirectly\ included\ windows.h\ (because\ of}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ *\ VK\_USE\_PLATFORM\_WIN32\_KHR)\ so\ we\ offer\ our\ replacement\ symbols\ after\ it.}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*\ It\ is\ customary\ to\ use\ APIENTRY\ for\ OpenGL\ function\ pointer\ declarations\ on}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ *\ all\ platforms.\ \ Additionally,\ the\ Windows\ OpenGL\ header\ needs\ APIENTRY.}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#if\ !defined(APIENTRY)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \#if\ defined(\_WIN32)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \#define\ APIENTRY\ \_\_stdcall}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \#else}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \#define\ APIENTRY}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \#define\ GLFW\_APIENTRY\_DEFINED}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ APIENTRY\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{/*\ Some\ Windows\ OpenGL\ headers\ need\ this.}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#if\ !defined(WINGDIAPI)\ \&\&\ defined(\_WIN32)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \#define\ WINGDIAPI\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \#define\ GLFW\_WINGDIAPI\_DEFINED}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ WINGDIAPI\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{/*\ Some\ Windows\ GLU\ headers\ need\ this.}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#if\ !defined(CALLBACK)\ \&\&\ defined(\_WIN32)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \#define\ CALLBACK\ \_\_stdcall}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \#define\ GLFW\_CALLBACK\_DEFINED}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CALLBACK\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{/*\ Include\ the\ chosen\ OpenGL\ or\ OpenGL\ ES\ headers.}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#if\ defined(GLFW\_INCLUDE\_ES1)}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \#include\ <GLES/gl.h>}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \#include\ <GLES/glext.h>}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_ES2)}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \#include\ <GLES2/gl2.h>}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \#include\ <GLES2/gl2ext.h>}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_ES3)}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \#include\ <GLES3/gl3.h>}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \#include\ <GLES2/gl2ext.h>}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_ES31)}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \#include\ <GLES3/gl31.h>}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \#include\ <GLES2/gl2ext.h>}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_ES32)}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\ \#include\ <GLES3/gl32.h>}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \#include\ <GLES2/gl2ext.h>}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \#endif}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_GLCOREARB)}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \#include\ <OpenGL/gl3.h>}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \#include\ <OpenGL/gl3ext.h>}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*GLFW\_INCLUDE\_GLEXT*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \#else\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \#include\ <GL/glcorearb.h>}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \#include\ <GL/glext.h>}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \#endif\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#elif\ defined(GLFW\_INCLUDE\_GLU)}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\ \#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_INCLUDE\_GLU)}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \#include\ <OpenGL/glu.h>}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\ \#else\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_INCLUDE\_GLU)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ \ \#include\ <GL/glu.h>}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \#endif\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#elif\ !defined(GLFW\_INCLUDE\_NONE)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gles1\_gl\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gles2\_gl2\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gles2\_gl3\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gles2\_gl31\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gles2\_gl32\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl\_glcorearb\_h\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl2\_h\_)\ }\textcolor{comment}{/*legacy*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl3\_h\_)\ }\textcolor{comment}{/*legacy*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl31\_h\_)\ }\textcolor{comment}{/*legacy*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gl32\_h\_)\ }\textcolor{comment}{/*legacy*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_glcorearb\_h\_)\ }\textcolor{comment}{/*legacy*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_GL\_H\_\_)\ }\textcolor{comment}{/*non-\/standard*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_gltypes\_h\_)\ }\textcolor{comment}{/*non-\/standard*/}\textcolor{preprocessor}{\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\ \ \ \ \ \ !defined(\_\_glee\_h\_)\ }\textcolor{comment}{/*non-\/standard*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\ \#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\ \ \#if\ !defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \#define\ GL\_GLEXT\_LEGACY}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \#include\ <OpenGL/gl.h>}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \#else\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \#include\ <GL/gl.h>}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \#if\ defined(GLFW\_INCLUDE\_GLEXT)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ \#include\ <GL/glext.h>}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \#endif\ }\textcolor{comment}{/*\_\_APPLE\_\_*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ OpenGL\ and\ OpenGL\ ES\ headers\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#if\ defined(GLFW\_DLL)\ \&\&\ defined(\_GLFW\_BUILD\_DLL)}}
+\DoxyCodeLine{00251\ \ \textcolor{comment}{/*\ GLFW\_DLL\ must\ be\ defined\ by\ applications\ that\ are\ linking\ against\ the\ DLL}}
+\DoxyCodeLine{00252\ \textcolor{comment}{\ \ *\ version\ of\ the\ GLFW\ library.\ \ \_GLFW\_BUILD\_DLL\ is\ defined\ by\ the\ GLFW}}
+\DoxyCodeLine{00253\ \textcolor{comment}{\ \ *\ configuration\ header\ when\ compiling\ the\ DLL\ version\ of\ the\ library.}}
+\DoxyCodeLine{00254\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \#error\ "{}You\ must\ not\ have\ both\ GLFW\_DLL\ and\ \_GLFW\_BUILD\_DLL\ defined"{}}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{comment}{/*\ GLFWAPI\ is\ used\ to\ declare\ public\ API\ functions\ for\ export}}
+\DoxyCodeLine{00259\ \textcolor{comment}{\ *\ from\ the\ DLL\ /\ shared\ library\ /\ dynamic\ library.}}
+\DoxyCodeLine{00260\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ \&\&\ defined(\_GLFW\_BUILD\_DLL)}}
+\DoxyCodeLine{00262\ \ \textcolor{comment}{/*\ We\ are\ building\ GLFW\ as\ a\ Win32\ DLL\ */}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \#define\ GLFWAPI\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#elif\ defined(\_WIN32)\ \&\&\ defined(GLFW\_DLL)}}
+\DoxyCodeLine{00265\ \ \textcolor{comment}{/*\ We\ are\ calling\ a\ GLFW\ Win32\ DLL\ */}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \#define\ GLFWAPI\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ defined(\_GLFW\_BUILD\_DLL)}}
+\DoxyCodeLine{00268\ \ \textcolor{comment}{/*\ We\ are\ building\ GLFW\ as\ a\ Unix\ shared\ library\ */}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \#define\ GLFWAPI\ \_\_attribute\_\_((visibility("{}default"{})))}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \#define\ GLFWAPI}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ *\ GLFW\ API\ tokens}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ GLFW\_VERSION\_MAJOR\ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ GLFW\_VERSION\_MINOR\ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ GLFW\_VERSION\_REVISION\ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ GLFW\_TRUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ GLFW\_FALSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ GLFW\_RELEASE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ GLFW\_PRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ GLFW\_REPEAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_CENTERED\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_RIGHT\_UP\ \ \ \ \ \ \ \ \ \ \ (GLFW\_HAT\_RIGHT\ |\ GLFW\_HAT\_UP)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_RIGHT\_DOWN\ \ \ \ \ \ \ \ \ (GLFW\_HAT\_RIGHT\ |\ GLFW\_HAT\_DOWN)}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_LEFT\_UP\ \ \ \ \ \ \ \ \ \ \ \ (GLFW\_HAT\_LEFT\ \ |\ GLFW\_HAT\_UP)}}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ GLFW\_HAT\_LEFT\_DOWN\ \ \ \ \ \ \ \ \ \ (GLFW\_HAT\_LEFT\ \ |\ GLFW\_HAT\_DOWN)}}
+\DoxyCodeLine{00390\ \textcolor{comment}{/*\ The\ unknown\ key\ */}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_UNKNOWN\ \ \ \ \ \ \ \ \ \ \ \ -\/1}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \textcolor{comment}{/*\ Printable\ keys\ */}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_SPACE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 32}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_APOSTROPHE\ \ \ \ \ \ \ \ \ 39\ \ }\textcolor{comment}{/*\ '\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_COMMA\ \ \ \ \ \ \ \ \ \ \ \ \ \ 44\ \ }\textcolor{comment}{/*\ ,\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_MINUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 45\ \ }\textcolor{comment}{/*\ -\/\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_PERIOD\ \ \ \ \ \ \ \ \ \ \ \ \ 46\ \ }\textcolor{comment}{/*\ .\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_SLASH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 47\ \ }\textcolor{comment}{/*\ /\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 48}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 49}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 50}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 51}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 52}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 53}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 54}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 55}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 56}}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 57}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_SEMICOLON\ \ \ \ \ \ \ \ \ \ 59\ \ }\textcolor{comment}{/*\ ;\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_EQUAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 61\ \ }\textcolor{comment}{/*\ =\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 65}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 66}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 67}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 68}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_E\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 69}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 70}}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_G\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 71}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 72}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_I\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 73}}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_J\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 74}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_K\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 75}}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 76}}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_M\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 77}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_N\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 78}}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_O\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 79}}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_P\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 80}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_Q\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 81}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_R\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 82}}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_S\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 83}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_T\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 84}}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 85}}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 86}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_W\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 87}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 88}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_Y\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 89}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_Z\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 90}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\_BRACKET\ \ \ \ \ \ \ 91\ \ }\textcolor{comment}{/*\ [\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_BACKSLASH\ \ \ \ \ \ \ \ \ \ 92\ \ }\textcolor{comment}{/*\ \(\backslash\)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\_BRACKET\ \ \ \ \ \ 93\ \ }\textcolor{comment}{/*\ ]\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_GRAVE\_ACCENT\ \ \ \ \ \ \ 96\ \ }\textcolor{comment}{/*\ \`{}\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_WORLD\_1\ \ \ \ \ \ \ \ \ \ \ \ 161\ }\textcolor{comment}{/*\ non-\/US\ \#1\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_WORLD\_2\ \ \ \ \ \ \ \ \ \ \ \ 162\ }\textcolor{comment}{/*\ non-\/US\ \#2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{comment}{/*\ Function\ keys\ */}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_ESCAPE\ \ \ \ \ \ \ \ \ \ \ \ \ 256}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_ENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ 257}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_TAB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 258}}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_BACKSPACE\ \ \ \ \ \ \ \ \ \ 259}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_INSERT\ \ \ \ \ \ \ \ \ \ \ \ \ 260}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_DELETE\ \ \ \ \ \ \ \ \ \ \ \ \ 261}}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 262}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 263}}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 264}}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 265}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_PAGE\_UP\ \ \ \ \ \ \ \ \ \ \ \ 266}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_PAGE\_DOWN\ \ \ \ \ \ \ \ \ \ 267}}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_HOME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 268}}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 269}}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_CAPS\_LOCK\ \ \ \ \ \ \ \ \ \ 280}}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_SCROLL\_LOCK\ \ \ \ \ \ \ \ 281}}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_NUM\_LOCK\ \ \ \ \ \ \ \ \ \ \ 282}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_PRINT\_SCREEN\ \ \ \ \ \ \ 283}}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_PAUSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 284}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 290}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 291}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 292}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 293}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 294}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 295}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 296}}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 297}}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 298}}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 299}}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 300}}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 301}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 302}}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 303}}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 304}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 305}}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 306}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 307}}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 308}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 309}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 310}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 311}}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 312}}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 313}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_F25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 314}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 320}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 321}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 322}}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 323}}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 324}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 325}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 326}}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 327}}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 328}}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 329}}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_DECIMAL\ \ \ \ \ \ \ \ \ 330}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_DIVIDE\ \ \ \ \ \ \ \ \ \ 331}}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_MULTIPLY\ \ \ \ \ \ \ \ 332}}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_SUBTRACT\ \ \ \ \ \ \ \ 333}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_ADD\ \ \ \ \ \ \ \ \ \ \ \ \ 334}}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_ENTER\ \ \ \ \ \ \ \ \ \ \ 335}}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_KP\_EQUAL\ \ \ \ \ \ \ \ \ \ \ 336}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\_SHIFT\ \ \ \ \ \ \ \ \ 340}}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\_CONTROL\ \ \ \ \ \ \ 341}}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\_ALT\ \ \ \ \ \ \ \ \ \ \ 342}}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LEFT\_SUPER\ \ \ \ \ \ \ \ \ 343}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\_SHIFT\ \ \ \ \ \ \ \ 344}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\_CONTROL\ \ \ \ \ \ 345}}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\_ALT\ \ \ \ \ \ \ \ \ \ 346}}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_RIGHT\_SUPER\ \ \ \ \ \ \ \ 347}}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_MENU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 348}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ GLFW\_KEY\_LAST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GLFW\_KEY\_MENU}}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_CONTROL\ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_SUPER\ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_CAPS\_LOCK\ \ \ \ \ \ \ 0x0010}}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ GLFW\_MOD\_NUM\_LOCK\ \ \ \ \ \ \ \ 0x0020}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_1\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_2\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_3\ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_4\ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_5\ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_6\ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_7\ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_8\ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_LAST\ \ \ \ \ \ GLFW\_MOUSE\_BUTTON\_8}}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_LEFT\ \ \ \ \ \ GLFW\_MOUSE\_BUTTON\_1}}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_RIGHT\ \ \ \ \ GLFW\_MOUSE\_BUTTON\_2}}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ GLFW\_MOUSE\_BUTTON\_MIDDLE\ \ \ \ GLFW\_MOUSE\_BUTTON\_3}}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_1\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_2\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_3\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_4\ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_5\ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_6\ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_7\ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_8\ \ \ \ \ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_9\ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_10\ \ \ \ \ \ \ \ \ \ \ \ 9}}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_11\ \ \ \ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_12\ \ \ \ \ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_13\ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_14\ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_15\ \ \ \ \ \ \ \ \ \ \ \ 14}}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_16\ \ \ \ \ \ \ \ \ \ \ \ 15}}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_LAST\ \ \ \ \ \ \ \ \ \ GLFW\_JOYSTICK\_16}}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_Y\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_LEFT\_BUMPER\ \ \ \ \ 4}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_RIGHT\_BUMPER\ \ \ \ 5}}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_BACK\ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_START\ \ \ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_GUIDE\ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_LEFT\_THUMB\ \ \ \ \ \ 9}}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_RIGHT\_THUMB\ \ \ \ \ 10}}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_UP\ \ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_RIGHT\ \ \ \ \ \ 12}}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_DOWN\ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_DPAD\_LEFT\ \ \ \ \ \ \ 14}}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_LAST\ \ \ \ \ \ \ \ \ \ \ \ GLFW\_GAMEPAD\_BUTTON\_DPAD\_LEFT}}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_CROSS\ \ \ \ \ \ \ GLFW\_GAMEPAD\_BUTTON\_A}}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_CIRCLE\ \ \ \ \ \ GLFW\_GAMEPAD\_BUTTON\_B}}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_SQUARE\ \ \ \ \ \ GLFW\_GAMEPAD\_BUTTON\_X}}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_BUTTON\_TRIANGLE\ \ \ \ GLFW\_GAMEPAD\_BUTTON\_Y}}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_LEFT\_X\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_LEFT\_Y\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_X\ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_Y\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_LEFT\_TRIGGER\ \ 4}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_RIGHT\_TRIGGER\ 5}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ GLFW\_GAMEPAD\_AXIS\_LAST\ \ \ \ \ \ \ \ \ \ GLFW\_GAMEPAD\_AXIS\_RIGHT\_TRIGGER}}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ GLFW\_NOT\_INITIALIZED\ \ \ \ \ \ \ \ 0x00010001}}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_CURRENT\_CONTEXT\ \ \ \ \ 0x00010002}}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ GLFW\_INVALID\_ENUM\ \ \ \ \ \ \ \ \ \ \ 0x00010003}}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#define\ GLFW\_INVALID\_VALUE\ \ \ \ \ \ \ \ \ \ 0x00010004}}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ GLFW\_OUT\_OF\_MEMORY\ \ \ \ \ \ \ \ \ \ 0x00010005}}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ GLFW\_API\_UNAVAILABLE\ \ \ \ \ \ \ \ 0x00010006}}
+\DoxyCodeLine{00749\ \textcolor{preprocessor}{\#define\ GLFW\_VERSION\_UNAVAILABLE\ \ \ \ 0x00010007}}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#define\ GLFW\_PLATFORM\_ERROR\ \ \ \ \ \ \ \ \ 0x00010008}}
+\DoxyCodeLine{00779\ \textcolor{preprocessor}{\#define\ GLFW\_FORMAT\_UNAVAILABLE\ \ \ \ \ 0x00010009}}
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_WINDOW\_CONTEXT\ \ \ \ \ \ 0x0001000A}}
+\DoxyCodeLine{00797\ \textcolor{preprocessor}{\#define\ GLFW\_FOCUSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020001}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\#define\ GLFW\_ICONIFIED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020002}}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#define\ GLFW\_RESIZABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020003}}
+\DoxyCodeLine{00814\ \textcolor{preprocessor}{\#define\ GLFW\_VISIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020004}}
+\DoxyCodeLine{00820\ \textcolor{preprocessor}{\#define\ GLFW\_DECORATED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020005}}
+\DoxyCodeLine{00826\ \textcolor{preprocessor}{\#define\ GLFW\_AUTO\_ICONIFY\ \ \ \ \ \ \ \ \ \ \ 0x00020006}}
+\DoxyCodeLine{00832\ \textcolor{preprocessor}{\#define\ GLFW\_FLOATING\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020007}}
+\DoxyCodeLine{00838\ \textcolor{preprocessor}{\#define\ GLFW\_MAXIMIZED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020008}}
+\DoxyCodeLine{00843\ \textcolor{preprocessor}{\#define\ GLFW\_CENTER\_CURSOR\ \ \ \ \ \ \ \ \ \ 0x00020009}}
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ GLFW\_TRANSPARENT\_FRAMEBUFFER\ 0x0002000A}}
+\DoxyCodeLine{00855\ \textcolor{preprocessor}{\#define\ GLFW\_HOVERED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002000B}}
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\#define\ GLFW\_FOCUS\_ON\_SHOW\ \ \ \ \ \ \ \ \ \ 0x0002000C}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\#define\ GLFW\_RED\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00021001}}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\#define\ GLFW\_GREEN\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00021002}}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#define\ GLFW\_BLUE\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00021003}}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\#define\ GLFW\_ALPHA\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00021004}}
+\DoxyCodeLine{00887\ \textcolor{preprocessor}{\#define\ GLFW\_DEPTH\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00021005}}
+\DoxyCodeLine{00892\ \textcolor{preprocessor}{\#define\ GLFW\_STENCIL\_BITS\ \ \ \ \ \ \ \ \ \ \ 0x00021006}}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\#define\ GLFW\_ACCUM\_RED\_BITS\ \ \ \ \ \ \ \ \ 0x00021007}}
+\DoxyCodeLine{00902\ \textcolor{preprocessor}{\#define\ GLFW\_ACCUM\_GREEN\_BITS\ \ \ \ \ \ \ 0x00021008}}
+\DoxyCodeLine{00907\ \textcolor{preprocessor}{\#define\ GLFW\_ACCUM\_BLUE\_BITS\ \ \ \ \ \ \ \ 0x00021009}}
+\DoxyCodeLine{00912\ \textcolor{preprocessor}{\#define\ GLFW\_ACCUM\_ALPHA\_BITS\ \ \ \ \ \ \ 0x0002100A}}
+\DoxyCodeLine{00917\ \textcolor{preprocessor}{\#define\ GLFW\_AUX\_BUFFERS\ \ \ \ \ \ \ \ \ \ \ \ 0x0002100B}}
+\DoxyCodeLine{00922\ \textcolor{preprocessor}{\#define\ GLFW\_STEREO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002100C}}
+\DoxyCodeLine{00927\ \textcolor{preprocessor}{\#define\ GLFW\_SAMPLES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002100D}}
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\#define\ GLFW\_SRGB\_CAPABLE\ \ \ \ \ \ \ \ \ \ \ 0x0002100E}}
+\DoxyCodeLine{00937\ \textcolor{preprocessor}{\#define\ GLFW\_REFRESH\_RATE\ \ \ \ \ \ \ \ \ \ \ 0x0002100F}}
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\#define\ GLFW\_DOUBLEBUFFER\ \ \ \ \ \ \ \ \ \ \ 0x00021010}}
+\DoxyCodeLine{00943\ }
+\DoxyCodeLine{00949\ \textcolor{preprocessor}{\#define\ GLFW\_CLIENT\_API\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00022001}}
+\DoxyCodeLine{00955\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_VERSION\_MAJOR\ \ 0x00022002}}
+\DoxyCodeLine{00961\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_VERSION\_MINOR\ \ 0x00022003}}
+\DoxyCodeLine{00967\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_REVISION\ \ \ \ \ \ \ 0x00022004}}
+\DoxyCodeLine{00973\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_ROBUSTNESS\ \ \ \ \ 0x00022005}}
+\DoxyCodeLine{00979\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_FORWARD\_COMPAT\ \ 0x00022006}}
+\DoxyCodeLine{00985\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_DEBUG\_CONTEXT\ \ \ 0x00022007}}
+\DoxyCodeLine{00991\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_PROFILE\ \ \ \ \ \ \ \ \ 0x00022008}}
+\DoxyCodeLine{00997\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_RELEASE\_BEHAVIOR\ 0x00022009}}
+\DoxyCodeLine{01003\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_NO\_ERROR\ \ \ \ \ \ \ 0x0002200A}}
+\DoxyCodeLine{01009\ \textcolor{preprocessor}{\#define\ GLFW\_CONTEXT\_CREATION\_API\ \ \ 0x0002200B}}
+\DoxyCodeLine{01013\ \textcolor{preprocessor}{\#define\ GLFW\_SCALE\_TO\_MONITOR\ \ \ \ \ \ \ 0x0002200C}}
+\DoxyCodeLine{01017\ \textcolor{preprocessor}{\#define\ GLFW\_COCOA\_RETINA\_FRAMEBUFFER\ 0x00023001}}
+\DoxyCodeLine{01021\ \textcolor{preprocessor}{\#define\ GLFW\_COCOA\_FRAME\_NAME\ \ \ \ \ \ \ \ \ 0x00023002}}
+\DoxyCodeLine{01025\ \textcolor{preprocessor}{\#define\ GLFW\_COCOA\_GRAPHICS\_SWITCHING\ 0x00023003}}
+\DoxyCodeLine{01029\ \textcolor{preprocessor}{\#define\ GLFW\_X11\_CLASS\_NAME\ \ \ \ \ \ \ \ \ 0x00024001}}
+\DoxyCodeLine{01033\ \textcolor{preprocessor}{\#define\ GLFW\_X11\_INSTANCE\_NAME\ \ \ \ \ \ 0x00024002}}
+\DoxyCodeLine{01036\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_API\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{01037\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_API\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00030001}}
+\DoxyCodeLine{01038\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_ES\_API\ \ \ \ \ \ \ \ \ \ 0x00030002}}
+\DoxyCodeLine{01039\ }
+\DoxyCodeLine{01040\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_ROBUSTNESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{01041\ \textcolor{preprocessor}{\#define\ GLFW\_NO\_RESET\_NOTIFICATION\ \ 0x00031001}}
+\DoxyCodeLine{01042\ \textcolor{preprocessor}{\#define\ GLFW\_LOSE\_CONTEXT\_ON\_RESET\ \ 0x00031002}}
+\DoxyCodeLine{01043\ }
+\DoxyCodeLine{01044\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_ANY\_PROFILE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{01045\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_CORE\_PROFILE\ \ \ \ 0x00032001}}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\#define\ GLFW\_OPENGL\_COMPAT\_PROFILE\ \ 0x00032002}}
+\DoxyCodeLine{01047\ }
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#define\ GLFW\_CURSOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00033001}}
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\#define\ GLFW\_STICKY\_KEYS\ \ \ \ \ \ \ \ \ \ \ \ 0x00033002}}
+\DoxyCodeLine{01050\ \textcolor{preprocessor}{\#define\ GLFW\_STICKY\_MOUSE\_BUTTONS\ \ \ 0x00033003}}
+\DoxyCodeLine{01051\ \textcolor{preprocessor}{\#define\ GLFW\_LOCK\_KEY\_MODS\ \ \ \ \ \ \ \ \ \ 0x00033004}}
+\DoxyCodeLine{01052\ \textcolor{preprocessor}{\#define\ GLFW\_RAW\_MOUSE\_MOTION\ \ \ \ \ \ \ 0x00033005}}
+\DoxyCodeLine{01053\ }
+\DoxyCodeLine{01054\ \textcolor{preprocessor}{\#define\ GLFW\_CURSOR\_NORMAL\ \ \ \ \ \ \ \ \ \ 0x00034001}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\#define\ GLFW\_CURSOR\_HIDDEN\ \ \ \ \ \ \ \ \ \ 0x00034002}}
+\DoxyCodeLine{01056\ \textcolor{preprocessor}{\#define\ GLFW\_CURSOR\_DISABLED\ \ \ \ \ \ \ \ 0x00034003}}
+\DoxyCodeLine{01057\ }
+\DoxyCodeLine{01058\ \textcolor{preprocessor}{\#define\ GLFW\_ANY\_RELEASE\_BEHAVIOR\ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{01059\ \textcolor{preprocessor}{\#define\ GLFW\_RELEASE\_BEHAVIOR\_FLUSH\ 0x00035001}}
+\DoxyCodeLine{01060\ \textcolor{preprocessor}{\#define\ GLFW\_RELEASE\_BEHAVIOR\_NONE\ \ 0x00035002}}
+\DoxyCodeLine{01061\ }
+\DoxyCodeLine{01062\ \textcolor{preprocessor}{\#define\ GLFW\_NATIVE\_CONTEXT\_API\ \ \ \ \ 0x00036001}}
+\DoxyCodeLine{01063\ \textcolor{preprocessor}{\#define\ GLFW\_EGL\_CONTEXT\_API\ \ \ \ \ \ \ \ 0x00036002}}
+\DoxyCodeLine{01064\ \textcolor{preprocessor}{\#define\ GLFW\_OSMESA\_CONTEXT\_API\ \ \ \ \ 0x00036003}}
+\DoxyCodeLine{01065\ }
+\DoxyCodeLine{01078\ \textcolor{preprocessor}{\#define\ GLFW\_ARROW\_CURSOR\ \ \ \ \ \ \ \ \ \ \ 0x00036001}}
+\DoxyCodeLine{01083\ \textcolor{preprocessor}{\#define\ GLFW\_IBEAM\_CURSOR\ \ \ \ \ \ \ \ \ \ \ 0x00036002}}
+\DoxyCodeLine{01088\ \textcolor{preprocessor}{\#define\ GLFW\_CROSSHAIR\_CURSOR\ \ \ \ \ \ \ 0x00036003}}
+\DoxyCodeLine{01093\ \textcolor{preprocessor}{\#define\ GLFW\_HAND\_CURSOR\ \ \ \ \ \ \ \ \ \ \ \ 0x00036004}}
+\DoxyCodeLine{01098\ \textcolor{preprocessor}{\#define\ GLFW\_HRESIZE\_CURSOR\ \ \ \ \ \ \ \ \ 0x00036005}}
+\DoxyCodeLine{01103\ \textcolor{preprocessor}{\#define\ GLFW\_VRESIZE\_CURSOR\ \ \ \ \ \ \ \ \ 0x00036006}}
+\DoxyCodeLine{01106\ \textcolor{preprocessor}{\#define\ GLFW\_CONNECTED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00040001}}
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\#define\ GLFW\_DISCONNECTED\ \ \ \ \ \ \ \ \ \ \ 0x00040002}}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01115\ \textcolor{preprocessor}{\#define\ GLFW\_JOYSTICK\_HAT\_BUTTONS\ \ \ 0x00050001}}
+\DoxyCodeLine{01120\ \textcolor{preprocessor}{\#define\ GLFW\_COCOA\_CHDIR\_RESOURCES\ \ 0x00051001}}
+\DoxyCodeLine{01125\ \textcolor{preprocessor}{\#define\ GLFW\_COCOA\_MENUBAR\ \ \ \ \ \ \ \ \ \ 0x00051002}}
+\DoxyCodeLine{01128\ \textcolor{preprocessor}{\#define\ GLFW\_DONT\_CARE\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/1}}
+\DoxyCodeLine{01129\ }
+\DoxyCodeLine{01130\ }
+\DoxyCodeLine{01131\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{01132\ \textcolor{comment}{\ *\ GLFW\ API\ types}}
+\DoxyCodeLine{01133\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{01134\ }
+\DoxyCodeLine{01147\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__context_ga3d47c2d2fbe0be9c505d0e04e91a133c}{GLFWglproc}})(void);}
+\DoxyCodeLine{01148\ }
+\DoxyCodeLine{01161\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__vulkan_ga70c01918dc9d233a4fbe0681a43018af}{GLFWvkproc}})(void);}
+\DoxyCodeLine{01162\ }
+\DoxyCodeLine{01173\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}};}
+\DoxyCodeLine{01174\ }
+\DoxyCodeLine{01185\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}\ \mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}};}
+\DoxyCodeLine{01186\ }
+\DoxyCodeLine{01197\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}}\ \mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}};}
+\DoxyCodeLine{01198\ }
+\DoxyCodeLine{01221\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}})(\textcolor{keywordtype}{int}\ error\_code,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ description);}
+\DoxyCodeLine{01222\ }
+\DoxyCodeLine{01244\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_gabe287973a21a8f927cde4db06b8dcbe9}{GLFWwindowposfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{01245\ }
+\DoxyCodeLine{01266\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_gaec0282944bb810f6f3163ec02da90350}{GLFWwindowsizefun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{01267\ }
+\DoxyCodeLine{01286\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_gabf859b936d80961b7d39013a9694cc3e}{GLFWwindowclosefun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{01287\ }
+\DoxyCodeLine{01306\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_ga431663a1427d2eb3a273bc398b6737b5}{GLFWwindowrefreshfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{01307\ }
+\DoxyCodeLine{01327\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_gabc58c47e9d93f6eb1862d615c3680f46}{GLFWwindowfocusfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ focused);}
+\DoxyCodeLine{01328\ }
+\DoxyCodeLine{01348\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_ga35c658cccba236f26e7adee0e25f6a4f}{GLFWwindowiconifyfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ iconified);}
+\DoxyCodeLine{01349\ }
+\DoxyCodeLine{01369\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_ga3017196fdaec33ac3e095765176c2a90}{GLFWwindowmaximizefun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ maximized);}
+\DoxyCodeLine{01370\ }
+\DoxyCodeLine{01390\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_gae18026e294dde685ed2e5f759533144d}{GLFWframebuffersizefun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{01391\ }
+\DoxyCodeLine{01411\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__window_ga77f288a2d04bb3c77c7d9615d08cf70e}{GLFWwindowcontentscalefun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{float}\ xscale,\ \textcolor{keywordtype}{float}\ yscale);}
+\DoxyCodeLine{01412\ }
+\DoxyCodeLine{01437\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_ga0184dcb59f6d85d735503dcaae809727}{GLFWmousebuttonfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{01438\ }
+\DoxyCodeLine{01460\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gad6fae41b3ac2e4209aaa87b596c57f68}{GLFWcursorposfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{01461\ }
+\DoxyCodeLine{01481\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gaa93dc4818ac9ab32532909d53a337cbe}{GLFWcursorenterfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ entered);}
+\DoxyCodeLine{01482\ }
+\DoxyCodeLine{01502\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gaf656112c33de3efdb227fa58f0134cf5}{GLFWscrollfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{double}\ xoffset,\ \textcolor{keywordtype}{double}\ yoffset);}
+\DoxyCodeLine{01503\ }
+\DoxyCodeLine{01528\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_ga5bd751b27b90f865d2ea613533f0453c}{GLFWkeyfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gears_8c_accd6b5b92b78666e36543412d4ac14cd}{key}},\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{01529\ }
+\DoxyCodeLine{01549\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_ga1ab90a55cf3f58639b893c0f4118cb6e}{GLFWcharfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ codepoint);}
+\DoxyCodeLine{01550\ }
+\DoxyCodeLine{01576\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gac3cf64f90b6219c05ac7b7822d5a4b8f}{GLFWcharmodsfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ codepoint,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{01577\ }
+\DoxyCodeLine{01600\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gaaba73c3274062c18723b7f05862d94b2}{GLFWdropfun}})(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ path\_count,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ paths[]);}
+\DoxyCodeLine{01601\ }
+\DoxyCodeLine{01621\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__monitor_gaabe16caca8dea952504dfdebdf4cd249}{GLFWmonitorfun}})(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}\ event);}
+\DoxyCodeLine{01622\ }
+\DoxyCodeLine{01642\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{group__input_gaa21ad5986ae9a26077a40142efb56243}{GLFWjoystickfun}})(\textcolor{keywordtype}{int}\ jid,\ \textcolor{keywordtype}{int}\ event);}
+\DoxyCodeLine{01643\ }
+\DoxyCodeLine{01657\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}}}
+\DoxyCodeLine{01658\ \{}
+\DoxyCodeLine{01661\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_a698dcb200562051a7249cb6ae154c71d}{width}};}
+\DoxyCodeLine{01664\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_ac65942a5f6981695517437a9d571d03c}{height}};}
+\DoxyCodeLine{01667\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_a6066c4ecd251098700062d3b735dba1b}{redBits}};}
+\DoxyCodeLine{01670\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_a292fdd281f3485fb3ff102a5bda43faa}{greenBits}};}
+\DoxyCodeLine{01673\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_af310977f58d2e3b188175b6e3d314047}{blueBits}};}
+\DoxyCodeLine{01676\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wvidmode_a791bdd6c7697b09f7e9c97054bf05649}{refreshRate}};}
+\DoxyCodeLine{01677\ \}\ \mbox{\hyperlink{group__monitor_ga902c2816ac9b34b757282daab59b2565}{GLFWvidmode}};}
+\DoxyCodeLine{01678\ }
+\DoxyCodeLine{01691\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}}}
+\DoxyCodeLine{01692\ \{}
+\DoxyCodeLine{01695\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*\ \mbox{\hyperlink{struct_g_l_f_wgammaramp_a87eabbc644cdb77145caf4a0a1b5d9bd}{red}};}
+\DoxyCodeLine{01698\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*\ \mbox{\hyperlink{struct_g_l_f_wgammaramp_acea1bf88573f37cb0583a0fc005bbd0c}{green}};}
+\DoxyCodeLine{01701\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*\ \mbox{\hyperlink{struct_g_l_f_wgammaramp_abd4ac5a186d9c000b9313099898df32a}{blue}};}
+\DoxyCodeLine{01704\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wgammaramp_ad620e1cffbff9a32c51bca46301b59a5}{size}};}
+\DoxyCodeLine{01705\ \}\ \mbox{\hyperlink{group__monitor_ga939cf093cb0af0498b7b54dc2e181404}{GLFWgammaramp}};}
+\DoxyCodeLine{01706\ }
+\DoxyCodeLine{01720\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}}}
+\DoxyCodeLine{01721\ \{}
+\DoxyCodeLine{01724\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wimage_af6a71cc999fe6d3aea31dd7e9687d835}{width}};}
+\DoxyCodeLine{01727\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_g_l_f_wimage_a0b7d95368f0c80d5e5c9875057c7dbec}{height}};}
+\DoxyCodeLine{01730\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_g_l_f_wimage_a65a8d70274a35e7342f87703e233a70c}{pixels}};}
+\DoxyCodeLine{01731\ \}\ \mbox{\hyperlink{group__window_ga7cc0a09de172fa7250872046f8c4d2ca}{GLFWimage}};}
+\DoxyCodeLine{01732\ }
+\DoxyCodeLine{01744\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_l_f_wgamepadstate}{GLFWgamepadstate}}}
+\DoxyCodeLine{01745\ \{}
+\DoxyCodeLine{01749\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_g_l_f_wgamepadstate_af483a8ac7b4cc9acd447fc2e45ffbd8b}{buttons}}[15];}
+\DoxyCodeLine{01753\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_g_l_f_wgamepadstate_a6603cfa2df8b4db422e67ca0bf689b6a}{axes}}[6];}
+\DoxyCodeLine{01754\ \}\ \mbox{\hyperlink{group__input_ga61acfb1f28f751438dd221225c5e725d}{GLFWgamepadstate}};}
+\DoxyCodeLine{01755\ }
+\DoxyCodeLine{01756\ }
+\DoxyCodeLine{01757\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{01758\ \textcolor{comment}{\ *\ GLFW\ API\ functions}}
+\DoxyCodeLine{01759\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{01760\ }
+\DoxyCodeLine{01797\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__init_gab41771f0215a2e0afb4cf1cf98082d40}{glfwInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01798\ }
+\DoxyCodeLine{01831\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__init_gafd90e6fd4819ea9e22e5e739519a6504}{glfwTerminate}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01832\ }
+\DoxyCodeLine{01863\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__init_gac85e41aab1c2bd6fc740f4377d9e7e9f}{glfwInitHint}}(\textcolor{keywordtype}{int}\ hint,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{01864\ }
+\DoxyCodeLine{01890\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__init_ga2402c7824ac0194c13722790ff9559ff}{glfwGetVersion}}(\textcolor{keywordtype}{int}*\ major,\ \textcolor{keywordtype}{int}*\ minor,\ \textcolor{keywordtype}{int}*\ rev);}
+\DoxyCodeLine{01891\ }
+\DoxyCodeLine{01921\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__init_gae5952184a0db36e24d1de7805b8b0945}{glfwGetVersionString}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01922\ }
+\DoxyCodeLine{01952\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__init_gaee7bac4c7e1b2769207747c1b5ae2f9e}{glfwGetError}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ description);}
+\DoxyCodeLine{01953\ }
+\DoxyCodeLine{01998\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}}\ \mbox{\hyperlink{group__init_ga746e2757d069eaea423349aca6ae097a}{glfwSetErrorCallback}}(\mbox{\hyperlink{group__init_ga8184701785c096b3862a75cda1bf44a3}{GLFWerrorfun}}\ callback);}
+\DoxyCodeLine{01999\ }
+\DoxyCodeLine{02027\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}**\ \mbox{\hyperlink{group__monitor_ga8c78e5db186ee10d00c053faf81998af}{glfwGetMonitors}}(\textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{02028\ }
+\DoxyCodeLine{02051\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ \mbox{\hyperlink{group__monitor_ga34befff4f9f0fae09dd8de6fb0eb4f3e}{glfwGetPrimaryMonitor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{02052\ }
+\DoxyCodeLine{02076\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_ga45b5481a614ad7beb2aade9746d07563}{glfwGetMonitorPos}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{02077\ }
+\DoxyCodeLine{02107\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_ga5a3ac0f6e3786df47aabccfb5760b31d}{glfwGetMonitorWorkarea}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{02108\ }
+\DoxyCodeLine{02141\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_gad0e93a9e42b32394369cabbbdc1ab702}{glfwGetMonitorPhysicalSize}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}*\ widthMM,\ \textcolor{keywordtype}{int}*\ heightMM);}
+\DoxyCodeLine{02142\ }
+\DoxyCodeLine{02173\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_ga28d856d94bea2ce8f09a67bb0346aaff}{glfwGetMonitorContentScale}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{float}*\ xscale,\ \textcolor{keywordtype}{float}*\ yscale);}
+\DoxyCodeLine{02174\ }
+\DoxyCodeLine{02199\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__monitor_ga6d0ee079c807cd123b56dc3fc01e8fd9}{glfwGetMonitorName}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{02200\ }
+\DoxyCodeLine{02225\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_ga6d89c74c1c293f0ab78a00c3c6d1ae44}{glfwSetMonitorUserPointer}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{void}*\ pointer);}
+\DoxyCodeLine{02226\ }
+\DoxyCodeLine{02249\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{group__monitor_ga13cb11e8f507dbc477e10a040f0fad7f}{glfwGetMonitorUserPointer}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{02250\ }
+\DoxyCodeLine{02279\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__monitor_gaabe16caca8dea952504dfdebdf4cd249}{GLFWmonitorfun}}\ \mbox{\hyperlink{group__monitor_ga9fa7cc37cd79216a7fc0b77af54109a1}{glfwSetMonitorCallback}}(\mbox{\hyperlink{group__monitor_gaabe16caca8dea952504dfdebdf4cd249}{GLFWmonitorfun}}\ callback);}
+\DoxyCodeLine{02280\ }
+\DoxyCodeLine{02313\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}}*\ \mbox{\hyperlink{group__monitor_ga7eaea6132f15e9b5d47eb94f88547f79}{glfwGetVideoModes}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{02314\ }
+\DoxyCodeLine{02341\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}}*\ \mbox{\hyperlink{group__monitor_ga21f7f60de4f4d0fa360c7ad159b75c9e}{glfwGetVideoMode}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{02342\ }
+\DoxyCodeLine{02374\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_ga3e4ab484476c935b4cd0bf49a5c429d6}{glfwSetGamma}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{float}\ gamma);}
+\DoxyCodeLine{02375\ }
+\DoxyCodeLine{02404\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}}*\ \mbox{\hyperlink{group__monitor_gafe7b41852c1a14fe978f0e5381969885}{glfwGetGammaRamp}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{02405\ }
+\DoxyCodeLine{02445\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__monitor_gac9f36a1cfa10eab191d3029ea8bc9558}{glfwSetGammaRamp}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}}*\ ramp);}
+\DoxyCodeLine{02446\ }
+\DoxyCodeLine{02464\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga8050ddceed9dc6bd9d3aa35666195cd4}{glfwDefaultWindowHints}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{02465\ }
+\DoxyCodeLine{02499\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga69c40728499720bef8a49aa925ea0efa}{glfwWindowHint}}(\textcolor{keywordtype}{int}\ hint,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{02500\ }
+\DoxyCodeLine{02537\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga3c2270562d7ba13d92680ba1090adafe}{glfwWindowHintString}}(\textcolor{keywordtype}{int}\ hint,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value);}
+\DoxyCodeLine{02538\ }
+\DoxyCodeLine{02691\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ \mbox{\hyperlink{group__window_gaaccd00fafe81e2db94e8cdf55721e055}{glfwCreateWindow}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ share);}
+\DoxyCodeLine{02692\ }
+\DoxyCodeLine{02720\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga806747476b7247d292be3711c323ea10}{glfwDestroyWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{02721\ }
+\DoxyCodeLine{02740\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__window_gaa6162f67dfa38b8beda2fea623649332}{glfwWindowShouldClose}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{02741\ }
+\DoxyCodeLine{02762\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga1cadeda7a1e2f224e06a8415d30741aa}{glfwSetWindowShouldClose}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{02763\ }
+\DoxyCodeLine{02787\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga861ed3414ab8120e2f74151a666ed1dc}{glfwSetWindowTitle}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title);}
+\DoxyCodeLine{02788\ }
+\DoxyCodeLine{02834\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga182987a1a62a41a924842b9473d560df}{glfwSetWindowIcon}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}}*\ images);}
+\DoxyCodeLine{02835\ }
+\DoxyCodeLine{02866\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga0076a8591ef7494d359730cf2250b45b}{glfwGetWindowPos}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{02867\ }
+\DoxyCodeLine{02901\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga0dc8d880a0d87be16d3ea8114561f6f0}{glfwSetWindowPos}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{02902\ }
+\DoxyCodeLine{02931\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga7feb769ebb3f3d21579b5a3fb07be76e}{glfwGetWindowSize}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{02932\ }
+\DoxyCodeLine{02974\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga8af814fc98d786d1de2505b40b707de8}{glfwSetWindowSizeLimits}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ minwidth,\ \textcolor{keywordtype}{int}\ minheight,\ \textcolor{keywordtype}{int}\ maxwidth,\ \textcolor{keywordtype}{int}\ maxheight);}
+\DoxyCodeLine{02975\ }
+\DoxyCodeLine{03017\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gad2ae94a2c5ee1c46a36e13a8f4ac68ac}{glfwSetWindowAspectRatio}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ numer,\ \textcolor{keywordtype}{int}\ denom);}
+\DoxyCodeLine{03018\ }
+\DoxyCodeLine{03058\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gae54d1f4915ded15e267ddd3f41496cd2}{glfwSetWindowSize}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{03059\ }
+\DoxyCodeLine{03087\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gaf7d17f3534b4b6dc9a6f905e3a240b7e}{glfwGetFramebufferSize}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}});}
+\DoxyCodeLine{03088\ }
+\DoxyCodeLine{03124\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gaad46cdaae2eb732f68d3a1499a7c5409}{glfwGetWindowFrameSize}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}*\ left,\ \textcolor{keywordtype}{int}*\ top,\ \textcolor{keywordtype}{int}*\ right,\ \textcolor{keywordtype}{int}*\ bottom);}
+\DoxyCodeLine{03125\ }
+\DoxyCodeLine{03157\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga72718c983a9fffaa27f786bfe7d1c9ee}{glfwGetWindowContentScale}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{float}*\ xscale,\ \textcolor{keywordtype}{float}*\ yscale);}
+\DoxyCodeLine{03158\ }
+\DoxyCodeLine{03184\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__window_gad124d57a1c1c519f60c9765cd0c2a89c}{glfwGetWindowOpacity}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03185\ }
+\DoxyCodeLine{03213\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga62a784fe328f227727cbcd0d07480ff3}{glfwSetWindowOpacity}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{float}\ opacity);}
+\DoxyCodeLine{03214\ }
+\DoxyCodeLine{03241\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga24274e3c6ecd44e11fec5e6b66e4d7f3}{glfwIconifyWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03242\ }
+\DoxyCodeLine{03268\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga1e29caf0b819f578b04db52fff17256c}{glfwRestoreWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03269\ }
+\DoxyCodeLine{03293\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga4f825a55367d3fabde3d06e7f30128e8}{glfwMaximizeWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03294\ }
+\DoxyCodeLine{03325\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga7945bcdff9e5e058cf36505d6873ed8c}{glfwShowWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03326\ }
+\DoxyCodeLine{03347\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gaa17e287d521544bdeceafa09ac036e20}{glfwHideWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03348\ }
+\DoxyCodeLine{03386\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga0da0e3daaa2d100f44a115c09077b510}{glfwFocusWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03387\ }
+\DoxyCodeLine{03413\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gad0c9629abb49447bedd28080642b8538}{glfwRequestWindowAttention}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03414\ }
+\DoxyCodeLine{03435\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ \mbox{\hyperlink{group__window_gad441645a53bc9274a0ee163d40f0c637}{glfwGetWindowMonitor}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03436\ }
+\DoxyCodeLine{03494\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga12fabf78575e59c00f822f323ae0b6ae}{glfwSetWindowMonitor}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}*\ monitor,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}},\ \textcolor{keywordtype}{int}\ refreshRate);}
+\DoxyCodeLine{03495\ }
+\DoxyCodeLine{03531\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__window_ga1bb0c7e100418e284dbb800789c63d40}{glfwGetWindowAttrib}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ attrib);}
+\DoxyCodeLine{03532\ }
+\DoxyCodeLine{03568\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gad39f43f07856efcf3d656426a9284c75}{glfwSetWindowAttrib}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ attrib,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{03569\ }
+\DoxyCodeLine{03591\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gacc9e68faee3c1763b54cd9bc405cf43e}{glfwSetWindowUserPointer}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{void}*\ pointer);}
+\DoxyCodeLine{03592\ }
+\DoxyCodeLine{03612\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{group__window_gad07c1ae8809c4f47e55ad8cc3f60e794}{glfwGetWindowUserPointer}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{03613\ }
+\DoxyCodeLine{03647\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_gabe287973a21a8f927cde4db06b8dcbe9}{GLFWwindowposfun}}\ \mbox{\hyperlink{group__window_ga517b6e80b982efa06e9b8ca89d4a75a6}{glfwSetWindowPosCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_gabe287973a21a8f927cde4db06b8dcbe9}{GLFWwindowposfun}}\ callback);}
+\DoxyCodeLine{03648\ }
+\DoxyCodeLine{03679\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_gaec0282944bb810f6f3163ec02da90350}{GLFWwindowsizefun}}\ \mbox{\hyperlink{group__window_gab0754f8d5c7c4d5cae2a9937a0e00bc5}{glfwSetWindowSizeCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_gaec0282944bb810f6f3163ec02da90350}{GLFWwindowsizefun}}\ callback);}
+\DoxyCodeLine{03680\ }
+\DoxyCodeLine{03719\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_gabf859b936d80961b7d39013a9694cc3e}{GLFWwindowclosefun}}\ \mbox{\hyperlink{group__window_ga693d778815971a06e1a5a7bcdeff3d36}{glfwSetWindowCloseCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_gabf859b936d80961b7d39013a9694cc3e}{GLFWwindowclosefun}}\ callback);}
+\DoxyCodeLine{03720\ }
+\DoxyCodeLine{03755\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga431663a1427d2eb3a273bc398b6737b5}{GLFWwindowrefreshfun}}\ \mbox{\hyperlink{group__window_ga62bfa902c07a03b8ad9be37da31a4be7}{glfwSetWindowRefreshCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_ga431663a1427d2eb3a273bc398b6737b5}{GLFWwindowrefreshfun}}\ callback);}
+\DoxyCodeLine{03756\ }
+\DoxyCodeLine{03790\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_gabc58c47e9d93f6eb1862d615c3680f46}{GLFWwindowfocusfun}}\ \mbox{\hyperlink{group__window_gacce1c4dd273b5c4c60b05599f8725b4e}{glfwSetWindowFocusCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_gabc58c47e9d93f6eb1862d615c3680f46}{GLFWwindowfocusfun}}\ callback);}
+\DoxyCodeLine{03791\ }
+\DoxyCodeLine{03823\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga35c658cccba236f26e7adee0e25f6a4f}{GLFWwindowiconifyfun}}\ \mbox{\hyperlink{group__window_ga3e9f355edb6b9247149ddea2335eda69}{glfwSetWindowIconifyCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_ga35c658cccba236f26e7adee0e25f6a4f}{GLFWwindowiconifyfun}}\ callback);}
+\DoxyCodeLine{03824\ }
+\DoxyCodeLine{03853\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga3017196fdaec33ac3e095765176c2a90}{GLFWwindowmaximizefun}}\ \mbox{\hyperlink{group__window_gae77b3960dcd40514fb7b2b8a6eb98137}{glfwSetWindowMaximizeCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_ga3017196fdaec33ac3e095765176c2a90}{GLFWwindowmaximizefun}}\ callback);}
+\DoxyCodeLine{03854\ }
+\DoxyCodeLine{03883\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_gae18026e294dde685ed2e5f759533144d}{GLFWframebuffersizefun}}\ \mbox{\hyperlink{group__window_ga41d69f9f263d7b33ea03cf58772b4ea0}{glfwSetFramebufferSizeCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_gae18026e294dde685ed2e5f759533144d}{GLFWframebuffersizefun}}\ callback);}
+\DoxyCodeLine{03884\ }
+\DoxyCodeLine{03914\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga77f288a2d04bb3c77c7d9615d08cf70e}{GLFWwindowcontentscalefun}}\ \mbox{\hyperlink{group__window_gac6edcddbe785445d0d2b7b7be500836e}{glfwSetWindowContentScaleCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__window_ga77f288a2d04bb3c77c7d9615d08cf70e}{GLFWwindowcontentscalefun}}\ callback);}
+\DoxyCodeLine{03915\ }
+\DoxyCodeLine{03952\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga872d16e4c77f58c0436f356255920cfc}{glfwPollEvents}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{03953\ }
+\DoxyCodeLine{03997\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga6e042d05823c11e11c7339b81a237738}{glfwWaitEvents}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{03998\ }
+\DoxyCodeLine{04046\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_ga05223a0a4c5e50f10f289e60398153aa}{glfwWaitEventsTimeout}}(\textcolor{keywordtype}{double}\ timeout);}
+\DoxyCodeLine{04047\ }
+\DoxyCodeLine{04066\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gad6f6b997278c91c43b35970eb9713d7e}{glfwPostEmptyEvent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{04067\ }
+\DoxyCodeLine{04091\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga1248dd5b1e566b2817e71547564d6af9}{glfwGetInputMode}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ mode);}
+\DoxyCodeLine{04092\ }
+\DoxyCodeLine{04153\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_gae1eb729d2dd91dc33fd60e150a6e1684}{glfwSetInputMode}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ mode,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{04154\ }
+\DoxyCodeLine{04182\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga9b83d8957a566b22b3b768c7d1d4be03}{glfwRawMouseMotionSupported}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{04183\ }
+\DoxyCodeLine{04250\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_ga98293ec4493cfe8e7df8ff22ee402b46}{glfwGetKeyName}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{gears_8c_accd6b5b92b78666e36543412d4ac14cd}{key}},\ \textcolor{keywordtype}{int}\ scancode);}
+\DoxyCodeLine{04251\ }
+\DoxyCodeLine{04274\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga3ea3b9d74f8352506068620980e01fe5}{glfwGetKeyScancode}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{gears_8c_accd6b5b92b78666e36543412d4ac14cd}{key}});}
+\DoxyCodeLine{04275\ }
+\DoxyCodeLine{04313\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga7d8ad8ffaf272808f04e1d5d33ec8859}{glfwGetKey}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gears_8c_accd6b5b92b78666e36543412d4ac14cd}{key}});}
+\DoxyCodeLine{04314\ }
+\DoxyCodeLine{04342\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga6da5efb04f700c312a57a169fa9393a0}{glfwGetMouseButton}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{int}\ button);}
+\DoxyCodeLine{04343\ }
+\DoxyCodeLine{04380\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_gad289438eb7cf53d11eca685373f44105}{glfwGetCursorPos}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{04381\ }
+\DoxyCodeLine{04420\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_gaaf152cc93418acb0ba342e3f4af922bc}{glfwSetCursorPos}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{04421\ }
+\DoxyCodeLine{04458\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}}*\ \mbox{\hyperlink{group__input_ga21fc9f020f062db88813aa722c30ba2c}{glfwCreateCursor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}}*\ image,\ \textcolor{keywordtype}{int}\ xhot,\ \textcolor{keywordtype}{int}\ yhot);}
+\DoxyCodeLine{04459\ }
+\DoxyCodeLine{04481\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}}*\ \mbox{\hyperlink{group__input_gab7c5b6023b39a0021b1fcdabd1d15f09}{glfwCreateStandardCursor}}(\textcolor{keywordtype}{int}\ shape);}
+\DoxyCodeLine{04482\ }
+\DoxyCodeLine{04508\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_ga27556b7122117bc1bbb4bb3cc003ea43}{glfwDestroyCursor}}(\mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}}*\ cursor);}
+\DoxyCodeLine{04509\ }
+\DoxyCodeLine{04535\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_gafaf103cea2f43530cff7de4e01126a4f}{glfwSetCursor}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_ga89261ae18c75e863aaf2656ecdd238f4}{GLFWcursor}}*\ cursor);}
+\DoxyCodeLine{04536\ }
+\DoxyCodeLine{04585\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_ga5bd751b27b90f865d2ea613533f0453c}{GLFWkeyfun}}\ \mbox{\hyperlink{group__input_gaa4cbcb81b939b8800e44cea971ddae47}{glfwSetKeyCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_ga5bd751b27b90f865d2ea613533f0453c}{GLFWkeyfun}}\ callback);}
+\DoxyCodeLine{04586\ }
+\DoxyCodeLine{04628\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_ga1ab90a55cf3f58639b893c0f4118cb6e}{GLFWcharfun}}\ \mbox{\hyperlink{group__input_gad3d7e6e3134fa034cc1604162579585e}{glfwSetCharCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_ga1ab90a55cf3f58639b893c0f4118cb6e}{GLFWcharfun}}\ callback);}
+\DoxyCodeLine{04629\ }
+\DoxyCodeLine{04670\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gac3cf64f90b6219c05ac7b7822d5a4b8f}{GLFWcharmodsfun}}\ \mbox{\hyperlink{group__input_ga359a8529c2eb06e6e2173168f30ac99c}{glfwSetCharModsCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_gac3cf64f90b6219c05ac7b7822d5a4b8f}{GLFWcharmodsfun}}\ callback);}
+\DoxyCodeLine{04671\ }
+\DoxyCodeLine{04707\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_ga0184dcb59f6d85d735503dcaae809727}{GLFWmousebuttonfun}}\ \mbox{\hyperlink{group__input_gab8f17646f43cdca14e5095512618fdf6}{glfwSetMouseButtonCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_ga0184dcb59f6d85d735503dcaae809727}{GLFWmousebuttonfun}}\ callback);}
+\DoxyCodeLine{04708\ }
+\DoxyCodeLine{04739\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gad6fae41b3ac2e4209aaa87b596c57f68}{GLFWcursorposfun}}\ \mbox{\hyperlink{group__input_ga74124d0eff27040fd10e4df9e17d129c}{glfwSetCursorPosCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_gad6fae41b3ac2e4209aaa87b596c57f68}{GLFWcursorposfun}}\ callback);}
+\DoxyCodeLine{04740\ }
+\DoxyCodeLine{04770\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gaa93dc4818ac9ab32532909d53a337cbe}{GLFWcursorenterfun}}\ \mbox{\hyperlink{group__input_gacdb3490e374c8bc08549c6f173ffa7c2}{glfwSetCursorEnterCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_gaa93dc4818ac9ab32532909d53a337cbe}{GLFWcursorenterfun}}\ callback);}
+\DoxyCodeLine{04771\ }
+\DoxyCodeLine{04804\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gaf656112c33de3efdb227fa58f0134cf5}{GLFWscrollfun}}\ \mbox{\hyperlink{group__input_gaa786b59f19ad8525d251cda8e0d7d29b}{glfwSetScrollCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_gaf656112c33de3efdb227fa58f0134cf5}{GLFWscrollfun}}\ callback);}
+\DoxyCodeLine{04805\ }
+\DoxyCodeLine{04841\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gaaba73c3274062c18723b7f05862d94b2}{GLFWdropfun}}\ \mbox{\hyperlink{group__input_ga8bab819b7b0ef9bc1a38e58c577c1d13}{glfwSetDropCallback}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{group__input_gaaba73c3274062c18723b7f05862d94b2}{GLFWdropfun}}\ callback);}
+\DoxyCodeLine{04842\ }
+\DoxyCodeLine{04865\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_gacb1b7dfd79df673d48814c06fc436eff}{glfwJoystickPresent}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{04866\ }
+\DoxyCodeLine{04898\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{group__input_gacd46b9f8d9d12dc50e45d7fe0ad32b23}{glfwGetJoystickAxes}}(\textcolor{keywordtype}{int}\ jid,\ \textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{04899\ }
+\DoxyCodeLine{04939\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_ga91cdcb462a3e17c647a55496eff7d0ee}{glfwGetJoystickButtons}}(\textcolor{keywordtype}{int}\ jid,\ \textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{04940\ }
+\DoxyCodeLine{04996\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_gaf0f00897c4d010af7bd1aea1f6193e6f}{glfwGetJoystickHats}}(\textcolor{keywordtype}{int}\ jid,\ \textcolor{keywordtype}{int}*\ count);}
+\DoxyCodeLine{04997\ }
+\DoxyCodeLine{05027\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_ga4b46e05195db3c2fc336cf69fc6c7128}{glfwGetJoystickName}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{05028\ }
+\DoxyCodeLine{05068\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_ga2c6a8b6e27cb8a8be7a0d020d9fd051c}{glfwGetJoystickGUID}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{05069\ }
+\DoxyCodeLine{05094\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_ga3a8999c2d2634c7bcf4a04f1ec64895c}{glfwSetJoystickUserPointer}}(\textcolor{keywordtype}{int}\ jid,\ \textcolor{keywordtype}{void}*\ pointer);}
+\DoxyCodeLine{05095\ }
+\DoxyCodeLine{05118\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{group__input_ga95c348e4b4308c44c59825def0d1367e}{glfwGetJoystickUserPointer}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{05119\ }
+\DoxyCodeLine{05146\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_gac9720b6e5062a5fc5fc0bb4be6dc04a0}{glfwJoystickIsGamepad}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{05147\ }
+\DoxyCodeLine{05182\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__input_gaa21ad5986ae9a26077a40142efb56243}{GLFWjoystickfun}}\ \mbox{\hyperlink{group__input_gad90f60a4c0e04629928305b53e96154a}{glfwSetJoystickCallback}}(\mbox{\hyperlink{group__input_gaa21ad5986ae9a26077a40142efb56243}{GLFWjoystickfun}}\ callback);}
+\DoxyCodeLine{05183\ }
+\DoxyCodeLine{05216\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga276a2aec236a671a99f6f0a9be7fa3fc}{glfwUpdateGamepadMappings}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{05217\ }
+\DoxyCodeLine{05248\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_gab7a03c6ca8aa55a52b750d862d106ffe}{glfwGetGamepadName}}(\textcolor{keywordtype}{int}\ jid);}
+\DoxyCodeLine{05249\ }
+\DoxyCodeLine{05286\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__input_ga6e138d3b0761546f5a12546f367501d6}{glfwGetGamepadState}}(\textcolor{keywordtype}{int}\ jid,\ \mbox{\hyperlink{struct_g_l_f_wgamepadstate}{GLFWgamepadstate}}*\ state);}
+\DoxyCodeLine{05287\ }
+\DoxyCodeLine{05311\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_ga7a580309bbc185a0459c3559021d2fd7}{glfwSetClipboardString}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{05312\ }
+\DoxyCodeLine{05341\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__input_ga315b28b05797d00fe7cdf1ecfdc638dc}{glfwGetClipboardString}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{05342\ }
+\DoxyCodeLine{05371\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{group__input_ga03d4a1039b8662c71eeb40beea8cb622}{glfwGetTime}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{05372\ }
+\DoxyCodeLine{05401\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__input_ga94360a3628a09f32708f83cc3fa48590}{glfwSetTime}}(\textcolor{keywordtype}{double}\ time);}
+\DoxyCodeLine{05402\ }
+\DoxyCodeLine{05423\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\_t}}\ \mbox{\hyperlink{group__input_gaa00c3e32227eb70b3968fca0bfe4ae26}{glfwGetTimerValue}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{05424\ }
+\DoxyCodeLine{05443\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\_t}}\ \mbox{\hyperlink{group__input_gaa92d10b10013372778efbf6367714371}{glfwGetTimerFrequency}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{05444\ }
+\DoxyCodeLine{05481\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__context_gafd76c93e15ec8b0b90506a9936a46185}{glfwMakeContextCurrent}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{05482\ }
+\DoxyCodeLine{05502\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ \mbox{\hyperlink{group__context_gab5fde1ef6238bfb82c7a2293f86172de}{glfwGetCurrentContext}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{05503\ }
+\DoxyCodeLine{05536\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__window_gafb827800eedbfcbc97b1e5408df668d7}{glfwSwapBuffers}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window);}
+\DoxyCodeLine{05537\ }
+\DoxyCodeLine{05582\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__context_ga12a595c06947cec4967c6e1f14210a8a}{glfwSwapInterval}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{05583\ }
+\DoxyCodeLine{05620\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__context_ga9a28c712d35f9e43534e1d03b051c04c}{glfwExtensionSupported}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ extension);}
+\DoxyCodeLine{05621\ }
+\DoxyCodeLine{05662\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__context_ga3d47c2d2fbe0be9c505d0e04e91a133c}{GLFWglproc}}\ \mbox{\hyperlink{group__context_ga0e8af175218929615c16e74938c10f2a}{glfwGetProcAddress}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ procname);}
+\DoxyCodeLine{05663\ }
+\DoxyCodeLine{05688\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__vulkan_ga72e7c3757d9ff2333181a5569bb7c403}{glfwVulkanSupported}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{05689\ }
+\DoxyCodeLine{05732\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ \mbox{\hyperlink{group__vulkan_gada152edc5bbbd0c2138728878632fd9c}{glfwGetRequiredInstanceExtensions}}(\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}*\ count);}
+\DoxyCodeLine{05733\ }
+\DoxyCodeLine{05734\ \textcolor{preprocessor}{\#if\ defined(VK\_VERSION\_1\_0)}}
+\DoxyCodeLine{05735\ }
+\DoxyCodeLine{05775\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{group__vulkan_ga70c01918dc9d233a4fbe0681a43018af}{GLFWvkproc}}\ \mbox{\hyperlink{vulkan_8c_ab1fbd7c0ba5c40c91c6b85b897364039}{glfwGetInstanceProcAddress}}(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}}\ instance,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ procname);}
+\DoxyCodeLine{05776\ }
+\DoxyCodeLine{05812\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vulkan_8c_a6a7033429666ac6b31d4250aeb5b37d1}{glfwGetPhysicalDevicePresentationSupport}}(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}}\ instance,\ \mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{VkPhysicalDevice}}\ device,\ \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ queuefamily);}
+\DoxyCodeLine{05813\ }
+\DoxyCodeLine{05875\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}}\ \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}}\ \mbox{\hyperlink{vulkan_8c_a5a47c783767442b8b8e9ab3cf2e4959b}{glfwCreateWindowSurface}}(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}}\ instance,\ \mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}*\ window,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vk_allocation_callbacks}{VkAllocationCallbacks}}*\ allocator,\ \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*\ surface);}
+\DoxyCodeLine{05876\ }
+\DoxyCodeLine{05877\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*VK\_VERSION\_1\_0*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{05878\ }
+\DoxyCodeLine{05879\ }
+\DoxyCodeLine{05880\ \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{05881\ \textcolor{comment}{\ *\ Global\ definition\ cleanup}}
+\DoxyCodeLine{05882\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{05883\ }
+\DoxyCodeLine{05884\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ BEGIN\ SYSTEM/COMPILER\ SPECIFIC\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{05885\ }
+\DoxyCodeLine{05886\ \textcolor{preprocessor}{\#ifdef\ GLFW\_WINGDIAPI\_DEFINED}}
+\DoxyCodeLine{05887\ \textcolor{preprocessor}{\ \#undef\ WINGDIAPI}}
+\DoxyCodeLine{05888\ \textcolor{preprocessor}{\ \#undef\ GLFW\_WINGDIAPI\_DEFINED}}
+\DoxyCodeLine{05889\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{05890\ }
+\DoxyCodeLine{05891\ \textcolor{preprocessor}{\#ifdef\ GLFW\_CALLBACK\_DEFINED}}
+\DoxyCodeLine{05892\ \textcolor{preprocessor}{\ \#undef\ CALLBACK}}
+\DoxyCodeLine{05893\ \textcolor{preprocessor}{\ \#undef\ GLFW\_CALLBACK\_DEFINED}}
+\DoxyCodeLine{05894\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{05895\ }
+\DoxyCodeLine{05896\ \textcolor{comment}{/*\ Some\ OpenGL\ related\ headers\ need\ GLAPIENTRY,\ but\ it\ is\ unconditionally}}
+\DoxyCodeLine{05897\ \textcolor{comment}{\ *\ defined\ by\ some\ gl.h\ variants\ (OpenBSD)\ so\ define\ it\ after\ if\ needed.}}
+\DoxyCodeLine{05898\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{05899\ \textcolor{preprocessor}{\#ifndef\ GLAPIENTRY}}
+\DoxyCodeLine{05900\ \textcolor{preprocessor}{\ \#define\ GLAPIENTRY\ APIENTRY}}
+\DoxyCodeLine{05901\ \textcolor{preprocessor}{\ \#define\ GLFW\_GLAPIENTRY\_DEFINED}}
+\DoxyCodeLine{05902\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{05903\ }
+\DoxyCodeLine{05904\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ END\ SYSTEM/COMPILER\ SPECIFIC\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{05905\ }
+\DoxyCodeLine{05906\ }
+\DoxyCodeLine{05907\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{05908\ \}}
+\DoxyCodeLine{05909\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{05910\ }
+\DoxyCodeLine{05911\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_glfw3\_h\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{05912\ }
+
+\end{DoxyCode}

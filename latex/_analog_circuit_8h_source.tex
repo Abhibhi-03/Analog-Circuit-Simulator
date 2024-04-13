@@ -1,0 +1,52 @@
+\doxysection{Analog\+Circuit.\+h}
+\hypertarget{_analog_circuit_8h_source}{}\label{_analog_circuit_8h_source}\mbox{\hyperlink{_analog_circuit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00001}00001\ \textcolor{comment}{//AnalogCircuit.h\ -\/\ header\ file\ for\ the\ analog\ circuit}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00002}00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00003}00003\ \textcolor{comment}{//\ 21-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Created.}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00004}00004\ \textcolor{comment}{//\ 27-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Added\ graphical\ display.}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ \_ANALOGCIRCUIT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ \_ANALOGCIRCUIT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}\ \ \ \textcolor{comment}{//for\ GLEW\ library}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <gl/GL.h>}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <gl/GLU.h>}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{glut_8h}{gl/glut.h}}>}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{freeglut_8h}{gl/freeglut.h}}>}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iomanip>}\textcolor{comment}{//setw}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00016}\mbox{\hyperlink{_analog_circuit_8h_a525335710b53cb064ca56b936120431e}{00016}}\ \textcolor{preprocessor}{\#define\ \_USE\_MATH\_DEFINES}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <math.h>}\textcolor{comment}{//M\_PI}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\textcolor{comment}{//abs}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_capacitor_8h}{Capacitor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_inductor_8h}{Inductor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resistor_8h}{Resistor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00023}\mbox{\hyperlink{_analog_circuit_8h_af140802328ffe8a45749114b1c5a2056}{00023}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_8h_aa61000540636bfdc4c9f27045ab84ce9}{windowWidth}},\ \mbox{\hyperlink{_analog_circuit_8h_af140802328ffe8a45749114b1c5a2056}{windowHeight}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00024}00024\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8h_a5dae6184b90fb30fb48cc8dab18d1cfe}{scalingFactor}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00026}00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_analog_circuit_8h_a60de64d75454385b23995437f1d72669}{start}}();}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00028}\mbox{\hyperlink{class_analog_circuit}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_analog_circuit}{AnalogCircuit}}\ \{}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ T\ =\ 0.000001;\textcolor{comment}{//timestep\ of\ 1uS}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ timeMax\ =\ 0.1;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tolerance\ =\ 0.0001;\textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ freq\ =\ 50;\textcolor{comment}{//50Hz}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Vpeak\ =\ 10.0;\textcolor{comment}{//10V}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ xoffset\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ I;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{double}\ accumulatedTime\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00037}00037\ \ \ \ \ std::list<Component*>\ component;\textcolor{comment}{//polymorphism\ with\ the\ STL}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00038}00038\ \ \ \ \ std::ofstream\ fout;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_analog_circuit}{AnalogCircuit}}(std::string\ filename);\textcolor{comment}{//dump\ output\ data\ to\ a\ file}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analog_circuit_a2d0f65beff8b31d2f9703bc1d48ca376}{display}}(\textcolor{keywordtype}{float}\ R,\ \textcolor{keywordtype}{float}\ G,\ \textcolor{keywordtype}{float}\ B);\textcolor{comment}{//display\ output\ data\ on\ the\ screen}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analog_circuit_aa6a708645d09728e2d4177c4adc9b206}{run}}();}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analog_circuit_a36aff7d1113271e6f0a62b3ebd36a15a}{CostFunctionV}}(\textcolor{keywordtype}{double}\&\ current,\ \textcolor{keywordtype}{double}\ V);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_analog_circuit_a21e6dd439e07dbe84bc40068fce8dc3a}{\string~AnalogCircuit}}();}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//\ \_ANALOGCIRCUIT\_H\_}}
+
+\end{DoxyCode}

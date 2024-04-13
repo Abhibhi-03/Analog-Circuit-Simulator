@@ -1,0 +1,748 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/wl\+\_\+platform.h File Reference}
+\hypertarget{wl__platform_8h}{}\label{wl__platform_8h}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/wl\_platform.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/wl\_platform.h}}
+{\ttfamily \#include $<$wayland-\/client.\+h$>$}\newline
+{\ttfamily \#include $<$xkbcommon/xkbcommon.\+h$>$}\newline
+{\ttfamily \#include $<$xkbcommon/xkbcommon-\/compose.\+h$>$}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include "{}posix\+\_\+thread.\+h"{}}\newline
+{\ttfamily \#include "{}posix\+\_\+time.\+h"{}}\newline
+{\ttfamily \#include "{}null\+\_\+joystick.\+h"{}}\newline
+{\ttfamily \#include "{}xkb\+\_\+unicode.\+h"{}}\newline
+{\ttfamily \#include "{}egl\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}osmesa\+\_\+context.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/xdg-\/shell-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/xdg-\/decoration-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/viewporter-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/relative-\/pointer-\/unstable-\/v1-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/pointer-\/constraints-\/unstable-\/v1-\/client-\/protocol.\+h"{}}\newline
+{\ttfamily \#include "{}wayland-\/idle-\/inhibit-\/unstable-\/v1-\/client-\/protocol.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}
+\item 
+struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}}
+\item 
+struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_woffer_wayland}{\+\_\+\+GLFWoffer\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}{\+\_\+glfw\+\_\+dlopen}}(name)~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}{\+\_\+glfw\+\_\+dlclose}}(handle)~dlclose(handle)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}{\+\_\+glfw\+\_\+dlsym}}(handle,  name)~dlsym(handle, name)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW}}~((EGLNative\+Window\+Type) window-\/$>$wl.\+egl.\+window)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a10726291463db08cf815a0170e85548a}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY}}~((EGLNative\+Display\+Type) \mbox{\hyperlink{boing_8c_a4ea013001a5fb47853d0fab8f8de35cd}{\+\_\+glfw.\+wl.\+display}})
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}  wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad666193a847340c128970216fc00f92c}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}  wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Context; \}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Library\+Context; \}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af0849f9b39044874257dae01cf1ab056}{wl\+\_\+cursor\+\_\+theme\+\_\+load}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+load
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f}{wl\+\_\+cursor\+\_\+theme\+\_\+destroy}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f}{wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+get\+\_\+cursor
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76}{wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer}}~\+\_\+glfw.\+wl.\+cursor.\+image\+\_\+get\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea}{wl\+\_\+egl\+\_\+window\+\_\+create}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+create
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb}{wl\+\_\+egl\+\_\+window\+\_\+destroy}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129}{wl\+\_\+egl\+\_\+window\+\_\+resize}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+resize
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651}{xkb\+\_\+context\+\_\+new}}~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+new
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444}{xkb\+\_\+context\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a46b7585bcf515582df56effb765548ff}{xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+new\+\_\+from\+\_\+string
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56}{xkb\+\_\+keymap\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ae00a697007ff6fb26df721434e95043a}{xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+mod\+\_\+get\+\_\+index
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1}{xkb\+\_\+keymap\+\_\+key\+\_\+repeats}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+repeats
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a426e6afbf7ce124d9a902f1ae4a119e4}{xkb\+\_\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c}{xkb\+\_\+state\+\_\+new}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+new
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504}{xkb\+\_\+state\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8}{xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+syms
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a}{xkb\+\_\+state\+\_\+update\+\_\+mask}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+update\+\_\+mask
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ab1d4db8d90560c06b7ac881b6591eaa0}{xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+layout}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+layout
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af0e931e223443ccb03af4676115cdd57}{xkb\+\_\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a31d4591408f363bbb8ad9cec1b6e39f0}{xkb\+\_\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a7c32628b208aba911df6796926d6f57d}{xkb\+\_\+compose\+\_\+table\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+table\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a4df1fec1617c73aa59d5ffe896313630}{xkb\+\_\+compose\+\_\+state\+\_\+new}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+new
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a73858a1a46e83ed97773dbbbdc541bbd}{xkb\+\_\+compose\+\_\+state\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a5a4d3a0e7178ae878559d13d1a282869}{xkb\+\_\+compose\+\_\+state\+\_\+feed}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+feed
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a75d9c30f172b5d524557b39d44ce8e23}{xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+status}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+get\+\_\+status
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a9e86514c92913299042b85adf71b739d}{xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym}}~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{Vk\+Wayland\+Surface\+Create\+Flags\+KHR}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}{PFN\+\_\+vk\+Create\+Wayland\+Surface\+KHR}}) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}{PFN\+\_\+vk\+Get\+Physical\+Device\+Wayland\+Presentation\+Support\+KHR}}) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, struct wl\+\_\+display \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+load}}) (const char \texorpdfstring{$\ast$}{*}, int, struct wl\+\_\+shm \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+destroy}}) (struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor}}) (struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct wl\+\_\+buffer \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}{PFN\+\_\+wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer}}) (struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+create}}) (struct wl\+\_\+surface \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+destroy}}) (struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_adcf78e57b989ea0e561208099dada945}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+resize}}) (struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*}, int, int, int, int)
+\item 
+typedef struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}{PFN\+\_\+xkb\+\_\+context\+\_\+new}}) (enum xkb\+\_\+context\+\_\+flags)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}{PFN\+\_\+xkb\+\_\+context\+\_\+unref}}) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}{PFN\+\_\+xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string}}) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+keymap\+\_\+format, enum xkb\+\_\+keymap\+\_\+compile\+\_\+flags)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}{PFN\+\_\+xkb\+\_\+keymap\+\_\+unref}}) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*})
+\item 
+typedef xkb\+\_\+mod\+\_\+index\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}{PFN\+\_\+xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index}}) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}{PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+repeats}}) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a9866b14ec9bf5013c49523c9a71c2660}{PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level}}) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+level\+\_\+index\+\_\+t, const xkb\+\_\+keysym\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+typedef struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}{PFN\+\_\+xkb\+\_\+state\+\_\+new}}) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*})
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}{PFN\+\_\+xkb\+\_\+state\+\_\+unref}}) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}{PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms}}) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t, const xkb\+\_\+keysym\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+typedef enum xkb\+\_\+state\+\_\+component(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}{PFN\+\_\+xkb\+\_\+state\+\_\+update\+\_\+mask}}) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t)
+\item 
+typedef xkb\+\_\+layout\+\_\+index\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a1ddf8a57641c77805f0aedf68d7c715e}{PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+layout}}) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_adf2e17b2cdff722281b20cc581fb8367}{PFN\+\_\+xkb\+\_\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active}}) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+mod\+\_\+index\+\_\+t, enum xkb\+\_\+state\+\_\+component)
+\item 
+typedef struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a220342367196970f53b774b9e2517d42}{PFN\+\_\+xkb\+\_\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale}}) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+compose\+\_\+compile\+\_\+flags)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a94826943d69f9fce48bb246457692c2e}{PFN\+\_\+xkb\+\_\+compose\+\_\+table\+\_\+unref}}) (struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a36a51971876d7465f817c4588e082d92}{PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+new}}) (struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+compose\+\_\+state\+\_\+flags)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a5b405c88d81a608a1a447ac889f6485b}{PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+unref}}) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})
+\item 
+typedef enum xkb\+\_\+compose\+\_\+feed\+\_\+result(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a58829e3e18572f5e5e8d7d0349b3f092}{PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+feed}}) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keysym\+\_\+t)
+\item 
+typedef enum xkb\+\_\+compose\+\_\+status(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_aad8c18022b37e3cd5d8e38a621fa42ed}{PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+status}}) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})
+\item 
+typedef xkb\+\_\+keysym\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{wl__platform_8h_a88d4343fefb99b57a83cb2609eebdf87}{PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym}}) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})
+\item 
+typedef enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a55173b590d4140e345ceeb03f906d101}{\+\_\+\+GLFWdecoration\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_woffer_wayland}{\+\_\+\+GLFWoffer\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a55a9cf6e56770dd52a68a302c3381c5b}{\+\_\+\+GLFWoffer\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4}{\+\_\+\+GLFWwindow\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} \mbox{\hyperlink{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755}{\+\_\+\+GLFWlibrary\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0}{\+\_\+\+GLFWmonitor\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86}{\+\_\+\+GLFWcursor\+Wayland}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \{ \newline
+\mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}{main\+Window}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}{top\+Decoration}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}{left\+Decoration}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}{right\+Decoration}}
+, \newline
+\mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}{bottom\+Decoration}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}{\+\_\+glfw\+Add\+Output\+Wayland}} (\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} name, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} version)
+\item 
+void \mbox{\hyperlink{wl__platform_8h_a44ae89b67cbd69fffc1c34fef72f97bb}{\+\_\+glfw\+Update\+Content\+Scale\+Wayland}} (\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}window)
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{wl__platform_8h_a590adac355ae7255f974357d3cc9bb82}{\+\_\+glfw\+Input\+Text\+Wayland}} (\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} scancode)
+\item 
+void \mbox{\hyperlink{wl__platform_8h_a01019cdd65c873422a200c50dbc03449}{\+\_\+glfw\+Add\+Seat\+Listener\+Wayland}} (struct wl\+\_\+seat \texorpdfstring{$\ast$}{*}seat)
+\item 
+void \mbox{\hyperlink{wl__platform_8h_a77de15c6021760ccbdbef73c90ece49f}{\+\_\+glfw\+Add\+Data\+Device\+Listener\+Wayland}} (struct wl\+\_\+data\+\_\+device \texorpdfstring{$\ast$}{*}device)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}\label{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlclose@{\_glfw\_dlclose}}
+\index{\_glfw\_dlclose@{\_glfw\_dlclose}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlclose}{\_glfw\_dlclose}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlclose(\begin{DoxyParamCaption}\item[{}]{handle }\end{DoxyParamCaption})~dlclose(handle)}
+
+\Hypertarget{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}\label{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlopen@{\_glfw\_dlopen}}
+\index{\_glfw\_dlopen@{\_glfw\_dlopen}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlopen}{\_glfw\_dlopen}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlopen(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~dlopen(name, RTLD\+\_\+\+LAZY \texorpdfstring{$\vert$}{|} RTLD\+\_\+\+LOCAL)}
+
+\Hypertarget{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}\label{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlsym@{\_glfw\_dlsym}}
+\index{\_glfw\_dlsym@{\_glfw\_dlsym}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlsym}{\_glfw\_dlsym}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlsym(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{name }\end{DoxyParamCaption})~dlsym(handle, name)}
+
+\Hypertarget{wl__platform_8h_a10726291463db08cf815a0170e85548a}\label{wl__platform_8h_a10726291463db08cf815a0170e85548a} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+\index{\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_DISPLAY}{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY~((EGLNative\+Display\+Type) \mbox{\hyperlink{boing_8c_a4ea013001a5fb47853d0fab8f8de35cd}{\+\_\+glfw.\+wl.\+display}})}
+
+\Hypertarget{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957}\label{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+\index{\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_WINDOW}{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW~((EGLNative\+Window\+Type) window-\/$>$wl.\+egl.\+window)}
+
+\Hypertarget{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}\label{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Context; \}}
+
+\Hypertarget{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}\label{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CURSOR\_STATE}{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}  wl}
+
+\Hypertarget{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}\label{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Library\+Context; \}}
+
+\Hypertarget{wl__platform_8h_ad666193a847340c128970216fc00f92c}\label{wl__platform_8h_ad666193a847340c128970216fc00f92c} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} wl}
+
+\Hypertarget{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}\label{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_MONITOR\_STATE}{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} wl}
+
+\Hypertarget{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}\label{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}  wl}
+
+\Hypertarget{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76}\label{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_image\_get\_buffer@{wl\_cursor\_image\_get\_buffer}}
+\index{wl\_cursor\_image\_get\_buffer@{wl\_cursor\_image\_get\_buffer}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_image\_get\_buffer}{wl\_cursor\_image\_get\_buffer}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer~\+\_\+glfw.\+wl.\+cursor.\+image\+\_\+get\+\_\+buffer}
+
+\Hypertarget{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f}\label{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_destroy@{wl\_cursor\_theme\_destroy}}
+\index{wl\_cursor\_theme\_destroy@{wl\_cursor\_theme\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_destroy}{wl\_cursor\_theme\_destroy}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+destroy~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+destroy}
+
+\Hypertarget{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f}\label{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_get\_cursor@{wl\_cursor\_theme\_get\_cursor}}
+\index{wl\_cursor\_theme\_get\_cursor@{wl\_cursor\_theme\_get\_cursor}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_get\_cursor}{wl\_cursor\_theme\_get\_cursor}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+get\+\_\+cursor}
+
+\Hypertarget{wl__platform_8h_af0849f9b39044874257dae01cf1ab056}\label{wl__platform_8h_af0849f9b39044874257dae01cf1ab056} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_load@{wl\_cursor\_theme\_load}}
+\index{wl\_cursor\_theme\_load@{wl\_cursor\_theme\_load}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_load}{wl\_cursor\_theme\_load}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+load~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+load}
+
+\Hypertarget{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea}\label{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_create@{wl\_egl\_window\_create}}
+\index{wl\_egl\_window\_create@{wl\_egl\_window\_create}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_create}{wl\_egl\_window\_create}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+create~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+create}
+
+\Hypertarget{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb}\label{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_destroy@{wl\_egl\_window\_destroy}}
+\index{wl\_egl\_window\_destroy@{wl\_egl\_window\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_destroy}{wl\_egl\_window\_destroy}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+destroy~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+destroy}
+
+\Hypertarget{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129}\label{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_resize@{wl\_egl\_window\_resize}}
+\index{wl\_egl\_window\_resize@{wl\_egl\_window\_resize}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_resize}{wl\_egl\_window\_resize}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+resize~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+resize}
+
+\Hypertarget{wl__platform_8h_a5a4d3a0e7178ae878559d13d1a282869}\label{wl__platform_8h_a5a4d3a0e7178ae878559d13d1a282869} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_state\_feed@{xkb\_compose\_state\_feed}}
+\index{xkb\_compose\_state\_feed@{xkb\_compose\_state\_feed}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_state\_feed}{xkb\_compose\_state\_feed}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+state\+\_\+feed~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+feed}
+
+\Hypertarget{wl__platform_8h_a9e86514c92913299042b85adf71b739d}\label{wl__platform_8h_a9e86514c92913299042b85adf71b739d} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_state\_get\_one\_sym@{xkb\_compose\_state\_get\_one\_sym}}
+\index{xkb\_compose\_state\_get\_one\_sym@{xkb\_compose\_state\_get\_one\_sym}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_state\_get\_one\_sym}{xkb\_compose\_state\_get\_one\_sym}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym}
+
+\Hypertarget{wl__platform_8h_a75d9c30f172b5d524557b39d44ce8e23}\label{wl__platform_8h_a75d9c30f172b5d524557b39d44ce8e23} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_state\_get\_status@{xkb\_compose\_state\_get\_status}}
+\index{xkb\_compose\_state\_get\_status@{xkb\_compose\_state\_get\_status}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_state\_get\_status}{xkb\_compose\_state\_get\_status}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+status~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+get\+\_\+status}
+
+\Hypertarget{wl__platform_8h_a4df1fec1617c73aa59d5ffe896313630}\label{wl__platform_8h_a4df1fec1617c73aa59d5ffe896313630} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_state\_new@{xkb\_compose\_state\_new}}
+\index{xkb\_compose\_state\_new@{xkb\_compose\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_state\_new}{xkb\_compose\_state\_new}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+state\+\_\+new~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+new}
+
+\Hypertarget{wl__platform_8h_a73858a1a46e83ed97773dbbbdc541bbd}\label{wl__platform_8h_a73858a1a46e83ed97773dbbbdc541bbd} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_state\_unref@{xkb\_compose\_state\_unref}}
+\index{xkb\_compose\_state\_unref@{xkb\_compose\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_state\_unref}{xkb\_compose\_state\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+state\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+state\+\_\+unref}
+
+\Hypertarget{wl__platform_8h_a31d4591408f363bbb8ad9cec1b6e39f0}\label{wl__platform_8h_a31d4591408f363bbb8ad9cec1b6e39f0} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_table\_new\_from\_locale@{xkb\_compose\_table\_new\_from\_locale}}
+\index{xkb\_compose\_table\_new\_from\_locale@{xkb\_compose\_table\_new\_from\_locale}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_table\_new\_from\_locale}{xkb\_compose\_table\_new\_from\_locale}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale}
+
+\Hypertarget{wl__platform_8h_a7c32628b208aba911df6796926d6f57d}\label{wl__platform_8h_a7c32628b208aba911df6796926d6f57d} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_compose\_table\_unref@{xkb\_compose\_table\_unref}}
+\index{xkb\_compose\_table\_unref@{xkb\_compose\_table\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_compose\_table\_unref}{xkb\_compose\_table\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+compose\+\_\+table\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+compose\+\_\+table\+\_\+unref}
+
+\Hypertarget{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651}\label{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_context\_new@{xkb\_context\_new}}
+\index{xkb\_context\_new@{xkb\_context\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_context\_new}{xkb\_context\_new}}
+{\footnotesize\ttfamily \#define xkb\+\_\+context\+\_\+new~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+new}
+
+\Hypertarget{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444}\label{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_context\_unref@{xkb\_context\_unref}}
+\index{xkb\_context\_unref@{xkb\_context\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_context\_unref}{xkb\_context\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+context\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+unref}
+
+\Hypertarget{wl__platform_8h_a426e6afbf7ce124d9a902f1ae4a119e4}\label{wl__platform_8h_a426e6afbf7ce124d9a902f1ae4a119e4} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_key\_get\_syms\_by\_level@{xkb\_keymap\_key\_get\_syms\_by\_level}}
+\index{xkb\_keymap\_key\_get\_syms\_by\_level@{xkb\_keymap\_key\_get\_syms\_by\_level}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_key\_get\_syms\_by\_level}{xkb\_keymap\_key\_get\_syms\_by\_level}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level}
+
+\Hypertarget{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1}\label{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_key\_repeats@{xkb\_keymap\_key\_repeats}}
+\index{xkb\_keymap\_key\_repeats@{xkb\_keymap\_key\_repeats}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_key\_repeats}{xkb\_keymap\_key\_repeats}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+key\+\_\+repeats~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+repeats}
+
+\Hypertarget{wl__platform_8h_ae00a697007ff6fb26df721434e95043a}\label{wl__platform_8h_ae00a697007ff6fb26df721434e95043a} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_mod\_get\_index@{xkb\_keymap\_mod\_get\_index}}
+\index{xkb\_keymap\_mod\_get\_index@{xkb\_keymap\_mod\_get\_index}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_mod\_get\_index}{xkb\_keymap\_mod\_get\_index}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+mod\+\_\+get\+\_\+index}
+
+\Hypertarget{wl__platform_8h_a46b7585bcf515582df56effb765548ff}\label{wl__platform_8h_a46b7585bcf515582df56effb765548ff} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_new\_from\_string@{xkb\_keymap\_new\_from\_string}}
+\index{xkb\_keymap\_new\_from\_string@{xkb\_keymap\_new\_from\_string}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_new\_from\_string}{xkb\_keymap\_new\_from\_string}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+new\+\_\+from\+\_\+string}
+
+\Hypertarget{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56}\label{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_unref@{xkb\_keymap\_unref}}
+\index{xkb\_keymap\_unref@{xkb\_keymap\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_unref}{xkb\_keymap\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+unref}
+
+\Hypertarget{wl__platform_8h_ab1d4db8d90560c06b7ac881b6591eaa0}\label{wl__platform_8h_ab1d4db8d90560c06b7ac881b6591eaa0} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_key\_get\_layout@{xkb\_state\_key\_get\_layout}}
+\index{xkb\_state\_key\_get\_layout@{xkb\_state\_key\_get\_layout}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_key\_get\_layout}{xkb\_state\_key\_get\_layout}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+layout~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+layout}
+
+\Hypertarget{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8}\label{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_key\_get\_syms@{xkb\_state\_key\_get\_syms}}
+\index{xkb\_state\_key\_get\_syms@{xkb\_state\_key\_get\_syms}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_key\_get\_syms}{xkb\_state\_key\_get\_syms}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+syms}
+
+\Hypertarget{wl__platform_8h_af0e931e223443ccb03af4676115cdd57}\label{wl__platform_8h_af0e931e223443ccb03af4676115cdd57} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_mod\_index\_is\_active@{xkb\_state\_mod\_index\_is\_active}}
+\index{xkb\_state\_mod\_index\_is\_active@{xkb\_state\_mod\_index\_is\_active}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_mod\_index\_is\_active}{xkb\_state\_mod\_index\_is\_active}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active}
+
+\Hypertarget{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c}\label{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_new@{xkb\_state\_new}}
+\index{xkb\_state\_new@{xkb\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_new}{xkb\_state\_new}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+new~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+new}
+
+\Hypertarget{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504}\label{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_unref@{xkb\_state\_unref}}
+\index{xkb\_state\_unref@{xkb\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_unref}{xkb\_state\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+unref}
+
+\Hypertarget{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a}\label{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_update\_mask@{xkb\_state\_update\_mask}}
+\index{xkb\_state\_update\_mask@{xkb\_state\_update\_mask}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_update\_mask}{xkb\_state\_update\_mask}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+update\+\_\+mask~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+update\+\_\+mask}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86}\label{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWcursorWayland@{\_GLFWcursorWayland}}
+\index{\_GLFWcursorWayland@{\_GLFWcursorWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWcursorWayland}{\_GLFWcursorWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413}\label{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}}
+\index{\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationSideWayland}{\_GLFWdecorationSideWayland}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_a55173b590d4140e345ceeb03f906d101}\label{wl__platform_8h_a55173b590d4140e345ceeb03f906d101} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationWayland@{\_GLFWdecorationWayland}}
+\index{\_GLFWdecorationWayland@{\_GLFWdecorationWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationWayland}{\_GLFWdecorationWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755}\label{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWlibraryWayland@{\_GLFWlibraryWayland}}
+\index{\_GLFWlibraryWayland@{\_GLFWlibraryWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWlibraryWayland}{\_GLFWlibraryWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0}\label{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWmonitorWayland@{\_GLFWmonitorWayland}}
+\index{\_GLFWmonitorWayland@{\_GLFWmonitorWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWmonitorWayland}{\_GLFWmonitorWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_a55a9cf6e56770dd52a68a302c3381c5b}\label{wl__platform_8h_a55a9cf6e56770dd52a68a302c3381c5b} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWofferWayland@{\_GLFWofferWayland}}
+\index{\_GLFWofferWayland@{\_GLFWofferWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWofferWayland}{\_GLFWofferWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_woffer_wayland}{\+\_\+\+GLFWoffer\+Wayland}} \mbox{\hyperlink{struct___g_l_f_woffer_wayland}{\+\_\+\+GLFWoffer\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4}\label{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWwindowWayland}{\_GLFWwindowWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}}
+
+\Hypertarget{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}\label{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_vkCreateWaylandSurfaceKHR@{PFN\_vkCreateWaylandSurfaceKHR}}
+\index{PFN\_vkCreateWaylandSurfaceKHR@{PFN\_vkCreateWaylandSurfaceKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkCreateWaylandSurfaceKHR}{PFN\_vkCreateWaylandSurfaceKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Create\+Wayland\+Surface\+KHR) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{struct_vk_allocation_callbacks}{Vk\+Allocation\+Callbacks}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}\label{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}}
+\index{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} \texorpdfstring{$\ast$}{*} PFN\+\_\+vk\+Get\+Physical\+Device\+Wayland\+Presentation\+Support\+KHR) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}, struct wl\+\_\+display \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}\label{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_image\_get\_buffer@{PFN\_wl\_cursor\_image\_get\_buffer}}
+\index{PFN\_wl\_cursor\_image\_get\_buffer@{PFN\_wl\_cursor\_image\_get\_buffer}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_image\_get\_buffer}{PFN\_wl\_cursor\_image\_get\_buffer}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+buffer \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer) (struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}\label{wl__platform_8h_a028b3d9313486c63f918b370f4290b46} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_destroy@{PFN\_wl\_cursor\_theme\_destroy}}
+\index{PFN\_wl\_cursor\_theme\_destroy@{PFN\_wl\_cursor\_theme\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_destroy}{PFN\_wl\_cursor\_theme\_destroy}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+destroy) (struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}\label{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_get\_cursor@{PFN\_wl\_cursor\_theme\_get\_cursor}}
+\index{PFN\_wl\_cursor\_theme\_get\_cursor@{PFN\_wl\_cursor\_theme\_get\_cursor}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_get\_cursor}{PFN\_wl\_cursor\_theme\_get\_cursor}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor) (struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}\label{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_load@{PFN\_wl\_cursor\_theme\_load}}
+\index{PFN\_wl\_cursor\_theme\_load@{PFN\_wl\_cursor\_theme\_load}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_load}{PFN\_wl\_cursor\_theme\_load}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+cursor\+\_\+theme \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+load) (const char \texorpdfstring{$\ast$}{*}, int, struct wl\+\_\+shm \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}\label{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_create@{PFN\_wl\_egl\_window\_create}}
+\index{PFN\_wl\_egl\_window\_create@{PFN\_wl\_egl\_window\_create}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_create}{PFN\_wl\_egl\_window\_create}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+create) (struct wl\+\_\+surface \texorpdfstring{$\ast$}{*}, int, int)}
+
+\Hypertarget{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}\label{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_destroy@{PFN\_wl\_egl\_window\_destroy}}
+\index{PFN\_wl\_egl\_window\_destroy@{PFN\_wl\_egl\_window\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_destroy}{PFN\_wl\_egl\_window\_destroy}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+destroy) (struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_adcf78e57b989ea0e561208099dada945}\label{wl__platform_8h_adcf78e57b989ea0e561208099dada945} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_resize@{PFN\_wl\_egl\_window\_resize}}
+\index{PFN\_wl\_egl\_window\_resize@{PFN\_wl\_egl\_window\_resize}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_resize}{PFN\_wl\_egl\_window\_resize}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+resize) (struct wl\+\_\+egl\+\_\+window \texorpdfstring{$\ast$}{*}, int, int, int, int)}
+
+\Hypertarget{wl__platform_8h_a58829e3e18572f5e5e8d7d0349b3f092}\label{wl__platform_8h_a58829e3e18572f5e5e8d7d0349b3f092} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_state\_feed@{PFN\_xkb\_compose\_state\_feed}}
+\index{PFN\_xkb\_compose\_state\_feed@{PFN\_xkb\_compose\_state\_feed}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_state\_feed}{PFN\_xkb\_compose\_state\_feed}}
+{\footnotesize\ttfamily typedef enum xkb\+\_\+compose\+\_\+feed\+\_\+result(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+feed) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keysym\+\_\+t)}
+
+\Hypertarget{wl__platform_8h_a88d4343fefb99b57a83cb2609eebdf87}\label{wl__platform_8h_a88d4343fefb99b57a83cb2609eebdf87} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_state\_get\_one\_sym@{PFN\_xkb\_compose\_state\_get\_one\_sym}}
+\index{PFN\_xkb\_compose\_state\_get\_one\_sym@{PFN\_xkb\_compose\_state\_get\_one\_sym}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_state\_get\_one\_sym}{PFN\_xkb\_compose\_state\_get\_one\_sym}}
+{\footnotesize\ttfamily typedef xkb\+\_\+keysym\+\_\+t(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+one\+\_\+sym) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_aad8c18022b37e3cd5d8e38a621fa42ed}\label{wl__platform_8h_aad8c18022b37e3cd5d8e38a621fa42ed} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_state\_get\_status@{PFN\_xkb\_compose\_state\_get\_status}}
+\index{PFN\_xkb\_compose\_state\_get\_status@{PFN\_xkb\_compose\_state\_get\_status}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_state\_get\_status}{PFN\_xkb\_compose\_state\_get\_status}}
+{\footnotesize\ttfamily typedef enum xkb\+\_\+compose\+\_\+status(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+get\+\_\+status) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a36a51971876d7465f817c4588e082d92}\label{wl__platform_8h_a36a51971876d7465f817c4588e082d92} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_state\_new@{PFN\_xkb\_compose\_state\_new}}
+\index{PFN\_xkb\_compose\_state\_new@{PFN\_xkb\_compose\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_state\_new}{PFN\_xkb\_compose\_state\_new}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+new) (struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+compose\+\_\+state\+\_\+flags)}
+
+\Hypertarget{wl__platform_8h_a5b405c88d81a608a1a447ac889f6485b}\label{wl__platform_8h_a5b405c88d81a608a1a447ac889f6485b} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_state\_unref@{PFN\_xkb\_compose\_state\_unref}}
+\index{PFN\_xkb\_compose\_state\_unref@{PFN\_xkb\_compose\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_state\_unref}{PFN\_xkb\_compose\_state\_unref}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+state\+\_\+unref) (struct xkb\+\_\+compose\+\_\+state \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a220342367196970f53b774b9e2517d42}\label{wl__platform_8h_a220342367196970f53b774b9e2517d42} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_table\_new\_from\_locale@{PFN\_xkb\_compose\_table\_new\_from\_locale}}
+\index{PFN\_xkb\_compose\_table\_new\_from\_locale@{PFN\_xkb\_compose\_table\_new\_from\_locale}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_table\_new\_from\_locale}{PFN\_xkb\_compose\_table\_new\_from\_locale}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+table\+\_\+new\+\_\+from\+\_\+locale) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+compose\+\_\+compile\+\_\+flags)}
+
+\Hypertarget{wl__platform_8h_a94826943d69f9fce48bb246457692c2e}\label{wl__platform_8h_a94826943d69f9fce48bb246457692c2e} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_compose\_table\_unref@{PFN\_xkb\_compose\_table\_unref}}
+\index{PFN\_xkb\_compose\_table\_unref@{PFN\_xkb\_compose\_table\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_compose\_table\_unref}{PFN\_xkb\_compose\_table\_unref}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+compose\+\_\+table\+\_\+unref) (struct xkb\+\_\+compose\+\_\+table \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}\label{wl__platform_8h_aab405d705b491d12d417d43653efb8b9} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_context\_new@{PFN\_xkb\_context\_new}}
+\index{PFN\_xkb\_context\_new@{PFN\_xkb\_context\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_context\_new}{PFN\_xkb\_context\_new}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+context\+\_\+new) (enum xkb\+\_\+context\+\_\+flags)}
+
+\Hypertarget{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}\label{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_context\_unref@{PFN\_xkb\_context\_unref}}
+\index{PFN\_xkb\_context\_unref@{PFN\_xkb\_context\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_context\_unref}{PFN\_xkb\_context\_unref}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+context\+\_\+unref) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a9866b14ec9bf5013c49523c9a71c2660}\label{wl__platform_8h_a9866b14ec9bf5013c49523c9a71c2660} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_key\_get\_syms\_by\_level@{PFN\_xkb\_keymap\_key\_get\_syms\_by\_level}}
+\index{PFN\_xkb\_keymap\_key\_get\_syms\_by\_level@{PFN\_xkb\_keymap\_key\_get\_syms\_by\_level}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_key\_get\_syms\_by\_level}{PFN\_xkb\_keymap\_key\_get\_syms\_by\_level}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+get\+\_\+syms\+\_\+by\+\_\+level) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+level\+\_\+index\+\_\+t, const xkb\+\_\+keysym\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}\label{wl__platform_8h_a10dd25305b8984d748e0c35db025106e} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_key\_repeats@{PFN\_xkb\_keymap\_key\_repeats}}
+\index{PFN\_xkb\_keymap\_key\_repeats@{PFN\_xkb\_keymap\_key\_repeats}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_key\_repeats}{PFN\_xkb\_keymap\_key\_repeats}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+repeats) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t)}
+
+\Hypertarget{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}\label{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_mod\_get\_index@{PFN\_xkb\_keymap\_mod\_get\_index}}
+\index{PFN\_xkb\_keymap\_mod\_get\_index@{PFN\_xkb\_keymap\_mod\_get\_index}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_mod\_get\_index}{PFN\_xkb\_keymap\_mod\_get\_index}}
+{\footnotesize\ttfamily typedef xkb\+\_\+mod\+\_\+index\+\_\+t(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}\label{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_new\_from\_string@{PFN\_xkb\_keymap\_new\_from\_string}}
+\index{PFN\_xkb\_keymap\_new\_from\_string@{PFN\_xkb\_keymap\_new\_from\_string}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_new\_from\_string}{PFN\_xkb\_keymap\_new\_from\_string}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string) (struct xkb\+\_\+context \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, enum xkb\+\_\+keymap\+\_\+format, enum xkb\+\_\+keymap\+\_\+compile\+\_\+flags)}
+
+\Hypertarget{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}\label{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_unref@{PFN\_xkb\_keymap\_unref}}
+\index{PFN\_xkb\_keymap\_unref@{PFN\_xkb\_keymap\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_unref}{PFN\_xkb\_keymap\_unref}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+keymap\+\_\+unref) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a1ddf8a57641c77805f0aedf68d7c715e}\label{wl__platform_8h_a1ddf8a57641c77805f0aedf68d7c715e} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_key\_get\_layout@{PFN\_xkb\_state\_key\_get\_layout}}
+\index{PFN\_xkb\_state\_key\_get\_layout@{PFN\_xkb\_state\_key\_get\_layout}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_key\_get\_layout}{PFN\_xkb\_state\_key\_get\_layout}}
+{\footnotesize\ttfamily typedef xkb\+\_\+layout\+\_\+index\+\_\+t(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+layout) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t)}
+
+\Hypertarget{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}\label{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_key\_get\_syms@{PFN\_xkb\_state\_key\_get\_syms}}
+\index{PFN\_xkb\_state\_key\_get\_syms@{PFN\_xkb\_state\_key\_get\_syms}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_key\_get\_syms}{PFN\_xkb\_state\_key\_get\_syms}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+keycode\+\_\+t, const xkb\+\_\+keysym\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_adf2e17b2cdff722281b20cc581fb8367}\label{wl__platform_8h_adf2e17b2cdff722281b20cc581fb8367} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_mod\_index\_is\_active@{PFN\_xkb\_state\_mod\_index\_is\_active}}
+\index{PFN\_xkb\_state\_mod\_index\_is\_active@{PFN\_xkb\_state\_mod\_index\_is\_active}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_mod\_index\_is\_active}{PFN\_xkb\_state\_mod\_index\_is\_active}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+mod\+\_\+index\+\_\+is\+\_\+active) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+mod\+\_\+index\+\_\+t, enum xkb\+\_\+state\+\_\+component)}
+
+\Hypertarget{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}\label{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_new@{PFN\_xkb\_state\_new}}
+\index{PFN\_xkb\_state\_new@{PFN\_xkb\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_new}{PFN\_xkb\_state\_new}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+new) (struct xkb\+\_\+keymap \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}\label{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_unref@{PFN\_xkb\_state\_unref}}
+\index{PFN\_xkb\_state\_unref@{PFN\_xkb\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_unref}{PFN\_xkb\_state\_unref}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+unref) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}\label{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_update\_mask@{PFN\_xkb\_state\_update\_mask}}
+\index{PFN\_xkb\_state\_update\_mask@{PFN\_xkb\_state\_update\_mask}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_update\_mask}{PFN\_xkb\_state\_update\_mask}}
+{\footnotesize\ttfamily typedef enum xkb\+\_\+state\+\_\+component(\texorpdfstring{$\ast$}{*} PFN\+\_\+xkb\+\_\+state\+\_\+update\+\_\+mask) (struct xkb\+\_\+state \texorpdfstring{$\ast$}{*}, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t)}
+
+\Hypertarget{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}\label{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33} 
+\index{wl\_platform.h@{wl\_platform.h}!VkWaylandSurfaceCreateFlagsKHR@{VkWaylandSurfaceCreateFlagsKHR}}
+\index{VkWaylandSurfaceCreateFlagsKHR@{VkWaylandSurfaceCreateFlagsKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkWaylandSurfaceCreateFlagsKHR}{VkWaylandSurfaceCreateFlagsKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{Vk\+Wayland\+Surface\+Create\+Flags\+KHR}}}
+
+\Hypertarget{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f}\label{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f} 
+\index{wl\_platform.h@{wl\_platform.h}!VkWaylandSurfaceCreateInfoKHR@{VkWaylandSurfaceCreateInfoKHR}}
+\index{VkWaylandSurfaceCreateInfoKHR@{VkWaylandSurfaceCreateInfoKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkWaylandSurfaceCreateInfoKHR}{VkWaylandSurfaceCreateInfoKHR}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}}
+\index{\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationSideWayland}{\_GLFWdecorationSideWayland}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mainWindow@{mainWindow}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!mainWindow@{mainWindow}}}\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b} 
+main\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{topDecoration@{topDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!topDecoration@{topDecoration}}}\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684} 
+top\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{leftDecoration@{leftDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!leftDecoration@{leftDecoration}}}\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4} 
+left\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rightDecoration@{rightDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!rightDecoration@{rightDecoration}}}\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc} 
+right\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bottomDecoration@{bottomDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!bottomDecoration@{bottomDecoration}}}\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550} 
+bottom\+Decoration&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{wl__platform_8h_a77de15c6021760ccbdbef73c90ece49f}\label{wl__platform_8h_a77de15c6021760ccbdbef73c90ece49f} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwAddDataDeviceListenerWayland@{\_glfwAddDataDeviceListenerWayland}}
+\index{\_glfwAddDataDeviceListenerWayland@{\_glfwAddDataDeviceListenerWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwAddDataDeviceListenerWayland()}{\_glfwAddDataDeviceListenerWayland()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Add\+Data\+Device\+Listener\+Wayland (\begin{DoxyParamCaption}\item[{struct wl\+\_\+data\+\_\+device \texorpdfstring{$\ast$}{*}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}\label{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwAddOutputWayland@{\_glfwAddOutputWayland}}
+\index{\_glfwAddOutputWayland@{\_glfwAddOutputWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwAddOutputWayland()}{\_glfwAddOutputWayland()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Add\+Output\+Wayland (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{name,  }\item[{\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{version }\end{DoxyParamCaption})}
+
+\Hypertarget{wl__platform_8h_a01019cdd65c873422a200c50dbc03449}\label{wl__platform_8h_a01019cdd65c873422a200c50dbc03449} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwAddSeatListenerWayland@{\_glfwAddSeatListenerWayland}}
+\index{\_glfwAddSeatListenerWayland@{\_glfwAddSeatListenerWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwAddSeatListenerWayland()}{\_glfwAddSeatListenerWayland()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Add\+Seat\+Listener\+Wayland (\begin{DoxyParamCaption}\item[{struct wl\+\_\+seat \texorpdfstring{$\ast$}{*}}]{seat }\end{DoxyParamCaption})}
+
+\Hypertarget{wl__platform_8h_a590adac355ae7255f974357d3cc9bb82}\label{wl__platform_8h_a590adac355ae7255f974357d3cc9bb82} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwInputTextWayland@{\_glfwInputTextWayland}}
+\index{\_glfwInputTextWayland@{\_glfwInputTextWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwInputTextWayland()}{\_glfwInputTextWayland()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Input\+Text\+Wayland (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{scancode }\end{DoxyParamCaption})}
+
+\Hypertarget{wl__platform_8h_a44ae89b67cbd69fffc1c34fef72f97bb}\label{wl__platform_8h_a44ae89b67cbd69fffc1c34fef72f97bb} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwUpdateContentScaleWayland@{\_glfwUpdateContentScaleWayland}}
+\index{\_glfwUpdateContentScaleWayland@{\_glfwUpdateContentScaleWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwUpdateContentScaleWayland()}{\_glfwUpdateContentScaleWayland()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Update\+Content\+Scale\+Wayland (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+

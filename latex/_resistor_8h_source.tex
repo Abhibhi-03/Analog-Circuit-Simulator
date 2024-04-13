@@ -1,0 +1,22 @@
+\doxysection{Resistor.\+h}
+\hypertarget{_resistor_8h_source}{}\label{_resistor_8h_source}\mbox{\hyperlink{_resistor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00001}00001\ \textcolor{comment}{//\ 09-\/Sept-\/23\ Fahad\ A.\ Khan\ Created}}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ \_RESISTOR\_H\_}}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00003}00003\ \textcolor{preprocessor}{\#define\ \_RESISTOR\_H\_}}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00006}\mbox{\hyperlink{class_resistor}{00006}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resistor}{Resistor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{double}\ resistance;}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{double}\ Vr\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00009}00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_resistor}{Resistor}}(\textcolor{keywordtype}{double}\ resistance,\ \textcolor{keywordtype}{double}\ red,\ \textcolor{keywordtype}{double}\ green,\ \textcolor{keywordtype}{double}\ blue,\ std::string\ \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}});}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00011}00011\ \ \ \ \ std::string\ \mbox{\hyperlink{class_resistor_a7ce084c8f44edda800354e60378f8692}{GetName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}{Update}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ voltage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}{GetVoltage}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ timestep)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}{Display}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}{SetColor}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00016}00016\ \};}
+\DoxyCodeLine{\Hypertarget{_resistor_8h_source_l00017}00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\_RESISTOR\_H}}
+
+\end{DoxyCode}

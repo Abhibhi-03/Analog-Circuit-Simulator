@@ -1,0 +1,52 @@
+\doxysection{Resistor.\+cpp}
+\hypertarget{_resistor_8cpp_source}{}\label{_resistor_8cpp_source}\mbox{\hyperlink{_resistor_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00001}00001\ \textcolor{comment}{//\ 12-\/Sept-\/23\ Fahad\ A.\ Khan\ Created}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Functions\ defintion\ for\ the\ resistor\ class}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resistor_8h}{Resistor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00007}\mbox{\hyperlink{class_resistor_a919ea298879e304db554ca41a89eaa7b}{00007}}\ \mbox{\hyperlink{class_resistor_a919ea298879e304db554ca41a89eaa7b}{Resistor::Resistor}}(\textcolor{keywordtype}{double}\ resistance,\ \textcolor{keywordtype}{double}\ red,\ \textcolor{keywordtype}{double}\ green,\ \textcolor{keywordtype}{double}\ blue,\ std::string\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00008}00008\ \ \ \ \ this-\/>resistance\ =\ resistance;}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00009}00009\ \ \ \ \ this-\/>\mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}}\ =\ red;}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00010}00010\ \ \ \ \ this-\/>\mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}}\ =\ green;}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00011}00011\ \ \ \ \ this-\/>\mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}}\ =\ blue;}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00012}00012\ \ \ \ \ this-\/>name\ =\ \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}};}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00015}\mbox{\hyperlink{class_resistor_a7ce084c8f44edda800354e60378f8692}{00015}}\ std::string\ \mbox{\hyperlink{class_resistor_a7ce084c8f44edda800354e60378f8692}{Resistor::GetName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00016}00016\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}};}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00020}\mbox{\hyperlink{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}{Resistor::Update}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ voltage)}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00025}\mbox{\hyperlink{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}{00025}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}{Resistor::GetVoltage}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ timestep)\ \{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ current\ *\ resistance;}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00029}\mbox{\hyperlink{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}{Resistor::Display}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}})}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//set\ color\ to\ the\ color\ of\ the\ component}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_acee7240272b34e83a4567a1fb586be99}{glColor3f}}(\mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}},\ \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}},\ \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}});}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Draw\ a\ point\ at\ the\ specified\ position}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a98964453975519f92d6cc59ef77f7436}{glBegin}}(\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a8c24a16d303b4d935f81c240a2cd88b8}{GL\_POINTS}});}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a474f4498ace02f86e7f299eb8bf27da3}{glVertex2f}}(\mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}});}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_abbff207d1fa71b296ff35b149cef7238}{glEnd}}();}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Force\ execution\ of\ OpenGL\ commands\ in\ finite\ time}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_afb3e087fc26a916a909d46ead9cfc44a}{glFlush}}();}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00042}\mbox{\hyperlink{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}{Resistor::SetColor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00043}00043\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ set\ the\ color\ to\ the\ color\ of\ the\ component}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_acee7240272b34e83a4567a1fb586be99}{glColor3f}}(\mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}},\ \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}},\ \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}});}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{_resistor_8cpp_source_l00047}00047\ }
+
+\end{DoxyCode}

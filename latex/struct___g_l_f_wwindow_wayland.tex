@@ -1,0 +1,332 @@
+\doxysection{\+\_\+\+GLFWwindow\+Wayland Struct Reference}
+\hypertarget{struct___g_l_f_wwindow_wayland}{}\label{struct___g_l_f_wwindow_wayland}\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+
+
+{\ttfamily \#include $<$wl\+\_\+platform.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ae7a74e82083246545e7caf62bb839cf3}{width}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4db9e7087b799ac1d45ba74214347e9d}{height}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_add22e05f7cce932e4e90a35c0b1fb430}{visible}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ac93fc033f79480e6401a1cb66340c16f}{maximized}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a46c3aea37ee468268f38eab12ccb7093}{activated}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_af5f585e87118fef5352752e6888dec20}{fullscreen}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a791c3840dc234bfb7feb8935ce23a75f}{hovered}}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ad5491743c29adf82ac47ed4d9de60a49}{transparent}}
+\item 
+struct wl\+\_\+surface \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a1245cc6dddb436bed05453cfaab7093a}{surface}}
+\item 
+struct wl\+\_\+callback \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a89673e8d23f9b390e9294685605c3cf0}{callback}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct wl\_egl\_window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ada6f7a999842fbbd5088c666cf4262b6}{window}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a417fcacb88a48b01dcea124ae45f237e}{egl}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ae7a74e82083246545e7caf62bb839cf3}{width}}\\
+\>int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4db9e7087b799ac1d45ba74214347e9d}{height}}\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ac93fc033f79480e6401a1cb66340c16f}{maximized}}\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a5692b0783fdb20cf7eb1e849ebe3eeae}{iconified}}\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a46c3aea37ee468268f38eab12ccb7093}{activated}}\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_af5f585e87118fef5352752e6888dec20}{fullscreen}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a9f880ead178c4313a54b2b8fbe087d4b}{pending}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct xdg\_surface \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a8ee97828153efb2c7e66fcfa09cdf686}{surface}}\\
+\>struct xdg\_toplevel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a72a94f91b3ac6c973f53f7e9cc0f560b}{toplevel}}\\
+\>struct zxdg\_toplevel\_decoration\_v1 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a848fd2c1b3a440168b71b1f9f3080596}{decoration}}\\
+\>\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a360345d1b3c7ab0bc022bec1addaa414}{decorationMode}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a533a6bb324b4dbe83e700793cc0bfcc1}{xdg}}\\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{struct___g_l_f_wcursor}{\+\_\+\+GLFWcursor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a872dbd1fe8731988ae5be6c94e3293d4}{current\+Cursor}}
+\item 
+double \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4fa337c9768c3bd451db24603d548069}{cursor\+PosX}}
+\item 
+double \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ac8a5b3ad373c2fd3c6ec4b171dab5af4}{cursor\+PosY}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_af83f39d1172fc1ebedb33d6ea77f03ec}{title}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_aa38d0343058e1ad1e24c619ab4d6ed70}{scale}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a0febe4239626689c8443bc675c10cfa0}{monitors}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_afb1e06d097ad0ce19eab5eaeacca6467}{monitors\+Count}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a130a3f4605089714cd799d8439047b60}{monitors\+Size}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct zwp\_relative\_pointer\_v1 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a3f31da3d66b010ef9f399e8c35f1e16f}{relativePointer}}\\
+\>struct zwp\_locked\_pointer\_v1 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a056ef50c72f289dbf9c671ee4f14e286}{lockedPointer}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_aa7f31996e458a60e7ab57e07fdc19b54}{pointerLock}}\\
+
+\end{tabbing}\item 
+struct zwp\+\_\+idle\+\_\+inhibitor\+\_\+v1 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a7054e326a924acf2143475ccbca9bfbf}{idle\+Inhibitor}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct wl\_buffer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a007a9a2477c6baea9337610def507cea}{buffer}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a074c129ff18686198704e23bd86d4e4e}{top}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a8aaf251086c05a6faca37495d0b7be8f}{left}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_acc2489167d7dd27a1f217f85a28bacfb}{right}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ab5085cc694337df30d46501a1a4f93e5}{bottom}}\\
+\>\mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\_GLFWdecorationSideWayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ae7b3936c82fc75cccf6cdc1c2c58e0c2}{focus}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a595c3ca518af71cfcfaf108a91868a5b}{decorations}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct___g_l_f_wwindow_wayland_a46c3aea37ee468268f38eab12ccb7093}\label{struct___g_l_f_wwindow_wayland_a46c3aea37ee468268f38eab12ccb7093} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!activated@{activated}}
+\index{activated@{activated}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{activated}{activated}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::activated}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ab5085cc694337df30d46501a1a4f93e5}\label{struct___g_l_f_wwindow_wayland_ab5085cc694337df30d46501a1a4f93e5} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!bottom@{bottom}}
+\index{bottom@{bottom}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \+\_\+\+GLFWwindow\+Wayland\+::bottom}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a007a9a2477c6baea9337610def507cea}\label{struct___g_l_f_wwindow_wayland_a007a9a2477c6baea9337610def507cea} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!buffer@{buffer}}
+\index{buffer@{buffer}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily struct wl\+\_\+buffer\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::buffer}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a89673e8d23f9b390e9294685605c3cf0}\label{struct___g_l_f_wwindow_wayland_a89673e8d23f9b390e9294685605c3cf0} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!callback@{callback}}
+\index{callback@{callback}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily struct wl\+\_\+callback\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::callback}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a872dbd1fe8731988ae5be6c94e3293d4}\label{struct___g_l_f_wwindow_wayland_a872dbd1fe8731988ae5be6c94e3293d4} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!currentCursor@{currentCursor}}
+\index{currentCursor@{currentCursor}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{currentCursor}{currentCursor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wcursor}{\+\_\+\+GLFWcursor}}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::current\+Cursor}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a4fa337c9768c3bd451db24603d548069}\label{struct___g_l_f_wwindow_wayland_a4fa337c9768c3bd451db24603d548069} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!cursorPosX@{cursorPosX}}
+\index{cursorPosX@{cursorPosX}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{cursorPosX}{cursorPosX}}
+{\footnotesize\ttfamily double \+\_\+\+GLFWwindow\+Wayland\+::cursor\+PosX}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ac8a5b3ad373c2fd3c6ec4b171dab5af4}\label{struct___g_l_f_wwindow_wayland_ac8a5b3ad373c2fd3c6ec4b171dab5af4} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!cursorPosY@{cursorPosY}}
+\index{cursorPosY@{cursorPosY}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{cursorPosY}{cursorPosY}}
+{\footnotesize\ttfamily double \+\_\+\+GLFWwindow\+Wayland\+::cursor\+PosY}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a848fd2c1b3a440168b71b1f9f3080596}\label{struct___g_l_f_wwindow_wayland_a848fd2c1b3a440168b71b1f9f3080596} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!decoration@{decoration}}
+\index{decoration@{decoration}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{decoration}{decoration}}
+{\footnotesize\ttfamily struct zxdg\+\_\+toplevel\+\_\+decoration\+\_\+v1\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::decoration}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a360345d1b3c7ab0bc022bec1addaa414}\label{struct___g_l_f_wwindow_wayland_a360345d1b3c7ab0bc022bec1addaa414} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!decorationMode@{decorationMode}}
+\index{decorationMode@{decorationMode}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{decorationMode}{decorationMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \+\_\+\+GLFWwindow\+Wayland\+::decoration\+Mode}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a595c3ca518af71cfcfaf108a91868a5b}\label{struct___g_l_f_wwindow_wayland_a595c3ca518af71cfcfaf108a91868a5b} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!decorations@{decorations}}
+\index{decorations@{decorations}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWwindow\+Wayland\+::decorations}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a417fcacb88a48b01dcea124ae45f237e}\label{struct___g_l_f_wwindow_wayland_a417fcacb88a48b01dcea124ae45f237e} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!egl@{egl}}
+\index{egl@{egl}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWwindow\+Wayland\+::egl}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ae7b3936c82fc75cccf6cdc1c2c58e0c2}\label{struct___g_l_f_wwindow_wayland_ae7b3936c82fc75cccf6cdc1c2c58e0c2} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!focus@{focus}}
+\index{focus@{focus}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{focus}{focus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \+\_\+\+GLFWwindow\+Wayland\+::focus}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_af5f585e87118fef5352752e6888dec20}\label{struct___g_l_f_wwindow_wayland_af5f585e87118fef5352752e6888dec20} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!fullscreen@{fullscreen}}
+\index{fullscreen@{fullscreen}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{fullscreen}{fullscreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::fullscreen}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a4db9e7087b799ac1d45ba74214347e9d}\label{struct___g_l_f_wwindow_wayland_a4db9e7087b799ac1d45ba74214347e9d} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!height@{height}}
+\index{height@{height}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWwindow\+Wayland\+::height}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a791c3840dc234bfb7feb8935ce23a75f}\label{struct___g_l_f_wwindow_wayland_a791c3840dc234bfb7feb8935ce23a75f} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!hovered@{hovered}}
+\index{hovered@{hovered}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{hovered}{hovered}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::hovered}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a5692b0783fdb20cf7eb1e849ebe3eeae}\label{struct___g_l_f_wwindow_wayland_a5692b0783fdb20cf7eb1e849ebe3eeae} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!iconified@{iconified}}
+\index{iconified@{iconified}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{iconified}{iconified}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::iconified}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a7054e326a924acf2143475ccbca9bfbf}\label{struct___g_l_f_wwindow_wayland_a7054e326a924acf2143475ccbca9bfbf} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!idleInhibitor@{idleInhibitor}}
+\index{idleInhibitor@{idleInhibitor}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{idleInhibitor}{idleInhibitor}}
+{\footnotesize\ttfamily struct zwp\+\_\+idle\+\_\+inhibitor\+\_\+v1\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::idle\+Inhibitor}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a8aaf251086c05a6faca37495d0b7be8f}\label{struct___g_l_f_wwindow_wayland_a8aaf251086c05a6faca37495d0b7be8f} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!left@{left}}
+\index{left@{left}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \+\_\+\+GLFWwindow\+Wayland\+::left}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a056ef50c72f289dbf9c671ee4f14e286}\label{struct___g_l_f_wwindow_wayland_a056ef50c72f289dbf9c671ee4f14e286} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!lockedPointer@{lockedPointer}}
+\index{lockedPointer@{lockedPointer}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{lockedPointer}{lockedPointer}}
+{\footnotesize\ttfamily struct zwp\+\_\+locked\+\_\+pointer\+\_\+v1\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::locked\+Pointer}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ac93fc033f79480e6401a1cb66340c16f}\label{struct___g_l_f_wwindow_wayland_ac93fc033f79480e6401a1cb66340c16f} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!maximized@{maximized}}
+\index{maximized@{maximized}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{maximized}{maximized}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::maximized}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a0febe4239626689c8443bc675c10cfa0}\label{struct___g_l_f_wwindow_wayland_a0febe4239626689c8443bc675c10cfa0} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!monitors@{monitors}}
+\index{monitors@{monitors}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{monitors}{monitors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::monitors}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_afb1e06d097ad0ce19eab5eaeacca6467}\label{struct___g_l_f_wwindow_wayland_afb1e06d097ad0ce19eab5eaeacca6467} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!monitorsCount@{monitorsCount}}
+\index{monitorsCount@{monitorsCount}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{monitorsCount}{monitorsCount}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWwindow\+Wayland\+::monitors\+Count}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a130a3f4605089714cd799d8439047b60}\label{struct___g_l_f_wwindow_wayland_a130a3f4605089714cd799d8439047b60} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!monitorsSize@{monitorsSize}}
+\index{monitorsSize@{monitorsSize}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{monitorsSize}{monitorsSize}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWwindow\+Wayland\+::monitors\+Size}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a9f880ead178c4313a54b2b8fbe087d4b}\label{struct___g_l_f_wwindow_wayland_a9f880ead178c4313a54b2b8fbe087d4b} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!pending@{pending}}
+\index{pending@{pending}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWwindow\+Wayland\+::pending}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_aa7f31996e458a60e7ab57e07fdc19b54}\label{struct___g_l_f_wwindow_wayland_aa7f31996e458a60e7ab57e07fdc19b54} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!pointerLock@{pointerLock}}
+\index{pointerLock@{pointerLock}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWwindow\+Wayland\+::pointer\+Lock}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a3f31da3d66b010ef9f399e8c35f1e16f}\label{struct___g_l_f_wwindow_wayland_a3f31da3d66b010ef9f399e8c35f1e16f} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!relativePointer@{relativePointer}}
+\index{relativePointer@{relativePointer}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{relativePointer}{relativePointer}}
+{\footnotesize\ttfamily struct zwp\+\_\+relative\+\_\+pointer\+\_\+v1\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::relative\+Pointer}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_acc2489167d7dd27a1f217f85a28bacfb}\label{struct___g_l_f_wwindow_wayland_acc2489167d7dd27a1f217f85a28bacfb} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!right@{right}}
+\index{right@{right}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \+\_\+\+GLFWwindow\+Wayland\+::right}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_aa38d0343058e1ad1e24c619ab4d6ed70}\label{struct___g_l_f_wwindow_wayland_aa38d0343058e1ad1e24c619ab4d6ed70} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!scale@{scale}}
+\index{scale@{scale}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWwindow\+Wayland\+::scale}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a1245cc6dddb436bed05453cfaab7093a}\label{struct___g_l_f_wwindow_wayland_a1245cc6dddb436bed05453cfaab7093a} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!surface@{surface}}
+\index{surface@{surface}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{surface}{surface}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily struct wl\+\_\+surface\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::surface}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a8ee97828153efb2c7e66fcfa09cdf686}\label{struct___g_l_f_wwindow_wayland_a8ee97828153efb2c7e66fcfa09cdf686} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!surface@{surface}}
+\index{surface@{surface}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{surface}{surface}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily struct xdg\+\_\+surface\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::surface}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_af83f39d1172fc1ebedb33d6ea77f03ec}\label{struct___g_l_f_wwindow_wayland_af83f39d1172fc1ebedb33d6ea77f03ec} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!title@{title}}
+\index{title@{title}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::title}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a074c129ff18686198704e23bd86d4e4e}\label{struct___g_l_f_wwindow_wayland_a074c129ff18686198704e23bd86d4e4e} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!top@{top}}
+\index{top@{top}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \+\_\+\+GLFWwindow\+Wayland\+::top}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a72a94f91b3ac6c973f53f7e9cc0f560b}\label{struct___g_l_f_wwindow_wayland_a72a94f91b3ac6c973f53f7e9cc0f560b} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!toplevel@{toplevel}}
+\index{toplevel@{toplevel}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{toplevel}{toplevel}}
+{\footnotesize\ttfamily struct xdg\+\_\+toplevel\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::toplevel}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ad5491743c29adf82ac47ed4d9de60a49}\label{struct___g_l_f_wwindow_wayland_ad5491743c29adf82ac47ed4d9de60a49} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!transparent@{transparent}}
+\index{transparent@{transparent}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{transparent}{transparent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::transparent}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_add22e05f7cce932e4e90a35c0b1fb430}\label{struct___g_l_f_wwindow_wayland_add22e05f7cce932e4e90a35c0b1fb430} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!visible@{visible}}
+\index{visible@{visible}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{visible}{visible}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWwindow\+Wayland\+::visible}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ae7a74e82083246545e7caf62bb839cf3}\label{struct___g_l_f_wwindow_wayland_ae7a74e82083246545e7caf62bb839cf3} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!width@{width}}
+\index{width@{width}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWwindow\+Wayland\+::width}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_ada6f7a999842fbbd5088c666cf4262b6}\label{struct___g_l_f_wwindow_wayland_ada6f7a999842fbbd5088c666cf4262b6} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!window@{window}}
+\index{window@{window}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily struct wl\+\_\+egl\+\_\+window\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWwindow\+Wayland\+::window}
+
+\Hypertarget{struct___g_l_f_wwindow_wayland_a533a6bb324b4dbe83e700793cc0bfcc1}\label{struct___g_l_f_wwindow_wayland_a533a6bb324b4dbe83e700793cc0bfcc1} 
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!xdg@{xdg}}
+\index{xdg@{xdg}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWwindow\+Wayland\+::xdg}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.\+3.\+8/glfw-\/3.\+3.\+8/src/\mbox{\hyperlink{wl__platform_8h}{wl\+\_\+platform.\+h}}\end{DoxyCompactItemize}

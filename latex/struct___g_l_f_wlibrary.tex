@@ -1,0 +1,306 @@
+\doxysection{\+\_\+\+GLFWlibrary Struct Reference}
+\hypertarget{struct___g_l_f_wlibrary}{}\label{struct___g_l_f_wlibrary}\index{\_GLFWlibrary@{\_GLFWlibrary}}
+
+
+{\ttfamily \#include $<$internal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wlibrary_aef3b20f1280cca7cae8316626af42c45}{initialized}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{struct___g_l_f_winitconfig}{\_GLFWinitconfig}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a86550c51bab958a99de2e243e48dd8e8}{init}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a4acbf6d9f23083704b5bfbab28aa3d9a}{framebuffer}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wwndconfig}{\_GLFWwndconfig}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a64464251b6f483f28ce17bdcbccc05cb}{window}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a681e7c0153724884070e9c94069693fb}{context}}\\
+\>int \mbox{\hyperlink{struct___g_l_f_wlibrary_aa6897931acebf196791bc65c82461110}{refreshRate}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wlibrary_a9f6a9a362dd3c8cabfaf6b31cf0bb968}{hints}}\\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{struct___g_l_f_werror}{\+\_\+\+GLFWerror}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a40ade94f8a327f4439b46314ae84dc98}{error\+List\+Head}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wcursor}{\+\_\+\+GLFWcursor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a8e4a4c3a75390dc4a6f649a71ab57a1e}{cursor\+List\+Head}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a7859e386c1ff4ed65e13e6ba1e189cfe}{window\+List\+Head}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_acb84371972f4d704deb0cdc649a1f1da}{monitors}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wlibrary_ae3f408467579cb3fb517fcd39fa23568}{monitor\+Count}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a7f6b01642d8bc4965fd7b084a01bc401}{joysticks}} \mbox{[}\mbox{\hyperlink{group__joysticks_ga9ca13ebf24c331dd98df17d84a4b72c9}{GLFW\+\_\+\+JOYSTICK\+\_\+\+LAST}}+1\mbox{]}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wmapping}{\+\_\+\+GLFWmapping}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a0f3d3622b971d031db365d71eeae0048}{mappings}}
+\item 
+int \mbox{\hyperlink{struct___g_l_f_wlibrary_a974eecd4fb17f568673a0b16474268aa}{mapping\+Count}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wtls}{\+\_\+\+GLFWtls}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a3c64f08c60bd21f7349ec252e65c6aa9}{error\+Slot}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wtls}{\+\_\+\+GLFWtls}} \mbox{\hyperlink{struct___g_l_f_wlibrary_aa267e959a6f2dae405c0c15220e0cfb2}{context\+Slot}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wmutex}{\+\_\+\+GLFWmutex}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a1bc5de4505509cfb4911760237845ee2}{error\+Lock}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\_t}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a1afbda4be41aa343745fc99acc9f895b}{offset}}\\
+\>\mbox{\hyperlink{struct___g_l_f_wlibrary_aee0722d771909a4044511c2d4a78ccd8}{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wlibrary_af030bbdc6fdf263f496f7a47f259c215}{timer}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a7978c47e7cee32b9d3b89bf787cfebc5}{available}}\\
+\>void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a5a67e92b012563943f1e1b26b0bf2645}{handle}}\\
+\>char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___g_l_f_wlibrary_a88851909f399ada9dc2777469bdb3397}{extensions}} \mbox{[}2\mbox{]}\\
+\>\mbox{\hyperlink{internal_8h_ab22f7f5030f939e5fbf5564db51eb197}{PFN\_vkEnumerateInstanceExtensionProperties}} \mbox{\hyperlink{struct___g_l_f_wlibrary_af54595d18803fd82236a53fa134bbce1}{EnumerateInstanceExtensionProperties}}\\
+\>\mbox{\hyperlink{internal_8h_afdd5e96faf709042a34a7bb0024e47d9}{PFN\_vkGetInstanceProcAddr}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a3596213ea7d65e1f299849c04facfe06}{GetInstanceProcAddr}}\\
+\>\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a5169664f24499b5b82dec093165ca166}{KHR\_surface}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wlibrary_a13a4b48ebbbfed84a15009c51adf246f}{vk}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{group__monitor_gaabe16caca8dea952504dfdebdf4cd249}{GLFWmonitorfun}} \mbox{\hyperlink{struct___g_l_f_wlibrary_acea278bb2641c36a371e9e715b7a8f9a}{monitor}}\\
+\>\mbox{\hyperlink{group__input_gaa21ad5986ae9a26077a40142efb56243}{GLFWjoystickfun}} \mbox{\hyperlink{struct___g_l_f_wlibrary_a60d552e59e41b4500e3d36acd35131da}{joystick}}\\
+\} \mbox{\hyperlink{struct___g_l_f_wlibrary_a2ba5093582e770d93bb76ce4394211db}{callbacks}}\\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary_acf3fcb624b8f4cd3c4579bead7111682}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary_a026ab93ed6693b14c3383a3626d8fbc8}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary_a6ce06ff388812f6549e0527f350dde27}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+JOYSTICK\+\_\+\+STATE}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary_a3e757a44b2ee795cc3c257c2b147c668}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary_a3c189ee88bab7d0bcf659e1e4ff3bbdb}{\+\_\+\+GLFW\+\_\+\+OSMESA\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct___g_l_f_wlibrary_a3e757a44b2ee795cc3c257c2b147c668}\label{struct___g_l_f_wlibrary_a3e757a44b2ee795cc3c257c2b147c668} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_a3c189ee88bab7d0bcf659e1e4ff3bbdb}\label{struct___g_l_f_wlibrary_a3c189ee88bab7d0bcf659e1e4ff3bbdb} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+OSMESA\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_a026ab93ed6693b14c3383a3626d8fbc8}\label{struct___g_l_f_wlibrary_a026ab93ed6693b14c3383a3626d8fbc8} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_a6ce06ff388812f6549e0527f350dde27}\label{struct___g_l_f_wlibrary_a6ce06ff388812f6549e0527f350dde27} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+JOYSTICK\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_aee0722d771909a4044511c2d4a78ccd8}\label{struct___g_l_f_wlibrary_aee0722d771909a4044511c2d4a78ccd8} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+TIMER\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_acf3fcb624b8f4cd3c4579bead7111682}\label{struct___g_l_f_wlibrary_acf3fcb624b8f4cd3c4579bead7111682} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \+\_\+\+GLFWlibrary\+::\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}
+
+\Hypertarget{struct___g_l_f_wlibrary_a7978c47e7cee32b9d3b89bf787cfebc5}\label{struct___g_l_f_wlibrary_a7978c47e7cee32b9d3b89bf787cfebc5} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!available@{available}}
+\index{available@{available}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWlibrary\+::available}
+
+\Hypertarget{struct___g_l_f_wlibrary_a2ba5093582e770d93bb76ce4394211db}\label{struct___g_l_f_wlibrary_a2ba5093582e770d93bb76ce4394211db} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWlibrary\+::callbacks}
+
+\Hypertarget{struct___g_l_f_wlibrary_a681e7c0153724884070e9c94069693fb}\label{struct___g_l_f_wlibrary_a681e7c0153724884070e9c94069693fb} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!context@{context}}
+\index{context@{context}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\+\_\+\+GLFWctxconfig}} \+\_\+\+GLFWlibrary\+::context}
+
+\Hypertarget{struct___g_l_f_wlibrary_aa267e959a6f2dae405c0c15220e0cfb2}\label{struct___g_l_f_wlibrary_aa267e959a6f2dae405c0c15220e0cfb2} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!contextSlot@{contextSlot}}
+\index{contextSlot@{contextSlot}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{contextSlot}{contextSlot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wtls}{\+\_\+\+GLFWtls}} \+\_\+\+GLFWlibrary\+::context\+Slot}
+
+\Hypertarget{struct___g_l_f_wlibrary_a8e4a4c3a75390dc4a6f649a71ab57a1e}\label{struct___g_l_f_wlibrary_a8e4a4c3a75390dc4a6f649a71ab57a1e} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!cursorListHead@{cursorListHead}}
+\index{cursorListHead@{cursorListHead}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{cursorListHead}{cursorListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wcursor}{\+\_\+\+GLFWcursor}}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::cursor\+List\+Head}
+
+\Hypertarget{struct___g_l_f_wlibrary_af54595d18803fd82236a53fa134bbce1}\label{struct___g_l_f_wlibrary_af54595d18803fd82236a53fa134bbce1} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!EnumerateInstanceExtensionProperties@{EnumerateInstanceExtensionProperties}}
+\index{EnumerateInstanceExtensionProperties@{EnumerateInstanceExtensionProperties}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{EnumerateInstanceExtensionProperties}{EnumerateInstanceExtensionProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ab22f7f5030f939e5fbf5564db51eb197}{PFN\+\_\+vk\+Enumerate\+Instance\+Extension\+Properties}} \+\_\+\+GLFWlibrary\+::\+Enumerate\+Instance\+Extension\+Properties}
+
+\Hypertarget{struct___g_l_f_wlibrary_a40ade94f8a327f4439b46314ae84dc98}\label{struct___g_l_f_wlibrary_a40ade94f8a327f4439b46314ae84dc98} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!errorListHead@{errorListHead}}
+\index{errorListHead@{errorListHead}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{errorListHead}{errorListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_werror}{\+\_\+\+GLFWerror}}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::error\+List\+Head}
+
+\Hypertarget{struct___g_l_f_wlibrary_a1bc5de4505509cfb4911760237845ee2}\label{struct___g_l_f_wlibrary_a1bc5de4505509cfb4911760237845ee2} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!errorLock@{errorLock}}
+\index{errorLock@{errorLock}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{errorLock}{errorLock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wmutex}{\+\_\+\+GLFWmutex}} \+\_\+\+GLFWlibrary\+::error\+Lock}
+
+\Hypertarget{struct___g_l_f_wlibrary_a3c64f08c60bd21f7349ec252e65c6aa9}\label{struct___g_l_f_wlibrary_a3c64f08c60bd21f7349ec252e65c6aa9} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!errorSlot@{errorSlot}}
+\index{errorSlot@{errorSlot}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{errorSlot}{errorSlot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wtls}{\+\_\+\+GLFWtls}} \+\_\+\+GLFWlibrary\+::error\+Slot}
+
+\Hypertarget{struct___g_l_f_wlibrary_a88851909f399ada9dc2777469bdb3397}\label{struct___g_l_f_wlibrary_a88851909f399ada9dc2777469bdb3397} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!extensions@{extensions}}
+\index{extensions@{extensions}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{extensions}{extensions}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::extensions\mbox{[}2\mbox{]}}
+
+\Hypertarget{struct___g_l_f_wlibrary_a4acbf6d9f23083704b5bfbab28aa3d9a}\label{struct___g_l_f_wlibrary_a4acbf6d9f23083704b5bfbab28aa3d9a} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!framebuffer@{framebuffer}}
+\index{framebuffer@{framebuffer}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{framebuffer}{framebuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\+\_\+\+GLFWfbconfig}} \+\_\+\+GLFWlibrary\+::framebuffer}
+
+\Hypertarget{struct___g_l_f_wlibrary_a3596213ea7d65e1f299849c04facfe06}\label{struct___g_l_f_wlibrary_a3596213ea7d65e1f299849c04facfe06} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!GetInstanceProcAddr@{GetInstanceProcAddr}}
+\index{GetInstanceProcAddr@{GetInstanceProcAddr}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{GetInstanceProcAddr}{GetInstanceProcAddr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_afdd5e96faf709042a34a7bb0024e47d9}{PFN\+\_\+vk\+Get\+Instance\+Proc\+Addr}} \+\_\+\+GLFWlibrary\+::\+Get\+Instance\+Proc\+Addr}
+
+\Hypertarget{struct___g_l_f_wlibrary_a5a67e92b012563943f1e1b26b0bf2645}\label{struct___g_l_f_wlibrary_a5a67e92b012563943f1e1b26b0bf2645} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!handle@{handle}}
+\index{handle@{handle}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::handle}
+
+\Hypertarget{struct___g_l_f_wlibrary_a9f6a9a362dd3c8cabfaf6b31cf0bb968}\label{struct___g_l_f_wlibrary_a9f6a9a362dd3c8cabfaf6b31cf0bb968} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!hints@{hints}}
+\index{hints@{hints}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWlibrary\+::hints}
+
+\Hypertarget{struct___g_l_f_wlibrary_a86550c51bab958a99de2e243e48dd8e8}\label{struct___g_l_f_wlibrary_a86550c51bab958a99de2e243e48dd8e8} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!init@{init}}
+\index{init@{init}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{init}{init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_winitconfig}{\+\_\+\+GLFWinitconfig}} \+\_\+\+GLFWlibrary\+::init}
+
+\Hypertarget{struct___g_l_f_wlibrary_aef3b20f1280cca7cae8316626af42c45}\label{struct___g_l_f_wlibrary_aef3b20f1280cca7cae8316626af42c45} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!initialized@{initialized}}
+\index{initialized@{initialized}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWlibrary\+::initialized}
+
+\Hypertarget{struct___g_l_f_wlibrary_a60d552e59e41b4500e3d36acd35131da}\label{struct___g_l_f_wlibrary_a60d552e59e41b4500e3d36acd35131da} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!joystick@{joystick}}
+\index{joystick@{joystick}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{joystick}{joystick}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__input_gaa21ad5986ae9a26077a40142efb56243}{GLFWjoystickfun}} \+\_\+\+GLFWlibrary\+::joystick}
+
+\Hypertarget{struct___g_l_f_wlibrary_a7f6b01642d8bc4965fd7b084a01bc401}\label{struct___g_l_f_wlibrary_a7f6b01642d8bc4965fd7b084a01bc401} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!joysticks@{joysticks}}
+\index{joysticks@{joysticks}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{joysticks}{joysticks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \+\_\+\+GLFWlibrary\+::joysticks\mbox{[}\mbox{\hyperlink{group__joysticks_ga9ca13ebf24c331dd98df17d84a4b72c9}{GLFW\+\_\+\+JOYSTICK\+\_\+\+LAST}}+1\mbox{]}}
+
+\Hypertarget{struct___g_l_f_wlibrary_a5169664f24499b5b82dec093165ca166}\label{struct___g_l_f_wlibrary_a5169664f24499b5b82dec093165ca166} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!KHR\_surface@{KHR\_surface}}
+\index{KHR\_surface@{KHR\_surface}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{KHR\_surface}{KHR\_surface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+\+GLFWlibrary\+::\+KHR\+\_\+surface}
+
+\Hypertarget{struct___g_l_f_wlibrary_a974eecd4fb17f568673a0b16474268aa}\label{struct___g_l_f_wlibrary_a974eecd4fb17f568673a0b16474268aa} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!mappingCount@{mappingCount}}
+\index{mappingCount@{mappingCount}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{mappingCount}{mappingCount}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWlibrary\+::mapping\+Count}
+
+\Hypertarget{struct___g_l_f_wlibrary_a0f3d3622b971d031db365d71eeae0048}\label{struct___g_l_f_wlibrary_a0f3d3622b971d031db365d71eeae0048} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!mappings@{mappings}}
+\index{mappings@{mappings}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{mappings}{mappings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wmapping}{\+\_\+\+GLFWmapping}}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::mappings}
+
+\Hypertarget{struct___g_l_f_wlibrary_acea278bb2641c36a371e9e715b7a8f9a}\label{struct___g_l_f_wlibrary_acea278bb2641c36a371e9e715b7a8f9a} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!monitor@{monitor}}
+\index{monitor@{monitor}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{monitor}{monitor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__monitor_gaabe16caca8dea952504dfdebdf4cd249}{GLFWmonitorfun}} \+\_\+\+GLFWlibrary\+::monitor}
+
+\Hypertarget{struct___g_l_f_wlibrary_ae3f408467579cb3fb517fcd39fa23568}\label{struct___g_l_f_wlibrary_ae3f408467579cb3fb517fcd39fa23568} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!monitorCount@{monitorCount}}
+\index{monitorCount@{monitorCount}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{monitorCount}{monitorCount}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWlibrary\+::monitor\+Count}
+
+\Hypertarget{struct___g_l_f_wlibrary_acb84371972f4d704deb0cdc649a1f1da}\label{struct___g_l_f_wlibrary_acb84371972f4d704deb0cdc649a1f1da} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!monitors@{monitors}}
+\index{monitors@{monitors}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{monitors}{monitors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::monitors}
+
+\Hypertarget{struct___g_l_f_wlibrary_a1afbda4be41aa343745fc99acc9f895b}\label{struct___g_l_f_wlibrary_a1afbda4be41aa343745fc99acc9f895b} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!offset@{offset}}
+\index{offset@{offset}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\+\_\+t}} \+\_\+\+GLFWlibrary\+::offset}
+
+\Hypertarget{struct___g_l_f_wlibrary_aa6897931acebf196791bc65c82461110}\label{struct___g_l_f_wlibrary_aa6897931acebf196791bc65c82461110} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!refreshRate@{refreshRate}}
+\index{refreshRate@{refreshRate}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{refreshRate}{refreshRate}}
+{\footnotesize\ttfamily int \+\_\+\+GLFWlibrary\+::refresh\+Rate}
+
+\Hypertarget{struct___g_l_f_wlibrary_af030bbdc6fdf263f496f7a47f259c215}\label{struct___g_l_f_wlibrary_af030bbdc6fdf263f496f7a47f259c215} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!timer@{timer}}
+\index{timer@{timer}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWlibrary\+::timer}
+
+\Hypertarget{struct___g_l_f_wlibrary_a13a4b48ebbbfed84a15009c51adf246f}\label{struct___g_l_f_wlibrary_a13a4b48ebbbfed84a15009c51adf246f} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!vk@{vk}}
+\index{vk@{vk}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  \+\_\+\+GLFWlibrary\+::vk}
+
+\Hypertarget{struct___g_l_f_wlibrary_a64464251b6f483f28ce17bdcbccc05cb}\label{struct___g_l_f_wlibrary_a64464251b6f483f28ce17bdcbccc05cb} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!window@{window}}
+\index{window@{window}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wwndconfig}{\+\_\+\+GLFWwndconfig}} \+\_\+\+GLFWlibrary\+::window}
+
+\Hypertarget{struct___g_l_f_wlibrary_a7859e386c1ff4ed65e13e6ba1e189cfe}\label{struct___g_l_f_wlibrary_a7859e386c1ff4ed65e13e6ba1e189cfe} 
+\index{\_GLFWlibrary@{\_GLFWlibrary}!windowListHead@{windowListHead}}
+\index{windowListHead@{windowListHead}!\_GLFWlibrary@{\_GLFWlibrary}}
+\doxysubsubsection{\texorpdfstring{windowListHead}{windowListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}}\texorpdfstring{$\ast$}{*} \+\_\+\+GLFWlibrary\+::window\+List\+Head}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.\+3.\+8/glfw-\/3.\+3.\+8/src/\mbox{\hyperlink{internal_8h}{internal.\+h}}\end{DoxyCompactItemize}

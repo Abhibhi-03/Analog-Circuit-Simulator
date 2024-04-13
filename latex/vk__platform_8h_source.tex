@@ -1,0 +1,90 @@
+\doxysection{vk\+\_\+platform.\+h}
+\hypertarget{vk__platform_8h_source}{}\label{vk__platform_8h_source}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/deps/glad/vk\_platform.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/deps/glad/vk\_platform.h}}
+\mbox{\hyperlink{vk__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ File:\ vk\_platform.h\ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Copyright\ 2014-\/2022\ The\ Khronos\ Group\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ VK\_PLATFORM\_H\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ VK\_PLATFORM\_H\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00020\ \textcolor{comment}{***************************************************************************************************}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*\ \ \ Platform-\/specific\ directives\ and\ type\ declarations}}
+\DoxyCodeLine{00022\ \textcolor{comment}{***************************************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ Platform-\/specific\ calling\ convention\ macros.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ Platforms\ should\ define\ these\ so\ that\ Vulkan\ clients\ call\ Vulkan\ commands}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ with\ the\ same\ calling\ conventions\ that\ the\ Vulkan\ implementation\ expects.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ VKAPI\_ATTR\ -\/\ Placed\ before\ the\ return\ type\ in\ function\ declarations.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ Useful\ for\ C++11\ and\ GCC/Clang-\/style\ function\ attribute\ syntax.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ VKAPI\_CALL\ -\/\ Placed\ after\ the\ return\ type\ in\ function\ declarations.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ Useful\ for\ MSVC-\/style\ calling\ convention\ syntax.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ VKAPI\_PTR\ \ -\/\ Placed\ between\ the\ '('\ and\ '*'\ in\ function\ pointer\ types.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ Function\ declaration:\ \ VKAPI\_ATTR\ void\ VKAPI\_CALL\ vkCommand(void);}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ Function\ pointer\ type:\ typedef\ void\ (VKAPI\_PTR\ *PFN\_vkCommand)(void);}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{/*\ On\ Windows,\ Vulkan\ commands\ use\ the\ stdcall\ convention\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_ATTR}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_CALL\ \_\_stdcall}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_PTR\ \ VKAPI\_CALL}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#elif\ defined(\_\_ANDROID\_\_)\ \&\&\ defined(\_\_ARM\_ARCH)\ \&\&\ \_\_ARM\_ARCH\ <\ 7}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \#error\ "{}Vulkan\ is\ not\ supported\ for\ the\ 'armeabi'\ NDK\ ABI"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#elif\ defined(\_\_ANDROID\_\_)\ \&\&\ defined(\_\_ARM\_ARCH)\ \&\&\ \_\_ARM\_ARCH\ >=\ 7\ \&\&\ defined(\_\_ARM\_32BIT\_STATE)}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{/*\ On\ Android\ 32-\/bit\ ARM\ targets,\ Vulkan\ functions\ use\ the\ "{}hardfloat"{}\ */}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ calling\ convention,\ i.e.\ float\ parameters\ are\ passed\ in\ registers.\ This\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*\ is\ true\ even\ if\ the\ rest\ of\ the\ application\ passes\ floats\ on\ the\ stack,\ */}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{/*\ as\ it\ does\ by\ default\ when\ compiling\ for\ the\ armeabi-\/v7a\ NDK\ ABI.\ */}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_ATTR\ \_\_attribute\_\_((pcs("{}aapcs-\/vfp"{})))}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_CALL}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_PTR\ \ VKAPI\_ATTR}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{/*\ On\ other\ platforms,\ use\ the\ default\ calling\ convention\ */}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_ATTR}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_CALL}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \#define\ VKAPI\_PTR}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ !defined(VK\_NO\_STDDEF\_H)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \#include\ <stddef.h>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !defined(VK\_NO\_STDDEF\_H)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ !defined(VK\_NO\_STDINT\_H)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_MSC\_VER)\ \&\&\ (\_MSC\_VER\ <\ 1600)}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \_\_int8\ \ \mbox{\hyperlink{stdint_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \_\_int8\ \ \mbox{\hyperlink{stdint_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \_\_int16\ \mbox{\hyperlink{stdint_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \_\_int16\ \mbox{\hyperlink{stdint_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \_\_int32\ \mbox{\hyperlink{stdint_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\_t}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \_\_int32\ \mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \_\_int64\ \mbox{\hyperlink{stdint_8h_a414156feea104f8f75b4ed9e3121b2f6}{int64\_t}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \_\_int64\ \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\_t}};}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <\mbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !defined(VK\_NO\_STDINT\_H)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00081\ \}\ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

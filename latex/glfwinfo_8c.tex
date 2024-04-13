@@ -1,0 +1,125 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/glfwinfo.c File Reference}
+\hypertarget{glfwinfo_8c}{}\label{glfwinfo_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/glfwinfo.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/glfwinfo.c}}
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include $<$glad/vulkan.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}getopt.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_a088324ad8995e3eb76024e3e79083d48}{GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_ad86628ae9a6cd0856e18e3d4597592c2}{API\+\_\+\+NAME\+\_\+\+OPENGL}}~"{}gl"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_a511755371b01da0ad04356d8748bf00e}{API\+\_\+\+NAME\+\_\+\+OPENGL\+\_\+\+ES}}~"{}es"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_a4759ca30eeb9b561d9f92620a0bf5a72}{API\+\_\+\+NAME\+\_\+\+NATIVE}}~"{}native"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_ab81c2e58deb2f086cd66b5b02d02bbdd}{API\+\_\+\+NAME\+\_\+\+EGL}}~"{}egl"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_ae378fdbbc6634c234caa5b184ccfa8cb}{API\+\_\+\+NAME\+\_\+\+OSMESA}}~"{}osmesa"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_aa17e97eac64dd5c8a67d61aee4d04e18}{PROFILE\+\_\+\+NAME\+\_\+\+CORE}}~"{}core"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_acfc211849aa8dff75e8f07fd2ef6d202}{PROFILE\+\_\+\+NAME\+\_\+\+COMPAT}}~"{}compat"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_aeddf6d1cc208f883f552be3d8e85be20}{STRATEGY\+\_\+\+NAME\+\_\+\+NONE}}~"{}none"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_ad1bebefcc4d979fa8d2b0903446c8503}{STRATEGY\+\_\+\+NAME\+\_\+\+LOSE}}~"{}lose"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_ab69925e9bbb02d4b381d4ff402a20dc0}{BEHAVIOR\+\_\+\+NAME\+\_\+\+NONE}}~"{}none"{}
+\item 
+\#define \mbox{\hyperlink{glfwinfo_8c_a38d80d41276fa757605653c264534b05}{BEHAVIOR\+\_\+\+NAME\+\_\+\+FLUSH}}~"{}flush"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{glfwinfo_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{glfwinfo_8c_ab81c2e58deb2f086cd66b5b02d02bbdd}\label{glfwinfo_8c_ab81c2e58deb2f086cd66b5b02d02bbdd} 
+\index{glfwinfo.c@{glfwinfo.c}!API\_NAME\_EGL@{API\_NAME\_EGL}}
+\index{API\_NAME\_EGL@{API\_NAME\_EGL}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_EGL}{API\_NAME\_EGL}}
+{\footnotesize\ttfamily \#define API\+\_\+\+NAME\+\_\+\+EGL~"{}egl"{}}
+
+\Hypertarget{glfwinfo_8c_a4759ca30eeb9b561d9f92620a0bf5a72}\label{glfwinfo_8c_a4759ca30eeb9b561d9f92620a0bf5a72} 
+\index{glfwinfo.c@{glfwinfo.c}!API\_NAME\_NATIVE@{API\_NAME\_NATIVE}}
+\index{API\_NAME\_NATIVE@{API\_NAME\_NATIVE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_NATIVE}{API\_NAME\_NATIVE}}
+{\footnotesize\ttfamily \#define API\+\_\+\+NAME\+\_\+\+NATIVE~"{}native"{}}
+
+\Hypertarget{glfwinfo_8c_ad86628ae9a6cd0856e18e3d4597592c2}\label{glfwinfo_8c_ad86628ae9a6cd0856e18e3d4597592c2} 
+\index{glfwinfo.c@{glfwinfo.c}!API\_NAME\_OPENGL@{API\_NAME\_OPENGL}}
+\index{API\_NAME\_OPENGL@{API\_NAME\_OPENGL}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_OPENGL}{API\_NAME\_OPENGL}}
+{\footnotesize\ttfamily \#define API\+\_\+\+NAME\+\_\+\+OPENGL~"{}gl"{}}
+
+\Hypertarget{glfwinfo_8c_a511755371b01da0ad04356d8748bf00e}\label{glfwinfo_8c_a511755371b01da0ad04356d8748bf00e} 
+\index{glfwinfo.c@{glfwinfo.c}!API\_NAME\_OPENGL\_ES@{API\_NAME\_OPENGL\_ES}}
+\index{API\_NAME\_OPENGL\_ES@{API\_NAME\_OPENGL\_ES}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_OPENGL\_ES}{API\_NAME\_OPENGL\_ES}}
+{\footnotesize\ttfamily \#define API\+\_\+\+NAME\+\_\+\+OPENGL\+\_\+\+ES~"{}es"{}}
+
+\Hypertarget{glfwinfo_8c_ae378fdbbc6634c234caa5b184ccfa8cb}\label{glfwinfo_8c_ae378fdbbc6634c234caa5b184ccfa8cb} 
+\index{glfwinfo.c@{glfwinfo.c}!API\_NAME\_OSMESA@{API\_NAME\_OSMESA}}
+\index{API\_NAME\_OSMESA@{API\_NAME\_OSMESA}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_OSMESA}{API\_NAME\_OSMESA}}
+{\footnotesize\ttfamily \#define API\+\_\+\+NAME\+\_\+\+OSMESA~"{}osmesa"{}}
+
+\Hypertarget{glfwinfo_8c_a38d80d41276fa757605653c264534b05}\label{glfwinfo_8c_a38d80d41276fa757605653c264534b05} 
+\index{glfwinfo.c@{glfwinfo.c}!BEHAVIOR\_NAME\_FLUSH@{BEHAVIOR\_NAME\_FLUSH}}
+\index{BEHAVIOR\_NAME\_FLUSH@{BEHAVIOR\_NAME\_FLUSH}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{BEHAVIOR\_NAME\_FLUSH}{BEHAVIOR\_NAME\_FLUSH}}
+{\footnotesize\ttfamily \#define BEHAVIOR\+\_\+\+NAME\+\_\+\+FLUSH~"{}flush"{}}
+
+\Hypertarget{glfwinfo_8c_ab69925e9bbb02d4b381d4ff402a20dc0}\label{glfwinfo_8c_ab69925e9bbb02d4b381d4ff402a20dc0} 
+\index{glfwinfo.c@{glfwinfo.c}!BEHAVIOR\_NAME\_NONE@{BEHAVIOR\_NAME\_NONE}}
+\index{BEHAVIOR\_NAME\_NONE@{BEHAVIOR\_NAME\_NONE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{BEHAVIOR\_NAME\_NONE}{BEHAVIOR\_NAME\_NONE}}
+{\footnotesize\ttfamily \#define BEHAVIOR\+\_\+\+NAME\+\_\+\+NONE~"{}none"{}}
+
+\Hypertarget{glfwinfo_8c_a088324ad8995e3eb76024e3e79083d48}\label{glfwinfo_8c_a088324ad8995e3eb76024e3e79083d48} 
+\index{glfwinfo.c@{glfwinfo.c}!GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}}
+\index{GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{GLFW\_INCLUDE\_NONE}{GLFW\_INCLUDE\_NONE}}
+{\footnotesize\ttfamily \#define GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}
+
+\Hypertarget{glfwinfo_8c_acfc211849aa8dff75e8f07fd2ef6d202}\label{glfwinfo_8c_acfc211849aa8dff75e8f07fd2ef6d202} 
+\index{glfwinfo.c@{glfwinfo.c}!PROFILE\_NAME\_COMPAT@{PROFILE\_NAME\_COMPAT}}
+\index{PROFILE\_NAME\_COMPAT@{PROFILE\_NAME\_COMPAT}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{PROFILE\_NAME\_COMPAT}{PROFILE\_NAME\_COMPAT}}
+{\footnotesize\ttfamily \#define PROFILE\+\_\+\+NAME\+\_\+\+COMPAT~"{}compat"{}}
+
+\Hypertarget{glfwinfo_8c_aa17e97eac64dd5c8a67d61aee4d04e18}\label{glfwinfo_8c_aa17e97eac64dd5c8a67d61aee4d04e18} 
+\index{glfwinfo.c@{glfwinfo.c}!PROFILE\_NAME\_CORE@{PROFILE\_NAME\_CORE}}
+\index{PROFILE\_NAME\_CORE@{PROFILE\_NAME\_CORE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{PROFILE\_NAME\_CORE}{PROFILE\_NAME\_CORE}}
+{\footnotesize\ttfamily \#define PROFILE\+\_\+\+NAME\+\_\+\+CORE~"{}core"{}}
+
+\Hypertarget{glfwinfo_8c_ad1bebefcc4d979fa8d2b0903446c8503}\label{glfwinfo_8c_ad1bebefcc4d979fa8d2b0903446c8503} 
+\index{glfwinfo.c@{glfwinfo.c}!STRATEGY\_NAME\_LOSE@{STRATEGY\_NAME\_LOSE}}
+\index{STRATEGY\_NAME\_LOSE@{STRATEGY\_NAME\_LOSE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{STRATEGY\_NAME\_LOSE}{STRATEGY\_NAME\_LOSE}}
+{\footnotesize\ttfamily \#define STRATEGY\+\_\+\+NAME\+\_\+\+LOSE~"{}lose"{}}
+
+\Hypertarget{glfwinfo_8c_aeddf6d1cc208f883f552be3d8e85be20}\label{glfwinfo_8c_aeddf6d1cc208f883f552be3d8e85be20} 
+\index{glfwinfo.c@{glfwinfo.c}!STRATEGY\_NAME\_NONE@{STRATEGY\_NAME\_NONE}}
+\index{STRATEGY\_NAME\_NONE@{STRATEGY\_NAME\_NONE}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{STRATEGY\_NAME\_NONE}{STRATEGY\_NAME\_NONE}}
+{\footnotesize\ttfamily \#define STRATEGY\+\_\+\+NAME\+\_\+\+NONE~"{}none"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{glfwinfo_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{glfwinfo_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{glfwinfo.c@{glfwinfo.c}!main@{main}}
+\index{main@{main}!glfwinfo.c@{glfwinfo.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+

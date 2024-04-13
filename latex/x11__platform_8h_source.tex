@@ -1,0 +1,456 @@
+\doxysection{x11\+\_\+platform.\+h}
+\hypertarget{x11__platform_8h_source}{}\label{x11__platform_8h_source}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_platform.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_platform.h}}
+\mbox{\hyperlink{x11__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ GLFW\ 3.3\ X11\ -\/\ www.glfw.org}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (c)\ 2002-\/2006\ Marcus\ Geelnard}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Copyright\ (c)\ 2006-\/2019\ Camilla\ Löwy\ <elmindreda@glfw.org>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ \ \ \ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ \ \ \ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ \ \ \ distribution.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <dlfcn.h>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <X11/Xlib.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <X11/keysym.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <X11/Xatom.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <X11/Xcursor/Xcursor.h>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ The\ XRandR\ extension\ provides\ mode\ setting\ and\ gamma\ control}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <X11/extensions/Xrandr.h>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ The\ Xkb\ extension\ provides\ improved\ keyboard\ support}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <X11/XKBlib.h>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ The\ Xinerama\ extension\ provides\ legacy\ monitor\ indices}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <X11/extensions/Xinerama.h>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ The\ XInput\ extension\ provides\ raw\ mouse\ motion\ input}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <X11/extensions/XInput2.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ XRRCrtcGamma*\ (*\ PFN\_XRRAllocGamma)(int);}
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_a2a128e8383ee7696b9912b25c489f668}{PFN\_XRRFreeCrtcInfo}})(XRRCrtcInfo*);}
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_a715362a3d9f09d07560b2d3fe18fa679}{PFN\_XRRFreeGamma}})(XRRCrtcGamma*);}
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_a49a492e9ff561e9e71ee8fb2ab304176}{PFN\_XRRFreeOutputInfo}})(XRROutputInfo*);}
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_a89c98aa408f3d07ccfcc5909a9afeaee}{PFN\_XRRFreeScreenResources}})(XRRScreenResources*);}
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ XRRCrtcGamma*\ (*\ PFN\_XRRGetCrtcGamma)(Display*,RRCrtc);}
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ int\ (*\ \mbox{\hyperlink{x11__platform_8h_a4293a5c80d8f8155c747543cb7684998}{PFN\_XRRGetCrtcGammaSize}})(Display*,RRCrtc);}
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ XRRCrtcInfo*\ (*\ PFN\_XRRGetCrtcInfo)\ (Display*,XRRScreenResources*,RRCrtc);}
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ XRROutputInfo*\ (*\ PFN\_XRRGetOutputInfo)(Display*,XRRScreenResources*,RROutput);}
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ RROutput\ (*\ \mbox{\hyperlink{x11__platform_8h_a77804bf49105dfad36c2f99293745f5a}{PFN\_XRRGetOutputPrimary}})(Display*,Window);}
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ XRRScreenResources*\ (*\ PFN\_XRRGetScreenResourcesCurrent)(Display*,Window);}
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_a395ccc9f7b363cb655b1dc80ffdb70c0}{PFN\_XRRQueryExtension}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ Status\ (*\ \mbox{\hyperlink{x11__platform_8h_ad60e77a1d429d446fa573736845e367b}{PFN\_XRRQueryVersion}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_ab1302751bde12c7de35a77b7d1614237}{PFN\_XRRSelectInput}})(Display*,Window,int);}
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ Status\ (*\ \mbox{\hyperlink{x11__platform_8h_a8da6db5156cb2e11e5de6d096512b2b0}{PFN\_XRRSetCrtcConfig}})(Display*,XRRScreenResources*,RRCrtc,Time,int,int,RRMode,Rotation,RROutput*,int);}
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_a5af20a315bd527aa8c8d9d55f7a8e5d0}{PFN\_XRRSetCrtcGamma}})(Display*,RRCrtc,XRRCrtcGamma*);}
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ int\ (*\ \mbox{\hyperlink{x11__platform_8h_a0dd4ffe4dadeeb5d27a3d74d621d18e2}{PFN\_XRRUpdateConfiguration}})(XEvent*);}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ XRRAllocGamma\ \_glfw.x11.randr.AllocGamma}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ XRRFreeCrtcInfo\ \_glfw.x11.randr.FreeCrtcInfo}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ XRRFreeGamma\ \_glfw.x11.randr.FreeGamma}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ XRRFreeOutputInfo\ \_glfw.x11.randr.FreeOutputInfo}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ XRRFreeScreenResources\ \_glfw.x11.randr.FreeScreenResources}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ XRRGetCrtcGamma\ \_glfw.x11.randr.GetCrtcGamma}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ XRRGetCrtcGammaSize\ \_glfw.x11.randr.GetCrtcGammaSize}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ XRRGetCrtcInfo\ \_glfw.x11.randr.GetCrtcInfo}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ XRRGetOutputInfo\ \_glfw.x11.randr.GetOutputInfo}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ XRRGetOutputPrimary\ \_glfw.x11.randr.GetOutputPrimary}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ XRRGetScreenResourcesCurrent\ \_glfw.x11.randr.GetScreenResourcesCurrent}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ XRRQueryExtension\ \_glfw.x11.randr.QueryExtension}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ XRRQueryVersion\ \_glfw.x11.randr.QueryVersion}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ XRRSelectInput\ \_glfw.x11.randr.SelectInput}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ XRRSetCrtcConfig\ \_glfw.x11.randr.SetCrtcConfig}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ XRRSetCrtcGamma\ \_glfw.x11.randr.SetCrtcGamma}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ XRRUpdateConfiguration\ \_glfw.x11.randr.UpdateConfiguration}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ XcursorImage*\ (*\ PFN\_XcursorImageCreate)(int,int);}
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ void\ (*\ \mbox{\hyperlink{x11__platform_8h_afe5bb9177ee2dc75be4c5254f06edda8}{PFN\_XcursorImageDestroy}})(XcursorImage*);}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ Cursor\ (*\ \mbox{\hyperlink{x11__platform_8h_a246763079b8594f83df243070530a83e}{PFN\_XcursorImageLoadCursor}})(Display*,\textcolor{keyword}{const}\ XcursorImage*);}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ XcursorImageCreate\ \_glfw.x11.xcursor.ImageCreate}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ XcursorImageDestroy\ \_glfw.x11.xcursor.ImageDestroy}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ XcursorImageLoadCursor\ \_glfw.x11.xcursor.ImageLoadCursor}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_aa865bdf7c9d46b2599a7385ab4054900}{PFN\_XineramaIsActive}})(Display*);}
+\DoxyCodeLine{00093\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_ac10a5e28c802fd73f3e2c94262baa115}{PFN\_XineramaQueryExtension}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00094\ \textcolor{keyword}{typedef}\ XineramaScreenInfo*\ (*\ PFN\_XineramaQueryScreens)(Display*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ XineramaIsActive\ \_glfw.x11.xinerama.IsActive}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ XineramaQueryExtension\ \_glfw.x11.xinerama.QueryExtension}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ XineramaQueryScreens\ \_glfw.x11.xinerama.QueryScreens}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{typedef}\ XID\ \mbox{\hyperlink{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c}{xcb\_window\_t}};}
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ XID\ \mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\_visualid\_t}};}
+\DoxyCodeLine{00101\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\_connection\_t}}\ \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\_connection\_t}};}
+\DoxyCodeLine{00102\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\_connection\_t}}*\ (*\ PFN\_XGetXCBConnection)(Display*);}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ XGetXCBConnection\ \_glfw.x11.x11xcb.GetXCBConnection}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_af17658d89afc7423d68b8a2c510ac3fa}{PFN\_XF86VidModeQueryExtension}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00106\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_aba9eded9fd386a2e80b945bad5f71ae8}{PFN\_XF86VidModeGetGammaRamp}})(Display*,int,int,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*);}
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_a6d46efcbd3f2f127c6c9453edfd4ee74}{PFN\_XF86VidModeSetGammaRamp}})(Display*,int,int,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*);}
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_a9c1952bf95a25d44574e1fa2061c6899}{PFN\_XF86VidModeGetGammaRampSize}})(Display*,int,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ XF86VidModeQueryExtension\ \_glfw.x11.vidmode.QueryExtension}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ XF86VidModeGetGammaRamp\ \_glfw.x11.vidmode.GetGammaRamp}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ XF86VidModeSetGammaRamp\ \_glfw.x11.vidmode.SetGammaRamp}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ XF86VidModeGetGammaRampSize\ \_glfw.x11.vidmode.GetGammaRampSize}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{typedef}\ Status\ (*\ \mbox{\hyperlink{x11__platform_8h_a15a1ff7b1e51b10c17e10f1b2ada71e9}{PFN\_XIQueryVersion}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00115\ \textcolor{keyword}{typedef}\ int\ (*\ \mbox{\hyperlink{x11__platform_8h_ae4714dd25018e231e1189d1fd79ef1aa}{PFN\_XISelectEvents}})(Display*,Window,XIEventMask*,int);}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ XIQueryVersion\ \_glfw.x11.xi.QueryVersion}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ XISelectEvents\ \_glfw.x11.xi.SelectEvents}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{typedef}\ Bool\ (*\ \mbox{\hyperlink{x11__platform_8h_a61745485e61f97ef9ab3450004ad8843}{PFN\_XRenderQueryExtension}})(Display*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00120\ \textcolor{keyword}{typedef}\ Status\ (*\ \mbox{\hyperlink{x11__platform_8h_af94996969f1f85bc80aa820285922762}{PFN\_XRenderQueryVersion}})(Display*dpy,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{00121\ \textcolor{keyword}{typedef}\ XRenderPictFormat*\ (*\ PFN\_XRenderFindVisualFormat)(Display*,Visual\ \textcolor{keyword}{const}*);}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ XRenderQueryExtension\ \_glfw.x11.xrender.QueryExtension}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ XRenderQueryVersion\ \_glfw.x11.xrender.QueryVersion}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ XRenderFindVisualFormat\ \_glfw.x11.xrender.FindVisualFormat}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{VkFlags}}\ \mbox{\hyperlink{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914}{VkXlibSurfaceCreateFlagsKHR}};}
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{VkFlags}}\ \mbox{\hyperlink{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981}{VkXcbSurfaceCreateFlagsKHR}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{VkXlibSurfaceCreateInfoKHR}}}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{vulkan_8h_aff9f2b99398eb80a2b5a146bc5534ce8}{VkStructureType}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r_a91e255ca484179ffee524dac66fe87cc}{sType}};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r_a0f01eba069d8c725e9a66ca185d4d4cc}{pNext}};}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ad3ff3a7be86a32d13ce27a63ecd07914}{VkXlibSurfaceCreateFlagsKHR}}\ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r_abe9c6f51aecc6830c795184c98cf5ac1}{flags}};}
+\DoxyCodeLine{00134\ \ \ \ \ Display*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r_a7bf07addcee007a51c706d7b377d5555}{dpy}};}
+\DoxyCodeLine{00135\ \ \ \ \ Window\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r_acac91401967e6d3b7dcc29d61447f616}{window}};}
+\DoxyCodeLine{00136\ \}\ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{VkXlibSurfaceCreateInfoKHR}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{VkXcbSurfaceCreateInfoKHR}}}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{vulkan_8h_aff9f2b99398eb80a2b5a146bc5534ce8}{VkStructureType}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r_a5c9a823be63cf4cbf7def3effe50dde7}{sType}};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r_a0f9ca853448da619194b84051970d4ed}{pNext}};}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_aac3138396859e048e8d4b3a81c39f981}{VkXcbSurfaceCreateFlagsKHR}}\ \ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r_ad766d93140f69d2174f03905afdfc92f}{flags}};}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\_connection\_t}}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r_ae6ddcad90726fafe890f466f887e5749}{connection}};}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a7d9111a4103329ac8c8f6e752a4c0a6c}{xcb\_window\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r_a0e60aca7a0cba6946076b0e6322e78aa}{window}};}
+\DoxyCodeLine{00145\ \}\ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{VkXcbSurfaceCreateInfoKHR}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}}\ (\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}}\ *\mbox{\hyperlink{x11__platform_8h_ac2df2d76a16c25b6744c7ca4028c1de7}{PFN\_vkCreateXlibSurfaceKHR}})(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}},\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vk_xlib_surface_create_info_k_h_r}{VkXlibSurfaceCreateInfoKHR}}*,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vk_allocation_callbacks}{VkAllocationCallbacks}}*,\mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*);}
+\DoxyCodeLine{00148\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{VkBool32}}\ (\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}}\ *\mbox{\hyperlink{x11__platform_8h_a993da456e6d8e84b174c0c075eb8797c}{PFN\_vkGetPhysicalDeviceXlibPresentationSupportKHR}})(\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{VkPhysicalDevice}},\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}},Display*,VisualID);}
+\DoxyCodeLine{00149\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}}\ (\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}}\ *\mbox{\hyperlink{x11__platform_8h_a096006a8090415c298343e76e7f4783a}{PFN\_vkCreateXcbSurfaceKHR}})(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}},\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vk_xcb_surface_create_info_k_h_r}{VkXcbSurfaceCreateInfoKHR}}*,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vk_allocation_callbacks}{VkAllocationCallbacks}}*,\mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*);}
+\DoxyCodeLine{00150\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{VkBool32}}\ (\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}}\ *\mbox{\hyperlink{x11__platform_8h_a9dadff46ad047864d3828d1352f1fb91}{PFN\_vkGetPhysicalDeviceXcbPresentationSupportKHR}})(\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{VkPhysicalDevice}},\mbox{\hyperlink{stdint_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}},\mbox{\hyperlink{x11__platform_8h_a8af532123ce5fb1c75ded03a0d77691f}{xcb\_connection\_t}}*,\mbox{\hyperlink{x11__platform_8h_af6d3da2162878f1f5100fda247831b8b}{xcb\_visualid\_t}});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{posix__thread_8h}{posix\_thread.h}}"{}}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{posix__time_8h}{posix\_time.h}}"{}}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{xkb__unicode_8h}{xkb\_unicode.h}}"{}}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glx__context_8h}{glx\_context.h}}"{}}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{egl__context_8h}{egl\_context.h}}"{}}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{osmesa__context_8h}{osmesa\_context.h}}"{}}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#if\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{linux__joystick_8h}{linux\_joystick.h}}"{}}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{null__joystick_8h}{null\_joystick.h}}"{}}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_glfw\_dlopen(name)\ dlopen(name,\ RTLD\_LAZY\ |\ RTLD\_LOCAL)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_glfw\_dlclose(handle)\ dlclose(handle)}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_glfw\_dlsym(handle,\ name)\ dlsym(handle,\ name)}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_GLFW\_EGL\_NATIVE\_WINDOW\ \ ((EGLNativeWindowType)\ window-\/>x11.handle)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_GLFW\_EGL\_NATIVE\_DISPLAY\ ((EGLNativeDisplayType)\ \_glfw.x11.display)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_GLFW\_PLATFORM\_WINDOW\_STATE\ \ \ \ \ \ \ \ \ \_GLFWwindowX11\ \ x11}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE\ \_GLFWlibraryX11\ x11}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ \_GLFW\_PLATFORM\_MONITOR\_STATE\ \ \ \ \ \ \ \ \_GLFWmonitorX11\ x11}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_GLFW\_PLATFORM\_CURSOR\_STATE\ \ \ \ \ \ \ \ \ \_GLFWcursorX11\ \ x11}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{comment}{//\ X11-\/specific\ per-\/window\ data}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//}}
+\DoxyCodeLine{00179\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\_GLFWwindowX11}}}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ Colormap\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a7eb096618d7bbebb829afd10dded9d39}{colormap}};}
+\DoxyCodeLine{00182\ \ \ \ \ Window\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a2a7044fb8deb636e3d846a381a4bc5af}{handle}};}
+\DoxyCodeLine{00183\ \ \ \ \ Window\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a09a6d08641d514ec11fee884864c5ed1}{parent}};}
+\DoxyCodeLine{00184\ \ \ \ \ XIC\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a0f06b5e4d8d91b2934edfd65f7f9127a}{ic}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_ae54dfe41a017a19fafa8a4f1bb0288f8}{overrideRedirect}};}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a6fcbd95fd9e1afcd19e9d118b09d9a2b}{iconified}};}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_ac186cffdb20f766a89a1199c5e425707}{maximized}};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ Whether\ the\ visual\ supports\ framebuffer\ transparency}}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a40c437a24bb6ed8b96282d84a7fe43dc}{transparent}};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{comment}{//\ Cached\ position\ and\ size\ used\ to\ filter\ out\ duplicate\ events}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a40382828ab57154b1841abe23a33917f}{width}},\ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_aa81c2c62408afb19f11f910f6132caba}{height}};}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_ac4b3b33298c1ac52ad1490507d45bdfc}{xpos}},\ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a4751f63c4f65dd88fc53ee5e10558c74}{ypos}};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{comment}{//\ The\ last\ received\ cursor\ position,\ regardless\ of\ source}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a03783cfd400953c6c89c97dd098ffb06}{lastCursorPosX}},\ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a797f3aa759901625800b295528baa670}{lastCursorPosY}};}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{comment}{//\ The\ last\ position\ the\ cursor\ was\ warped\ to\ by\ GLFW}}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_ab1cb1cbd9161408ff01b74174f0ee784}{warpCursorPosX}},\ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a1bacb07cf71e91d7721139c09e43b2ca}{warpCursorPosY}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//\ The\ time\ of\ the\ last\ KeyPress\ event\ per\ keycode,\ for\ discarding}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//\ duplicate\ key\ events\ generated\ for\ some\ keys\ by\ ibus}}
+\DoxyCodeLine{00204\ \ \ \ \ Time\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow_x11_a7e8948608aa786b5dd81b39bb5d9e3c4}{keyPressTimes}}[256];}
+\DoxyCodeLine{00205\ \}\ \mbox{\hyperlink{struct___g_l_f_wwindow_x11}{\_GLFWwindowX11}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ X11-\/specific\ global\ data}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\_GLFWlibraryX11}}}
+\DoxyCodeLine{00210\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ Display*\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af0aa2a7965bf19cad26853dbee101aa5}{display}};}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a4fffc59e1bb20e819f31975408ad1c14}{screen}};}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Window}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a6b8934bb9537dd8908d6746d65ec439c}{root}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ System\ content\ scale}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a377171379181883c489cdebf66484827}{contentScaleX}},\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a8e9b6ee43510de2885f466eba27173b1}{contentScaleY}};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ Helper\ window\ for\ IPC}}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Window}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a5184d604907b81fd5f948c4e53b163fd}{helperWindowHandle}};}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{//\ Invisible\ cursor\ for\ hidden\ cursor\ mode}}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Cursor}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af9f7294217c1ace59aeb9896ccbff682}{hiddenCursorHandle}};}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{comment}{//\ Context\ for\ mapping\ window\ XIDs\ to\ \_GLFWwindow\ pointers}}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{XContext}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ac4e38d2fcb14f07705c6890672a59a80}{context}};}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//\ XIM\ input\ method}}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{XIM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a52a869c4a5a948955eabe08d525085cd}{im}};}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//\ The\ previous\ X\ error\ handler,\ to\ be\ restored\ later}}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{XErrorHandler}}\ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_abcc79c136b0cd7876611a224a3dbd381}{errorHandler}};}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//\ Most\ recent\ error\ code\ received\ by\ X\ error\ handler}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a46fadcaae0566e058110cd1cc46ddab8}{errorCode}};}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ Primary\ selection\ string\ (while\ the\ primary\ selection\ is\ owned)}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a64e8ac20fec1cb715a6d2cc57c66ab9e}{primarySelectionString}};}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//\ Clipboard\ string\ (while\ the\ selection\ is\ owned)}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acb4673b85d59e095a8658623ad487071}{clipboardString}};}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\ Key\ name\ string}}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a007114d358acee22b14db8352ffa5d03}{keynames}}[\mbox{\hyperlink{group__keys_ga442cbaef7bfb9a4ba13594dd7fbf2789}{GLFW\_KEY\_LAST}}\ +\ 1][5];}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{comment}{//\ X11\ keycode\ to\ GLFW\ key\ LUT}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3b61cd7eef93c74a4c94dd8fb8f2e631}{keycodes}}[256];}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{comment}{//\ GLFW\ key\ to\ X11\ keycode\ LUT}}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a1bad127e5e51f9f9395fe9ae7c5b10f5}{scancodes}}[\mbox{\hyperlink{group__keys_ga442cbaef7bfb9a4ba13594dd7fbf2789}{GLFW\_KEY\_LAST}}\ +\ 1];}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{comment}{//\ Where\ to\ place\ the\ cursor\ when\ re-\/enabled}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a7e02f767f0550aca9c95ecd43a275ec7}{restoreCursorPosX}},\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acfedef185f950798e85ef6852b2bae56}{restoreCursorPosY}};}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{comment}{//\ The\ window\ whose\ disabled\ cursor\ mode\ is\ active}}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}*\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a265b4aad7a4a9ca42345b84c309879bc}{disabledCursorWindow}};}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a1100bac48dafea661b8d98afaf30e0f4}{emptyEventPipe}}[2];}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//\ Window\ manager\ atoms}}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3bd94eedd5db8996ec27c843cc0d4dab}{NET\_SUPPORTED}};}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a022a242b0e1a0a271b891cf47f899b80}{NET\_SUPPORTING\_WM\_CHECK}};}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa8ebd6d2d25d7ee51268e58264229344}{WM\_PROTOCOLS}};}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a69aec8c0e6cd0d58d5cf2398346f6fbe}{WM\_STATE}};}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a7ab7891cd8923ea3abd3846a62b9d9fe}{WM\_DELETE\_WINDOW}};}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a8177fbef755bfb8c32fca11ace597b2b}{NET\_WM\_NAME}};}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3f984c72faa0520bbc0356660c5ed93d}{NET\_WM\_ICON\_NAME}};}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a11221e5f185a3ef78553dc2db168bb63}{NET\_WM\_ICON}};}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a2629a14440ee85b795b7e1f073fe38ed}{NET\_WM\_PID}};}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa4179f1f7390af8cc21416d10a42cf44}{NET\_WM\_PING}};}
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa411143c12c1ab4ea811b869767ccd3a}{NET\_WM\_WINDOW\_TYPE}};}
+\DoxyCodeLine{00257\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ae9271206ee51a7f621e8b77f0820d341}{NET\_WM\_WINDOW\_TYPE\_NORMAL}};}
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3572b8adc36de966c4fa93117d357e4d}{NET\_WM\_STATE}};}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ae103ab55a93236ff71d1342144489325}{NET\_WM\_STATE\_ABOVE}};}
+\DoxyCodeLine{00260\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_adb5fe704eb78af9dc9adf38142115bef}{NET\_WM\_STATE\_FULLSCREEN}};}
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af6f853c0da666ceea2e608e3a23ef512}{NET\_WM\_STATE\_MAXIMIZED\_VERT}};}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa9915ce5213148c611d2a7ad42bd6044}{NET\_WM\_STATE\_MAXIMIZED\_HORZ}};}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aeb1a169796ed2be04c76856fc6da8fb5}{NET\_WM\_STATE\_DEMANDS\_ATTENTION}};}
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a02ad593b27a0702d73b50579ee273ddf}{NET\_WM\_BYPASS\_COMPOSITOR}};}
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_abfd74e48e59316a0331b897eafcbc775}{NET\_WM\_FULLSCREEN\_MONITORS}};}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab339dd46a0eff3435af3e39ad267809e}{NET\_WM\_WINDOW\_OPACITY}};}
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3260359dcb12f2c270295c380de53bc7}{NET\_WM\_CM\_Sx}};}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad73f4fd0f06c8f58d0d95bb0f73b932c}{NET\_WORKAREA}};}
+\DoxyCodeLine{00269\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a51086498b85d9ba86385ba4faa028638}{NET\_CURRENT\_DESKTOP}};}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a605af2c701c3b768f71d6ffb4bab33f9}{NET\_ACTIVE\_WINDOW}};}
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a3c92c43df56f7c7b4bc9768c4ea6cf9d}{NET\_FRAME\_EXTENTS}};}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_abc7f12ec664736508abf23899e2d7a31}{NET\_REQUEST\_FRAME\_EXTENTS}};}
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a067152471b25eaef4173c72d37b5927f}{MOTIF\_WM\_HINTS}};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{comment}{//\ Xdnd\ (drag\ and\ drop)\ atoms}}
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad9bcf550a504f968cd5cfaf7d1747990}{XdndAware}};}
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a46a6bffc947a9f751c9c5a439d6955cf}{XdndEnter}};}
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af124202feddc3e54761babb00528bb59}{XdndPosition}};}
+\DoxyCodeLine{00279\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a24cd938015d8a2762ba4235236c7ad81}{XdndStatus}};}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a0f33373c98349cf85ea6a4834d3b87da}{XdndActionCopy}};}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a01ccdcdd25009c51d565f278f1807f79}{XdndDrop}};}
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a2e8cc770a3d3fc5fd8008605da9ce6a4}{XdndFinished}};}
+\DoxyCodeLine{00283\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af50f9f6a14c80242f914521d6b534e3f}{XdndSelection}};}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a1d4eb17f868135cd5440965224ce4edf}{XdndTypeList}};}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa112695cda23f2953f0731f2ffabaec0}{text\_uri\_list}};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{comment}{//\ Selection\ (clipboard)\ atoms}}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ae27165ae9283e0feb9ae7dc8bd7a4cef}{TARGETS}};}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a0538d14698a3c8ca7158c8df8aecd909}{MULTIPLE}};}
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af5ff35fd9e9e367d4dfb0256ef413eab}{INCR}};}
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad08724f9c2f9d2ad7ee15a1de4f629aa}{CLIPBOARD}};}
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad5e74dfb3eb5d847d97a6851fbc64964}{PRIMARY}};}
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a9319bad95e954932ef1764e978e676a2}{CLIPBOARD\_MANAGER}};}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af37b7891322296d097e2c952cedde9b5}{SAVE\_TARGETS}};}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad4ffbf25e4d673cd936a5ef1101bdae0}{NULL\_}};}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a955444bef4fe657f50f760e48249abd4}{UTF8\_STRING}};}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab75a041cc080f8d949c94f1767c3c2c6}{COMPOUND\_STRING}};}
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a621773da402f65dacdabd837d7a2935d}{ATOM\_PAIR}};}
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acae287b505539bbe8c9d1b7e1bbe087c}{GLFW\_SELECTION}};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad78cc9cc0f660f47bee42789c84472e9}{eventBase}};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06b794795677a230153edc4601ffbf74}{errorBase}};}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ace8792cb1a97976a82a94ab4bb7eb492}{major}};}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad13c1b504246c68f6f45c571b8b002af}{minor}};}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afeef93ec2d1c85c50a6ead457a7f9ef7}{gammaBroken}};}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab330b07f3acacb66a4b5b0efc66d733b}{monitorBroken}};}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a1fb8ec75465e95f1e599b7b9316db6e8}{PFN\_XRRAllocGamma}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_adee852e8f7ef0f1530639f3ab31420c4}{AllocGamma}};}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a2a128e8383ee7696b9912b25c489f668}{PFN\_XRRFreeCrtcInfo}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ac976aa551c622fb20c8f10d8dfa5c864}{FreeCrtcInfo}};}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a715362a3d9f09d07560b2d3fe18fa679}{PFN\_XRRFreeGamma}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afabf64ffb1c814df0fc3c408e540d89b}{FreeGamma}};}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a49a492e9ff561e9e71ee8fb2ab304176}{PFN\_XRRFreeOutputInfo}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_af32e31b6c7a767eff3284d87195f05e6}{FreeOutputInfo}};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a89c98aa408f3d07ccfcc5909a9afeaee}{PFN\_XRRFreeScreenResources}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab8dd60ad7035963af2bd066910dec9d7}{FreeScreenResources}};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_aaf98563bb31f310a2dc702d4665a44c1}{PFN\_XRRGetCrtcGamma}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a044a43a747c02df2c19554e96f8a366b}{GetCrtcGamma}};}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a4293a5c80d8f8155c747543cb7684998}{PFN\_XRRGetCrtcGammaSize}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_abdc69b80fdeb7daa287d230d379848f4}{GetCrtcGammaSize}};}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a5622179c9d57786f7f758fb1ae8c61e0}{PFN\_XRRGetCrtcInfo}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a4b9764e49423f4d96b92d5ad3be404cc}{GetCrtcInfo}};}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_aebb50ac71bcaee24807cb6b9b7920c41}{PFN\_XRRGetOutputInfo}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a35e72a0a66058b2671849354f428be00}{GetOutputInfo}};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a77804bf49105dfad36c2f99293745f5a}{PFN\_XRRGetOutputPrimary}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a7dd25ce6f97db44cb758c860429d0e1e}{GetOutputPrimary}};}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a7d8848666763445d0fba6bdc045dd9be}{PFN\_XRRGetScreenResourcesCurrent}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afd725d3686c3e347e7a4efe547f7fb7f}{GetScreenResourcesCurrent}};}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a395ccc9f7b363cb655b1dc80ffdb70c0}{PFN\_XRRQueryExtension}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afcb52baf2afea400102f4ed647e6efc1}{QueryExtension}};}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ad60e77a1d429d446fa573736845e367b}{PFN\_XRRQueryVersion}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a057b0387b4d4fc67859410254c5575f6}{QueryVersion}};}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ab1302751bde12c7de35a77b7d1614237}{PFN\_XRRSelectInput}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a19299374f8a7f5bf04774fd27e69060a}{SelectInput}};}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a8da6db5156cb2e11e5de6d096512b2b0}{PFN\_XRRSetCrtcConfig}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a59e6d18f60083b3f6c59df09f036c16d}{SetCrtcConfig}};}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a5af20a315bd527aa8c8d9d55f7a8e5d0}{PFN\_XRRSetCrtcGamma}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a6b83c2d8a6fecc4ec0b947a764d78fd1}{SetCrtcGamma}};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a0dd4ffe4dadeeb5d27a3d74d621d18e2}{PFN\_XRRUpdateConfiguration}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a21574443e769ccaadbbdb7658b76ec78}{UpdateConfiguration}};}
+\DoxyCodeLine{00327\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ae8fa06e0b880fd92486fed5843be4bce}{randr}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a7361f691ed348187f810c7b527dfb542}{detectable}};}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a032f8699ad2c02087e92d75e538ecdad}{majorOpcode}};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad78cc9cc0f660f47bee42789c84472e9}{eventBase}};}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06b794795677a230153edc4601ffbf74}{errorBase}};}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ace8792cb1a97976a82a94ab4bb7eb492}{major}};}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad13c1b504246c68f6f45c571b8b002af}{minor}};}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_abc1f3864e52de8779b5eca6a26dad88b}{group}};}
+\DoxyCodeLine{00338\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a5af2589d151280f017ae9627b0e9bea2}{xkb}};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acd88e99ba01e677d42b661f308a137c9}{count}};}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab5253de386ab0a295d7913b2e6b64ad5}{timeout}};}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a2167bd104f8e37d474269330bcff1e79}{interval}};}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab87edb1a7894cd2de22ab1d8e4b24017}{blanking}};}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acdcce44bbf1b93473e6e26c6e1760e87}{exposure}};}
+\DoxyCodeLine{00346\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a5aaaf57e21f8a75b430897a6b9626cbe}{saver}};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_adab05893aed1a7a7f4bc46cce1ddde43}{version}};}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Window}}\ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a39319be291b039841200955fe548f847}{source}};}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{Atom}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aba9b88a0799f45ffd169bbbae3b60d3b}{format}};}
+\DoxyCodeLine{00352\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a22144182497897df2d623cf0c8584b75}{xdnd}};}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ab7cc53b80724438ca5b10ed5c41be891}{PFN\_XcursorImageCreate}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a894b7439e4b99cf53ed2e19b8af1c06f}{ImageCreate}};}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_afe5bb9177ee2dc75be4c5254f06edda8}{PFN\_XcursorImageDestroy}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad01e72ed978a8d1ccecc9639ffc10a08}{ImageDestroy}};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a246763079b8594f83df243070530a83e}{PFN\_XcursorImageLoadCursor}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a4a3d4a2807c73b283776738d4b5f51de}{ImageLoadCursor}};}
+\DoxyCodeLine{00359\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a55e63e2a4b39d1b34b3a82a7a256785f}{xcursor}};}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ace8792cb1a97976a82a94ab4bb7eb492}{major}};}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad13c1b504246c68f6f45c571b8b002af}{minor}};}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_aa865bdf7c9d46b2599a7385ab4054900}{PFN\_XineramaIsActive}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06df6e05f6042c93da0211cce918c48d}{IsActive}};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ac10a5e28c802fd73f3e2c94262baa115}{PFN\_XineramaQueryExtension}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a07a13c96b61c025a3e203e6ecb739ad1}{QueryExtension}};}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ae6405b1f605cfad5e144b81aff973475}{PFN\_XineramaQueryScreens}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a6722cb12e64acfbd663e8b0bfd015da6}{QueryScreens}};}
+\DoxyCodeLine{00369\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a7751f22a405ccfc24a454eb824f24ce8}{xinerama}};}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a78d05140fce23724a98b067a148039b5}{PFN\_XGetXCBConnection}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_aa68b292239955c8b4f7ac03aa9db8d47}{GetXCBConnection}};}
+\DoxyCodeLine{00374\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acb115eeca921cc20f199dcd3e0fe409b}{x11xcb}};}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad78cc9cc0f660f47bee42789c84472e9}{eventBase}};}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06b794795677a230153edc4601ffbf74}{errorBase}};}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_af17658d89afc7423d68b8a2c510ac3fa}{PFN\_XF86VidModeQueryExtension}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a263d10fd18569dd1423a613d02db0200}{QueryExtension}};}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_aba9eded9fd386a2e80b945bad5f71ae8}{PFN\_XF86VidModeGetGammaRamp}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afc2ee8f8d6a0dcdbe5c6b4acef74523a}{GetGammaRamp}};}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a6d46efcbd3f2f127c6c9453edfd4ee74}{PFN\_XF86VidModeSetGammaRamp}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_adedbfa3dd29f655136f29dd192d9480a}{SetGammaRamp}};}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a9c1952bf95a25d44574e1fa2061c6899}{PFN\_XF86VidModeGetGammaRampSize}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a89d92ac7a331d63b0963462156da5fd7}{GetGammaRampSize}};}
+\DoxyCodeLine{00385\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a2e077143d18e58c3cde306519fbb0c85}{vidmode}};}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a032f8699ad2c02087e92d75e538ecdad}{majorOpcode}};}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad78cc9cc0f660f47bee42789c84472e9}{eventBase}};}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06b794795677a230153edc4601ffbf74}{errorBase}};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ace8792cb1a97976a82a94ab4bb7eb492}{major}};}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad13c1b504246c68f6f45c571b8b002af}{minor}};}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a15a1ff7b1e51b10c17e10f1b2ada71e9}{PFN\_XIQueryVersion}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a2725d31b11d10f8c252cdb3c95e83849}{QueryVersion}};}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_ae4714dd25018e231e1189d1fd79ef1aa}{PFN\_XISelectEvents}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ae6c202e04abd518c585f983c290cdaf7}{SelectEvents}};}
+\DoxyCodeLine{00397\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_acc071d7fee390e64297d162c18f0cac1}{xi}};}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a150ac582262b697bd541ce16c1ac3847}{available}};}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ab6974dfc323851ca1a5680029a94d12e}{handle}};}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ace8792cb1a97976a82a94ab4bb7eb492}{major}};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad13c1b504246c68f6f45c571b8b002af}{minor}};}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_ad78cc9cc0f660f47bee42789c84472e9}{eventBase}};}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a06b794795677a230153edc4601ffbf74}{errorBase}};}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a61745485e61f97ef9ab3450004ad8843}{PFN\_XRenderQueryExtension}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_afef03389b73f2b99e20445543591ace5}{QueryExtension}};}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_af94996969f1f85bc80aa820285922762}{PFN\_XRenderQueryVersion}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a291e70cb435a7d329b52fbf7680b1dc9}{QueryVersion}};}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{x11__platform_8h_a632f526f083a1026086d2188d90cd53e}{PFN\_XRenderFindVisualFormat}}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a54680ca1796963ce55ae961390bd2e5f}{FindVisualFormat}};}
+\DoxyCodeLine{00409\ \ \ \ \ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11_a6c98bcf19677285afbf3287f0d050cf0}{xrender}};}
+\DoxyCodeLine{00410\ \}\ \mbox{\hyperlink{struct___g_l_f_wlibrary_x11}{\_GLFWlibraryX11}};}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \textcolor{comment}{//\ X11-\/specific\ per-\/monitor\ data}}
+\DoxyCodeLine{00413\ \textcolor{comment}{//}}
+\DoxyCodeLine{00414\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\_GLFWmonitorX11}}}
+\DoxyCodeLine{00415\ \{}
+\DoxyCodeLine{00416\ \ \ \ \ RROutput\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wmonitor_x11_a4c3af8ee9964e75e02c4085f3beb5159}{output}};}
+\DoxyCodeLine{00417\ \ \ \ \ RRCrtc\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wmonitor_x11_ae6a05077744b9df3f06264e4119d94c3}{crtc}};}
+\DoxyCodeLine{00418\ \ \ \ \ RRMode\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wmonitor_x11_a4c78b460dec9146f01ae0fbce7a180e5}{oldMode}};}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{comment}{//\ Index\ of\ corresponding\ Xinerama\ screen,}}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{comment}{//\ for\ EWMH\ full\ screen\ window\ placement}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct___g_l_f_wmonitor_x11_acd3849d53da4da250dafdbc6052deeaa}{index}};}
+\DoxyCodeLine{00423\ \}\ \mbox{\hyperlink{struct___g_l_f_wmonitor_x11}{\_GLFWmonitorX11}};}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{comment}{//\ X11-\/specific\ per-\/cursor\ data}}
+\DoxyCodeLine{00426\ \textcolor{comment}{//}}
+\DoxyCodeLine{00427\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\_GLFWcursorX11}}}
+\DoxyCodeLine{00428\ \{}
+\DoxyCodeLine{00429\ \ \ \ \ Cursor\ \mbox{\hyperlink{struct___g_l_f_wcursor_x11_aa33b3a24b7e0169fc1d9ac9f5c07b6c2}{handle}};}
+\DoxyCodeLine{00430\ \}\ \mbox{\hyperlink{struct___g_l_f_wcursor_x11}{\_GLFWcursorX11}};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_ade7b239b6691fb34b66f3022ad97949d}{\_glfwPollMonitorsX11}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00434\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_ab4f579e1c8c56307de37875618f947ba}{\_glfwSetVideoModeX11}}(\mbox{\hyperlink{struct___g_l_f_wmonitor}{\_GLFWmonitor}}*\ monitor,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}}*\ desired);}
+\DoxyCodeLine{00435\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_a6dbff2579e47fcec78b5510d738b70a1}{\_glfwRestoreVideoModeX11}}(\mbox{\hyperlink{struct___g_l_f_wmonitor}{\_GLFWmonitor}}*\ monitor);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ Cursor\ \mbox{\hyperlink{x11__platform_8h_adbdd4b17827c10e74644fbd7cd98115e}{\_glfwCreateCursorX11}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}}*\ image,\ \textcolor{keywordtype}{int}\ xhot,\ \textcolor{keywordtype}{int}\ yhot);}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{x11__platform_8h_a889b3172437e770a55812b569e1a93bd}{\_glfwGetWindowPropertyX11}}(Window\ window,}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Atom\ property,}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Atom\ type,}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}**\ value);}
+\DoxyCodeLine{00443\ \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}\ \mbox{\hyperlink{x11__platform_8h_aaed792df59dc2eff6382d4a6f9c54c67}{\_glfwIsVisualTransparentX11}}(Visual*\ visual);}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_ac91795c020fc3d64cabfe8bacb141185}{\_glfwGrabErrorHandlerX11}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00446\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_a2fec8c7a77c8004f943f25914dc947d9}{\_glfwReleaseErrorHandlerX11}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00447\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_a21e402dbb0117b1706d8506024c5689d}{\_glfwInputErrorX11}}(\textcolor{keywordtype}{int}\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message);}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{x11__platform_8h_ae8c308d237bfd06661aa590bfa582579}{\_glfwPushSelectionToManagerX11}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00450\ }
+
+\end{DoxyCode}

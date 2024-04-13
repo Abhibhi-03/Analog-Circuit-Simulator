@@ -1,0 +1,128 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/triangle-\/vulkan.c File Reference}
+\hypertarget{triangle-vulkan_8c}{}\label{triangle-vulkan_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/triangle-\/vulkan.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/tests/triangle-\/vulkan.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$glad/vulkan.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtexture__object}{texture\+\_\+object}}
+\item 
+struct \mbox{\hyperlink{struct_swapchain_buffers}{Swapchain\+Buffers}}
+\item 
+struct \mbox{\hyperlink{structdemo}{demo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_a088324ad8995e3eb76024e3e79083d48}{GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_a889c754b96e13c9a94c431b8c10b7153}{DEMO\+\_\+\+TEXTURE\+\_\+\+COUNT}}~1
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_aca6d606eef84a7f729b71b8abad8f074}{VERTEX\+\_\+\+BUFFER\+\_\+\+BIND\+\_\+\+ID}}~0
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_ab5541e08a357bb88cd008693b6ffc6db}{APP\+\_\+\+SHORT\+\_\+\+NAME}}~"{}tri"{}
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_a7ddc1be37ecfdff9eaaaa045820a96ad}{APP\+\_\+\+LONG\+\_\+\+NAME}}~"{}The Vulkan Triangle Demo Program"{}
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_a25f003de16c08a4888b69f619d70f427}{ARRAY\+\_\+\+SIZE}}(a)~(sizeof(a) / sizeof(a\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_ab33dabc77056cb02bf8609c97d49716b}{U\+\_\+\+ASSERT\+\_\+\+ONLY}}
+\item 
+\#define \mbox{\hyperlink{triangle-vulkan_8c_a28fe14fddb8a99da1b8a644308d1a901}{ERR\+\_\+\+EXIT}}(err\+\_\+msg,  err\+\_\+class)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{vk__platform_8h_a4394dd2421147ed91e838b086be25512}{VKAPI\+\_\+\+ATTR}} \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}} \mbox{\hyperlink{vk__platform_8h_a3856c7761d8b7260870053d0f03a0a49}{VKAPI\+\_\+\+CALL}} \mbox{\hyperlink{triangle-vulkan_8c_aceb348ca75acc3d014a6b94ac3452e57}{Break\+Callback}} (\mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} msg\+Flags, \mbox{\hyperlink{vulkan_8h_a70ad5d79db53aef728a95528945a4c0f}{Vk\+Debug\+Report\+Object\+Type\+EXT}} obj\+Type, \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\+\_\+t}} src\+Object, size\+\_\+t location, \mbox{\hyperlink{stdint_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\+\_\+t}} msg\+Code, const char \texorpdfstring{$\ast$}{*}p\+Layer\+Prefix, const char \texorpdfstring{$\ast$}{*}p\+Msg, void \texorpdfstring{$\ast$}{*}p\+User\+Data)
+\item 
+\mbox{\hyperlink{vk__platform_8h_a4394dd2421147ed91e838b086be25512}{VKAPI\+\_\+\+ATTR}} \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}} \mbox{\hyperlink{vk__platform_8h_a3856c7761d8b7260870053d0f03a0a49}{VKAPI\+\_\+\+CALL}} \mbox{\hyperlink{triangle-vulkan_8c_a4e3e0fcb987c805f9d82039a8af2485c}{dbg\+Func}} (\mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} msg\+Flags, \mbox{\hyperlink{vulkan_8h_a70ad5d79db53aef728a95528945a4c0f}{Vk\+Debug\+Report\+Object\+Type\+EXT}} obj\+Type, \mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\+\_\+t}} src\+Object, size\+\_\+t location, \mbox{\hyperlink{stdint_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\+\_\+t}} msg\+Code, const char \texorpdfstring{$\ast$}{*}p\+Layer\+Prefix, const char \texorpdfstring{$\ast$}{*}p\+Msg, void \texorpdfstring{$\ast$}{*}p\+User\+Data)
+\item 
+int \mbox{\hyperlink{triangle-vulkan_8c_ad53223b8779f25caeddb70a3b9172967}{main}} (const int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{triangle-vulkan_8c_a7ddc1be37ecfdff9eaaaa045820a96ad}\label{triangle-vulkan_8c_a7ddc1be37ecfdff9eaaaa045820a96ad} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!APP\_LONG\_NAME@{APP\_LONG\_NAME}}
+\index{APP\_LONG\_NAME@{APP\_LONG\_NAME}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{APP\_LONG\_NAME}{APP\_LONG\_NAME}}
+{\footnotesize\ttfamily \#define APP\+\_\+\+LONG\+\_\+\+NAME~"{}The Vulkan Triangle Demo Program"{}}
+
+\Hypertarget{triangle-vulkan_8c_ab5541e08a357bb88cd008693b6ffc6db}\label{triangle-vulkan_8c_ab5541e08a357bb88cd008693b6ffc6db} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!APP\_SHORT\_NAME@{APP\_SHORT\_NAME}}
+\index{APP\_SHORT\_NAME@{APP\_SHORT\_NAME}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SHORT\_NAME}{APP\_SHORT\_NAME}}
+{\footnotesize\ttfamily \#define APP\+\_\+\+SHORT\+\_\+\+NAME~"{}tri"{}}
+
+\Hypertarget{triangle-vulkan_8c_a25f003de16c08a4888b69f619d70f427}\label{triangle-vulkan_8c_a25f003de16c08a4888b69f619d70f427} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!ARRAY\_SIZE@{ARRAY\_SIZE}}
+\index{ARRAY\_SIZE@{ARRAY\_SIZE}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_SIZE}{ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define ARRAY\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(sizeof(a) / sizeof(a\mbox{[}0\mbox{]}))}
+
+\Hypertarget{triangle-vulkan_8c_a889c754b96e13c9a94c431b8c10b7153}\label{triangle-vulkan_8c_a889c754b96e13c9a94c431b8c10b7153} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!DEMO\_TEXTURE\_COUNT@{DEMO\_TEXTURE\_COUNT}}
+\index{DEMO\_TEXTURE\_COUNT@{DEMO\_TEXTURE\_COUNT}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{DEMO\_TEXTURE\_COUNT}{DEMO\_TEXTURE\_COUNT}}
+{\footnotesize\ttfamily \#define DEMO\+\_\+\+TEXTURE\+\_\+\+COUNT~1}
+
+\Hypertarget{triangle-vulkan_8c_a28fe14fddb8a99da1b8a644308d1a901}\label{triangle-vulkan_8c_a28fe14fddb8a99da1b8a644308d1a901} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!ERR\_EXIT@{ERR\_EXIT}}
+\index{ERR\_EXIT@{ERR\_EXIT}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{ERR\_EXIT}{ERR\_EXIT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+EXIT(\begin{DoxyParamCaption}\item[{}]{err\+\_\+msg,  }\item[{}]{err\+\_\+class }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(err\_msg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fflush(stdout);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+\Hypertarget{triangle-vulkan_8c_a088324ad8995e3eb76024e3e79083d48}\label{triangle-vulkan_8c_a088324ad8995e3eb76024e3e79083d48} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}}
+\index{GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{GLFW\_INCLUDE\_NONE}{GLFW\_INCLUDE\_NONE}}
+{\footnotesize\ttfamily \#define GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}
+
+\Hypertarget{triangle-vulkan_8c_ab33dabc77056cb02bf8609c97d49716b}\label{triangle-vulkan_8c_ab33dabc77056cb02bf8609c97d49716b} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!U\_ASSERT\_ONLY@{U\_ASSERT\_ONLY}}
+\index{U\_ASSERT\_ONLY@{U\_ASSERT\_ONLY}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{U\_ASSERT\_ONLY}{U\_ASSERT\_ONLY}}
+{\footnotesize\ttfamily \#define U\+\_\+\+ASSERT\+\_\+\+ONLY}
+
+\Hypertarget{triangle-vulkan_8c_aca6d606eef84a7f729b71b8abad8f074}\label{triangle-vulkan_8c_aca6d606eef84a7f729b71b8abad8f074} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!VERTEX\_BUFFER\_BIND\_ID@{VERTEX\_BUFFER\_BIND\_ID}}
+\index{VERTEX\_BUFFER\_BIND\_ID@{VERTEX\_BUFFER\_BIND\_ID}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{VERTEX\_BUFFER\_BIND\_ID}{VERTEX\_BUFFER\_BIND\_ID}}
+{\footnotesize\ttfamily \#define VERTEX\+\_\+\+BUFFER\+\_\+\+BIND\+\_\+\+ID~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{triangle-vulkan_8c_aceb348ca75acc3d014a6b94ac3452e57}\label{triangle-vulkan_8c_aceb348ca75acc3d014a6b94ac3452e57} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!BreakCallback@{BreakCallback}}
+\index{BreakCallback@{BreakCallback}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{BreakCallback()}{BreakCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vk__platform_8h_a4394dd2421147ed91e838b086be25512}{VKAPI\+\_\+\+ATTR}} \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}} \mbox{\hyperlink{vk__platform_8h_a3856c7761d8b7260870053d0f03a0a49}{VKAPI\+\_\+\+CALL}} Break\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}}}]{msg\+Flags,  }\item[{\mbox{\hyperlink{vulkan_8h_a70ad5d79db53aef728a95528945a4c0f}{Vk\+Debug\+Report\+Object\+Type\+EXT}}}]{obj\+Type,  }\item[{\mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\+\_\+t}}}]{src\+Object,  }\item[{size\+\_\+t}]{location,  }\item[{\mbox{\hyperlink{stdint_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\+\_\+t}}}]{msg\+Code,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+Layer\+Prefix,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+Msg,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+User\+Data }\end{DoxyParamCaption})}
+
+\Hypertarget{triangle-vulkan_8c_a4e3e0fcb987c805f9d82039a8af2485c}\label{triangle-vulkan_8c_a4e3e0fcb987c805f9d82039a8af2485c} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!dbgFunc@{dbgFunc}}
+\index{dbgFunc@{dbgFunc}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{dbgFunc()}{dbgFunc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vk__platform_8h_a4394dd2421147ed91e838b086be25512}{VKAPI\+\_\+\+ATTR}} \mbox{\hyperlink{vulkan_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}} \mbox{\hyperlink{vk__platform_8h_a3856c7761d8b7260870053d0f03a0a49}{VKAPI\+\_\+\+CALL}} dbg\+Func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vulkan_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}}}]{msg\+Flags,  }\item[{\mbox{\hyperlink{vulkan_8h_a70ad5d79db53aef728a95528945a4c0f}{Vk\+Debug\+Report\+Object\+Type\+EXT}}}]{obj\+Type,  }\item[{\mbox{\hyperlink{stdint_8h_aec6fcb673ff035718c238c8c9d544c47}{uint64\+\_\+t}}}]{src\+Object,  }\item[{size\+\_\+t}]{location,  }\item[{\mbox{\hyperlink{stdint_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\+\_\+t}}}]{msg\+Code,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+Layer\+Prefix,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+Msg,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+User\+Data }\end{DoxyParamCaption})}
+
+\Hypertarget{triangle-vulkan_8c_ad53223b8779f25caeddb70a3b9172967}\label{triangle-vulkan_8c_ad53223b8779f25caeddb70a3b9172967} 
+\index{triangle-\/vulkan.c@{triangle-\/vulkan.c}!main@{main}}
+\index{main@{main}!triangle-\/vulkan.c@{triangle-\/vulkan.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{const int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

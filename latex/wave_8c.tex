@@ -1,0 +1,303 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/wave.c File Reference}
+\hypertarget{wave_8c}{}\label{wave_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/wave.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/wave.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+{\ttfamily \#include $<$linmath.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{wave_8c_a088324ad8995e3eb76024e3e79083d48}{GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{wave_8c_a82c13b07387b0fa3ab346ad38894e2a7}{MAX\+\_\+\+DELTA\+\_\+T}}~0.\+01
+\item 
+\#define \mbox{\hyperlink{wave_8c_aaa69f89df4c8e47abeb574bfdd11d9f4}{ANIMATION\+\_\+\+SPEED}}~10.\+0
+\item 
+\#define \mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}~50
+\item 
+\#define \mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}~50
+\item 
+\#define \mbox{\hyperlink{wave_8c_abd709477ffd7875a410c3e7825811574}{VERTEXNUM}}~(\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}})
+\item 
+\#define \mbox{\hyperlink{wave_8c_ae10902c68cd7f4aaf5bd6a0dcc774f8f}{QUADW}}~(\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}} -\/ 1)
+\item 
+\#define \mbox{\hyperlink{wave_8c_a0c865f0be27a2d2ea258170ccdb7e5c3}{QUADH}}~(\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}} -\/ 1)
+\item 
+\#define \mbox{\hyperlink{wave_8c_aaaa740511f97d0370a51a9219a806a7b}{QUADNUM}}~(\mbox{\hyperlink{wave_8c_ae10902c68cd7f4aaf5bd6a0dcc774f8f}{QUADW}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_a0c865f0be27a2d2ea258170ccdb7e5c3}{QUADH}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{wave_8c_a903a28082e3bfadf6a7b1fd0be8d4909}{init\+\_\+vertices}} (void)
+\item 
+void \mbox{\hyperlink{wave_8c_a61e20756921c698158edcbde49ec1230}{init\+\_\+grid}} (void)
+\item 
+void \mbox{\hyperlink{wave_8c_ae370908c38c53e0cad194f03f73aac96}{draw\+\_\+scene}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window)
+\item 
+void \mbox{\hyperlink{wave_8c_a100d8d4de0ba1cb930db3b54ccc92894}{init\+\_\+opengl}} (void)
+\item 
+void \mbox{\hyperlink{wave_8c_a59b9ad3ad093089c64996013be9541c7}{adjust\+\_\+grid}} (void)
+\item 
+void \mbox{\hyperlink{wave_8c_a60caf84ae85662ac67ab2dfd0da1be89}{calc\+\_\+grid}} (void)
+\item 
+void \mbox{\hyperlink{wave_8c_a286930f4e8ede059b83ff6eafa2ff718}{key\+\_\+callback}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, int \mbox{\hyperlink{gears_8c_accd6b5b92b78666e36543412d4ac14cd}{key}}, int scancode, int action, int mods)
+\item 
+void \mbox{\hyperlink{wave_8c_a5515d805e76ce6728de3c0dc5e187c86}{mouse\+\_\+button\+\_\+callback}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, int button, int action, int mods)
+\item 
+void \mbox{\hyperlink{wave_8c_ab5fb5502317b46f9cecd6379f2ecd210}{cursor\+\_\+position\+\_\+callback}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, double \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}}, double \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}})
+\item 
+void \mbox{\hyperlink{wave_8c_a6bec52479312a11696798b50140f227d}{scroll\+\_\+callback}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, double \mbox{\hyperlink{offscreen_8c_ad0da36b2558901e21e7a30f6c227a45e}{x}}, double \mbox{\hyperlink{offscreen_8c_aa4f0d3eebc3c443f9be81bf48561a217}{y}})
+\item 
+void \mbox{\hyperlink{wave_8c_a5180f7bf2b71421af837035824a8c8ac}{framebuffer\+\_\+size\+\_\+callback}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, int \mbox{\hyperlink{boing_8c_a2474a5474cbff19523a51eb1de01cda4}{width}}, int \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}})
+\item 
+int \mbox{\hyperlink{wave_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{wave_8c_a6487f2034e554d7d012dc0821253e5be}{alpha}} = 210.f
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{wave_8c_aabc9b3ee8fafa62b353f3956f8e3c269}{beta}} = -\/70.f
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} \mbox{\hyperlink{wave_8c_a5a2149a845f88b6489d3d88845d0f257}{zoom}} = 2.f
+\item 
+double \mbox{\hyperlink{wave_8c_a7dd3022939e7ae3380309dc7364b5e80}{cursorX}}
+\item 
+double \mbox{\hyperlink{wave_8c_a34542bdac8d5a952df4c392a78d0b7e8}{cursorY}}
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \mbox{\hyperlink{wave_8c_ae633a736679a0ac3460861099a0cf9c2}{quad}} \mbox{[}4 \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_aaaa740511f97d0370a51a9219a806a7b}{QUADNUM}}\mbox{]}
+\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}} \mbox{\hyperlink{wave_8c_aeb310e20c71a4ca39015f9553658d290}{vertex}} \mbox{[}\mbox{\hyperlink{wave_8c_abd709477ffd7875a410c3e7825811574}{VERTEXNUM}}\mbox{]}
+\item 
+double \mbox{\hyperlink{wave_8c_a03e28be41881b703c836edbfe9b51b17}{dt}}
+\item 
+double \mbox{\hyperlink{wave_8c_ab661957592a1103b5021605bb3f17e19}{p}} \mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}
+\item 
+double \mbox{\hyperlink{wave_8c_ae0c26d4f5512acab464189507e1a351b}{vx}} \mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}
+\item 
+double \mbox{\hyperlink{wave_8c_a1bf63c4490d6d4ad47a0a05b14f806a9}{vy}} \mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}
+\item 
+double \mbox{\hyperlink{wave_8c_a5f62e300af876f32e1ceef29663b6ec5}{ax}} \mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}
+\item 
+double \mbox{\hyperlink{wave_8c_a9b3620b058f40faa81012a49e0d959e8}{ay}} \mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{wave_8c_aaa69f89df4c8e47abeb574bfdd11d9f4}\label{wave_8c_aaa69f89df4c8e47abeb574bfdd11d9f4} 
+\index{wave.c@{wave.c}!ANIMATION\_SPEED@{ANIMATION\_SPEED}}
+\index{ANIMATION\_SPEED@{ANIMATION\_SPEED}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{ANIMATION\_SPEED}{ANIMATION\_SPEED}}
+{\footnotesize\ttfamily \#define ANIMATION\+\_\+\+SPEED~10.\+0}
+
+\Hypertarget{wave_8c_a088324ad8995e3eb76024e3e79083d48}\label{wave_8c_a088324ad8995e3eb76024e3e79083d48} 
+\index{wave.c@{wave.c}!GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}}
+\index{GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{GLFW\_INCLUDE\_NONE}{GLFW\_INCLUDE\_NONE}}
+{\footnotesize\ttfamily \#define GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}
+
+\Hypertarget{wave_8c_a7327eab323c715d04c1fac38cd61d856}\label{wave_8c_a7327eab323c715d04c1fac38cd61d856} 
+\index{wave.c@{wave.c}!GRIDH@{GRIDH}}
+\index{GRIDH@{GRIDH}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{GRIDH}{GRIDH}}
+{\footnotesize\ttfamily \#define GRIDH~50}
+
+\Hypertarget{wave_8c_a36f83106cff056abddf55fdc6f803311}\label{wave_8c_a36f83106cff056abddf55fdc6f803311} 
+\index{wave.c@{wave.c}!GRIDW@{GRIDW}}
+\index{GRIDW@{GRIDW}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{GRIDW}{GRIDW}}
+{\footnotesize\ttfamily \#define GRIDW~50}
+
+\Hypertarget{wave_8c_a82c13b07387b0fa3ab346ad38894e2a7}\label{wave_8c_a82c13b07387b0fa3ab346ad38894e2a7} 
+\index{wave.c@{wave.c}!MAX\_DELTA\_T@{MAX\_DELTA\_T}}
+\index{MAX\_DELTA\_T@{MAX\_DELTA\_T}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_DELTA\_T}{MAX\_DELTA\_T}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DELTA\+\_\+T~0.\+01}
+
+\Hypertarget{wave_8c_a0c865f0be27a2d2ea258170ccdb7e5c3}\label{wave_8c_a0c865f0be27a2d2ea258170ccdb7e5c3} 
+\index{wave.c@{wave.c}!QUADH@{QUADH}}
+\index{QUADH@{QUADH}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{QUADH}{QUADH}}
+{\footnotesize\ttfamily \#define QUADH~(\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}} -\/ 1)}
+
+\Hypertarget{wave_8c_aaaa740511f97d0370a51a9219a806a7b}\label{wave_8c_aaaa740511f97d0370a51a9219a806a7b} 
+\index{wave.c@{wave.c}!QUADNUM@{QUADNUM}}
+\index{QUADNUM@{QUADNUM}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{QUADNUM}{QUADNUM}}
+{\footnotesize\ttfamily \#define QUADNUM~(\mbox{\hyperlink{wave_8c_ae10902c68cd7f4aaf5bd6a0dcc774f8f}{QUADW}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_a0c865f0be27a2d2ea258170ccdb7e5c3}{QUADH}})}
+
+\Hypertarget{wave_8c_ae10902c68cd7f4aaf5bd6a0dcc774f8f}\label{wave_8c_ae10902c68cd7f4aaf5bd6a0dcc774f8f} 
+\index{wave.c@{wave.c}!QUADW@{QUADW}}
+\index{QUADW@{QUADW}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{QUADW}{QUADW}}
+{\footnotesize\ttfamily \#define QUADW~(\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}} -\/ 1)}
+
+\Hypertarget{wave_8c_abd709477ffd7875a410c3e7825811574}\label{wave_8c_abd709477ffd7875a410c3e7825811574} 
+\index{wave.c@{wave.c}!VERTEXNUM@{VERTEXNUM}}
+\index{VERTEXNUM@{VERTEXNUM}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{VERTEXNUM}{VERTEXNUM}}
+{\footnotesize\ttfamily \#define VERTEXNUM~(\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}})}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{wave_8c_a59b9ad3ad093089c64996013be9541c7}\label{wave_8c_a59b9ad3ad093089c64996013be9541c7} 
+\index{wave.c@{wave.c}!adjust\_grid@{adjust\_grid}}
+\index{adjust\_grid@{adjust\_grid}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{adjust\_grid()}{adjust\_grid()}}
+{\footnotesize\ttfamily void adjust\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a60caf84ae85662ac67ab2dfd0da1be89}\label{wave_8c_a60caf84ae85662ac67ab2dfd0da1be89} 
+\index{wave.c@{wave.c}!calc\_grid@{calc\_grid}}
+\index{calc\_grid@{calc\_grid}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{calc\_grid()}{calc\_grid()}}
+{\footnotesize\ttfamily void calc\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_ab5fb5502317b46f9cecd6379f2ecd210}\label{wave_8c_ab5fb5502317b46f9cecd6379f2ecd210} 
+\index{wave.c@{wave.c}!cursor\_position\_callback@{cursor\_position\_callback}}
+\index{cursor\_position\_callback@{cursor\_position\_callback}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{cursor\_position\_callback()}{cursor\_position\_callback()}}
+{\footnotesize\ttfamily void cursor\+\_\+position\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_ae370908c38c53e0cad194f03f73aac96}\label{wave_8c_ae370908c38c53e0cad194f03f73aac96} 
+\index{wave.c@{wave.c}!draw\_scene@{draw\_scene}}
+\index{draw\_scene@{draw\_scene}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{draw\_scene()}{draw\_scene()}}
+{\footnotesize\ttfamily void draw\+\_\+scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a5180f7bf2b71421af837035824a8c8ac}\label{wave_8c_a5180f7bf2b71421af837035824a8c8ac} 
+\index{wave.c@{wave.c}!framebuffer\_size\_callback@{framebuffer\_size\_callback}}
+\index{framebuffer\_size\_callback@{framebuffer\_size\_callback}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{framebuffer\_size\_callback()}{framebuffer\_size\_callback()}}
+{\footnotesize\ttfamily void framebuffer\+\_\+size\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a61e20756921c698158edcbde49ec1230}\label{wave_8c_a61e20756921c698158edcbde49ec1230} 
+\index{wave.c@{wave.c}!init\_grid@{init\_grid}}
+\index{init\_grid@{init\_grid}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{init\_grid()}{init\_grid()}}
+{\footnotesize\ttfamily void init\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a100d8d4de0ba1cb930db3b54ccc92894}\label{wave_8c_a100d8d4de0ba1cb930db3b54ccc92894} 
+\index{wave.c@{wave.c}!init\_opengl@{init\_opengl}}
+\index{init\_opengl@{init\_opengl}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{init\_opengl()}{init\_opengl()}}
+{\footnotesize\ttfamily void init\+\_\+opengl (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a903a28082e3bfadf6a7b1fd0be8d4909}\label{wave_8c_a903a28082e3bfadf6a7b1fd0be8d4909} 
+\index{wave.c@{wave.c}!init\_vertices@{init\_vertices}}
+\index{init\_vertices@{init\_vertices}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{init\_vertices()}{init\_vertices()}}
+{\footnotesize\ttfamily void init\+\_\+vertices (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a286930f4e8ede059b83ff6eafa2ff718}\label{wave_8c_a286930f4e8ede059b83ff6eafa2ff718} 
+\index{wave.c@{wave.c}!key\_callback@{key\_callback}}
+\index{key\_callback@{key\_callback}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{key\_callback()}{key\_callback()}}
+{\footnotesize\ttfamily void key\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{wave_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{wave.c@{wave.c}!main@{main}}
+\index{main@{main}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a5515d805e76ce6728de3c0dc5e187c86}\label{wave_8c_a5515d805e76ce6728de3c0dc5e187c86} 
+\index{wave.c@{wave.c}!mouse\_button\_callback@{mouse\_button\_callback}}
+\index{mouse\_button\_callback@{mouse\_button\_callback}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_button\_callback()}{mouse\_button\_callback()}}
+{\footnotesize\ttfamily void mouse\+\_\+button\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+\Hypertarget{wave_8c_a6bec52479312a11696798b50140f227d}\label{wave_8c_a6bec52479312a11696798b50140f227d} 
+\index{wave.c@{wave.c}!scroll\_callback@{scroll\_callback}}
+\index{scroll\_callback@{scroll\_callback}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{scroll\_callback()}{scroll\_callback()}}
+{\footnotesize\ttfamily void scroll\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{wave_8c_a6487f2034e554d7d012dc0821253e5be}\label{wave_8c_a6487f2034e554d7d012dc0821253e5be} 
+\index{wave.c@{wave.c}!alpha@{alpha}}
+\index{alpha@{alpha}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} alpha = 210.f}
+
+\Hypertarget{wave_8c_a5f62e300af876f32e1ceef29663b6ec5}\label{wave_8c_a5f62e300af876f32e1ceef29663b6ec5} 
+\index{wave.c@{wave.c}!ax@{ax}}
+\index{ax@{ax}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{ax}{ax}}
+{\footnotesize\ttfamily double ax\mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}}
+
+\Hypertarget{wave_8c_a9b3620b058f40faa81012a49e0d959e8}\label{wave_8c_a9b3620b058f40faa81012a49e0d959e8} 
+\index{wave.c@{wave.c}!ay@{ay}}
+\index{ay@{ay}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{ay}{ay}}
+{\footnotesize\ttfamily double ay\mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}}
+
+\Hypertarget{wave_8c_aabc9b3ee8fafa62b353f3956f8e3c269}\label{wave_8c_aabc9b3ee8fafa62b353f3956f8e3c269} 
+\index{wave.c@{wave.c}!beta@{beta}}
+\index{beta@{beta}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} beta = -\/70.f}
+
+\Hypertarget{wave_8c_a7dd3022939e7ae3380309dc7364b5e80}\label{wave_8c_a7dd3022939e7ae3380309dc7364b5e80} 
+\index{wave.c@{wave.c}!cursorX@{cursorX}}
+\index{cursorX@{cursorX}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{cursorX}{cursorX}}
+{\footnotesize\ttfamily double cursorX}
+
+\Hypertarget{wave_8c_a34542bdac8d5a952df4c392a78d0b7e8}\label{wave_8c_a34542bdac8d5a952df4c392a78d0b7e8} 
+\index{wave.c@{wave.c}!cursorY@{cursorY}}
+\index{cursorY@{cursorY}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{cursorY}{cursorY}}
+{\footnotesize\ttfamily double cursorY}
+
+\Hypertarget{wave_8c_a03e28be41881b703c836edbfe9b51b17}\label{wave_8c_a03e28be41881b703c836edbfe9b51b17} 
+\index{wave.c@{wave.c}!dt@{dt}}
+\index{dt@{dt}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily double dt}
+
+\Hypertarget{wave_8c_ab661957592a1103b5021605bb3f17e19}\label{wave_8c_ab661957592a1103b5021605bb3f17e19} 
+\index{wave.c@{wave.c}!p@{p}}
+\index{p@{p}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily double p\mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}}
+
+\Hypertarget{wave_8c_ae633a736679a0ac3460861099a0cf9c2}\label{wave_8c_ae633a736679a0ac3460861099a0cf9c2} 
+\index{wave.c@{wave.c}!quad@{quad}}
+\index{quad@{quad}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{quad}{quad}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} quad\mbox{[}4 \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{wave_8c_aaaa740511f97d0370a51a9219a806a7b}{QUADNUM}}\mbox{]}}
+
+\Hypertarget{wave_8c_aeb310e20c71a4ca39015f9553658d290}\label{wave_8c_aeb310e20c71a4ca39015f9553658d290} 
+\index{wave.c@{wave.c}!vertex@{vertex}}
+\index{vertex@{vertex}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{vertex}{vertex}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_vertex}{Vertex}} vertex\mbox{[}\mbox{\hyperlink{wave_8c_abd709477ffd7875a410c3e7825811574}{VERTEXNUM}}\mbox{]}}
+
+\Hypertarget{wave_8c_ae0c26d4f5512acab464189507e1a351b}\label{wave_8c_ae0c26d4f5512acab464189507e1a351b} 
+\index{wave.c@{wave.c}!vx@{vx}}
+\index{vx@{vx}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{vx}{vx}}
+{\footnotesize\ttfamily double vx\mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}}
+
+\Hypertarget{wave_8c_a1bf63c4490d6d4ad47a0a05b14f806a9}\label{wave_8c_a1bf63c4490d6d4ad47a0a05b14f806a9} 
+\index{wave.c@{wave.c}!vy@{vy}}
+\index{vy@{vy}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{vy}{vy}}
+{\footnotesize\ttfamily double vy\mbox{[}\mbox{\hyperlink{wave_8c_a36f83106cff056abddf55fdc6f803311}{GRIDW}}\mbox{]}\mbox{[}\mbox{\hyperlink{wave_8c_a7327eab323c715d04c1fac38cd61d856}{GRIDH}}\mbox{]}}
+
+\Hypertarget{wave_8c_a5a2149a845f88b6489d3d88845d0f257}\label{wave_8c_a5a2149a845f88b6489d3d88845d0f257} 
+\index{wave.c@{wave.c}!zoom@{zoom}}
+\index{zoom@{zoom}!wave.c@{wave.c}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}} zoom = 2.f}
+

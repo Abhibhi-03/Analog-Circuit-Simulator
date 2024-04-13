@@ -1,0 +1,75 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\+\_\+init.c File Reference}
+\hypertarget{x11__init_8c}{}\label{x11__init_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_init.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/x11\_init.c}}
+{\ttfamily \#include "{}internal.\+h"{}}\newline
+{\ttfamily \#include $<$X11/\+Xresource.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{x11__init_8c_ac91795c020fc3d64cabfe8bacb141185}{\+\_\+glfw\+Grab\+Error\+Handler\+X11}} (void)
+\item 
+void \mbox{\hyperlink{x11__init_8c_a2fec8c7a77c8004f943f25914dc947d9}{\+\_\+glfw\+Release\+Error\+Handler\+X11}} (void)
+\item 
+void \mbox{\hyperlink{x11__init_8c_a21e402dbb0117b1706d8506024c5689d}{\+\_\+glfw\+Input\+Error\+X11}} (int error, const char \texorpdfstring{$\ast$}{*}message)
+\item 
+Cursor \mbox{\hyperlink{x11__init_8c_adbdd4b17827c10e74644fbd7cd98115e}{\+\_\+glfw\+Create\+Cursor\+X11}} (const \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}} \texorpdfstring{$\ast$}{*}image, int xhot, int yhot)
+\item 
+int \mbox{\hyperlink{x11__init_8c_aaed0c9f6d4944cc993516fa1fe112101}{\+\_\+glfw\+Platform\+Init}} (void)
+\item 
+void \mbox{\hyperlink{x11__init_8c_a7a957eb71af07a553a88382f860a5fdc}{\+\_\+glfw\+Platform\+Terminate}} (void)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{x11__init_8c_a57538a4b425c1c8724529545db805c48}{\+\_\+glfw\+Platform\+Get\+Version\+String}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{x11__init_8c_adbdd4b17827c10e74644fbd7cd98115e}\label{x11__init_8c_adbdd4b17827c10e74644fbd7cd98115e} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwCreateCursorX11@{\_glfwCreateCursorX11}}
+\index{\_glfwCreateCursorX11@{\_glfwCreateCursorX11}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwCreateCursorX11()}{\_glfwCreateCursorX11()}}
+{\footnotesize\ttfamily Cursor \+\_\+glfw\+Create\+Cursor\+X11 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_g_l_f_wimage}{GLFWimage}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{int}]{xhot,  }\item[{int}]{yhot }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_ac91795c020fc3d64cabfe8bacb141185}\label{x11__init_8c_ac91795c020fc3d64cabfe8bacb141185} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwGrabErrorHandlerX11@{\_glfwGrabErrorHandlerX11}}
+\index{\_glfwGrabErrorHandlerX11@{\_glfwGrabErrorHandlerX11}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwGrabErrorHandlerX11()}{\_glfwGrabErrorHandlerX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Grab\+Error\+Handler\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_a21e402dbb0117b1706d8506024c5689d}\label{x11__init_8c_a21e402dbb0117b1706d8506024c5689d} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwInputErrorX11@{\_glfwInputErrorX11}}
+\index{\_glfwInputErrorX11@{\_glfwInputErrorX11}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwInputErrorX11()}{\_glfwInputErrorX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Input\+Error\+X11 (\begin{DoxyParamCaption}\item[{int}]{error,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_a57538a4b425c1c8724529545db805c48}\label{x11__init_8c_a57538a4b425c1c8724529545db805c48} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwPlatformGetVersionString@{\_glfwPlatformGetVersionString}}
+\index{\_glfwPlatformGetVersionString@{\_glfwPlatformGetVersionString}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetVersionString()}{\_glfwPlatformGetVersionString()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} \+\_\+glfw\+Platform\+Get\+Version\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_aaed0c9f6d4944cc993516fa1fe112101}\label{x11__init_8c_aaed0c9f6d4944cc993516fa1fe112101} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwPlatformInit@{\_glfwPlatformInit}}
+\index{\_glfwPlatformInit@{\_glfwPlatformInit}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformInit()}{\_glfwPlatformInit()}}
+{\footnotesize\ttfamily int \+\_\+glfw\+Platform\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_a7a957eb71af07a553a88382f860a5fdc}\label{x11__init_8c_a7a957eb71af07a553a88382f860a5fdc} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwPlatformTerminate@{\_glfwPlatformTerminate}}
+\index{\_glfwPlatformTerminate@{\_glfwPlatformTerminate}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformTerminate()}{\_glfwPlatformTerminate()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Platform\+Terminate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{x11__init_8c_a2fec8c7a77c8004f943f25914dc947d9}\label{x11__init_8c_a2fec8c7a77c8004f943f25914dc947d9} 
+\index{x11\_init.c@{x11\_init.c}!\_glfwReleaseErrorHandlerX11@{\_glfwReleaseErrorHandlerX11}}
+\index{\_glfwReleaseErrorHandlerX11@{\_glfwReleaseErrorHandlerX11}!x11\_init.c@{x11\_init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwReleaseErrorHandlerX11()}{\_glfwReleaseErrorHandlerX11()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Release\+Error\+Handler\+X11 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

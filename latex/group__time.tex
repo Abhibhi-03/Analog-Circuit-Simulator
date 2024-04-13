@@ -1,0 +1,56 @@
+\doxysection{Time input}
+\hypertarget{group__time}{}\label{group__time}\index{Time input@{Time input}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} double \mbox{\hyperlink{group__time_ga03d4a1039b8662c71eeb40beea8cb622}{glfw\+Get\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the value of the GLFW timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} void \mbox{\hyperlink{group__time_ga94360a3628a09f32708f83cc3fa48590}{glfw\+Set\+Time}} (double time)
+\begin{DoxyCompactList}\small\item\em Sets the GLFW timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__time_ga03d4a1039b8662c71eeb40beea8cb622}\label{group__time_ga03d4a1039b8662c71eeb40beea8cb622} 
+\index{Time input@{Time input}!glfwGetTime@{glfwGetTime}}
+\index{glfwGetTime@{glfwGetTime}!Time input@{Time input}}
+\doxysubsubsection{\texorpdfstring{glfwGetTime()}{glfwGetTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} double glfw\+Get\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the value of the GLFW timer. 
+
+This function returns the value of the GLFW timer. Unless the timer has been set using \doxylink{group__input_ga94360a3628a09f32708f83cc3fa48590}{glfw\+Set\+Time}, the timer measures time elapsed since GLFW was initialized.
+
+\begin{DoxyReturn}{Returns}
+The current value, in seconds, or zero if an error occurred.
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+This function may be called from secondary threads.
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+The resolution of the timer is system dependent, but is usually on the order of a few micro-\/ or nanoseconds. It uses the highest-\/resolution monotonic time source on each supported platform. 
+\end{DoxyNote}
+\Hypertarget{group__time_ga94360a3628a09f32708f83cc3fa48590}\label{group__time_ga94360a3628a09f32708f83cc3fa48590} 
+\index{Time input@{Time input}!glfwSetTime@{glfwSetTime}}
+\index{glfwSetTime@{glfwSetTime}!Time input@{Time input}}
+\doxysubsubsection{\texorpdfstring{glfwSetTime()}{glfwSetTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} void glfw\+Set\+Time (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Sets the GLFW timer. 
+
+This function sets the value of the GLFW timer. It then continues to count up from that value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & The new value, in seconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The resolution of the timer is system dependent, but is usually on the order of a few micro-\/ or nanoseconds. It uses the highest-\/resolution monotonic time source on each supported platform. 
+\end{DoxyNote}

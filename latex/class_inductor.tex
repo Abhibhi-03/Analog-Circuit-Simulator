@@ -1,0 +1,162 @@
+\doxysection{Inductor Class Reference}
+\hypertarget{class_inductor}{}\label{class_inductor}\index{Inductor@{Inductor}}
+
+
+{\ttfamily \#include $<$Inductor.\+h$>$}
+
+Inheritance diagram for Inductor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_inductor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_inductor_a3c8a60104b545c06271e582da5e36ce3}{Inductor}} (double inductance, double red, double green, double blue, std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}})
+\item 
+double \mbox{\hyperlink{class_inductor_ae045cf8523e9165db6fae8db50912fda}{Get\+Voltage}} (double current, double timestep) override
+\item 
+std\+::string \mbox{\hyperlink{class_inductor_a7bf3d43b795db93952525dcb2ad4720b}{Get\+Name}} () const override
+\item 
+void \mbox{\hyperlink{class_inductor_a7162d9c8a63cc89bce90c104cb324d1f}{Display}} (double \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}}, double \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}}) override
+\item 
+void \mbox{\hyperlink{class_inductor_adcfc54d563afee6eb59c45496d3f7eef}{Update}} (double current, double voltage) override
+\item 
+double \mbox{\hyperlink{class_inductor_a2eae0fcdc5bf43c690d21b39eba7ac3f}{Get\+Inductance}} ()
+\item 
+void \mbox{\hyperlink{class_inductor_a23dbfb2d25d5384e1fc41fc2fdd46330}{Set\+Inductance}} (double l)
+\item 
+void \mbox{\hyperlink{class_inductor_ad57d15aeb4479d0bef84400649ad2e68}{Set\+Color}} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}}
+\item 
+float \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}}
+\item 
+float \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}}
+\item 
+std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_inductor_8h_source_l00007}{7}} of file \mbox{\hyperlink{_inductor_8h_source}{Inductor.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_inductor_a3c8a60104b545c06271e582da5e36ce3}\label{class_inductor_a3c8a60104b545c06271e582da5e36ce3} 
+\index{Inductor@{Inductor}!Inductor@{Inductor}}
+\index{Inductor@{Inductor}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{Inductor()}{Inductor()}}
+{\footnotesize\ttfamily Inductor\+::\+Inductor (\begin{DoxyParamCaption}\item[{double}]{inductance,  }\item[{double}]{red,  }\item[{double}]{green,  }\item[{double}]{blue,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_inductor_a7162d9c8a63cc89bce90c104cb324d1f}\label{class_inductor_a7162d9c8a63cc89bce90c104cb324d1f} 
+\index{Inductor@{Inductor}!Display@{Display}}
+\index{Display@{Display}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Inductor\+::\+Display (\begin{DoxyParamCaption}\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_a2eae0fcdc5bf43c690d21b39eba7ac3f}\label{class_inductor_a2eae0fcdc5bf43c690d21b39eba7ac3f} 
+\index{Inductor@{Inductor}!GetInductance@{GetInductance}}
+\index{GetInductance@{GetInductance}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{GetInductance()}{GetInductance()}}
+{\footnotesize\ttfamily double Inductor\+::\+Get\+Inductance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_a7bf3d43b795db93952525dcb2ad4720b}\label{class_inductor_a7bf3d43b795db93952525dcb2ad4720b} 
+\index{Inductor@{Inductor}!GetName@{GetName}}
+\index{GetName@{GetName}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Inductor\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_ae045cf8523e9165db6fae8db50912fda}\label{class_inductor_ae045cf8523e9165db6fae8db50912fda} 
+\index{Inductor@{Inductor}!GetVoltage@{GetVoltage}}
+\index{GetVoltage@{GetVoltage}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{GetVoltage()}{GetVoltage()}}
+{\footnotesize\ttfamily double Inductor\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{timestep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_ad57d15aeb4479d0bef84400649ad2e68}\label{class_inductor_ad57d15aeb4479d0bef84400649ad2e68} 
+\index{Inductor@{Inductor}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Inductor\+::\+Set\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_a23dbfb2d25d5384e1fc41fc2fdd46330}\label{class_inductor_a23dbfb2d25d5384e1fc41fc2fdd46330} 
+\index{Inductor@{Inductor}!SetInductance@{SetInductance}}
+\index{SetInductance@{SetInductance}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{SetInductance()}{SetInductance()}}
+{\footnotesize\ttfamily void Inductor\+::\+Set\+Inductance (\begin{DoxyParamCaption}\item[{double}]{l }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+\Hypertarget{class_inductor_adcfc54d563afee6eb59c45496d3f7eef}\label{class_inductor_adcfc54d563afee6eb59c45496d3f7eef} 
+\index{Inductor@{Inductor}!Update@{Update}}
+\index{Update@{Update}!Inductor@{Inductor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Inductor\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_inductor_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_inductor_8cpp_source}{Inductor.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_inductor_8h}{Inductor.\+h}}\item 
+\mbox{\hyperlink{_inductor_8cpp}{Inductor.\+cpp}}\end{DoxyCompactItemize}

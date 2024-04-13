@@ -1,0 +1,245 @@
+\doxysection{freeglut\+\_\+ext.\+h}
+\hypertarget{_learn_open_gl_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_source}{}\label{_learn_open_gl_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_source}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/LearnOpenGl/packages/nupengl.core.0.1.0.1/build/native/include/GL/freeglut\_ext.h@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/LearnOpenGl/packages/nupengl.core.0.1.0.1/build/native/include/GL/freeglut\_ext.h}}
+\mbox{\hyperlink{_learn_open_gl_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \ \_\_FREEGLUT\_EXT\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \ \_\_FREEGLUT\_EXT\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ freeglut\_ext.h}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ The\ non-\/GLUT-\/compatible\ extensions\ to\ the\ freeglut\ library\ include\ file}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2000\ Pawel\ W.\ Olszta.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Written\ by\ Pawel\ W.\ Olszta,\ <olszta@sourceforge.net>}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Creation\ date:\ Thu\ Dec\ 2\ 1999}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ copy\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ to\ deal\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ \ IN\ NO\ EVENT\ SHALL}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ PAWEL\ W.\ OLSZTA\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ Additional\ GLUT\ Key\ definitions\ for\ the\ Special\ key\ function}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_NUM\_LOCK\ \ \ \ \ \ \ \ \ \ \ 0x006D}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_BEGIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006E}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_DELETE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x006F}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_SHIFT\_L\ \ \ \ \ \ \ \ \ \ \ \ 0x0070}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_SHIFT\_R\ \ \ \ \ \ \ \ \ \ \ \ 0x0071}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_CTRL\_L\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0072}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_CTRL\_R\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0073}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_ALT\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0074}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ GLUT\_KEY\_ALT\_R\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0075}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ GLUT\ API\ Extension\ macro\ definitions\ -\/-\/\ behaviour\ when\ the\ user\ clicks\ on\ an\ "{}x"{}\ to\ close\ a\ window}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ GLUT\_ACTION\_EXIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ GLUT\_ACTION\_CONTINUE\_EXECUTION\ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ Create\ a\ new\ rendering\ context\ when\ the\ user\ opens\ a\ new\ window?}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ GLUT\_CREATE\_NEW\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ GLUT\_USE\_CURRENT\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *\ Direct/Indirect\ rendering\ context\ options\ (has\ meaning\ only\ in\ Unix/X11)}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ GLUT\_FORCE\_INDIRECT\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ GLUT\_ALLOW\_DIRECT\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ GLUT\_TRY\_DIRECT\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ GLUT\_FORCE\_DIRECT\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *\ GLUT\ API\ Extension\ macro\ definitions\ -\/-\/\ the\ glutGet\ parameters}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x007C}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \ GLUT\_ACTION\_ON\_WINDOW\_CLOSE\ \ \ \ \ \ \ \ 0x01F9}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_BORDER\_WIDTH\ \ \ \ \ \ \ \ \ \ \ 0x01FA}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_BORDER\_HEIGHT\ \ \ \ \ \ \ \ \ \ 0x01FB}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_HEADER\_HEIGHT\ \ \ \ \ \ \ \ \ \ 0x01FB\ \ }\textcolor{comment}{/*\ Docs\ say\ it\ should\ always\ have\ been\ GLUT\_WINDOW\_BORDER\_HEIGHT,\ keep\ this\ for\ backward\ compatibility\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \ GLUT\_VERSION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01FC}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \ GLUT\_RENDERING\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x01FD}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \ GLUT\_DIRECT\_RENDERING\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01FE}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \ GLUT\_FULL\_SCREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01FF}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \ GLUT\_SKIP\_STALE\_MOTION\_EVENTS\ \ \ \ \ \ 0x0204}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ New\ tokens\ for\ glutInitDisplayMode.}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ Only\ one\ GLUT\_AUXn\ bit\ may\ be\ used\ at\ a\ time.}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ Value\ 0x0400\ is\ defined\ in\ OpenGLUT.}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \ GLUT\_AUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \ GLUT\_AUX1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \ GLUT\_AUX2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \ GLUT\_AUX3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \ GLUT\_AUX4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ *\ Context-\/related\ flags,\ see\ freeglut\_state.c}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_MAJOR\_VERSION\ \ \ \ \ \ \ \ \ \ \ \ 0x0200}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_MINOR\_VERSION\ \ \ \ \ \ \ \ \ \ \ \ 0x0201}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_FLAGS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0202}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_PROFILE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0203}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ Flags\ for\ glutInitContextFlags,\ see\ freeglut\_init.c}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \ GLUT\_DEBUG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \ GLUT\_FORWARD\_COMPATIBLE\ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ *\ Flags\ for\ glutInitContextProfile,\ see\ freeglut\_init.c}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ GLUT\_CORE\_PROFILE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ GLUT\_COMPATIBILITY\_PROFILE\ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ *\ Process\ loop\ function,\ see\ freeglut\_main.c}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a6ab07848a855e45793d05bcce93faba3}{glutMainLoopEvent}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00126\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a49fa089383daefbddc005f2bfcd04071}{glutLeaveMainLoop}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00127\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a354d9a39b095c4dc22ad6f6d163826ec}{glutExit}}\ \ \ \ \ \ \ \ \ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ *\ Window\ management\ functions,\ see\ freeglut\_window.c}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00132\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a1b189e2ab9719c6f12251dbe9b03faa1}{glutFullScreenToggle}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a227f0301219e24dfbba6a562c47f8252}{glutLeaveFullScreen}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ *\ Window-\/specific\ callback\ functions,\ see\ freeglut\_callbacks.c}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00138\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a9161e4426b136e1929b95c1780acba81}{glutMouseWheelFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{00139\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_aefa43f2bacd50aa3fb851ed50af99520}{glutCloseFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{00140\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a1f14c9f686d40ac81838ba0096c64815}{glutWMCloseFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ A.\ Donev:\ Also\ a\ destruction\ callback\ for\ menus\ */}}
+\DoxyCodeLine{00142\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_afe6f085e3599cda08e5b784a1a5f499f}{glutMenuDestroyFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ *\ State\ setting\ and\ retrieval\ functions,\ see\ freeglut\_state.c}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00147\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a18f94be444502efce3eee0ca1c5fd5b3}{glutSetOption}}\ (\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}}\ option\_flag,\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{00148\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{int}\ *\ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_abec1747976e26a62ce157963819582a5}{glutGetModeValues}}(\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a7efd7809e1632cdae75603fd1fee61c0}{GLenum}}\ mode,\ \textcolor{keywordtype}{int}\ *\ size);}
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ A.Donev:\ User-\/data\ manipulation\ */}}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}*\ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_af71cc72e049c32994f54abb898c8622c}{glutGetWindowData}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00151\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a77097f59115b3fdc6e4c7b1a05a30688}{glutSetWindowData}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00152\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}*\ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a41fccc0298f981f610a210592d8b08c5}{glutGetMenuData}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_af89db03e5b31ffe1bb56b91c57f94e8a}{glutSetMenuData}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ *\ Font\ stuff,\ see\ freeglut\_font.c}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00158\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a5b6f22e0919265e3f1f2a5fe0267b4e9}{glutBitmapHeight}}(\ \textcolor{keywordtype}{void}*\ font\ );}
+\DoxyCodeLine{00159\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a31aeedaeef29442c9c015ab355c8f5ab}{GLfloat}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_aa92ad14a94a3e52fbce036983f7cb81b}{glutStrokeHeight}}(\ \textcolor{keywordtype}{void}*\ font\ );}
+\DoxyCodeLine{00160\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a49d2f57dbb22d136b9843e48bc4f6936}{glutBitmapString}}(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string}\ );}
+\DoxyCodeLine{00161\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_aa08192f6d743e1db38a54d0ffdcdf813}{glutStrokeString}}(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string}\ );}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ *\ Geometry\ functions,\ see\ freeglut\_geometry.c}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a0646e97fa16eae6264801a2a5a20ebb7}{glutWireRhombicDodecahedron}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00167\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a5bbf9c4c34980fb79b34ce6f8237f80e}{glutSolidRhombicDodecahedron}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a6fac6d6a4a8f7a2f8050a8ed6ff53d03}{glutWireSierpinskiSponge}}\ (\ \textcolor{keywordtype}{int}\ num\_levels,\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ offset[3],\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ scale\ );}
+\DoxyCodeLine{00169\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a50409328e958d946d5e3219e15015d34}{glutSolidSierpinskiSponge}}\ (\ \textcolor{keywordtype}{int}\ num\_levels,\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ offset[3],\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ scale\ );}
+\DoxyCodeLine{00170\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a9e89165415295a9db5904929d70b6cbb}{glutWireCylinder}}(\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ \mbox{\hyperlink{_application_8cpp_a3f67c53b80389c5f53961936edba04c9}{radius}},\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}},\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}\ slices,\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}\ stacks);}
+\DoxyCodeLine{00171\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a7415d348b7ea09c2281e52bc9df1d2bb}{glutSolidCylinder}}(\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ \mbox{\hyperlink{_application_8cpp_a3f67c53b80389c5f53961936edba04c9}{radius}},\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a4f86c02824a01bb647d89449b9a8eacc}{GLdouble}}\ \mbox{\hyperlink{boing_8c_ad12fc34ce789bce6c8a05d8a17138534}{height}},\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}\ slices,\ \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a5ac0f3c4d7fafd42b284b5487a791017}{GLint}}\ stacks);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ *\ Extension\ functions,\ see\ freeglut\_ext.c}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}{GLUTproc}})();}
+\DoxyCodeLine{00177\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a3ae3ba12b8b90253225790b5d7566dc6}{GLUTproc}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ae4d0f4651650924d24ce5c13edee0e06}{glutGetProcAddress}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *procName\ );}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ *\ Multi-\/touch/multi-\/pointer\ extensions}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ GLUT\_HAS\_MULTI\ 1}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_af8782fcb6ef57235d4833857581c34b4}{glutMultiEntryFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{00186\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a4e76b8c3f851f285b16ccf10dd52497a}{glutMultiButtonFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{00187\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_adfa134cbbac7fc808c0a656ade6b8c25}{glutMultiMotionFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{00188\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_af362999e14f86407ae7c40fff8ea2939}{glutMultiPassiveFunc}}(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ *\ Joystick\ functions,\ see\ freeglut\_joystick.c}}
+\DoxyCodeLine{00192\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00193\ \textcolor{comment}{/*\ USE\ OF\ THESE\ FUNCTIONS\ IS\ DEPRECATED\ !!!!!\ */}}
+\DoxyCodeLine{00194\ \textcolor{comment}{/*\ If\ you\ have\ a\ serious\ need\ for\ these\ functions\ in\ your\ application,\ please\ either}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ *\ contact\ the\ "{}freeglut"{}\ developer\ community\ at\ freeglut-\/developer@lists.sourceforge.net,}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ *\ switch\ to\ the\ OpenGLUT\ library,\ or\ else\ port\ your\ joystick\ functionality\ over\ to\ PLIB's}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ *\ "{}js"{}\ library.}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ab7f38f57eb585b9729f586f8456801c1}{glutJoystickGetNumAxes}}(\ \textcolor{keywordtype}{int}\ ident\ );}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a1fb7799b5e666941df23a96bfe50b590}{glutJoystickGetNumButtons}}(\ \textcolor{keywordtype}{int}\ ident\ );}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a12e27b530800e931493867834a428fe6}{glutJoystickNotWorking}}(\ \textcolor{keywordtype}{int}\ ident\ );}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{float}\ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_af8827f7a77db26c2839e6a8c541643cf}{glutJoystickGetDeadBand}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{int}\ axis\ );}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a68362f5d4eb25af37426b780dce0fab9}{glutJoystickSetDeadBand}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{int}\ axis,\ \textcolor{keywordtype}{float}\ db\ );}
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{float}\ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a72c3fd24f981c303084384a57081906a}{glutJoystickGetSaturation}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{int}\ axis\ );}
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a1ea1d3fac954b1918633c04d0c9e9e1e}{glutJoystickSetSaturation}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{int}\ axis,\ \textcolor{keywordtype}{float}\ st\ );}
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a1f4e3c75e1ca330ea75bd8280f1cc98b}{glutJoystickSetMinRange}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a653525349c4ebe5af4c2cdfa23a2ac92}{glutJoystickSetMaxRange}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a2f71a97351526922047a3dec887d1acc}{glutJoystickSetCenter}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a8d8d7d08e10b13738aba738322ee7e3b}{glutJoystickGetMinRange}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ae2f47100d658bcdf6c375d71fe02ddcc}{glutJoystickGetMaxRange}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00211\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ad636ed6a5796fb860986b3f60ef4208d}{glutJoystickGetCenter}}(\ \textcolor{keywordtype}{int}\ ident,\ \textcolor{keywordtype}{float}\ *axes\ );}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00214\ \textcolor{comment}{\ *\ Initialization\ functions,\ see\ freeglut\_init.c}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_abe52eb31edbf01b16cd347ac88b2f71f}{glutInitContextVersion}}(\ \textcolor{keywordtype}{int}\ majorVersion,\ \textcolor{keywordtype}{int}\ minorVersion\ );}
+\DoxyCodeLine{00217\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_a161686883fdccf9ca181605438779795}{glutInitContextFlags}}(\ \textcolor{keywordtype}{int}\ flags\ );}
+\DoxyCodeLine{00218\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ad7f3455a601c63b75310a3ad61d54dd4}{glutInitContextProfile}}(\ \textcolor{keywordtype}{int}\ profile\ );}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{comment}{/*\ to\ get\ the\ typedef\ for\ va\_list\ */}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_ac36f541fc55288cae8478fde66b18b25}{glutInitErrorFunc}}(\ \textcolor{keywordtype}{void}\ (*\ vError)(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ va\_list\ ap\ )\ );}
+\DoxyCodeLine{00224\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_a0c13890087e4c32266826db56c710098}{FGAPI}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__std_8h_acfe8e7260770f0d6471764f95864489c}{FGAPIENTRY}}\ \mbox{\hyperlink{_assignment1_2_for___v_s_2packages_2nupengl_8core_80_81_80_81_2build_2native_2include_2_g_l_2freeglut__ext_8h_aad9f54aaf994578312a42a2e7093070b}{glutInitWarningFunc}}(\ \textcolor{keywordtype}{void}\ (*\ vWarning)(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ va\_list\ ap\ )\ );}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00227\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ display\ mode\ definitions}}
+\DoxyCodeLine{00228\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \ GLUT\_CAPTIONLESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0400}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ \ GLUT\_BORDERLESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0800}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \ GLUT\_SRGB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{comment}{/***\ END\ OF\ FILE\ ***/}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_FREEGLUT\_EXT\_H\_\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

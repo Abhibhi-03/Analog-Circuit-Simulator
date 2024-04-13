@@ -1,0 +1,138 @@
+\doxysection{Resistor Class Reference}
+\hypertarget{class_resistor}{}\label{class_resistor}\index{Resistor@{Resistor}}
+
+
+{\ttfamily \#include $<$Resistor.\+h$>$}
+
+Inheritance diagram for Resistor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_resistor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resistor_a919ea298879e304db554ca41a89eaa7b}{Resistor}} (double resistance, double red, double green, double blue, std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}})
+\item 
+std\+::string \mbox{\hyperlink{class_resistor_a7ce084c8f44edda800354e60378f8692}{Get\+Name}} () const override
+\item 
+void \mbox{\hyperlink{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}{Update}} (double current, double voltage) override
+\item 
+double \mbox{\hyperlink{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}{Get\+Voltage}} (double current, double timestep) override
+\item 
+void \mbox{\hyperlink{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}{Display}} (double \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}}, double \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}}) override
+\item 
+void \mbox{\hyperlink{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}{Set\+Color}} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_component_a627ec61e88e3a92f7df344b52bbb4efa}{Red}}
+\item 
+float \mbox{\hyperlink{class_component_a7969050ef5900af7eb5db990afc0f582}{Green}}
+\item 
+float \mbox{\hyperlink{class_component_aed6b29d9378c59dbf0e4ee950b6084f4}{Blue}}
+\item 
+std\+::string \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_resistor_8h_source_l00006}{6}} of file \mbox{\hyperlink{_resistor_8h_source}{Resistor.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_resistor_a919ea298879e304db554ca41a89eaa7b}\label{class_resistor_a919ea298879e304db554ca41a89eaa7b} 
+\index{Resistor@{Resistor}!Resistor@{Resistor}}
+\index{Resistor@{Resistor}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{Resistor()}{Resistor()}}
+{\footnotesize\ttfamily Resistor\+::\+Resistor (\begin{DoxyParamCaption}\item[{double}]{resistance,  }\item[{double}]{red,  }\item[{double}]{green,  }\item[{double}]{blue,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_resistor_a0adda43190713b468dee75c5f6b9ed7a}\label{class_resistor_a0adda43190713b468dee75c5f6b9ed7a} 
+\index{Resistor@{Resistor}!Display@{Display}}
+\index{Display@{Display}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Resistor\+::\+Display (\begin{DoxyParamCaption}\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a7b578e52f1325b116999b09e4c074b8f}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+\Hypertarget{class_resistor_a7ce084c8f44edda800354e60378f8692}\label{class_resistor_a7ce084c8f44edda800354e60378f8692} 
+\index{Resistor@{Resistor}!GetName@{GetName}}
+\index{GetName@{GetName}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Resistor\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a3897912d1c1b30cd6f8bf5a255f22fb7}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+\Hypertarget{class_resistor_aa6df00e13387fb0e446b08d808c4ec67}\label{class_resistor_aa6df00e13387fb0e446b08d808c4ec67} 
+\index{Resistor@{Resistor}!GetVoltage@{GetVoltage}}
+\index{GetVoltage@{GetVoltage}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{GetVoltage()}{GetVoltage()}}
+{\footnotesize\ttfamily double Resistor\+::\+Get\+Voltage (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{timestep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_acfea93c40240140362e7a03d263f2a17}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+\Hypertarget{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589}\label{class_resistor_ad983c6466bf09b8cc0b178ab11cbd589} 
+\index{Resistor@{Resistor}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Resistor\+::\+Set\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_ad3ee7184ccb015b166af2cebf94a6b10}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+\Hypertarget{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55}\label{class_resistor_ad73e532bba28c393f7b6a2dd8d3feb55} 
+\index{Resistor@{Resistor}!Update@{Update}}
+\index{Update@{Update}!Resistor@{Resistor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Resistor\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{current,  }\item[{double}]{voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_component_a1299af5f5bbaf277c9c7881bc8c241bc}{Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{_resistor_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_resistor_8cpp_source}{Resistor.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_resistor_8h}{Resistor.\+h}}\item 
+\mbox{\hyperlink{_resistor_8cpp}{Resistor.\+cpp}}\end{DoxyCompactItemize}

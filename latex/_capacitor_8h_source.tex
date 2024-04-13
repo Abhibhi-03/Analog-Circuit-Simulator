@@ -1,0 +1,28 @@
+\doxysection{Capacitor.\+h}
+\hypertarget{_capacitor_8h_source}{}\label{_capacitor_8h_source}\mbox{\hyperlink{_capacitor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00001}00001\ \textcolor{comment}{//\ 09-\/Sept-\/23\ Fahad\ A.\ Khan\ Created}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ \_CAPACITOR\_H}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#define\ \_CAPACITOR\_H}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00007}\mbox{\hyperlink{class_capacitor}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_capacitor}{Capacitor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{double}\ capacitance;}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00009}00009\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{double}\ Vc\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_capacitor}{Capacitor}}(\textcolor{keywordtype}{double}\ capacitance,\ \textcolor{keywordtype}{double}\ red,\ \textcolor{keywordtype}{double}\ green,\ \textcolor{keywordtype}{double}\ blue,\ std::string\ name);}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_capacitor_af23e972081307b1d8b5980d7aa335999}{GetVoltage}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ timestep)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_capacitor_ad53c8e0afce7629f2bcbf6299acf4999}{GetName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//display}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_capacitor_a032f12506154b8f353d302deb35d4a72}{Display}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ voltage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//update}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_capacitor_ab4d161bad90659e3f32f757a4e10c3fa}{Update}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//getters}}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_capacitor_adde5af0d81f2c51abacf9451fd0856da}{GetInductance}}();}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_capacitor_ad359475527a08035d5cf2e1ba17216e5}{SetColor}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00022}00022\ \};}
+\DoxyCodeLine{\Hypertarget{_capacitor_8h_source_l00023}00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_CAPACITOR\_H\_;}}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/nsgl\+\_\+context.m File Reference}
+\hypertarget{nsgl__context_8m}{}\label{nsgl__context_8m}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/nsgl\_context.m@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/nsgl\_context.m}}
+{\ttfamily \#include "{}internal.\+h"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}{add\+Attrib}}(a)
+\item 
+\#define \mbox{\hyperlink{nsgl__context_8m_a8f427f7949c0cb386b5632aa88cb30c7}{set\+Attrib}}(a,  v)~\{ \mbox{\hyperlink{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}{add\+Attrib}}(a); \mbox{\hyperlink{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}{add\+Attrib}}(v); \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{nsgl__context_8m_ac0510729f33f4aa006a3bc03dc98b37a}{\+\_\+glfw\+Init\+NSGL}} (void)
+\item 
+void \mbox{\hyperlink{nsgl__context_8m_ad104998536aae3e02fa89f78925a9a52}{\+\_\+glfw\+Terminate\+NSGL}} (void)
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{nsgl__context_8m_a4d57514fb92fa2439dfe429183aee6c6}{\+\_\+glfw\+Create\+Context\+NSGL}} (\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}window, const \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\+\_\+\+GLFWctxconfig}} \texorpdfstring{$\ast$}{*}ctxconfig, const \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\+\_\+\+GLFWfbconfig}} \texorpdfstring{$\ast$}{*}fbconfig)
+\item 
+\mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{cocoa__platform_8h_a6ca49e267a019c46a02191d2d11620b6}{id}} \mbox{\hyperlink{nsgl__context_8m_a7d06532c9eacc1beb3722ee02ec1b528}{glfw\+Get\+NSGLContext}} (\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}handle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}\label{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1} 
+\index{nsgl\_context.m@{nsgl\_context.m}!addAttrib@{addAttrib}}
+\index{addAttrib@{addAttrib}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{addAttrib}{addAttrib}}
+{\footnotesize\ttfamily \#define add\+Attrib(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ assert((\textcolor{keywordtype}{size\_t})\ index\ <\ \textcolor{keyword}{sizeof}(attribs)\ /\ \textcolor{keyword}{sizeof}(attribs[0]));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ attribs[index++]\ =\ a;\ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{nsgl__context_8m_a8f427f7949c0cb386b5632aa88cb30c7}\label{nsgl__context_8m_a8f427f7949c0cb386b5632aa88cb30c7} 
+\index{nsgl\_context.m@{nsgl\_context.m}!setAttrib@{setAttrib}}
+\index{setAttrib@{setAttrib}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{setAttrib}{setAttrib}}
+{\footnotesize\ttfamily \#define set\+Attrib(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{v }\end{DoxyParamCaption})~\{ \mbox{\hyperlink{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}{add\+Attrib}}(a); \mbox{\hyperlink{nsgl__context_8m_ae24f754d0973d289958e25833b5025f1}{add\+Attrib}}(v); \}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{nsgl__context_8m_a4d57514fb92fa2439dfe429183aee6c6}\label{nsgl__context_8m_a4d57514fb92fa2439dfe429183aee6c6} 
+\index{nsgl\_context.m@{nsgl\_context.m}!\_glfwCreateContextNSGL@{\_glfwCreateContextNSGL}}
+\index{\_glfwCreateContextNSGL@{\_glfwCreateContextNSGL}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwCreateContextNSGL()}{\_glfwCreateContextNSGL()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Create\+Context\+NSGL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wwindow}{\+\_\+\+GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\+\_\+\+GLFWctxconfig}} \texorpdfstring{$\ast$}{*}}]{ctxconfig,  }\item[{const \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\+\_\+\+GLFWfbconfig}} \texorpdfstring{$\ast$}{*}}]{fbconfig }\end{DoxyParamCaption})}
+
+\Hypertarget{nsgl__context_8m_ac0510729f33f4aa006a3bc03dc98b37a}\label{nsgl__context_8m_ac0510729f33f4aa006a3bc03dc98b37a} 
+\index{nsgl\_context.m@{nsgl\_context.m}!\_glfwInitNSGL@{\_glfwInitNSGL}}
+\index{\_glfwInitNSGL@{\_glfwInitNSGL}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwInitNSGL()}{\_glfwInitNSGL()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Init\+NSGL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{nsgl__context_8m_ad104998536aae3e02fa89f78925a9a52}\label{nsgl__context_8m_ad104998536aae3e02fa89f78925a9a52} 
+\index{nsgl\_context.m@{nsgl\_context.m}!\_glfwTerminateNSGL@{\_glfwTerminateNSGL}}
+\index{\_glfwTerminateNSGL@{\_glfwTerminateNSGL}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwTerminateNSGL()}{\_glfwTerminateNSGL()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Terminate\+NSGL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{nsgl__context_8m_a7d06532c9eacc1beb3722ee02ec1b528}\label{nsgl__context_8m_a7d06532c9eacc1beb3722ee02ec1b528} 
+\index{nsgl\_context.m@{nsgl\_context.m}!glfwGetNSGLContext@{glfwGetNSGLContext}}
+\index{glfwGetNSGLContext@{glfwGetNSGLContext}!nsgl\_context.m@{nsgl\_context.m}}
+\doxysubsubsection{\texorpdfstring{glfwGetNSGLContext()}{glfwGetNSGLContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_assignment1_2_for___v_s_2_dependencies_2_g_l_f_w_2include_2_g_l_f_w_2glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{cocoa__platform_8h_a6ca49e267a019c46a02191d2d11620b6}{id}} glfw\+Get\+NSGLContext (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{handle }\end{DoxyParamCaption})}
+

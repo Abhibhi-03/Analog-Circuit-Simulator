@@ -1,0 +1,48 @@
+\doxysection{Analog\+Circuit\+Main.\+cpp}
+\hypertarget{_analog_circuit_main_8cpp_source}{}\label{_analog_circuit_main_8cpp_source}\mbox{\hyperlink{_analog_circuit_main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00001}00001\ \textcolor{comment}{//AnalogCircuitMain.cpp\ -\/\ main\ function\ for\ the\ analog\ circuit\ simulation}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00002}00002\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Generate\ graphs\ with\ the\ OpenGL\ graphics\ library}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00003}00003\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00004}00004\ \textcolor{comment}{//\ https://content.byui.edu/file/2315e65e-\/a34a-\/48d3-\/814d-\/4175a2b74ed5/1/intro/165-\/opengl-\/visualStudio2017.html}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00005}00005\ \textcolor{comment}{//\ Create\ a\ project}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00006}00006\ \textcolor{comment}{//\ Right-\/click\ on\ "{}References"{},\ then\ click\ on\ Manage\ Nuget\ Packages}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00007}00007\ \textcolor{comment}{//\ Select\ Package\ Manager\ Console}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00008}00008\ \textcolor{comment}{//\ Click\ on\ the\ prompt\ (where\ it\ says\ PM>),\ and\ type:\ Install-\/Package\ nupengl.core\ Then\ press\ enter.}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00009}00009\ \textcolor{comment}{//\ http://code.nabla.net/doc/OpenGL/api/OpenGL/man/}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00010}00010\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00011}00011\ \textcolor{comment}{//\ 23-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Created.}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00012}00012\ \textcolor{comment}{//\ 27-\/May-\/22\ \ M.\ Watler\ \ \ \ \ \ \ \ \ Added\ graphical\ display.}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_analog_circuit_8h}{AnalogCircuit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00019}\mbox{\hyperlink{_analog_circuit_main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00019}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_analog_circuit_main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv)\ \{}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_abc547c43592e2ce465a58abed544f282}{glutInit}}(\&argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_a1082eda6b270a765d2d8f4f839cf728c}{glutInitDisplayMode}}(\mbox{\hyperlink{freeglut__std_8h_af72a6f59f18e560f3ee70b9feb40eeb5}{GLUT\_RGB}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00022}00022\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ width\ of\ the\ window:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00023}00023\ \ \ \ \ cin\ >>\ \mbox{\hyperlink{_analog_circuit_8cpp_aa61000540636bfdc4c9f27045ab84ce9}{windowWidth}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00024}00024\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ height\ of\ the\ window:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00025}00025\ \ \ \ \ cin\ >>\ \mbox{\hyperlink{_analog_circuit_8cpp_af140802328ffe8a45749114b1c5a2056}{windowHeight}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00026}00026\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ height\ scaling\ factor:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00027}00027\ \ \ \ \ cin\ >>\ \mbox{\hyperlink{_analog_circuit_8cpp_a5dae6184b90fb30fb48cc8dab18d1cfe}{scalingFactor}};}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_af3be2e60d17964dfe49a67b37d9deba5}{glutInitWindowSize}}(\mbox{\hyperlink{_analog_circuit_8cpp_aa61000540636bfdc4c9f27045ab84ce9}{windowWidth}},\ \mbox{\hyperlink{_analog_circuit_8cpp_a5dae6184b90fb30fb48cc8dab18d1cfe}{scalingFactor}}\ *\ \mbox{\hyperlink{_analog_circuit_8cpp_af140802328ffe8a45749114b1c5a2056}{windowHeight}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_a110614b330069d2ae48de1d0ef04519b}{glutInitWindowPosition}}(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_aea4ae15d87a833997b1f72d5e4a1a58e}{glutCreateWindow}}(\textcolor{stringliteral}{"{}ANASIM"{}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_af339551012daa99fef8c4d313e98b546}{glClearColor}}(0.0,\ 0.0,\ 0.0,\ 1.0);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_acee7240272b34e83a4567a1fb586be99}{glColor3f}}(1.0,\ 0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a6e4c9239a0c28e7076599c1137e00c26}{glPointSize}}(1.0);}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_af14e38e22806d0220680b52edbc3bcef}{glMatrixMode}}(\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a85e93b355494186ced027f1a1142fefb}{GL\_PROJECTION}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a6577472f85b23086331edadaf0311a49}{glLoadIdentity}}();}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00036}00036\ \ \ \ \ gluOrtho2D(0.0,\ \mbox{\hyperlink{_analog_circuit_8cpp_aa61000540636bfdc4c9f27045ab84ce9}{windowWidth}},\ 0.0,\ \mbox{\hyperlink{_analog_circuit_8cpp_a5dae6184b90fb30fb48cc8dab18d1cfe}{scalingFactor}}\ *\ \mbox{\hyperlink{_analog_circuit_8cpp_af140802328ffe8a45749114b1c5a2056}{windowHeight}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_affc6c383998f3d5c0a5e74a07788f6ed}{glClear}}(\mbox{\hyperlink{_dependencies_2_g_l_e_w_2include_2_g_l_2glew_8h_a947db9ff944c4b78e652144c3dd1060c}{GL\_COLOR\_BUFFER\_BIT}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_a765b5fa72e50aa6225a4779e176af26e}{glutDisplayFunc}}(\mbox{\hyperlink{_analog_circuit_8cpp_a60de64d75454385b23995437f1d72669}{start}});}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{freeglut__std_8h_a9c4fdc94124aec578f3bea7070bd6ceb}{glutMainLoop}}();}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_analog_circuit_main_8cpp_source_l00043}00043\ \}}
+
+\end{DoxyCode}

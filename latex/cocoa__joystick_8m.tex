@@ -1,0 +1,67 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/cocoa\+\_\+joystick.m File Reference}
+\hypertarget{cocoa__joystick_8m}{}\label{cocoa__joystick_8m}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/cocoa\_joystick.m@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/src/cocoa\_joystick.m}}
+{\ttfamily \#include "{}internal.\+h"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$mach/mach.\+h$>$}\newline
+{\ttfamily \#include $<$mach/mach\+\_\+error.\+h$>$}\newline
+{\ttfamily \#include $<$Core\+Foundation/\+Core\+Foundation.\+h$>$}\newline
+{\ttfamily \#include $<$Kernel/\+IOKit/hidsystem/\+IOHIDUsage\+Tables.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wjoyelement_n_s}{\+\_\+\+GLFWjoyelement\+NS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wjoyelement_n_s}{\+\_\+\+GLFWjoyelement\+NS}} \mbox{\hyperlink{cocoa__joystick_8m_ab6bd3da6c56b26813c15b18611077df1}{\+\_\+\+GLFWjoyelement\+NS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cocoa__joystick_8m_ac7ecf0f3b0bc7553b98d4f4952413a02}{\+\_\+glfw\+Init\+Joysticks\+NS}} (void)
+\item 
+void \mbox{\hyperlink{cocoa__joystick_8m_aea760d1e1b1985f78d5c5a4d38e52e71}{\+\_\+glfw\+Terminate\+Joysticks\+NS}} (void)
+\item 
+int \mbox{\hyperlink{cocoa__joystick_8m_a07c7e99222e703fbd67b2c6045d6440f}{\+\_\+glfw\+Platform\+Poll\+Joystick}} (\mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \texorpdfstring{$\ast$}{*}js, int mode)
+\item 
+void \mbox{\hyperlink{cocoa__joystick_8m_ab9fd6c52f91cdf20f1b190a365709033}{\+\_\+glfw\+Platform\+Update\+Gamepad\+GUID}} (char \texorpdfstring{$\ast$}{*}guid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{cocoa__joystick_8m_ab6bd3da6c56b26813c15b18611077df1}\label{cocoa__joystick_8m_ab6bd3da6c56b26813c15b18611077df1} 
+\index{cocoa\_joystick.m@{cocoa\_joystick.m}!\_GLFWjoyelementNS@{\_GLFWjoyelementNS}}
+\index{\_GLFWjoyelementNS@{\_GLFWjoyelementNS}!cocoa\_joystick.m@{cocoa\_joystick.m}}
+\doxysubsubsection{\texorpdfstring{\_GLFWjoyelementNS}{\_GLFWjoyelementNS}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wjoyelement_n_s}{\+\_\+\+GLFWjoyelement\+NS}} \mbox{\hyperlink{struct___g_l_f_wjoyelement_n_s}{\+\_\+\+GLFWjoyelement\+NS}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cocoa__joystick_8m_ac7ecf0f3b0bc7553b98d4f4952413a02}\label{cocoa__joystick_8m_ac7ecf0f3b0bc7553b98d4f4952413a02} 
+\index{cocoa\_joystick.m@{cocoa\_joystick.m}!\_glfwInitJoysticksNS@{\_glfwInitJoysticksNS}}
+\index{\_glfwInitJoysticksNS@{\_glfwInitJoysticksNS}!cocoa\_joystick.m@{cocoa\_joystick.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwInitJoysticksNS()}{\_glfwInitJoysticksNS()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Init\+Joysticks\+NS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{cocoa__joystick_8m_a07c7e99222e703fbd67b2c6045d6440f}\label{cocoa__joystick_8m_a07c7e99222e703fbd67b2c6045d6440f} 
+\index{cocoa\_joystick.m@{cocoa\_joystick.m}!\_glfwPlatformPollJoystick@{\_glfwPlatformPollJoystick}}
+\index{\_glfwPlatformPollJoystick@{\_glfwPlatformPollJoystick}!cocoa\_joystick.m@{cocoa\_joystick.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformPollJoystick()}{\_glfwPlatformPollJoystick()}}
+{\footnotesize\ttfamily int \+\_\+glfw\+Platform\+Poll\+Joystick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wjoystick}{\+\_\+\+GLFWjoystick}} \texorpdfstring{$\ast$}{*}}]{js,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{cocoa__joystick_8m_ab9fd6c52f91cdf20f1b190a365709033}\label{cocoa__joystick_8m_ab9fd6c52f91cdf20f1b190a365709033} 
+\index{cocoa\_joystick.m@{cocoa\_joystick.m}!\_glfwPlatformUpdateGamepadGUID@{\_glfwPlatformUpdateGamepadGUID}}
+\index{\_glfwPlatformUpdateGamepadGUID@{\_glfwPlatformUpdateGamepadGUID}!cocoa\_joystick.m@{cocoa\_joystick.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformUpdateGamepadGUID()}{\_glfwPlatformUpdateGamepadGUID()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Platform\+Update\+Gamepad\+GUID (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{guid }\end{DoxyParamCaption})}
+
+\Hypertarget{cocoa__joystick_8m_aea760d1e1b1985f78d5c5a4d38e52e71}\label{cocoa__joystick_8m_aea760d1e1b1985f78d5c5a4d38e52e71} 
+\index{cocoa\_joystick.m@{cocoa\_joystick.m}!\_glfwTerminateJoysticksNS@{\_glfwTerminateJoysticksNS}}
+\index{\_glfwTerminateJoysticksNS@{\_glfwTerminateJoysticksNS}!cocoa\_joystick.m@{cocoa\_joystick.m}}
+\doxysubsubsection{\texorpdfstring{\_glfwTerminateJoysticksNS()}{\_glfwTerminateJoysticksNS()}}
+{\footnotesize\ttfamily void \+\_\+glfw\+Terminate\+Joysticks\+NS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

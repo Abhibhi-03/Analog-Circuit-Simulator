@@ -1,0 +1,115 @@
+\doxysection{C\+:/\+Users/\+Fahad/\+One\+Drive -\/ Seneca/\+Seneca/\+Sem\+\_\+5/\+SED500-\/\+Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/heightmap.c File Reference}
+\hypertarget{heightmap_8c}{}\label{heightmap_8c}\index{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/heightmap.c@{C:/Users/Fahad/OneDrive -\/ Seneca/Seneca/Sem\_5/SED500-\/Introduction to Software Engineering/glfw-\/3.3.8/glfw-\/3.3.8/examples/heightmap.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a088324ad8995e3eb76024e3e79083d48}{GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a1c1167975f3a29bed7fadc2481e3cfb8}{MAX\+\_\+\+CIRCLE\+\_\+\+SIZE}}~(5.\+0f)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_abe8d9161d34b872b26bf32dfd91b4219}{MAX\+\_\+\+DISPLACEMENT}}~(1.\+0f)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a30bb4b7143ab05b8762147492186048b}{DISPLACEMENT\+\_\+\+SIGN\+\_\+\+LIMIT}}~(0.\+3f)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_acd517c6f195c75b9dd0f3aad65326f3b}{MAX\+\_\+\+ITER}}~(200)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a57bf1d631b48112ad201fcbebbd41cac}{NUM\+\_\+\+ITER\+\_\+\+AT\+\_\+\+A\+\_\+\+TIME}}~(1)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a0a82fd70402bbdc2259248e735fecbca}{MAP\+\_\+\+SIZE}}~(10.\+0f)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\+\_\+\+NUM\+\_\+\+VERTICES}}~(80)
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_a3d451dbde0a691bc6e1c6f44eed13520}{MAP\+\_\+\+NUM\+\_\+\+TOTAL\+\_\+\+VERTICES}}~(\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\+\_\+\+NUM\+\_\+\+VERTICES}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\+\_\+\+NUM\+\_\+\+VERTICES}})
+\item 
+\#define \mbox{\hyperlink{heightmap_8c_ae582efab11c39544148a1940c4d23bb9}{MAP\+\_\+\+NUM\+\_\+\+LINES}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{heightmap_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{heightmap_8c_a30bb4b7143ab05b8762147492186048b}\label{heightmap_8c_a30bb4b7143ab05b8762147492186048b} 
+\index{heightmap.c@{heightmap.c}!DISPLACEMENT\_SIGN\_LIMIT@{DISPLACEMENT\_SIGN\_LIMIT}}
+\index{DISPLACEMENT\_SIGN\_LIMIT@{DISPLACEMENT\_SIGN\_LIMIT}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{DISPLACEMENT\_SIGN\_LIMIT}{DISPLACEMENT\_SIGN\_LIMIT}}
+{\footnotesize\ttfamily \#define DISPLACEMENT\+\_\+\+SIGN\+\_\+\+LIMIT~(0.\+3f)}
+
+\Hypertarget{heightmap_8c_a088324ad8995e3eb76024e3e79083d48}\label{heightmap_8c_a088324ad8995e3eb76024e3e79083d48} 
+\index{heightmap.c@{heightmap.c}!GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}}
+\index{GLFW\_INCLUDE\_NONE@{GLFW\_INCLUDE\_NONE}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{GLFW\_INCLUDE\_NONE}{GLFW\_INCLUDE\_NONE}}
+{\footnotesize\ttfamily \#define GLFW\+\_\+\+INCLUDE\+\_\+\+NONE}
+
+\Hypertarget{heightmap_8c_ae582efab11c39544148a1940c4d23bb9}\label{heightmap_8c_ae582efab11c39544148a1940c4d23bb9} 
+\index{heightmap.c@{heightmap.c}!MAP\_NUM\_LINES@{MAP\_NUM\_LINES}}
+\index{MAP\_NUM\_LINES@{MAP\_NUM\_LINES}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAP\_NUM\_LINES}{MAP\_NUM\_LINES}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+NUM\+\_\+\+LINES}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3*\ (\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\_NUM\_VERTICES}}\ -\/\ 1)\ *\ (\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\_NUM\_VERTICES}}\ -\/\ 1)\ +\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ *\ (\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\_NUM\_VERTICES}}\ -\/\ 1))}
+
+\end{DoxyCode}
+\Hypertarget{heightmap_8c_a3d451dbde0a691bc6e1c6f44eed13520}\label{heightmap_8c_a3d451dbde0a691bc6e1c6f44eed13520} 
+\index{heightmap.c@{heightmap.c}!MAP\_NUM\_TOTAL\_VERTICES@{MAP\_NUM\_TOTAL\_VERTICES}}
+\index{MAP\_NUM\_TOTAL\_VERTICES@{MAP\_NUM\_TOTAL\_VERTICES}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAP\_NUM\_TOTAL\_VERTICES}{MAP\_NUM\_TOTAL\_VERTICES}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+NUM\+\_\+\+TOTAL\+\_\+\+VERTICES~(\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\+\_\+\+NUM\+\_\+\+VERTICES}}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}{MAP\+\_\+\+NUM\+\_\+\+VERTICES}})}
+
+\Hypertarget{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4}\label{heightmap_8c_acf2895d866fcf9abb9cb46ea26c6e6b4} 
+\index{heightmap.c@{heightmap.c}!MAP\_NUM\_VERTICES@{MAP\_NUM\_VERTICES}}
+\index{MAP\_NUM\_VERTICES@{MAP\_NUM\_VERTICES}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAP\_NUM\_VERTICES}{MAP\_NUM\_VERTICES}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+NUM\+\_\+\+VERTICES~(80)}
+
+\Hypertarget{heightmap_8c_a0a82fd70402bbdc2259248e735fecbca}\label{heightmap_8c_a0a82fd70402bbdc2259248e735fecbca} 
+\index{heightmap.c@{heightmap.c}!MAP\_SIZE@{MAP\_SIZE}}
+\index{MAP\_SIZE@{MAP\_SIZE}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAP\_SIZE}{MAP\_SIZE}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+SIZE~(10.\+0f)}
+
+\Hypertarget{heightmap_8c_a1c1167975f3a29bed7fadc2481e3cfb8}\label{heightmap_8c_a1c1167975f3a29bed7fadc2481e3cfb8} 
+\index{heightmap.c@{heightmap.c}!MAX\_CIRCLE\_SIZE@{MAX\_CIRCLE\_SIZE}}
+\index{MAX\_CIRCLE\_SIZE@{MAX\_CIRCLE\_SIZE}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CIRCLE\_SIZE}{MAX\_CIRCLE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CIRCLE\+\_\+\+SIZE~(5.\+0f)}
+
+\Hypertarget{heightmap_8c_abe8d9161d34b872b26bf32dfd91b4219}\label{heightmap_8c_abe8d9161d34b872b26bf32dfd91b4219} 
+\index{heightmap.c@{heightmap.c}!MAX\_DISPLACEMENT@{MAX\_DISPLACEMENT}}
+\index{MAX\_DISPLACEMENT@{MAX\_DISPLACEMENT}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_DISPLACEMENT}{MAX\_DISPLACEMENT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+DISPLACEMENT~(1.\+0f)}
+
+\Hypertarget{heightmap_8c_acd517c6f195c75b9dd0f3aad65326f3b}\label{heightmap_8c_acd517c6f195c75b9dd0f3aad65326f3b} 
+\index{heightmap.c@{heightmap.c}!MAX\_ITER@{MAX\_ITER}}
+\index{MAX\_ITER@{MAX\_ITER}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_ITER}{MAX\_ITER}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ITER~(200)}
+
+\Hypertarget{heightmap_8c_a57bf1d631b48112ad201fcbebbd41cac}\label{heightmap_8c_a57bf1d631b48112ad201fcbebbd41cac} 
+\index{heightmap.c@{heightmap.c}!NUM\_ITER\_AT\_A\_TIME@{NUM\_ITER\_AT\_A\_TIME}}
+\index{NUM\_ITER\_AT\_A\_TIME@{NUM\_ITER\_AT\_A\_TIME}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_ITER\_AT\_A\_TIME}{NUM\_ITER\_AT\_A\_TIME}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+ITER\+\_\+\+AT\+\_\+\+A\+\_\+\+TIME~(1)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{heightmap_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{heightmap_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{heightmap.c@{heightmap.c}!main@{main}}
+\index{main@{main}!heightmap.c@{heightmap.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+

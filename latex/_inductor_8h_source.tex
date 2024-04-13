@@ -1,0 +1,30 @@
+\doxysection{Inductor.\+h}
+\hypertarget{_inductor_8h_source}{}\label{_inductor_8h_source}\mbox{\hyperlink{_inductor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00001}00001\ \textcolor{comment}{//\ 09-\/Sept-\/23\ Fahad\ A.\ Khan\ Created}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00002}00002\ \textcolor{comment}{//\ Compare\ this\ snippet\ from\ Capacitor.h:}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ \_INDUCTOR\_H}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ \_INDUCTOR\_H}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00007}\mbox{\hyperlink{class_inductor}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inductor}{Inductor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{double}\ inductance;}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{double}\ Vl\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{double}\ C0\ =\ 0.0;\ \ \textcolor{comment}{//\ to\ store\ next\ time\ step}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_inductor}{Inductor}}(\textcolor{keywordtype}{double}\ inductance,\ \textcolor{keywordtype}{double}\ red,\ \textcolor{keywordtype}{double}\ green,\ \textcolor{keywordtype}{double}\ blue,\ std::string\ \mbox{\hyperlink{class_component_a46343549452bda5ee9752f7a9bc15efb}{name}});}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_inductor_ae045cf8523e9165db6fae8db50912fda}{GetVoltage}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ timestep)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_inductor_a7bf3d43b795db93952525dcb2ad4720b}{GetName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//display}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inductor_a7162d9c8a63cc89bce90c104cb324d1f}{Display}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a14b63b1237cbab23c02957e583b5c404}{xpos}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_analog_circuit_8cpp_a0cdebacabf02eca9293328d9ae7e2b49}{ypos}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//update\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inductor_adcfc54d563afee6eb59c45496d3f7eef}{Update}}(\textcolor{keywordtype}{double}\ current,\ \textcolor{keywordtype}{double}\ voltage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//getters}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_inductor_a2eae0fcdc5bf43c690d21b39eba7ac3f}{GetInductance}}();}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//setters}}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inductor_a23dbfb2d25d5384e1fc41fc2fdd46330}{SetInductance}}(\textcolor{keywordtype}{double}\ l);}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inductor_ad57d15aeb4479d0bef84400649ad2e68}{SetColor}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{_inductor_8h_source_l00025}00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_INDUCTOR\_H\_}}
+
+\end{DoxyCode}
